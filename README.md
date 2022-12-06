@@ -1,22 +1,31 @@
 RamTech
 
 ¿Qué productos o servicios brindará nuestro sitio?
+
 Nuestro sitio se basa en la venta de computadoras, componentes de PC, periféricos y consolas.
 
 ¿Quién será nuestra audiencia objetivo?
+
 Nuestros productos están orientados a gamers y entusiastas. Esto incluye a los que están comenzando en este mundo como jugadores profesionales.
 
 ¿Cómo ajustaremos nuestra oferta a ese público?
+
 Contamos con todo tipo de productos de informática tanto para el gaming como para el uso de oficina. Además, para mayor comodidad del público ofrecemos un servicio de asesoramiento técnico para el armado de la pc acorde al presupuesto del usuario. 
 
 URL Trello: https://trello.com/b/k35aZXXl/sprint1
 
 Nuestro equipo está compuesto por:
+
 -Abigail Barroso
+
 -Angel Macias
+
 -Conrado Aizawa
+
 -Mateo Lauzan
+
 -Martin Polito
+
 -Paula Suarez
 
 Links de referencia:
