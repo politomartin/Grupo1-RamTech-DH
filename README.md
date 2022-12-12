@@ -24,7 +24,7 @@ Nuestro equipo está compuesto por:
 
 -Mateo Lauzan: Estoy empezando en el mundo del desarrollo web y tengo ganas de seguir aprendiendo. 
 
--Martin Polito
+-Martin Polito: Tengo 22 años, trabajo, estudio y tengo ganas de conseguir mas conocimientos sobre distintos lenguajes, elegir uno y especializarme para poder conseguir mi primer trabajo como programador.
 
 -Paula Suarez
 
