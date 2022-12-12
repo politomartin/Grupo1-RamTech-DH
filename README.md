@@ -20,7 +20,7 @@ Nuestro equipo está compuesto por:
 
 -Angel Macias
 
--Conrado Aizawa
+-Conrado Aizawa: 22 años, futuro desarrollador web full stack
 
 -Mateo Lauzan: Estoy empezando en el mundo del desarrollo web y tengo ganas de seguir aprendiendo. 
 
