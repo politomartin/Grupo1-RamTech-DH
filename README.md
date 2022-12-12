@@ -16,7 +16,7 @@ URL Trello: https://trello.com/b/k35aZXXl/sprint1
 
 Nuestro equipo está compuesto por:
 
--Abigail Barroso
+-Abigail Barroso: Tengo 28 años, soy entusiasta del gaming, del diseño y del mundo IT. Busco expander mis horizontes y dominar el Back-end.
 
 -Angel Macias
 
