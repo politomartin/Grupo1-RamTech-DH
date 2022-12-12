@@ -20,13 +20,13 @@ Nuestro equipo está compuesto por:
 
 -Angel Macias
 
--Conrado Aizawa: 22 años, futuro desarrollador web full stack
+-Conrado Aizawa: 22 años, futuro desarrollador web full stack.
 
 -Mateo Lauzan: Estoy empezando en el mundo del desarrollo web y tengo ganas de seguir aprendiendo. 
 
 -Martin Polito: Tengo 22 años, trabajo, estudio y tengo ganas de conseguir mas conocimientos sobre distintos lenguajes, elegir uno y especializarme para poder conseguir mi primer trabajo como programador.
 
--Paula Suarez
+-Paula Suarez: Tengo 27 años, acompañante terapeutico.
 
 Links de referencia:
 
