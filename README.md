@@ -22,7 +22,7 @@ Nuestro equipo está compuesto por:
 
 -Conrado Aizawa
 
--Mateo Lauzan
+-Mateo Lauzan: Estoy empezando en el mundo del desarrollo web y tengo ganas de seguir aprendiendo. 
 
 -Martin Polito
 
