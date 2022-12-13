@@ -18,7 +18,7 @@ Nuestro equipo está compuesto por:
 
 -Abigail Barroso: Tengo 28 años, soy entusiasta del gaming, del diseño y del mundo IT. Busco expander mis horizontes y dominar el Back-end.
 
--Angel Macias
+-Angel Macias: 27 años, gamer casual, iniciandome en el mundo de la programación.
 
 -Conrado Aizawa: 22 años, futuro desarrollador web full stack.
 
