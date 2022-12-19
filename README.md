@@ -26,8 +26,6 @@ Nuestro equipo está compuesto por:
 
 -Martin Polito: Tengo 22 años, trabajo, estudio y tengo ganas de conseguir mas conocimientos sobre distintos lenguajes, elegir uno y especializarme para poder conseguir mi primer trabajo como programador.
 
--Paula Suarez: Tengo 27 años, acompañante terapeutico.
-
 Links de referencia:
 
 https://www.franshalsmuseum.nl/en/
