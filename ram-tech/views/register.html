@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/register.css" rel="stylesheet">
     <title>Formulario de registro</title>
 </head>
 
@@ -18,7 +18,7 @@
     <div class="formBox">
         <h5>Registro</h5>
 
-        <form>
+        <form autocomplete="off">
 
             <i class='bx bxs-user' style="color:white"></i> <input class="inputs" type="text" name="name"
                 placeholder="Ingrese su nombre" required>
@@ -27,7 +27,7 @@
             <i class='bx bxs-user' style="color:white"></i> <input class="inputs" type="text" name="surname"
                 placeholder="Ingrese su apellido" required>
 
-            <i class='bx bxs-envelope' style="color:white" ></i>
+            <i class='bx bxs-envelope' style="color:white"></i>
             <input class="inputs" type="email" name="email" placeholder="Ingrese su email" required>
 
             <i class='bx bxs-lock-open' style="color:white"></i>
@@ -37,12 +37,13 @@
             <input class="inputs" type="password" name="confirmPassword" placeholder="Vuelva a ingresar su contraseña"
                 required>
 
+
+            <button type="submit" class="buttons">Enviar</button>
+            <button type="reset" class="buttons">Limpiar</button>
         </form>
 
-        <input class="buttons" type="submit" value="Enviar">
-        <input class="buttons" type="submit" value="Volver">
 
-        <p> Ya tengo una cuenta</p>
+        <a href="http://localhost:3033/login">Ya tengo una cuenta</a>
 
     </div>
 
