@@ -1,0 +1,226 @@
+/*Cuidado, afecta a todos los elementos */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* HEADER */
+body header {
+    display: flex;
+    flex-direction: row;
+    background-color: #39426D;
+    height: 8vh;
+    border-bottom: 3px solid #000;
+}
+
+body header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+/* body header div.logo {
+    width: 30%; 
+}*/
+body header div.header-logo{
+    display: flex;
+}
+
+body header div div.burger-menu {
+    text-align: center;
+}
+
+body header div div.burger-menu i {
+    background-color: transparent;
+    border-radius: 5px;
+    color: #BC6FF1;
+    font-size: 20px;
+    border: 2px solid #150050;
+    height: 40px;
+    margin: 10px 0px 20px 0px;
+    padding: 10px;
+    width: 40px;
+}
+
+body header div div.logo img {
+    width: 134px;
+    height: 61px;
+    /* margin-left: 57px; */
+    margin-top: -2px;
+}
+
+body header nav ul li {
+    list-style-type: none;
+    font-size: x-large;
+}
+
+body header nav div ul {
+    display: flex;
+    /* border: 2px solid #150050; */
+    border:none;
+    flex-direction: row;
+    list-style-type: none;
+    gap:8px;
+}
+
+body header nav div.icons {
+    display: flex;
+    position: relative;
+}
+
+body header nav div.icons button {
+    background-color: transparent;
+    border: none;
+}
+
+body header nav form {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+body header nav form button {
+    background-color: transparent;
+    border: none;
+}
+
+body header nav form button i {
+    font-size: x-large;
+}
+
+body header nav form input {
+    display: none;
+}
+body header nav form button.submit {
+    display: none;
+}
+body header nav form input:active {
+    outline: none;
+}
+
+/* MAIN */
+body main section.carousel{
+    background: rgb(181,30,200);
+background: linear-gradient(90deg, rgba(181,30,200,1) 11%, rgba(145,30,200,1) 21%, rgba(132,11,151,1) 35%, rgba(181,30,200,1) 55%, rgba(145,30,200,1) 68%, rgba(181,30,200,1) 88%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 17vh;
+    border-bottom:2px solid #000;
+}
+body main section.carousel i.tablet, body main section.carousel i.desktop {
+    display: none;
+}
+body main section.carousel i{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+body main section.carousel i img{
+    height: 100%;
+    width: 100%;
+}
+body main section.carousel i img:hover{
+    transform: scale(1.1);
+}
+body main section.categories nav{
+    height: 6vh;
+    background-color: #39426D;
+}
+body main section.categories nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    height: 100%;
+}
+body main section.categories nav ul li:hover {
+background-color: #BC6FF1;
+transform: scale(1.3);
+}
+
+@media (min-width: 425px) {
+    /* HEADER */
+    body header nav {
+        justify-content: space-evenly;
+    }
+    body header nav div ul {
+        gap: 8px;
+    }
+    /* MAIN */
+    body main section.carousel i.tablet {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    /* HEADER */
+    body header div div.burger-menu{
+        display: none;
+    }
+    body header nav form {
+        border: 3px solid;
+        margin-top: 13px;
+        margin-bottom: 13px; 
+        height: 70%;
+        border-radius: 16px; 
+        background-clip: padding-box;
+        background-color: #39426D;
+        border-image: linear-gradient(to right, #bc6ff1, #150050) 1;    
+    }
+    body header nav form::after{
+        position: absolute;
+        top: -4px; bottom: -4px;
+        left: -4px; right: -4px;
+        z-index: -1;
+        border-radius: 16px;
+    }
+    
+    body header nav form input {
+    display: flex;
+    border:none;
+    background-color: #39426D;
+    color:#FFF;
+    font-family: 'Russo One', sans-serif;
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    outline: none;
+
+    }
+    body header nav form button.submit {
+        display: block;
+        margin-left:8px;
+    }
+    body header nav form button.search {
+        display: none;
+    }
+    /* MAIN */
+    body main section.carousel {
+        height: 25vh;
+    }
+    body main section.carousel i.desktop {
+        display: block;
+    }
+    body main section.categories nav {
+        height: 10vh;
+    }
+    body main section.categories nav li {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    } 
+    body main section.categories nav li i{
+        font-size: xx-large;
+    }
+}
