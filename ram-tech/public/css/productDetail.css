@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #39426D;
+}
+
+main h2 {
+    background-color: red;
+    text-align: center;
+}
+
+main section {
+    background-color: white;
+    width: 200px;
+    padding: 0px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.recibir-producto {
+    margin-bottom: 50px;
+}
+.botones {
+    margin: 20px 15px;
+
+}
+.imagen-producto {
+    width: 100%;
+}

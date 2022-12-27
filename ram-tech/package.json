@@ -1,0 +1,27 @@
+{
+  "name": "grupo1-tpintegrador-dh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pholl7/Grupo1-TPIntegrador-DH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pholl7/Grupo1-TPIntegrador-DH/issues"
+  },
+  "homepage": "https://github.com/Pholl7/Grupo1-TPIntegrador-DH#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
