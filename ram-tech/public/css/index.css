@@ -4,6 +4,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 /* HEADER */
 body header {
     display: flex;
@@ -24,7 +25,7 @@ body header nav {
 /* body header div.logo {
     width: 30%; 
 }*/
-body header div.header-logo{
+body header div.header-logo {
     display: flex;
 }
 
@@ -59,10 +60,10 @@ body header nav ul li {
 body header nav div ul {
     display: flex;
     /* border: 2px solid #150050; */
-    border:none;
+    border: none;
     flex-direction: row;
     list-style-type: none;
-    gap:8px;
+    gap: 8px;
 }
 
 body header nav div.icons {
@@ -95,44 +96,53 @@ body header nav form button i {
 body header nav form input {
     display: none;
 }
+
 body header nav form button.submit {
     display: none;
 }
+
 body header nav form input:active {
     outline: none;
 }
 
 /* MAIN */
-body main section.carousel{
-    background: rgb(181,30,200);
-background: linear-gradient(90deg, rgba(181,30,200,1) 11%, rgba(145,30,200,1) 21%, rgba(132,11,151,1) 35%, rgba(181,30,200,1) 55%, rgba(145,30,200,1) 68%, rgba(181,30,200,1) 88%);
+body main section.carousel {
+    background: rgb(181, 30, 200);
+    background: linear-gradient(90deg, rgba(181, 30, 200, 1) 11%, rgba(145, 30, 200, 1) 21%, rgba(132, 11, 151, 1) 35%, rgba(181, 30, 200, 1) 55%, rgba(145, 30, 200, 1) 68%, rgba(181, 30, 200, 1) 88%);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 17vh;
-    border-bottom:2px solid #000;
+    border-bottom: 2px solid #000;
 }
-body main section.carousel i.tablet, body main section.carousel i.desktop {
+
+body main section.carousel i.tablet,
+body main section.carousel i.desktop {
     display: none;
 }
-body main section.carousel i{
+
+body main section.carousel i {
     text-align: center;
     height: 100%;
     width: 100%;
 }
-body main section.carousel i img{
+
+body main section.carousel i img {
     height: 100%;
     width: 100%;
 }
-body main section.carousel i img:hover{
+
+body main section.carousel i img:hover {
     transform: scale(1.1);
 }
-body main section.categories nav{
+
+body main section.categories nav {
     height: 6vh;
     background-color: #39426D;
 }
-body main section.categories nav ul{
+
+body main section.categories nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -140,19 +150,153 @@ body main section.categories nav ul{
     list-style-type: none;
     height: 100%;
 }
+
 body main section.categories nav ul li:hover {
-background-color: #BC6FF1;
-transform: scale(1.3);
+    background-color: #BC6FF1;
+    transform: scale(1.3);
 }
 
+/* BODY Abi */
+body {
+    background-color: #141317;
+
+}
+
+body main section.highlight {
+    background-image: url("https://www.rxwallpaper.site/wp-content/uploads/wallpapers-purple-abstract-polygons-black-bgkaminohunter-1024x576.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    margin-bottom: 5%
+}
+
+body main section div.title-section {
+    margin-top: 2%;
+}
+
+body main section h2.title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 28px;
+    color: white;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+body main section h2.title::before {
+    background: #BC6FF1;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 5%;
+    transition: 0.4s ease;
+}
+
+body main section h2.title:hover::before {
+    width: 100%;
+}
+
+
+/* Sección products */
+body main section div.products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0% 5%;
+}
+
+body main section div.products article {
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    color: #FFF;
+    background-color: #150050;
+    margin: 1%;
+    width: 30%;
+}
+
+body main section div.products article img {
+    display: block;
+    width: 100%;
+    padding: 2%;
+}
+
+body main section div.products article:hover .description-container {
+    height: unset;
+    opacity: 1;
+}
+
+body main section article div.main-article {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid 2px #39426D;
+    padding: 15px;
+}
+
+/* marcador heart fav*/
+body main section article div.main-article .heart-icon {
+    display: flex;
+    font-size: 16px;
+    color: #BC6FF1;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #BC6FF1;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+
+body main section article div.main-article:hover .heart-icon {
+    transform: scale(2);
+}
+
+body main section article div.description-container p.price {
+    font-size: 18px;
+    width: 50%;
+}
+
+body main section article div.description-container p.discount {
+    font-size: 18px;
+    color: #BC6FF1;
+    width: 50%;
+}
+
+body main section article div.main-article h4.description {
+    font-size: 18px;
+    color: #BC6FF1;
+    margin-top: 20px;
+}
+
+body main section article div.main-article div.description-container {
+    opacity: 0;
+    height: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+
+
+
+
 @media (min-width: 425px) {
+
     /* HEADER */
     body header nav {
         justify-content: space-evenly;
     }
+
     body header nav div ul {
         gap: 8px;
     }
+
     /* MAIN */
     body main section.carousel i.tablet {
         display: block;
@@ -160,58 +304,69 @@ transform: scale(1.3);
 }
 
 @media (min-width: 769px) {
+
     /* HEADER */
-    body header div div.burger-menu{
+    body header div div.burger-menu {
         display: none;
     }
+
     body header nav form {
         border: 3px solid;
         margin-top: 13px;
-        margin-bottom: 13px; 
+        margin-bottom: 13px;
         height: 70%;
-        border-radius: 16px; 
+        border-radius: 16px;
         background-clip: padding-box;
         background-color: #39426D;
-        border-image: linear-gradient(to right, #bc6ff1, #150050) 1;    
+        border-image: linear-gradient(to right, #bc6ff1, #150050) 1;
     }
-    body header nav form::after{
+
+    body header nav form::after {
         position: absolute;
-        top: -4px; bottom: -4px;
-        left: -4px; right: -4px;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
         z-index: -1;
         border-radius: 16px;
     }
-    
+
     body header nav form input {
-    display: flex;
-    border:none;
-    background-color: #39426D;
-    color:#FFF;
-    font-family: 'Russo One', sans-serif;
-    margin-left: 10px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 2px;
-    outline: none;
+        display: flex;
+        border: none;
+        background-color: #39426D;
+        color: #FFF;
+        font-family: 'Russo One', sans-serif;
+        margin-left: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-right: 2px;
+        outline: none;
 
     }
+
     body header nav form button.submit {
         display: block;
-        margin-left:8px;
+        margin-left: 8px;
     }
+
     body header nav form button.search {
         display: none;
     }
+
     /* MAIN */
     body main section.carousel {
         height: 25vh;
     }
+
     body main section.carousel i.desktop {
         display: block;
     }
+
     body main section.categories nav {
         height: 10vh;
     }
+
     body main section.categories nav li {
         width: 20%;
         height: 100%;
@@ -219,8 +374,9 @@ transform: scale(1.3);
         text-align: center;
         align-items: center;
         justify-content: center;
-    } 
-    body main section.categories nav li i{
+    }
+
+    body main section.categories nav li i {
         font-size: xx-large;
     }
 }
