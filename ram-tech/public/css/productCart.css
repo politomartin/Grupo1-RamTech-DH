@@ -1,0 +1,380 @@
+/*Cuidado, afecta a todos los elementos */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* HEADER */
+body header {
+    display: flex;
+    flex-direction: row;
+    background-color: #39426D;
+    height: 8vh;
+    border-bottom: 3px solid #000;
+}
+
+body header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+/* body header div.logo {
+    width: 30%; 
+}*/
+body header div.header-logo {
+    display: flex;
+}
+
+body header div div.burger-menu {
+    text-align: center;
+}
+
+body header div div.burger-menu i {
+    background-color: transparent;
+    border-radius: 5px;
+    color: #BC6FF1;
+    font-size: 20px;
+    border: 2px solid #150050;
+    height: 40px;
+    margin: 10px 0px 20px 0px;
+    padding: 10px;
+    width: 40px;
+}
+
+body header div div.logo img {
+    width: 134px;
+    height: 61px;
+    /* margin-left: 57px; */
+    margin-top: -2px;
+}
+
+body header nav ul li {
+    list-style-type: none;
+    font-size: x-large;
+}
+
+body header nav div ul {
+    display: flex;
+    /* border: 2px solid #150050; */
+    border: none;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 8px;
+}
+
+body header nav div.icons {
+    display: flex;
+    position: relative;
+}
+
+body header nav div.icons button {
+    background-color: transparent;
+    border: none;
+}
+
+body header nav form {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+body header nav form button {
+    background-color: transparent;
+    border: none;
+}
+
+body header nav form button i {
+    font-size: x-large;
+}
+
+body header nav form input {
+    display: none;
+}
+
+body header nav form button.submit {
+    display: none;
+}
+
+body header nav form input:active {
+    outline: none;
+}
+
+/* MAIN */
+body{
+    background-image: url("/images/bg2.jpg");
+    /* background-repeat: repeat; */
+    /* background-size:cover; */
+    color: #FFF;
+}
+
+main div.title {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    margin-top:15%;
+    margin-left:10%;
+    display: flex;
+    gap: 20px;
+}
+main div.title h1{
+    font-size: 35px;
+}
+main div.title h4 {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+main div.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+main div.container div.productos {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+    width: 90%;
+}
+main div.container div.productos hr {
+   border:2px solid #000;
+   border-radius: 1px;
+   width: 100%;
+   margin-left: 7%;
+   margin-right: 7%;
+}
+main div.container div.productos div.image {
+    display: flex;
+    width: 33%;
+}
+main div.container div.productos img{
+    margin: 10px 10px 10px 10px;
+    width: 64%;
+    height: 65px;
+}
+main div.container div.productos div.producto{
+width: 100%;
+display: flex;
+}
+main div.container div.productos div.description {
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: 'Manjari', sans-serif;
+    font-size: 17px;
+    color: #FFF;
+}
+main div.container div.productos div.description div.buttons{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+}
+main div.container div.productos div.description article.article1{
+    text-align: left;
+    margin-top:2%;
+    width: 40%;
+}
+main div.container div.productos div.description article.article2{
+    margin-top:2%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+}
+main div.container div.productos div.description article.article3{
+    display: flex;
+    margin-right: 5%;
+    justify-content: flex-end;
+    width: 100%;
+}
+main div.container div.productos div.description div.buttons article.article5 {
+    margin-right: 3%;
+}
+main div.container div.total {
+    font-family: 'Manjari', sans-serif;
+    font-size: 17px;
+    color: #FFF;
+    background-color:rgba(255, 255, 255, 0.2);
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:10%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+main div.container div.total article {
+    width: 45%;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+main div.container div.total article.article1 {
+margin-left: 3%;
+}
+main div.container div.total article.article1total {
+    text-align: end;
+    margin-right: 2%;
+}
+main div.container div.total article.article2 {
+    margin-left: 3%;
+}
+main div.container div.total article.article2total {
+    text-align: end;
+    margin-right: 2%;
+    margin-bottom: 22px;
+}
+main div.container div.total article.article3 {
+    margin-left: 3%;
+    width: 60%;
+    margin-bottom: 5%;
+}
+main div.container div.total article.article3total {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 5%;
+    font-weight: bolder;
+    color:#000;
+}
+main div.container div.total article.article4 {
+    margin-left: 3%;
+    width: 60%;
+    margin-bottom: 5%;
+}
+main div.container div.total article.article4total {
+    text-align: end;
+    width: 30%;
+    margin-bottom: 5%;
+    font-weight: bolder;
+}
+main div.container div.total hr {
+    border:2px solid #000;
+    border-radius: 1px;
+    width: 100%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+main div.container div.pago {
+    display: flex;
+    margin-right: 20%;
+    width: 100%;
+    margin-left: 20%;
+}
+main div.container div.pago a{
+    width: 100%;
+}
+.btn-grad {
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    outline: none;
+}
+.btn-grad:focus {
+    outline:none;
+}
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (min-width: 425px) {
+
+    /* HEADER */
+    body header nav {
+        justify-content: space-evenly;
+    }
+
+    body header nav div ul {
+        gap: 8px;
+    }
+
+}
+
+@media (min-width: 769px) {
+
+    /* HEADER */
+    body header div div.burger-menu {
+        display: none;
+    }
+
+    body header nav form {
+        border: 3px solid;
+        margin-top: 13px;
+        margin-bottom: 13px;
+        height: 70%;
+        border-radius: 16px;
+        background-clip: padding-box;
+        background-color: #39426D;
+        border-image: linear-gradient(to right, #bc6ff1, #150050) 1;
+    }
+
+    body header nav form::after {
+        position: absolute;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
+        z-index: -1;
+        border-radius: 16px;
+    }
+
+    body header nav form input {
+        display: flex;
+        border: none;
+        background-color: #39426D;
+        color: #FFF;
+        font-family: 'Russo One', sans-serif;
+        margin-left: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-right: 2px;
+        outline: none;
+
+    }
+
+    body header nav form button.submit {
+        display: block;
+        margin-left: 8px;
+    }
+
+    body header nav form button.search {
+        display: none;
+    }
+        /* MAIN */
+    main div.title {
+        margin-bottom: 10%;
+    }
+    main div.container div.total {
+        width: 40%;
+        margin: 0%;
+    }
+    main div.container div.productos {
+        width: 40%;
+        margin: 0%;
+    }
+    main div.container {
+        display: flex;
+        justify-content: space-around;
+    }
+    main div.container div.pago {
+        margin-top:10%;
+    }
+}

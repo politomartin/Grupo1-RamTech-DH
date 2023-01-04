@@ -20,6 +20,9 @@ app.get('/product-detail', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/productDetail.html'));
 })
 
+app.get('/product-cart', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/productCart.html'));
+})
 app.listen(3033, () => {
     console.log('Servidor iniciado en http://localhost:3033');
 })
