@@ -140,6 +140,7 @@ body main section.carousel i img:hover {
 body main section.categories nav {
     height: 6vh;
     background-color: #39426D;
+    display:none;
 }
 
 body main section.categories nav ul {
