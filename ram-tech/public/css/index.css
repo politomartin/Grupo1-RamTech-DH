@@ -161,15 +161,16 @@ body {
     background-color: #141317;
 
 }
+/* Títulos de sección */
 
 body main section.highlight {
-    background-image: url("https://www.rxwallpaper.site/wp-content/uploads/wallpapers-purple-abstract-polygons-black-bgkaminohunter-1024x576.png");
+    background-image: url("../images/background-image1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: block;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    border-top: 5px solid #141317;
+    border-bottom: 5px solid #141317;
     margin-bottom: 5%
 }
 
@@ -187,10 +188,9 @@ body main section h2.title {
 }
 
 body main section h2.title::before {
-    background: #BC6FF1;
     content: '';
-    display: block;
-    height: 3px;
+    position: absolute;
+    border-bottom: 3px solid #BC6FF1;
     width: 5%;
     transition: 0.4s ease;
 }
@@ -201,14 +201,14 @@ body main section h2.title:hover::before {
 
 
 /* Sección products */
-body main section div.products {
+body main section.highlight div.products {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     margin: 0% 5%;
 }
 
-body main section div.products article {
+body main section.highlight div.products article {
     font-family: 'Manjari', sans-serif;
     font-size: 18px;
     color: #FFF;
@@ -217,18 +217,31 @@ body main section div.products article {
     width: 30%;
 }
 
-body main section div.products article img {
+body main section.highlight div.products article:after {
+    position: absolute;
+    width: 27%;
+    content: '';
+    border: 1px solid #FFF;
+    transform: scaleX(0);
+    transition: 200ms;
+}
+
+body main section.highlight div.products article:hover::after {
+    transform: scaleX(1);
+}
+
+body main section.highlight div.products article img {
     display: block;
     width: 100%;
     padding: 2%;
 }
 
-body main section div.products article:hover .description-container {
+body main section.highlight div.products article:hover .description-container {
     height: unset;
     opacity: 1;
 }
 
-body main section article div.main-article {
+body main section.highlight article div.main-article {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -237,7 +250,7 @@ body main section article div.main-article {
 }
 
 /* marcador heart fav*/
-body main section article div.main-article .heart-icon {
+body main section.highlight article div.main-article .heart-icon {
     display: flex;
     font-size: 16px;
     color: #BC6FF1;
@@ -252,35 +265,79 @@ body main section article div.main-article .heart-icon {
     top: -15px;
     justify-content: center;
     align-items: center;
-    transition: 300ms;
+    transition: 200ms;
 }
 
-body main section article div.main-article:hover .heart-icon {
+body main section.highlight article div.main-article:hover .heart-icon {
     transform: scale(2);
 }
 
-body main section article div.description-container p.price {
+body main section.highlight article div.main-article h4.description {
     font-size: 18px;
-    width: 50%;
+    color: #FFF;
+    width: 100%;
+    margin: 2% 0% 2% 0%;
 }
 
-body main section article div.description-container p.discount {
+body main section.highlight article div.description-container p.price {
+    font-size: 18px;
+    width: 100%;
+}
+
+body main section.highlight article div.description-container p.discount {
     font-size: 18px;
     color: #BC6FF1;
-    width: 50%;
+    width: 100%;
 }
 
-body main section article div.main-article h4.description {
-    font-size: 18px;
-    color: #BC6FF1;
-    margin-top: 20px;
-}
-
-body main section article div.main-article div.description-container {
+body main section.highlight article div.main-article div.description-container {
     opacity: 0;
     height: 0;
     transition: opacity 200ms ease-in-out;
 }
+
+
+/* Sección Setup */
+
+body main section.setup-products div.title-section img {
+    width: 100%;
+    border-top: 5px solid #141317;
+    border-bottom: 5px solid #141317;
+}
+
+body main section.setup-products div.setup {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 5% 5%;
+    width: 25%;
+}
+
+body main section.setup-products div.setup article {
+    background-color: #150050;
+    font-family: 'Manjari', sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 5%;
+    padding: 5%;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+body main section.setup-products div.setup article:hover {
+    color: #BC6FF1;
+    transition: 300ms;
+}
+
+body main section.setup-products div.main-article {
+    align-content: center;
+    text-align: center;
+    margin: 2%;
+}
+
+
 
 
 
