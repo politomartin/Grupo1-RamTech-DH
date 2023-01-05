@@ -70,7 +70,10 @@ body header nav div.icons {
     display: flex;
     position: relative;
 }
-
+body header nav div.icons a:visited {
+    text-decoration: none;
+    color:#000;
+}
 body header nav div.icons button {
     background-color: transparent;
     border: none;
@@ -215,7 +218,7 @@ body main section.highlight div.products article {
     color: #FFF;
     background-color: #150050;
     margin: 1%;
-    width: 30%;
+    width: 100%;
 }
 
 body main section.highlight div.products article:after {
@@ -241,7 +244,9 @@ body main section.highlight div.products article:hover .description-container {
     height: unset;
     opacity: 1;
 }
-
+body main section.highlight div.products article a#product-redirect {
+    text-decoration:none;
+}
 body main section.highlight article div.main-article {
     position: relative;
     display: flex;
@@ -283,6 +288,7 @@ body main section.highlight article div.main-article h4.description {
 body main section.highlight article div.description-container p.price {
     font-size: 18px;
     width: 100%;
+    color: #FFF;
 }
 
 body main section.highlight article div.description-container p.discount {
@@ -325,6 +331,9 @@ body main section.setup-products div.setup article {
     padding: 5%;
     width: 100%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    padding: 5px 141px;
+    justify-content: center;
+    display: flex;
 }
 
 body main section.setup-products div.setup article:hover {
@@ -358,6 +367,9 @@ body main section.setup-products div.main-article {
     /* MAIN */
     body main section.carousel i.tablet {
         display: block;
+    }
+    body main section.highlight div.products article {
+        width: 47%;
     }
 }
 
@@ -436,5 +448,8 @@ body main section.setup-products div.main-article {
 
     body main section.categories nav li i {
         font-size: xx-large;
+    }
+    body main section.highlight div.products article {
+        width: 30%;
     }
 }

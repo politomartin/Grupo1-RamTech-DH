@@ -138,3 +138,10 @@ main .botones input {
     margin-bottom: 15px;
     font-family: 'Russo One', sans-serif;
 }
+
+@media (min-width: 425px) {
+
+}
+@media (min-width: 769px) {
+
+}
