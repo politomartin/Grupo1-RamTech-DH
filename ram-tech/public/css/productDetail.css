@@ -1,4 +1,6 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -6,26 +8,133 @@ body {
     background-color: #39426D;
 }
 
-main h2 {
-    background-color: red;
-    text-align: center;
+/* MAIN */
+main .main-product {
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    width: 80vw;
 }
 
+
 main section {
-    background-color: white;
     width: 200px;
     padding: 0px;
     margin-bottom: 20px;
     margin-left: 10px;
 }
 
-.recibir-producto {
-    margin-bottom: 50px;
+h2 {
+    font-family: "Russo One";
 }
-.botones {
-    margin: 20px 15px;
+
+p, h4, li{
+    font-family: sans-serif;
+}
+
+p, li {
+    font-size: 13px;
+}
+/* Titulo e imagenes del producto*/
+main .product {
+    margin-bottom: 30px;
+}
+main .product h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+main .images-product {
+    display: flex;
+    background-image: url(/images/bg.png);
+    padding: 10px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+main .images-product .principal-image {
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+}
+
+main .images-product .carrousel-images {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+main .images-product .carrousel-images div {
+    width: 100%;
+    margin: auto;
 
 }
-.imagen-producto {
+main .images-product .carrousel-images div img {
     width: 100%;
+    margin: auto;
+}
+
+/* Otros detalles del producto*/
+
+main .product-description {
+    background-color: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+main .product-description h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main .product-description ul {
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+main .product-description .dues input {
+    font-weight: bold;
+    padding: 5px ;
+    background-color: rgb(211, 211, 211);
+    border: none;
+    border-radius: 2px;
+    color: #000000;
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+main .product-description .recive-product input {
+    font-weight: bold;
+    padding: 5px ;
+    background-color: rgb(211, 211, 211);
+    border: none;
+    border-radius: 2px;
+    color: #000000;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+main .botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    margin-top: 15px;
+}
+
+main .botones input {
+    font-weight: bold;
+    padding: 5px 15px ;
+    background: linear-gradient(#3f0071, #bc6ff1);
+    border: none;
+    border-radius: 2px;
+    color: #CDB9DD;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-family: 'Russo One', sans-serif;
 }

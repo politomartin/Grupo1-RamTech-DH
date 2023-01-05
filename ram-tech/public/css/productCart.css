@@ -106,9 +106,8 @@ body header nav form input:active {
 
 /* MAIN */
 body{
-    background-image: url("/images/bg2.jpg");
-    /* background-repeat: repeat; */
-    /* background-size:cover; */
+    background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     color: #FFF;
 }
 
@@ -143,10 +142,14 @@ main div.container div.productos {
     margin-top: 10%;
     width: 90%;
 }
+main div.container div.productos div.producto:hover {
+     background-color: rgba(255, 255, 255, 0.3); 
+}
 main div.container div.productos hr {
    border:2px solid #000;
    border-radius: 1px;
    width: 100%;
+   height: 1px;
    margin-left: 7%;
    margin-right: 7%;
 }
@@ -361,6 +364,7 @@ main div.container div.pago a{
         /* MAIN */
     main div.title {
         margin-bottom: 10%;
+        margin-top: 5%;
     }
     main div.container div.total {
         width: 40%;
