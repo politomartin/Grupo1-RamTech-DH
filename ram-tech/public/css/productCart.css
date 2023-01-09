@@ -272,6 +272,7 @@ main div.container div.pago {
 }
 main div.container div.pago a{
     width: 100%;
+    text-decoration: none;
 }
 .btn-grad {
     background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
