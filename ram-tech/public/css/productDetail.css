@@ -11,7 +11,7 @@ body {
 /* MAIN */
 main .main-product {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 10px;
     width: 80vw;
 }
@@ -139,9 +139,74 @@ main .botones input {
     font-family: 'Russo One', sans-serif;
 }
 
+main .payment-method-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+main .payment-method-images div {
+    width: 20%;
+    margin: auto;
+}
+main .payment-method-images div img {
+    width:100%;
+}
+
 @media (min-width: 425px) {
 
 }
 @media (min-width: 769px) {
+    main .main-product {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1500px;
+    }
+    main .product {
+        max-width: 650px;
+        width: 55%;
+    }
+    main .product h2 {
+        font-size: 50px;
+    }
 
+    main .box-product-buttons {
+        width: 40%;
+    }
+    main .product-description {
+        height: 80%;
+        margin-top: 10%;
+    }
+    main .product-description h2 {
+        font-size: 40px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    p, li {
+        font-size: 20px;
+    }
+    main .product-description .dues input {
+        padding: 10px;
+        font-size: 15px;
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+
+    main .product-description .recive-product input {
+        padding: 10px;
+        font-size: 15px;
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+
+    main .product-description h4 {
+        font-size: 30px;
+        margin: 20px 0px;
+    }
+    main .botones input {
+        padding: 15px 35px;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
 }
