@@ -5,3 +5,7 @@ Las conclusiones que sacamos en este daily fue acomodar todos los archivos dentr
 # Daily 03/01 // Sprint 2
 
 En este daily organizamos el progreso del proyecto, buscando ultimar detalles de cara a la entrega del segundo sprint.
+
+# Daily 11/01 // Sprint 3
+
+En este daily separamos las vistas en carpetas, realizamos la retrospectiva del sprint 2 y organizamos las tareas para el Sprint 3.
