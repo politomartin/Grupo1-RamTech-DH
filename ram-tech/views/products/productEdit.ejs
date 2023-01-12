@@ -20,18 +20,55 @@
 
         <form autocomplete="off">
 
-            <i class='bx bxs-edit-alt' style="color:white"></i>
-            <input class="inputs" type="text" name="title" placeholder="Cambiar el título">
 
-            <i class='bx bxs-notepad' style="color:white"></i>
-            <input class="inputs" type="text" name="description " placeholder="Cambiar la descripción">
+            <select class="selection">
+                <option disabled selected="">Seleccione una categoría</option>
+                <option>Gabinetes</option>
+                <option>Almacenamiento</option>
+                <option>Procesadores</option>
+                <option>Placas de video</option>
+                <option>Monitores</option>
+                <option>Mouses</option>
+                <option>Teclados</option>
+                <option>Auriculares</option>
+                <option>Micrófonos</option>
+                <option>Mandos</option>
+                <option>Impresoras</option>
+            </select>
 
-            <input class="inputs" id='inputImage' type="file" name="images">
 
-            <i class='bx bx-dollar' style="color:white"></i>
-            <input class="inputs" type="number" name="price" placeholder="Cambiar el precio">"
+            <input class="inputs" type="text" name="name" placeholder="Cambiar el nombre del producto">
 
-            <button type="submit" class="buttons">Cambiar</button>
+
+            <input class="inputs" type="text" name="model" placeholder="Cambiar el modelo">
+
+            <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
+
+
+            <input class="inputs" type="number" name="price" min="1" placeholder="Cambiar el precio">
+
+
+            <input class="inputs" type="number" name="discount" min="1" max="100"
+                placeholder="Cambiar el porcentaje del descuento">
+
+            <select class="selection">
+                <option disabled selected="">Seleccione un color</option>
+                <option>Negro</option> 
+                <option>Blanco</option>
+                <option>Gris</option>
+                <option>Rojo</option>
+                <option>Amarillo</option>
+                <option>Naranja</option>
+                <option>Azul</option>
+                <option>Celeste</option>
+                <option>Verde</option>
+                <option>Violeta</option>
+                <option>Rosa</option>
+            </select>
+
+            <textarea class="textarea" placeholder="Ingrese la descripcion del producto"></textarea>
+
+            <button type="submit" class="buttons">Editar</button>
 
         </form>
 

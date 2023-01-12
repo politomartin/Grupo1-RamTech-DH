@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'sans-serif';
+
 }
 
 body {
@@ -40,8 +42,8 @@ form input {
 }
 
 .inputs {
+    text-align: left;
     width: 100%;
-    font-size: 7px;
     color: white;
     padding: 4px;
     margin-bottom: 15px;
@@ -51,8 +53,6 @@ form input {
 input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 7px;
-
 }
 
 .buttons {
@@ -65,7 +65,7 @@ input::placeholder {
     font-weight: 100;
     font-size: 13px;
     color: black;
-    margin: 7px 0;
+    margin-top: 18px;
     border: none;
     border-radius: 5px;
     background-color: white;
@@ -77,10 +77,34 @@ input::placeholder {
     background-color: black;
 }
 
+.selection {
+    color: white;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px white solid;
+    margin: 15px 0
+}
 
+option {
+    color: black;
 
-i {
-    position: absolute;
-    transform: translateX(1.4px) translateY(7px);
-    font-size: 12px;
+}
+
+.textarea {
+    color: white;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px white solid;
+    margin: 15px 0
+}
+
+.textarea::placeholder{
+    color: white;
+    opacity: 1;
 }
