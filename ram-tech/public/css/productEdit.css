@@ -16,7 +16,7 @@ body {
 .formBox {
     width: 250px;
     padding: 10px;
-    background-image: url(/images/bg.png);
+    background-image: url(/images/background-image1.png);
     background-size: cover;
     text-align: center;
 }
@@ -30,12 +30,13 @@ h5 {
 }
 
 form input {
-    background-color: #150050;
+    background-color: transparent;
     color: white;
     margin-top: 5px;
-    margin-bottom: 25px;
     border: none;
     text-align: center;
+    outline: none;
+    border-bottom: solid 2px white;
 }
 
 .inputs {
@@ -43,6 +44,8 @@ form input {
     font-size: 7px;
     color: white;
     padding: 4px;
+    margin-bottom: 15px;
+
 }
 
 input::placeholder {
@@ -52,51 +55,32 @@ input::placeholder {
 
 }
 
-input:focus {
-    outline: none;
-    border: solid 1px#bc6ff1;
-}
-
 .buttons {
     cursor: pointer;
-    display: inline;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     font-family: 'Russo One', sans-serif;
-    padding: 3px;
+    padding: 4px;
     font-weight: 100;
     font-size: 13px;
-    color: #CDB9DD;
-    margin: 0 17.97px;
-    margin-bottom: 10px;
+    color: black;
+    margin: 7px 0;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(#3f0071, #bc6ff1);
-
+    background-color: white;
+    transition: 500ms;
 }
 
+.buttons:hover {
+    color: white;
+    background-color: black;
+}
 
 
 
 i {
     position: absolute;
-    transform: translateX(1.4px) translateY(7.4px);
+    transform: translateX(1.4px) translateY(7px);
     font-size: 12px;
 }
-
-a {
-    cursor: pointer;
-    position: absolute;
-    transform: translateX(22px) translateY(-3px);
-    font-size: 9px;
-    color: white;
-    text-decoration: none;
-
-}
-
-a:hover {
-    cursor: pointer;
-    color: #bc6ff1;
-    text-decoration: none;
-    transition: 350ms;
-}
-
-
