@@ -5,7 +5,7 @@
 }
 
 body {
-    height: 66vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .formBox {
-    width: 200px;
+    width: 250px;
     padding: 10px;
     background-image: url(/images/bg.png);
     background-size: cover;

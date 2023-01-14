@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'sans-serif';
+
 }
 
 body {
@@ -16,7 +18,7 @@ body {
 .formBox {
     width: 250px;
     padding: 10px;
-    background-image: url(/images/bg.png);
+    background-image: url(/images/background-image1.png);
     background-size: cover;
     text-align: center;
 }
@@ -33,25 +35,24 @@ form input {
     background-color: transparent;
     color: white;
     margin-top: 5px;
-    margin-bottom: 10px;
     border: none;
     text-align: center;
     outline: none;
-    border-bottom: solid 2px #150050;
+    border-bottom: solid 2px white;
 }
 
 .inputs {
+    text-align: left;
     width: 100%;
-    font-size: 7px;
     color: white;
     padding: 4px;
+    margin-bottom: 15px;
+
 }
 
 input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 7px;
-
 }
 
 .buttons {
@@ -63,63 +64,47 @@ input::placeholder {
     padding: 4px;
     font-weight: 100;
     font-size: 13px;
-    color: #CDB9DD;
-    margin: 7px 0;
+    color: black;
+    margin-top: 18px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(#3f0071, #bc6ff1);
-    transition: 1ms;
+    background-color: white;
+    transition: 500ms;
 }
 
-
-
-i {
-    position: absolute;
-    transform: translateX(1.4px) translateY(7.4px);
-    font-size: 12px;
-}
-
-.links {
-    display: inline-flex;
-    font-size: 6px;
-    
-}
-a {
-    cursor: pointer;
+.buttons:hover {
     color: white;
-    text-decoration: none;
-    margin: 0 14.76px;
+    background-color: black;
 }
 
-a:hover {
-    cursor: pointer;
-    color: #bc6ff1;
-    text-decoration: none;
-    transition: 350ms;
+.selection {
+    color: white;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px white solid;
+    margin: 15px 0
 }
 
+option {
+    color: black;
 
-.checkbox {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:white
 }
 
-.checkbox input {
-    margin:0;
+.textarea {
+    color: white;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px white solid;
+    margin: 15px 0
 }
 
-.checkbox label {
-    margin-left:2px;
-}
-
-.checkbox:hover{    
-    color: #bc6ff1;
-    transition: 350ms;
-}
-
-.checkbox input::before{
-    border-radius: 20px;
+.textarea::placeholder{
+    color: white;
+    opacity: 1;
 }
