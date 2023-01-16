@@ -5,66 +5,71 @@
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #39426D;
+    
+    background-color: #141317;
 
 }
 
-.formBox {
-    width: 250px;
+body main div.formBox {
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 80%;
     padding: 10px;
-    background-image: url(/images/bg.png);
-    background-size: cover;
+    margin: 10%;
+
+    font-family: 'Manjari', sans-serif;
     text-align: center;
 }
 
-h5 {
+body main div.formBox h5 {
     font-family: 'Russo One', sans-serif;
     font-weight: 100;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
-form input {
+body main div.formBox form input {
     background-color: transparent;
     color: white;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     border: none;
     text-align: center;
     outline: none;
     border-bottom: solid 2px #150050;
 }
 
-.inputs {
+body main div.formBox form .inputs {
     width: 100%;
-    font-size: 7px;
+    font-size: 10px;
     color: white;
-    padding: 4px;
+    padding: 5px;
 }
 
-input::placeholder {
+body main div.formBox form input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 7px;
+    font-size: 10px;
 
 }
 
-.buttons {
+body main div.formBox form .buttons {
     cursor: pointer;
     display: flex;
     justify-content: center;
     width: 100%;
     font-family: 'Russo One', sans-serif;
-    padding: 4px;
+    padding: 7px;
     font-weight: 100;
-    font-size: 13px;
+    font-size: 15px;
     color: #CDB9DD;
-    margin: 7px 0;
+    margin: 15px 0;
     border: none;
     border-radius: 5px;
     background: linear-gradient(#3f0071, #bc6ff1);
@@ -72,34 +77,13 @@ input::placeholder {
 }
 
 
-
-i {
+body main div.formBox form i {
     position: absolute;
     transform: translateX(1.4px) translateY(7.4px);
     font-size: 12px;
 }
 
-.links {
-    display: inline-flex;
-    font-size: 6px;
-    
-}
-a {
-    cursor: pointer;
-    color: white;
-    text-decoration: none;
-    margin: 0 14.76px;
-}
-
-a:hover {
-    cursor: pointer;
-    color: #bc6ff1;
-    text-decoration: none;
-    transition: 350ms;
-}
-
-
-.checkbox {
+body main div.formBox form .checkbox {
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -107,19 +91,49 @@ a:hover {
     color:white
 }
 
-.checkbox input {
+body main div.formBox form .checkbox input {
     margin:0;
 }
 
-.checkbox label {
+body main div.formBox form .checkbox label {
     margin-left:2px;
+    margin-top: 5px;
 }
 
-.checkbox:hover{    
+body main div.formBox form .checkbox:hover{    
     color: #bc6ff1;
     transition: 350ms;
 }
 
-.checkbox input::before{
+body main div.formBox form .checkbox input::before{
     border-radius: 20px;
+}
+
+
+body main div.formBox div.links {
+    display: inline-flex;
+    font-size: 10px;
+    
+}
+
+body main div.formBox .links a {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    margin: 0 14.76px;
+}
+
+body main div.formBox.links a:hover {
+    cursor: pointer;
+    color: #bc6ff1;
+    text-decoration: none;
+    transition: 350ms;
+}
+
+
+@media (min-width: 769px) {
+    body main div.formBoxv {
+        width: 50%;
+        margin: 25%;
+    }
 }

@@ -5,32 +5,35 @@
 }
 
 body {
-    height: 100vh;
+    
+    background-color: #141317;
+
+}
+
+body main div.formBox {
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-radius: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #39426D;
-
-}
-
-.formBox {
-    width: 250px;
+    height: 60vh;
+    width: 80%;
     padding: 10px;
-    background-image: url(/images/bg.png);
-    background-size: cover;
-    text-align: center;
+    margin: 10%;
 }
 
-h5 {
+body main div.formBox h5 {
     font-family: 'Russo One', sans-serif;
     font-weight: 100;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
-form input {
-    background-color: #150050;
+body main div.formBox form input {
+    background-color: #222027;
+    border-radius: 5px;
     color: white;
     margin-top: 5px;
     margin-bottom: 25px;
@@ -38,61 +41,58 @@ form input {
     text-align: center;
 }
 
-.inputs {
+body main div.formBox .inputs {
     width: 100%;
-    font-size: 7px;
+    font-size: 10px;
     color: white;
-    padding: 4px;
+    padding: 5px;
 }
 
-input::placeholder {
+body main div.formBox form input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 7px;
+    font-size: 10px;
 
 }
 
-input:focus {
+body main div.formBox form input:focus {
     outline: none;
-    border: solid 1px#bc6ff1;
+    border: solid 2px#bc6ff1;
 }
 
-.buttons {
+body main div.formBox form .buttons {
     cursor: pointer;
     display: inline;
     font-family: 'Russo One', sans-serif;
-    padding: 3px;
+    padding: 10px;
     font-weight: 100;
-    font-size: 13px;
+    font-size: 15px;
     color: #CDB9DD;
-    margin: 0 17.97px;
-    margin-bottom: 10px;
+    margin: 5px 45px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 5px;
     background: linear-gradient(#3f0071, #bc6ff1);
-
 }
 
 
-
-
-i {
+body main div.formBox form i {
     position: absolute;
     transform: translateX(1.4px) translateY(7.4px);
-    font-size: 12px;
+    font-size: 15px;
 }
 
-a {
+body main div.formBox div a {
     cursor: pointer;
     position: absolute;
-    transform: translateX(22px) translateY(-3px);
-    font-size: 9px;
+    transform: translateX(25px) translateY(0px);
+    font-size: 12px;
     color: white;
     text-decoration: none;
 
 }
 
-a:hover {
+body main div.formBox  a:hover {
     cursor: pointer;
     color: #bc6ff1;
     text-decoration: none;
@@ -100,3 +100,9 @@ a:hover {
 }
 
 
+@media (min-width: 769px) {
+    body main div.formBoxv {
+        width: 50%;
+        margin: 25%;
+    }
+}
