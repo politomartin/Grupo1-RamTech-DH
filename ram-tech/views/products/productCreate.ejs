@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="/css/productEdit.css" rel="stylesheet">
+<!-- HEAD  -->
+<%- include('../partials/head')  %>
+    <link href="/css/productCreate.css" rel="stylesheet">
     <title>Creación de producto</title>
 </head>
 
 <body>
-
+    <!-- HEADER  -->
+    <%- include('../partials/header')  %>   
+    <main>
     <div class="formBox">
         <h5>Crear producto</h5>
 
@@ -72,9 +65,7 @@
             <button type="submit" class="buttons">Crear</button>
 
         </form>
-
     </div>
-
-</body>
-
-</html>
+    </main>
+    <!-- FOOTER  -->
+    <%- include('../partials/footer')  %>
