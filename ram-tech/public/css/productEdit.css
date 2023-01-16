@@ -7,12 +7,19 @@
 }
 
 body {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #141317;
+    flex-direction: column;
+}
 
+body header {
+    width: 100%;
+}
+
+body main {
+    margin: 50px 0;
 }
 
 .formBox {
@@ -107,4 +114,8 @@ option {
 .textarea::placeholder{
     color: white;
     opacity: 1;
+}
+
+footer {
+    width: 100%;
 }
