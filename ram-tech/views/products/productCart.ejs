@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HEAD  -->
+<%- include('../partials/head')  %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="/css/productCart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Carrito</title>
 </head>
-
+  
 <body>
-    <header class="flex">
-        <div class="header-logo">
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-            <div class="logo">
-                <a href="/"><img src="/images/logoRamTech.png" alt=""></img></a>
-            </div>
-        </div>
-        <nav>
-            <form action="/" method="post">
-                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" placeholder="Buscar..." name="search" id="">
-            </form>
-            <div class="icons">
-                <ul>
-                    <a href="/register"><button>
-                            <li><i class="fa-regular fa-user"></i></li>
-                        </button></a>
-                    <button>
-                        <li><i class="fa-solid fa-cart-shopping"></i></li>
-                    </button>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!-- HEADER  -->
+    <%- include('../partials/header')  %>
+   
     <main>
         <div class="title">
-            <h1>CARRITO</h1>
+            <h2>CARRITO</h2>
             <h4>(2 ARTICULOS)</h4>
         </div>
         <div class="container">
@@ -97,6 +65,6 @@
             </div>
         </div>
         </main>
-    </body>
 
-</html>
+    <!-- FOOTER  -->
+    <%- include('../partials/footer')  %>

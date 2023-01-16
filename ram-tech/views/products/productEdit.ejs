@@ -1,80 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HEAD  -->
+<%- include('../partials/head')  %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="/css/productEdit.css" rel="stylesheet">
     <title>Edición de producto</title>
 </head>
 
 <body>
+    <!-- HEADER  -->
+    <%- include('../partials/header')  %>
+    <main>
+        <div class="formBox">
+            <h5>Editar producto</h5>
 
-    <div class="formBox">
-        <h5>Editar producto</h5>
-
-        <form autocomplete="off">
-
-
-            <select class="selection">
-                <option disabled selected="">Seleccione una categoría</option>
-                <option>Gabinetes</option>
-                <option>Almacenamiento</option>
-                <option>Procesadores</option>
-                <option>Placas de video</option>
-                <option>Monitores</option>
-                <option>Mouses</option>
-                <option>Teclados</option>
-                <option>Auriculares</option>
-                <option>Micrófonos</option>
-                <option>Web Cams</option>
-                <option>Mandos</option>
-                <option>Parlantes</option>
-            </select>
+            <form autocomplete="off">
 
 
-            <input class="inputs" type="text" name="name" placeholder="Cambie el nombre del producto">
+                <select class="selection">
+                    <option disabled selected="">Seleccione una categoría</option>
+                    <option>Gabinetes</option>
+                    <option>Almacenamiento</option>
+                    <option>Procesadores</option>
+                    <option>Placas de video</option>
+                    <option>Monitores</option>
+                    <option>Mouses</option>
+                    <option>Teclados</option>
+                    <option>Auriculares</option>
+                    <option>Micrófonos</option>
+                    <option>Web Cams</option>
+                    <option>Mandos</option>
+                    <option>Parlantes</option>
+                </select>
 
 
-            <input class="inputs" type="text" name="model" placeholder="Cambie el modelo">
-
-            <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
+                <input class="inputs" type="text" name="name" placeholder="Cambie el nombre del producto">
 
 
-            <input class="inputs" type="number" name="price" min="1" placeholder="Cambie el precio">
+                <input class="inputs" type="text" name="model" placeholder="Cambie el modelo">
+
+                <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
 
 
-            <input class="inputs" type="number" name="discount" min="1" max="100"
-                placeholder="Cambie el porcentaje del descuento">
+                <input class="inputs" type="number" name="price" min="1" placeholder="Cambie el precio">
 
-            <select class="selection">
-                <option disabled selected="">Seleccione un color</option>
-                <option>Negro</option>
-                <option>Blanco</option>
-                <option>Gris</option>
-                <option>Rojo</option>
-                <option>Amarillo</option>
-                <option>Naranja</option>
-                <option>Azul</option>
-                <option>Celeste</option>
-                <option>Verde</option>
-                <option>Violeta</option>
-                <option>Rosa</option>
-            </select>
 
-            <textarea class="textarea" placeholder="Cambie la descripcion del producto"></textarea>
+                <input class="inputs" type="number" name="discount" min="1" max="100"
+                    placeholder="Cambie el porcentaje del descuento">
 
-            <button type="submit" class="buttons">Editar</button>
+                <select class="selection">
+                    <option disabled selected="">Seleccione un color</option>
+                    <option>Negro</option>
+                    <option>Blanco</option>
+                    <option>Gris</option>
+                    <option>Rojo</option>
+                    <option>Amarillo</option>
+                    <option>Naranja</option>
+                    <option>Azul</option>
+                    <option>Celeste</option>
+                    <option>Verde</option>
+                    <option>Violeta</option>
+                    <option>Rosa</option>
+                </select>
 
-        </form>
+                <textarea class="textarea" placeholder="Cambie la descripcion del producto"></textarea>
 
-    </div>
+                <button type="submit" class="buttons">Editar</button>
 
-</body>
+            </form>
 
-</html>
+        </div>
+    </main>
+
+<!-- FOOTER  -->
+<%- include('../partials/footer')  %>

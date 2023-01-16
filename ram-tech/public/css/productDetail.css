@@ -1,3 +1,4 @@
+/*Cuidado, afecta a todos los elementos */
 * {
     margin: 0;
     padding: 0;
@@ -5,60 +6,45 @@
 }
 
 body {
-    background-color: #39426D;
+    background-color: #141317;
 }
 
 /* MAIN */
-main .main-product {
-    margin: auto;
-    margin-top: 20px;
-    padding: 10px;
-    width: 80vw;
-}
-
-
-main section {
-    width: 200px;
-    padding: 0px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-}
-
-h2 {
+body main .product-title {
     font-family: "Russo One";
-}
-
-p, h4, li{
-    font-family: sans-serif;
-}
-
-p, li {
-    font-size: 13px;
-}
-/* Titulo e imagenes del producto*/
-main .product {
-    margin-bottom: 30px;
-}
-main .product h2 {
     text-align: center;
     color: white;
-    margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 20px;
+    margin: 10% 10% 5% 10%;
 }
-main .images-product {
+
+body main .main-product {
+    margin: 0% 5% 5% 5%;
+    padding: 5%;
+    width: 90%;
+}
+
+
+/* Box del producto*/
+
+body main .main-product .product {
+    margin-bottom: 30px;
+}
+
+body main .main-product .product div.images-product {
     display: flex;
-    background-image: url(/images/bg.png);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     padding: 10px;
     border-radius: 5px;
     flex-wrap: wrap;
 }
-main .images-product .principal-image {
+body main .main-product .product .images-product .principal-image {
     width: 100%;
     margin: auto;
     padding: 5px;
 }
 
-main .images-product .carrousel-images {
+body main .main-product .product .images-product .carrousel-images {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -68,35 +54,49 @@ main .images-product .carrousel-images {
     gap: 5px;
     margin-top: 10px;
 }
-main .images-product .carrousel-images div {
+
+body main .main-product .product .images-product .carrousel-images div {
     width: 100%;
     margin: auto;
 
 }
-main .images-product .carrousel-images div img {
+
+body main .main-product .product .images-product .carrousel-images div img {
     width: 100%;
     margin: auto;
 }
 
 /* Otros detalles del producto*/
 
-main .product-description {
+body main .box-product-buttons .product-description {
     background-color: #fff;
     padding: 5px 20px;
     border-radius: 5px;
 }
 
-main .product-description h2 {
+body main .box-product-buttons .product-description h2 {
     text-align: center;
     margin-bottom: 10px;
 }
 
-main .product-description ul {
+body main .box-product-buttons h2 {
+    font-family: "Russo One";
+}
+
+body main .box-product-buttons p, h4, li{
+    font-family: 'Manjari', sans-serif;
+}
+
+body main .box-product-buttons p, li {
+    font-size: 13px;
+}
+
+body main .box-product-buttons .product-description ul {
     padding-left: 15px;
     margin-bottom: 5px;
 }
 
-main .product-description .dues input {
+body main .box-product-buttons .product-description .dues input {
     font-weight: bold;
     padding: 5px ;
     background-color: rgb(211, 211, 211);
@@ -107,7 +107,7 @@ main .product-description .dues input {
     margin-bottom: 15px;
 }
 
-main .product-description .recive-product input {
+body main .box-product-buttons .product-description .recive-product input {
     font-weight: bold;
     padding: 5px ;
     background-color: rgb(211, 211, 211);
@@ -119,14 +119,29 @@ main .product-description .recive-product input {
     margin-bottom: 15px;
 }
 
-main .botones {
+body main .box-product-buttons .product-description .payment-method-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+body main .box-product-buttons .product-description .payment-method-images div {
+    width: 20%;
+    margin: auto;
+}
+
+body main .box-product-buttons .product-description .payment-method-images div img {
+    width:100%;
+}
+
+body main .box-product-buttons .botones {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     margin-top: 15px;
 }
 
-main .botones input {
+body main .box-product-buttons .botones input {
     font-weight: bold;
     padding: 5px 15px ;
     background: linear-gradient(#3f0071, #bc6ff1);
@@ -139,44 +154,51 @@ main .botones input {
     font-family: 'Russo One', sans-serif;
 }
 
-main .payment-method-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-main .payment-method-images div {
-    width: 20%;
-    margin: auto;
-}
-main .payment-method-images div img {
-    width:100%;
-}
 
-@media (min-width: 425px) {
 
-}
 @media (min-width: 769px) {
-    main .main-product {
+    body main div.product-title {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    body main div.product-title::before {
+        content: '';
+        position: absolute;
+        border-bottom: 3px solid #BC6FF1;
+        width: 5%;
+        transition: 0.4s ease;
+    }
+    
+    body main div.product-title:hover::before {
+        width: 100%;
+    }
+
+
+
+    body main section.main-product {
         display: flex;
         justify-content: space-between;
         max-width: 1500px;
-    }
-    main .product {
-        max-width: 650px;
-        width: 55%;
-    }
-    main .product h2 {
-        font-size: 50px;
+        width: 100%;
+        gap: 5%;
+        margin: 0%;
     }
 
-    main .box-product-buttons {
+    body main section article.product {
+        max-width: 650px;
+        width: 70%;
+    }
+
+    body main section article.box-product-buttons {
         width: 40%;
     }
-    main .product-description {
-        height: 80%;
-        margin-top: 10%;
+
+    body main section .box-product-buttons .product-description {
+        width: 100%;
     }
-    main .product-description h2 {
+
+    body main section .box-product-buttons .product-description h2 {
         font-size: 40px;
         padding: 10px;
         margin-bottom: 20px;
@@ -185,25 +207,27 @@ main .payment-method-images div img {
     p, li {
         font-size: 20px;
     }
-    main .product-description .dues input {
+
+    body main section .box-product-buttons .product-description .dues input {
         padding: 10px;
         font-size: 15px;
         margin-bottom: 25px;
         margin-top: 15px;
     }
 
-    main .product-description .recive-product input {
+    body main section .box-product-buttons .product-description .recive-product input {
         padding: 10px;
         font-size: 15px;
         margin-bottom: 25px;
         margin-top: 15px;
     }
 
-    main .product-description h4 {
+    body main section .box-product-buttons .product-description h4 {
         font-size: 30px;
         margin: 20px 0px;
     }
-    main .botones input {
+
+    body main section .box-product-buttons .botones input {
         padding: 15px 35px;
         font-size: 20px;
         margin-top: 5px;

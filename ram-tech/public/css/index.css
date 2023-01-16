@@ -169,7 +169,7 @@ body main section div.title-section {
 
 body main section h2.title {
     font-family: 'Russo One', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: white;
     margin-top: 5%;
     margin-left: 10%;
@@ -524,7 +524,9 @@ body footer div.footer-box .main-footer .copy p {
     }
 
     /* Main - abi */
- 
+    body main section h2.title {
+        font-size: 30px;
+    }
     body main section h2.title::before {
         content: '';
         position: absolute;

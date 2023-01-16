@@ -1,57 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HEAD  -->
+<%- include('partials/head')  %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RamTech</title>
-  <link rel="stylesheet" href="/css/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <title>RamTech</title> 
 </head>
 
 <body>
-  <header>
-    <div class="flex" style="background-image: url('../images/bg2.jpg')">
-      
-      <div class="logo">
-        <a href="/"><img src="/images/logo2.png" alt="RamTech"></img></a>
-      </div>
+  
+  <!-- HEADER  -->
+  <%- include('partials/header')  %>
 
-      <div class="navbar">
-        <nav>
-          <form action="/" method="post">
-            <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="text" placeholder="Buscar..." name="search" id="">
-          </form>
-        </nav>
-
-        <div class="icons">
-          <ul>
-            <button>
-              <a href="/login">
-                <li><i class="fa-solid fa-user-astronaut"></i></li>
-              </a>
-            </button>
-            <button>
-              <a href="/product-cart">
-                <li><i class="fa-solid fa-cart-shopping"></i></li>
-              </a>
-            </button>
-          </ul>
-        </div>
-      
-        <div class="burger-menu">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-
-      </div>
-    </div>
-  </header>
   <main>
     <section class="carousel">
       <i><img src="/images/carousel1.jpg" alt="Imagen de oferta"></i>
@@ -270,53 +227,5 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-box" style="background-image: url('../images/background-image2.jpg')">
-
-      <div class="up">
-        <a href="/"><i class="fa-solid fa-circle-chevron-up"></i></a>
-      </div>
-
-      <div class="main-footer">
-        <div class="box1">
-          <a href="/"><img src="/images/logo1.png" alt=""></img></a>
-        </div>
-
-        <div class="box2">
-          <a href="/#">
-            <p>Quienes Somos</p>
-          </a>
-          <a href="/#">
-            <p>Contacto</p>
-          </a>
-          <a href="/#">
-            <p>Asesor</p>
-          </a>
-          <a href="/#">
-            <p>Categorías</p>
-          </a>
-          <a href="/#">
-            <p>Marcas</p>
-          </a>
-        </div>
-
-        <div class="box3">
-          <a href="/#"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="/#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="/#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="/#"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-
-
-
-        <div class="copy">
-          <p>Copyright © 2023 RamTech S.R.L.</p>
-          <p>Made with <i class="fa-solid fa-heart heart-icon"></i> by G1-DH</p>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-</body>
-
-</html>
+  <!-- FOOTER  -->
+  <%- include('partials/footer')  %>

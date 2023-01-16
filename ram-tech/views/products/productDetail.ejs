@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HEAD  -->
+<%- include('../partials/head')  %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="/css/productDetail.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/productDetail.css">
     <title>Detalle del Producto</title>
 </head>
 
 <body>
+
+    <!-- HEADER  -->
+    <%- include('../partials/header')  %>
+
     <main>
+        <div class="product-title">
+            <h2> Controles Nintendo Switch</h2>
+        </div>
+
         <section class="main-product">
-            <article class="product">
-                <div class="product-title">
-                    <h2> Controles Nintendo Switch</h2>
-                </div>
+
+            <article class="product"> 
                 <div class="images-product">
                     <img src="/images/images-product-detail/joyConProduct.jpg" alt="Imagen del Producto" width="200px"
                         alt="Imagen del producto" class="principal-image">
@@ -39,8 +40,9 @@
                     </div>
                 </div>
             </article>
-            <div class="box-product-buttons">
-                <article class="product-description">
+
+            <article class="box-product-buttons">
+                <div class="product-description">
                     <article class="price-product">
                         <h2> $33.000 </h2>
                     </article>
@@ -55,6 +57,7 @@
                         <p> Llega hoy por $1.200</p>
                         <input class="buttons" type="submit" value="Formas de entrega">
                     </article>
+
                     <article>
                         <h4> Medios de pago </h4>
                         <div class="payment-method-images">
@@ -64,7 +67,8 @@
                             <div><img src="/images/images-product-detail/logo-mercado-credito.png"></div>
                         </div>
                     </article>
-                </article>
+                </div>
+                
                 <article class="botones">
                     <input class="buttons" type="submit" value="Ver Mas">
                     <input class="buttons" type="submit" value="Comprar">
@@ -72,9 +76,6 @@
             </div>
         </section>
     </main>
-    <footer>
 
-    </footer>
-</body>
-
-</html>
+<!-- FOOTER  -->
+<%- include('../partials/footer')  %>
