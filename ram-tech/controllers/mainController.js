@@ -13,6 +13,9 @@ const controller = {
     productEdit: (req,res) => {
         res.render("./products/productEdit");
     },
+    productCreate: (req,res) => {
+        res.render("./products/productCreate");
+    },
     login: (req,res) => {
         res.render("./users/login");
     },
