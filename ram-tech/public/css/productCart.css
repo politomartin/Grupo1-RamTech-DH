@@ -17,10 +17,6 @@ body main div.title {
     gap: 20px;
 }
 
-body main div.title h2 {
-    font-size: 20px;
-}
-
 body main div.title h4 {
     font-size: 15px;
     display: flex;
@@ -229,6 +225,11 @@ main div.container div.pago a{
     text-decoration: none;
 }
 
+@media (min-width: 425px) {
+    body main div.title {
+        font-size: 20px;
+    }
+}
 
 @media (min-width: 769px) {
         /* MAIN */

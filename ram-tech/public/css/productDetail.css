@@ -14,7 +14,6 @@ body main .product-title {
     font-family: "Russo One";
     text-align: center;
     color: white;
-    font-size: 20px;
     margin: 10% 10% 5% 10%;
 }
 
@@ -156,10 +155,17 @@ body main .box-product-buttons .botones input {
 
 
 
+@media (min-width: 425px) {
+    body main div.product-title {
+        font-size: 20px;
+        text-align: left;
+    }
+}
+
+
 @media (min-width: 769px) {
     body main div.product-title {
         font-size: 30px;
-        text-align: left;
     }
 
     body main div.product-title::before {
