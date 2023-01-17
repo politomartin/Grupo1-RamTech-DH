@@ -5,13 +5,14 @@
 }
 
 body {
-    
+
     background-color: #141317;
 
 }
 
+
 body main div.formBox {
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -25,6 +26,7 @@ body main div.formBox {
     font-family: 'Manjari', sans-serif;
     text-align: center;
 }
+
 
 body main div.formBox h5 {
     font-family: 'Russo One', sans-serif;
@@ -72,10 +74,19 @@ body main div.formBox form .buttons {
     margin: 15px 0;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(#3f0071, #bc6ff1);
-    transition: 1ms;
+    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
+    transition: 0.5s;
+    box-shadow: none;
+    outline: none;
+    background-size: 200% auto;
 }
 
+body main div.formBox form .buttons:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 10px #eee;
+}
 
 body main div.formBox form i {
     position: absolute;
@@ -88,24 +99,24 @@ body main div.formBox form .checkbox {
     display: flex;
     align-items: center;
     justify-content: center;
-    color:white
+    color: white
 }
 
 body main div.formBox form .checkbox input {
-    margin:0;
+    margin: 0;
 }
 
 body main div.formBox form .checkbox label {
-    margin-left:2px;
+    margin-left: 2px;
     margin-top: 5px;
 }
 
-body main div.formBox form .checkbox:hover{    
+body main div.formBox form .checkbox:hover {
     color: #bc6ff1;
     transition: 350ms;
 }
 
-body main div.formBox form .checkbox input::before{
+body main div.formBox form .checkbox input::before {
     border-radius: 20px;
 }
 
@@ -113,7 +124,7 @@ body main div.formBox form .checkbox input::before{
 body main div.formBox div.links {
     display: inline-flex;
     font-size: 10px;
-    
+
 }
 
 body main div.formBox .links a {
@@ -132,8 +143,59 @@ body main div.formBox.links a:hover {
 
 
 @media (min-width: 769px) {
+
+    body main div.formBox {
+        justify-content: space-evenly;
+        height: 90%;
+    }
+
+    body main div.formBox form .inputs {
+        font-size: 20px;
+        padding: 10px;
+        margin: 30px 0;
+    }
+
+    body main {
+        width: 50%;
+        margin: auto;
+        max-width: 700px;
+    }
+
+    body main div.formBox form {
+        width: 80%;
+    }
+
     body main div.formBoxv {
         width: 50%;
         margin: 25%;
+    }
+
+    body main div.formBox form input::placeholder {
+        font-size: 20px;
+    }
+
+    body main div.formBox h5 {
+        font-size: 50px;
+        margin: 30px 0;
+    }
+    body main div.formBox form .checkbox {
+        margin: 20px 0;
+    }
+
+    body main div.formBox form .checkbox label {
+        font-size: 20px;
+    }
+    body main div.formBox form .buttons {
+        margin-top: 60px;
+    }
+
+    body main div.formBox div.links {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    body main div.formBox .links a {
+        font-size: 15px;
+        width: 45%;
     }
 }

@@ -143,7 +143,7 @@ body main .box-product-buttons .botones {
 body main .box-product-buttons .botones input {
     font-weight: bold;
     padding: 5px 15px ;
-    background: linear-gradient(#3f0071, #bc6ff1);
+    background: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
     border: none;
     border-radius: 2px;
     color: #CDB9DD;
@@ -151,6 +151,16 @@ body main .box-product-buttons .botones input {
     margin-top: 5px;
     margin-bottom: 15px;
     font-family: 'Russo One', sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+}
+
+body main .box-product-buttons .botones input:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 10px #eee;
 }
 
 
@@ -166,6 +176,7 @@ body main .box-product-buttons .botones input {
 @media (min-width: 769px) {
     body main div.product-title {
         font-size: 30px;
+        margin: 3% 10% 0% 10%;
     }
 
     body main div.product-title::before {
@@ -188,7 +199,7 @@ body main .box-product-buttons .botones input {
         max-width: 1500px;
         width: 100%;
         gap: 5%;
-        margin: 0%;
+        margin: auto;
     }
 
     body main section article.product {
@@ -234,7 +245,7 @@ body main .box-product-buttons .botones input {
     }
 
     body main section .box-product-buttons .botones input {
-        padding: 15px 35px;
+        padding: 15px 60px;
         font-size: 20px;
         margin-top: 5px;
         margin-bottom: 15px;
