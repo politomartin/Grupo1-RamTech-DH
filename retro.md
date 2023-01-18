@@ -11,3 +11,10 @@
 3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina.
 4. Hacer menos: Subir las cosas al repositorio faltando poco para la fecha de entrega del Sprint.
 5. Dejar de hacer: -
+
+# Retrospectiva Sprint 3.
+1. Comenzar a hacer: Mantener la comunicacion en base a las actualizaciones del proyecto.
+2. Hacer mas: Realizar reuniones con mayor continuidad.
+3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo.
+4. Hacer menos: Dejar de poner estilos distintos a la pagina.
+5. Dejar de hacer: -
