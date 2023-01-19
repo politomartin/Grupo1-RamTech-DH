@@ -13,3 +13,7 @@ En este daily separamos las vistas en carpetas, realizamos la retrospectiva del 
 # Daily 18/01 // Sprint 3
 
 En el dia de hoy realizamos la retrospetiva del Sprint 3 y nos ayudamos a evacuar dudas.
+
+# Daily 19/01 // Sprint 4
+
+Realizamos la division de tareas del Sprint 4 en Trello, analizamos los tiempos de realizacion de las actividades del mismo y charlamos sobre los problemas que se nos presentaban de cara a las tareas del proyecto, buscando una solucion.
