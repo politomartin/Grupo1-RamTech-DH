@@ -17,7 +17,7 @@ body main div.formBox {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 55vh;
     width: 80%;
     padding: 10px;
     margin: 10%;
@@ -66,9 +66,9 @@ body main div.formBox form input:focus {
 
 body main div.formBox .interaction-buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     width: 100%;
-    margin: 20px;
+    margin: 0px;
 }
 
 body main div.formBox .interaction-buttons .buttons{
@@ -104,8 +104,7 @@ body main div.formBox form i {
 
 body main div.formBox div a {
     cursor: pointer;
-    position: absolute;
-    transform: translateX(25px) translateY(0px);
+    display: flex;
     font-size: 12px;
     color: white;
     text-decoration: none;
@@ -121,9 +120,10 @@ body main div.formBox  a:hover {
 
 
 @media (min-width: 769px) {
-    body main div.formBoxv {
+    body main div.formBox {
         width: 50%;
         margin: 25%;
+        
     }
 
     body main div.formBox {
@@ -131,10 +131,11 @@ body main div.formBox  a:hover {
         margin: auto;
         margin-top: 100px;
         margin-bottom: 100px;
+        
     }
 
     body main div.formBox div a {
-        transform: translateX(134px) translateY(-40px);
+        margin-top: -10px;
         font-size: 20px;
     }
 
@@ -159,6 +160,6 @@ body main div.formBox  a:hover {
         height: 90%;
     }
     body main div.formBox .interaction-buttons {
-        margin: 60px;
+        margin-bottom: 30px;
     }
 }

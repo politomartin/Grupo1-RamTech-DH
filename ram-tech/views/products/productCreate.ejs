@@ -1,72 +1,54 @@
 <!-- HEAD  -->
-<%- include('../partials/head')  %>
+<%- include('../partials/head') %>
 
     <link href="/css/productCreate.css" rel="stylesheet">
     <title>Creación de producto</title>
-</head>
+    </head>
 
-<body>
-    <!-- HEADER  -->
-    <%- include('../partials/header')  %>   
-    <main>
-        <div class="formBox">
-            <h5>Crear producto</h5>
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/header') %>
+            <main>
+                <div class="formBox">
+                    <h5>Crear producto</h5>
 
-            <form autocomplete="off">
+                    <form autocomplete="off">
 
+                        <input class="inputs" type="text" name="name" placeholder="Elige el nombre del producto">
 
-                <select class="selection">
-                    <option disabled selected="">Seleccione una categoría</option>
-                    <option>Gabinetes</option>
-                    <option>Almacenamiento</option>
-                    <option>Procesadores</option>
-                    <option>Placas de video</option>
-                    <option>Monitores</option>
-                    <option>Mouses</option>
-                    <option>Teclados</option>
-                    <option>Auriculares</option>
-                    <option>Micrófonos</option>
-                    <option>Web Cams</option>
-                    <option>Mandos</option>
-                    <option>Parlantes</option>
-                </select>
+                        <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
 
-
-                <input class="inputs" type="text" name="name" placeholder="Elige el nombre del producto">
-
-
-                <input class="inputs" type="text" name="model" placeholder="Elige el modelo">
-
-                <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
+                        <select class="selection">
+                            <option disabled selected="">Seleccione una categoría</option>
+                            <option>Gabinetes</option>
+                            <option>Almacenamiento</option>
+                            <option>Procesadores</option>
+                            <option>Placas de video</option>
+                            <option>Monitores</option>
+                            <option>Mouses</option>
+                            <option>Teclados</option>
+                            <option>Auriculares</option>
+                            <option>Micrófonos</option>
+                            <option>Web Cams</option>
+                            <option>Mandos</option>
+                            <option>Parlantes</option>
+                        </select>
 
 
-                <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
+                        <input class="inputs" type="text" name="brand" placeholder="Elige la marca">
+
+                        <input class="inputs" type="number" name="discount" min="1" max="100"
+                            placeholder="Elige el porcentaje del descuento">
 
 
-                <input class="inputs" type="number" name="discount" min="1" max="100"
-                    placeholder="Elige el porcentaje del descuento">
+                        <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
 
-                <select class="selection">
-                    <option disabled selected="">Seleccione un color</option>
-                    <option>Negro</option>
-                    <option>Blanco</option>
-                    <option>Gris</option>
-                    <option>Rojo</option>
-                    <option>Amarillo</option>
-                    <option>Naranja</option>
-                    <option>Azul</option>
-                    <option>Celeste</option>
-                    <option>Verde</option>
-                    <option>Violeta</option>
-                    <option>Rosa</option>
-                </select>
+                        <textarea class="textarea" placeholder="Elige la descripcion del producto"></textarea>
 
-                <textarea class="textarea" placeholder="Elige la descripcion del producto"></textarea>
+                        <button type="submit" class="buttons">Crear</button>
 
-                <button type="submit" class="buttons">Crear</button>
-
-            </form>
-        </div>
-    </main>
-    <!-- FOOTER  -->
-    <%- include('../partials/footer')  %>
+                    </form>
+                </div>
+            </main>
+            <!-- FOOTER  -->
+            <%- include('../partials/footer') %>
