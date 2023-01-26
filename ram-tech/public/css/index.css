@@ -179,10 +179,6 @@ body main section h2.title {
 /* Sección products */
 
 body main section.highlight {
-    background-image: url("../images/background-image1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     display: block;
     border-top: 5px solid #141317;
     border-bottom: 5px solid #141317;
