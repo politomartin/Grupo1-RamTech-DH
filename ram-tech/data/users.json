@@ -1,0 +1,40 @@
+[{
+    "id": 1,
+    "firstName": "Martin",
+    "lastName": "Polito",
+    "email": "politomartin00@gmail.com",
+    "password": "1234hola",
+    "favouriteProducts": [],
+    "image": "default.jpg",
+    "rol": "admin"
+},
+{
+    "id": 2,
+    "name": "Mateo",
+    "lastName": "Lauzan",
+    "email": "mateolauzan@gmail.com",
+    "password": "helloword123",
+    "favouriteProducts": [],
+    "image": "default.jpg",
+    "rol": "admin"
+},
+{
+    "id": 3,
+    "firstName": "Abigail",
+    "lastName": "Barroso",
+    "email": "abigail.sabm@gmail.com",
+    "password": "messiqatar22",
+    "favouriteProducts": [],
+    "image": "default.jpg",
+    "rol": "admin"
+},
+{
+    "id": 4,
+    "name": "Conrado",
+    "lastName": "Aizawa",
+    "email": "conradoaizawa1@gmail.com",
+    "password": "mefuidevacaciones27",
+    "favouriteProducts": [],
+    "image": "default.jpg",
+    "rol": "user"
+}]
