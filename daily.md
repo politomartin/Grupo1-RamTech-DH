@@ -17,3 +17,7 @@ En el dia de hoy realizamos la retrospetiva del Sprint 3 y nos ayudamos a evacua
 # Daily 19/01 // Sprint 4
 
 Realizamos la division de tareas del Sprint 4 en Trello, analizamos los tiempos de realizacion de las actividades del mismo y charlamos sobre los problemas que se nos presentaban de cara a las tareas del proyecto, buscando una solucion.
+
+# Daily 31/01 // Sprint 4
+
+Volvimos a revisar las tareas faltantes, organizando todo para la finalizacion del Sprint. Sacamos ideas nuevas para aplicarlas en el proyecto. Pensamos los nuevos productos a agregar.
