@@ -38,31 +38,26 @@ h5 {
     margin-bottom: 10px;
 }
 
-form input {
-    background-color: transparent;
-    color: black;
-    margin-top: 5px;
-    border: none;
-    text-align: center;
-    outline: none;
-    border-bottom: solid 2px black;
-}
 
-.inputs {
+.formBox .inputs {
+    background-color: transparent;
     text-align: left;
     width: 100%;
     color: black;
     padding: 4px;
     margin-bottom: 15px;
-
+    border: none;
+    border-bottom: solid 2px black;
+    outline: none;
+    margin-top: 5px;
 }
 
-input::placeholder {
+.formBox input::placeholder {
     color: black;
     opacity: 1;
 }
 
-.buttons {
+.formBox .buttons {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -79,12 +74,12 @@ input::placeholder {
     transition: 500ms;
 }
 
-.buttons:hover {
+.formBox .buttons:hover {
     color: black;
     background-color: white;
 }
 
-.selection {
+.formBox .selection {
     color: black;
     display: block;
     width: 100%;
@@ -95,12 +90,12 @@ input::placeholder {
     margin: 15px 0
 }
 
-option {
-    color: white;
+.formBox option {
+    color: black;
 
 }
 
-.textarea {
+.formBox .textarea {
     color: black;
     display: block;
     width: 100%;
@@ -111,12 +106,13 @@ option {
     margin: 15px 0
 }
 
-.textarea::placeholder{
+.formBox .textarea::placeholder{
     color: black;
     opacity: 1;
 }
 
 footer {
+    
     width: 100%;
 }
 

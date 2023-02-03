@@ -2,12 +2,12 @@
  {
   "id": 1,
   "name": "Controles JoyCon",
-  "price": 30000,
+  "price": "30000",
   "category": "Consoles",
   "brand": "Nintendo",
-  "discount": 15,
-  "image": "default.jpg",
-  "description": " "
+  "discount": "15",
+  "image": "",
+  "description": "Controles Joy facheritos"
  },
  {
   "id": 2,
@@ -17,6 +17,6 @@
   "brand": "Razer",
   "discount": 5,
   "image": "default.jpg",
-  "description": " "
+  "description": "Mouse gamer bien fachero"
  }
 ]
