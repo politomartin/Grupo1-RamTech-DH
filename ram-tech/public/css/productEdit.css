@@ -10,7 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #141317;
+    background-color: grey;
     flex-direction: column;
 }
 
@@ -25,7 +25,7 @@ body main {
 .formBox {
     width: 250px;
     padding: 10px;
-    background-image: url(/images/background-image1.png);
+    background-color: lightgray;
     background-size: cover;
     text-align: center;
 }
@@ -33,32 +33,32 @@ body main {
 h5 {
     font-family: 'Russo One', sans-serif;
     font-weight: 100;
-    color: white;
+    color: black;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 form input {
     background-color: transparent;
-    color: white;
+    color: black;
     margin-top: 5px;
     border: none;
     text-align: center;
     outline: none;
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px black;
 }
 
 .inputs {
     text-align: left;
     width: 100%;
-    color: white;
+    color: black;
     padding: 4px;
     margin-bottom: 15px;
 
 }
 
 input::placeholder {
-    color: white;
+    color: black;
     opacity: 1;
 }
 
@@ -71,48 +71,48 @@ input::placeholder {
     padding: 4px;
     font-weight: 100;
     font-size: 13px;
-    color: black;
+    color: white;
     margin-top: 18px;
     border: none;
     border-radius: 5px;
-    background-color: white;
+    background-color: black;
     transition: 500ms;
 }
 
 .buttons:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
 }
 
 .selection {
-    color: white;
+    color: black;
     display: block;
     width: 100%;
     background-color: transparent;
     outline: none;
     border: none;
-    border-bottom: 2px white solid;
+    border-bottom: 2px black solid;
     margin: 15px 0
 }
 
 option {
-    color: black;
+    color: white;
 
 }
 
 .textarea {
-    color: white;
+    color: black;
     display: block;
     width: 100%;
     background-color: transparent;
     outline: none;
     border: none;
-    border-bottom: 2px white solid;
+    border-bottom: 2px black solid;
     margin: 15px 0
 }
 
 .textarea::placeholder{
-    color: white;
+    color: black;
     opacity: 1;
 }
 
@@ -126,7 +126,7 @@ footer {
         margin: 150px 0;
     }
     .formBox {
-        width: 50%;
+        width: 600px;
         margin: auto;
     }
 }

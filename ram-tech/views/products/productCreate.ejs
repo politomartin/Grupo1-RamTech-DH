@@ -12,13 +12,13 @@
                 <div class="formBox">
                     <h5>Crear producto</h5>
 
-                    <form autocomplete="off">
+                    <form action="/" method="POST" autocomplete="off">
 
                         <input class="inputs" type="text" name="name" placeholder="Elige el nombre del producto">
 
                         <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
 
-                        <select class="selection">
+                        <select class="selection" name="category">
                             <option disabled selected="">Seleccione una categoría</option>
                             <option>Gabinetes</option>
                             <option>Almacenamiento</option>
@@ -41,9 +41,9 @@
                             placeholder="Elige el porcentaje del descuento">
 
 
-                        <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="images">
+                        <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
 
-                        <textarea class="textarea" placeholder="Elige la descripcion del producto"></textarea>
+                        <textarea name="description" class="textarea" placeholder="Elige la descripcion del producto"></textarea>
 
                         <button type="submit" class="buttons">Crear</button>
 
