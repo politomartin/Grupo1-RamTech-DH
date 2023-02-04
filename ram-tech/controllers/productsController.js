@@ -7,9 +7,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const controller = {
- 
+    //LISTA DE PRODUCTOS
     index: (req, res) => {
-		res.render('./products/products');
+		res.render('./products/products',{products: products});
 	},
     
     // CARRITO

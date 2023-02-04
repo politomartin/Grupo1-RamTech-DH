@@ -6,7 +6,7 @@
   "category": "Consoles",
   "brand": "Nintendo",
   "discount": "15",
-  "image": "",
+  "image": "joy-con01.jpg",
   "description": "Controles Joy facheritos"
  },
  {
@@ -16,7 +16,7 @@
   "category": "Mouses",
   "brand": "Razer",
   "discount": 5,
-  "image": "default.jpg",
+  "image": "razer-viper-mini-usp1-mobile.jpg",
   "description": "Mouse gamer bien fachero"
  }
 ]

@@ -6,11 +6,30 @@
 	<!-- Header -->
 	<%- include('../partials/header') %>
 	<!-- /Header -->
-
+<main>
+	<section class="highlight">
 	
-
-	<!-- footer -->
-	<%- include('../partials/footer') %>
-	<!-- /footer -->
+		<div class="products">
+	<% products.forEach(element => { %>
+			<article>
+				<a href="/product-detail" id="product-redirect">
+					<img src="/images/images-products/<%= element.image %>" alt="<%=element.name %>">
+					<div class="main-article">
+						<i class="fa-solid fa-heart heart-icon"></i>
+						<h4 class="description"><%=element.name %></h4>
+						<div class="description-container">
+							<p class="price">$<%=element.price %> </p>
+							<p class="discount"><%=element.discount %>% Off</p>
+						</div>
+					</div>
+				</a>
+			</article>
+			<%}); %> 
+		</div>
+		</section>
+	</main>
+		<!-- footer -->
+		<%- include('../partials/footer') %>
+		<!-- /footer -->
 </body>	
 </html>
