@@ -8,15 +8,22 @@
 	<!-- /Header -->
 <main>
 	<section class="highlight">
-	
+		
+		<div class="title-section">
+
+			<h2 class="title">
+			  <strong>Destacados del mes</strong>
+			</h2>
+		</div>
+
 		<div class="products">
-	<% products.forEach(element => { %>
+		<% products.forEach(element => { %>
 			<article>
 				<a href="/product-detail" id="product-redirect">
 					<img src="/images/images-products/<%= element.image %>" alt="<%=element.name %>">
 					<div class="main-article">
 						<i class="fa-solid fa-heart heart-icon"></i>
-						<h4 class="description"><%=element.name %></h4>
+						<h4 class="name"><%=element.name %></h4>
 						<div class="description-container">
 							<p class="price">$<%=element.price %> </p>
 							<p class="discount"><%=element.discount %>% Off</p>
@@ -26,8 +33,8 @@
 			</article>
 			<%}); %> 
 		</div>
-		</section>
-	</main>
+	</section>
+</main>
 		<!-- footer -->
 		<%- include('../partials/footer') %>
 		<!-- /footer -->

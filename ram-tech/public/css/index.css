@@ -241,7 +241,7 @@ body main section.highlight article div.main-article:hover .heart-icon {
     transform: scale(2);   
 }
 
-body main section.highlight article div.main-article h4.description {
+body main section.highlight article div.main-article h4.name {
     font-size: 15px;
     color: #FFF;
     width: 100%;
@@ -554,7 +554,7 @@ body footer div.footer-box .main-footer .copy p {
         transform: scaleX(1);
     }
     
-    body main section.highlight article div.main-article h4.description {
+    body main section.highlight article div.main-article h4.name {
         font-size: 18px;
         margin: 2% 0% 2% 0%;
     }
