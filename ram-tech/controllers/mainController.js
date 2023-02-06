@@ -10,7 +10,7 @@ const controller = {
     // INDEX
     
     index: (req,res) => {
-        res.render("index");
+        res.render("index", { products: products});
     },
 
    // USUARIOS

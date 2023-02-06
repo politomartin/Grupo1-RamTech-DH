@@ -12,16 +12,16 @@
 
     <main>
         <div class="product-title">
-            <h2> Controles Nintendo Switch</h2>
+            <h2> <%= product.name %></h2>
         </div>
 
         <section class="main-product">
 
             <article class="product"> 
                 <div class="images-product">
-                    <img src="/images/images-product-detail/joyConProduct.jpg" alt="Imagen del Producto" width="200px"
+                    <img src="/images/images-products/<%= product.image %> " alt="Imagen del Producto" width="200px"
                         alt="Imagen del producto" class="principal-image">
-                    <div class="carrousel-images">
+                    <!-- <div class="carrousel-images">
                         <div>
                             <img src="/images/images-product-detail/joy-con01.jpg">
                         </div>
@@ -37,21 +37,27 @@
                         <div>
                             <img src="/images/images-product-detail/joy-con05.jpg">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </article>
 
             <article class="box-product-buttons">
                 <div class="product-description">
                     <article class="price-product">
-                        <h2> $33.000 </h2>
+                        <h2> $<%= product.price - (product.price*product.discount)/100 %> </h2>
                     </article>
-                    <article class="dues">
+                    <% if(product.discount > 0) { %>
+                        <article class="product-discount">
+                            <h4> <%= product.discount %>% de descuento!</h4>
+                            <p> Precio anterior: <%= product.price %> </p>
+                        </article>
+                    <% } %> 
+                    <!-- <article class="dues">
                         <ul>
                             <li> 12 cuotas sin interes</li>
                         </ul>
                         <input class="buttons" type="button" value="Calcular Cuotas">
-                    </article>
+                    </article> -->
                     <article class="recive-product">
                         <h4> Recibi tu producto </h4>
                         <p> Llega hoy por $1.200</p>
@@ -74,6 +80,10 @@
                     <input class="buttons" type="submit" value="Comprar">
                 </article>
             </div>
+        </section>
+        <section class="description-under-product">
+            <h2> Descripcion </h2>
+            <p> <%= product.description %> </p>
         </section>
     </main>
 

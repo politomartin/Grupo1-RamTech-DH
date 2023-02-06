@@ -9,7 +9,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
     //LISTA DE PRODUCTOS
     index: (req, res) => {
-        res.render('./products/products', { products: products });
+        res.render('./partials/products', { products: products });
     },
 
     // CARRITO
@@ -21,7 +21,9 @@ const controller = {
     // DETALLE DEL PRODUCTO
 
     productDetail: (req, res) => {
-        res.render("./products/productDetail");
+        const { id } = req.params;
+		const product = products.find((product) => product.id == id);
+		res.render('./products/productDetail', { product });
     },
 
     // CREACIÓN Y EDICIÓN

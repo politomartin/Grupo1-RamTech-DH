@@ -19,7 +19,7 @@ body main .product-title {
 
 body main .main-product {
     margin: 0% 5% 5% 5%;
-    padding: 5%;
+    padding: 2%;
     width: 90%;
 }
 
@@ -82,11 +82,11 @@ body main .box-product-buttons h2 {
     font-family: "Russo One";
 }
 
-body main .box-product-buttons p, h4, li{
+body main .box-product-buttons p, h4{
     font-family: 'Manjari', sans-serif;
 }
 
-body main .box-product-buttons p, li {
+body main .box-product-buttons p {
     font-size: 13px;
 }
 
@@ -95,7 +95,7 @@ body main .box-product-buttons .product-description ul {
     margin-bottom: 5px;
 }
 
-body main .box-product-buttons .product-description .dues input {
+/* body main .box-product-buttons .product-description .dues input {
     font-weight: bold;
     padding: 5px ;
     background-color: rgb(211, 211, 211);
@@ -104,7 +104,7 @@ body main .box-product-buttons .product-description .dues input {
     color: #000000;
     font-size: 10px;
     margin-bottom: 15px;
-}
+} */
 
 body main .box-product-buttons .product-description .recive-product input {
     font-weight: bold;
@@ -131,6 +131,16 @@ body main .box-product-buttons .product-description .payment-method-images div {
 
 body main .box-product-buttons .product-description .payment-method-images div img {
     width:100%;
+}
+
+body main .product-discount h4 {
+    font-size: 15px;
+    color: #00c45f;
+    font-weight: bold;
+}
+
+body main .product-discount p {
+    font-size: 12px;    
 }
 
 body main .box-product-buttons .botones {
@@ -163,7 +173,24 @@ body main .box-product-buttons .botones input:hover {
     box-shadow: 0 0 10px #eee;
 }
 
+body main .description-under-product {
+    text-align: center;
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    font-family: 'Manjari', sans-serif;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
 
+body main .description-under-product h2 {
+    padding: 20px 0px;
+    font-family: "Russo One";
+}
+
+body main .description-under-product p {
+    padding: 15px;
+}
 
 @media (min-width: 425px) {
     body main div.product-title {
@@ -195,7 +222,7 @@ body main .box-product-buttons .botones input:hover {
 
     body main section.main-product {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         max-width: 1500px;
         width: 100%;
         gap: 5%;
@@ -221,15 +248,19 @@ body main .box-product-buttons .botones input:hover {
         margin-bottom: 20px;
     }
 
-    p, li {
+    p {
         font-size: 20px;
     }
 
-    body main section .box-product-buttons .product-description .dues input {
+    /* body main section .box-product-buttons .product-description .dues input {
         padding: 10px;
         font-size: 15px;
         margin-bottom: 25px;
         margin-top: 15px;
+    } */
+
+    body main .product-discount p {
+        font-size: 18px;    
     }
 
     body main section .box-product-buttons .product-description .recive-product input {
@@ -249,5 +280,16 @@ body main .box-product-buttons .botones input:hover {
         font-size: 20px;
         margin-top: 5px;
         margin-bottom: 15px;
+    }
+
+    body main .description-under-product h2 {
+        padding: 20px 0px;
+        font-size: 30px;
+        font-family: "Russo One";
+    }
+    
+    body main .description-under-product p {
+        font-size: 20px;
+        padding: 25px;
     }
 }
