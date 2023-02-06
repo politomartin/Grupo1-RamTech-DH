@@ -290,6 +290,41 @@ body main section.setup-products div.setup .main-box a:hover {
     transition: 400ms;
 }
 
+/* BOTONES DE TODOS LOS PRODUCTOS Y CREAR PRODUCTO*/
+
+body main .buttons-create-products {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body main .buttons-create-products .buttons {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Russo One', sans-serif;
+    padding: 7px;
+    font-weight: 100;
+    font-size: 15px;
+    color: #CDB9DD;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
+    transition: 0.5s;
+    box-shadow: none;
+    outline: none;
+    background-size: 200% auto;
+}
+
+body main .buttons-create-products .buttons:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 10px #eee;
+}
+
+
 /* FOOTER */
 
 body footer div.footer-box {
@@ -581,6 +616,13 @@ body footer div.footer-box .main-footer .copy p {
         font-size: 18px;
         color: #BC6FF1;
         width: 100%;
+    }
+
+    /* Seccion botones de todos los productos y crea tu producto*/
+
+    body main .buttons-create-products .buttons {
+        padding: 15px;
+        font-size: 20px;
     }
     
     /* Sección setup */

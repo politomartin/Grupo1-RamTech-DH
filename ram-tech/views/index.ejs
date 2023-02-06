@@ -42,7 +42,7 @@
       <div class="products">
       <% for (let i = 0; i<3; i++) { %>
         <article>
-          <a href="/product/product-detail" id="product-redirect">
+          <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
             <img src="/images/images-products/<%= products[i].image %>" alt="<%=products[i].name %>">
             <div class="main-article">
               <i class="fa-solid fa-heart heart-icon"></i>
@@ -56,6 +56,11 @@
         </article>
         <%}; %> 
       </div>
+    </section>
+
+    <section class="buttons-create-products">
+      <a href="/products" id="product-redirect"><input class="buttons" type="submit" value="Todos los productos"></a>
+      <a href="/products/product-create" id="product-redirect"><input class="buttons" type="submit" value="Crea tu producto"></a>
     </section>
 
     <section class="setup-products">
