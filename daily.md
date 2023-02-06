@@ -21,3 +21,7 @@ Realizamos la division de tareas del Sprint 4 en Trello, analizamos los tiempos 
 # Daily 31/01 // Sprint 4
 
 Volvimos a revisar las tareas faltantes, organizando todo para la finalizacion del Sprint. Sacamos ideas nuevas para aplicarlas en el proyecto. Pensamos los nuevos productos a agregar.
+
+# Daily 06/02 // Sprint 4
+
+En esta revisión diaria verificamos que todas las tareas hayan sido finalizadas. Propusimos diferentes ideas nuevas para la página. Arreglamos y mejoramos detalles visuales. También actualizamos el tablero en Trello.
