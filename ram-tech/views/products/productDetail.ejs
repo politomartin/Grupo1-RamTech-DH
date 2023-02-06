@@ -9,7 +9,7 @@
 
     <!-- HEADER  -->
     <%- include('../partials/header')  %>
-
+ 
     <main>
         <div class="product-title">
             <h2> <%= product.name %></h2>
@@ -78,12 +78,17 @@
                 <article class="botones">
                     <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input class="buttons" type="submit" value="Editar"></a>
                     <input class="buttons" type="submit" value="Comprar">
+                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
+                      </form>
                 </article>
             </div>
         </section>
         <section class="description-under-product">
             <h2> Descripcion </h2>
             <p> <%= product.description %> </p>
+            
+         
         </section>
     </main>
 

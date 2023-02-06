@@ -63,16 +63,14 @@ const controller = {
 
     // ELIMINACIÓN
 
-    //deleteProduct: (req, res) => {
-    //    const idProduct = req.params.id
-    //    const productToDelete = products.findIndex((product) => product.id == idProduct)
-        
-    //    products.splice(productToDelete, 1)
-
-    //    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-
-    //   res.redirect('/products');
-    //}
+    deleteProduct: function(req, res){
+        const productIndexFound = products.findIndex(function(product){
+            return product.id == req.params.id;
+        })
+        products.splice(productIndexFound, 1)
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        res.redirect('/products');
+}
 
 }
 

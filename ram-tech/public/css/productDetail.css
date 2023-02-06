@@ -9,6 +9,8 @@ body {
     background-color: #141317;
 }
 
+
+
 /* MAIN */
 body main .product-title {
     font-family: "Russo One";
@@ -164,6 +166,13 @@ body main .box-product-buttons .botones input {
     transition: 0.5s;
     background-size: 200% auto;
     border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+body main .box-product-buttons .botones form #delete-button {
+background: linear-gradient(to right, rgb(193, 12, 27) 0%, rgb(189, 8, 8) 51%, rgb(235, 13, 50) 100%);
+
 }
 
 body main .box-product-buttons .botones input:hover {
@@ -292,4 +301,5 @@ body main .description-under-product p {
         font-size: 20px;
         padding: 25px;
     }
+    
 }
