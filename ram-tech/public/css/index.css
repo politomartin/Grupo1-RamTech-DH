@@ -78,6 +78,7 @@ body header .flex div.navbar nav form input:active {
 }
 
 body header .flex .navbar div.icons ul li {
+    color: whitesmoke;
     list-style-type: none;
     font-size: x-large;
 }
@@ -198,6 +199,7 @@ body main section.highlight div.products article {
     background-color: #150050;
     margin: 5%;
     width: 90%;
+    box-shadow: 0 0 10px rgb(100, 100, 100);
 }
 
 body main section.highlight div.products article a#product-redirect {
@@ -214,7 +216,7 @@ body main section.highlight div.products article div.main-article {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    border-top: solid 2px #39426D;
+    border-top: solid 2px #CDB9DD;
     padding: 15px;
 }
 
@@ -222,7 +224,7 @@ body main section.highlight div.products article div.main-article {
 body main section.highlight article div.main-article .heart-icon {
     display: flex;
     font-size: 16px;
-    color: #BC6FF1;
+    color: #bc6ff1;
     padding: 5px;
     width: 30px;
     height: 30px;
@@ -238,7 +240,9 @@ body main section.highlight article div.main-article .heart-icon {
 }
 
 body main section.highlight article div.main-article:hover .heart-icon {
-    transform: scale(2);   
+    transform: scale(2);
+    color: #BC6FF1;
+    border: 2px solid #BC6FF1;   
 }
 
 body main section.highlight article div.main-article h4.name {
@@ -310,7 +314,7 @@ body main .buttons-create-products .buttons {
     margin: 15px 0;
     border: none;
     border-radius: 5px;
-    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
+    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(183, 16, 132) 100%);
     transition: 0.5s;
     box-shadow: none;
     outline: none;
@@ -350,7 +354,7 @@ body footer div.footer-box div.up {
 body footer div.footer-box div.up i {
     display: flex;
     font-size: 26px;
-    color: #39426D;
+    color: #b6a2ee;
     padding: 5px;
     width: 40px;
     height: 40px;
@@ -366,7 +370,7 @@ body footer div.footer-box div.up i {
 body footer div.footer-box div.up:hover i {
     transform: scale(1.2);
     color: #BC6FF1;
-    border-color: #39426D; 
+    border-color: #b71084; 
 }
 
 body footer div.footer-box .main-footer .box1 {
@@ -486,7 +490,7 @@ body footer div.footer-box .main-footer .copy p {
         margin-bottom: 13px;
         height: 50px;
         background-clip: padding-box;
-        border-image: linear-gradient(to right, #bc6ff1, #150050) 1;
+        border-image: linear-gradient(to right, #bc6ff1, #b71084) 1;
     }
 
     body header .flex .navbar nav form::after {
@@ -502,7 +506,7 @@ body footer div.footer-box .main-footer .copy p {
     body header .flex div.navbar nav form i {
         background-color: transparent;
         border: 0px;
-        color: #141317;
+        color: #CDB9DD;
         margin: 3px 0px 0px 0px;
         padding: 3px;
     }
@@ -511,7 +515,7 @@ body footer div.footer-box .main-footer .copy p {
         display: flex;
         position: relative;
         background-color: transparent;
-        color: #141317;
+        color: #CDB9DD;
         font-family: 'Russo One', sans-serif;
         font-size: 15px;
         margin: 10px 0px 10px 50px;
@@ -561,9 +565,9 @@ body footer div.footer-box .main-footer .copy p {
     body main section h2.title::before {
         content: '';
         position: absolute;
-        border-bottom: 3px solid #BC6FF1;
+        border-bottom: 3px solid #bc6ff1;
         width: 5%;
-        transition: 0.4s ease;
+        transition: 500ms ease;
     }
     
     body main section h2.title:hover::before {
@@ -580,7 +584,7 @@ body footer div.footer-box .main-footer .copy p {
         position: absolute;
         width: 27%;
         content: '';
-        border: 1px solid #FFF;
+        border: 1px solid #CDB9DD;
         transform: scaleX(0);
         transition: 400ms;
     }
@@ -614,7 +618,7 @@ body footer div.footer-box .main-footer .copy p {
     
     body main section.highlight article div.description-container p.discount {
         font-size: 18px;
-        color: #BC6FF1;
+        color: #b71084;
         width: 100%;
     }
 
@@ -637,7 +641,7 @@ body footer div.footer-box .main-footer .copy p {
         color: #BC6FF1;
         transition: 400ms;
         transform: scale(1.2);
-        box-shadow: 0px 0px 10px magenta;
+        box-shadow: 0px 0px 10px #b71084;
     }
 
     /* FOOTER */

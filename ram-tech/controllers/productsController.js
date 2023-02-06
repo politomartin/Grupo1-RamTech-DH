@@ -64,12 +64,14 @@ const controller = {
     // ELIMINACIÓN
 
     //deleteProduct: (req, res) => {
-        //const productToDelete = products.filter((product) => product.id != req.params.id)
-       
-        //let id = req.params.id
-        //const productToDelete = products.splice(id, 1)
+    //    const idProduct = req.params.id
+    //    const productToDelete = products.findIndex((product) => product.id == idProduct)
+        
+    //    products.splice(productToDelete, 1)
 
-        //res.redirect("/products");
+    //    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+    //   res.redirect('/products');
     //}
 
 }

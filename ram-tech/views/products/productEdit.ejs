@@ -1,55 +1,58 @@
 <!-- HEAD  -->
 <%- include('../partials/head') %>
 
-    <link href="/css/productEdit.css" rel="stylesheet">
-    <title>Edición de producto</title>
-    </head>
+<link href="/css/productEdit.css" rel="stylesheet">
+<title>Edición de producto</title>
+</head>
 
     <body>
         
-            <main>
-                <div class="formBox">
-                    <h5>Editar producto</h5>
+        <main>
+            <div class="formBox">
+                <h5>Editar producto</h5>
 
-                    <form action="/products/<%= productToEdit.id %>?_method=PUT"   method="POST" autocomplete="off">
+                <form action="/products/<%= productToEdit.id %>?_method=PUT"   method="POST" autocomplete="off">
 
-                        <input value= "<%=productToEdit.name %>" class="inputs" type="text" name="name" placeholder="Edita el nombre del producto">
+                    <input value= "<%=productToEdit.name %>" class="inputs" type="text" name="name" placeholder="Edita el nombre del producto">
 
-                        <input value= "<%=productToEdit.price %>" class="inputs" type="number" name="price" min="1" placeholder="Edita el precio">
+                    <input value= "<%=productToEdit.price %>" class="inputs" type="number" name="price" min="1" placeholder="Edita el precio">
 
-                        <select class="selection">
-                            <option <%= productToEdit.category === 'Seleccione una categoría' ? 'selected' : null %> value="Seleccione una categoría" disabled selected="">Seleccione una categoría</option>
-                            <option <%= productToEdit.category === 'Gabinetes' ? 'selected' : null %> value="Gabinetes">Gabinetes</option>
-                            <option <%= productToEdit.category === 'Almacenamiento' ? 'selected' : null %> value="Almacenamiento">Almacenamiento</option>
-                            <option <%= productToEdit.category === 'Procesadores' ? 'selected' : null %> value="Procesadores">Procesadores</option>
-                            <option <%= productToEdit.category === 'Placas de video' ? 'selected' : null %> value="Placas de video">Placas de video</option>
-                            <option <%= productToEdit.category === 'Monitores' ? 'selected' : null %> value="Monitores">Monitores</option>
-                            <option <%= productToEdit.category === 'Mouses' ? 'selected' : null %> value="Mouses">Mouses</option>
-                            <option <%= productToEdit.category === 'Teclados' ? 'selected' : null %> value="Teclados">Teclados</option>
-                            <option <%= productToEdit.category === 'Auriculares' ? 'selected' : null %> value="Auriculares">Auriculares</option>
-                            <option <%= productToEdit.category === 'Micrófonos' ? 'selected' : null %> value="Micrófonos">Micrófonos</option>
-                            <option <%= productToEdit.category === 'Web Cams' ? 'selected' : null %> value="Web Cams">Web Cams</option>
-                            <option <%= productToEdit.category === 'Mandos' ? 'selected' : null %> value="Mandos">Mandos</option>
-                            <option <%= productToEdit.category === 'Parlantes' ? 'selected' : null %> value="Parlantes">Parlantes</option>
-                        </select>
-
-
-                        <input value= "<%=productToEdit.brand %>" class="inputs" type="text" name="brand" placeholder="Edita la marca">
-
-                        <input value= "<%=productToEdit.discount %>" class="inputs" type="number" name="discount" min="1" max="100"
-                            placeholder="Edita el porcentaje del descuento">
+                    <select class="selection">
+                        <option <%= productToEdit.category === 'Seleccione una categoría' ? 'selected' : null %> value="Seleccione una categoría" disabled selected="">Seleccione una categoría</option>
+                        <option <%= productToEdit.category === 'Gabinetes' ? 'selected' : null %> value="Gabinetes">Gabinetes</option>
+                        <option <%= productToEdit.category === 'Almacenamiento' ? 'selected' : null %> value="Almacenamiento">Almacenamiento</option>
+                        <option <%= productToEdit.category === 'Procesadores' ? 'selected' : null %> value="Procesadores">Procesadores</option>
+                        <option <%= productToEdit.category === 'Placas de video' ? 'selected' : null %> value="Placas de video">Placas de video</option>
+                        <option <%= productToEdit.category === 'Monitores' ? 'selected' : null %> value="Monitores">Monitores</option>
+                        <option <%= productToEdit.category === 'Mouses' ? 'selected' : null %> value="Mouses">Mouses</option>
+                        <option <%= productToEdit.category === 'Teclados' ? 'selected' : null %> value="Teclados">Teclados</option>
+                        <option <%= productToEdit.category === 'Auriculares' ? 'selected' : null %> value="Auriculares">Auriculares</option>
+                        <option <%= productToEdit.category === 'Micrófonos' ? 'selected' : null %> value="Micrófonos">Micrófonos</option>
+                        <option <%= productToEdit.category === 'Web Cams' ? 'selected' : null %> value="Web Cams">Web Cams</option>
+                        <option <%= productToEdit.category === 'Mandos' ? 'selected' : null %> value="Mandos">Mandos</option>
+                        <option <%= productToEdit.category === 'Parlantes' ? 'selected' : null %> value="Parlantes">Parlantes</option>
+                    </select>
 
 
-                        <input value= "<%=productToEdit.image %>" class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
+                    <input value= "<%=productToEdit.brand %>" class="inputs" type="text" name="brand" placeholder="Edita la marca">
+
+                    <input value= "<%=productToEdit.discount %>" class="inputs" type="number" name="discount" min="1" max="100" 
+                    placeholder="Edita el porcentaje del descuento">
+
+                    <input value= "<%=productToEdit.image %>" class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg, .webp" name="image">
+
+                    <textarea name= "description" class="textarea" placeholder="Edita la descripcion del producto"><%=productToEdit.description %></textarea>
 
 
-                        <textarea name= "description" class="textarea" placeholder="Edita la descripcion del producto"><%=productToEdit.description %></textarea>
+                    <button type="submit" class="buttons">Editar</button>
+                        
+                    <!-- <form action="/products/%= product.id %?_method=DELETE" method="POST">
+                        <button class="buttons">Borrar</button>
+                    </form> -->
 
-                        <button type="submit" class="buttons">Editar</button>
+                </form>
 
-                    </form>
-
-                </div>
-            </main>
+            </div>
+        </main>
 
             

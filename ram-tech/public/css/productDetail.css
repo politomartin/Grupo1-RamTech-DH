@@ -32,7 +32,7 @@ body main .main-product .product {
 
 body main .main-product .product div.images-product {
     display: flex;
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: linear-gradient(90deg, rgba(205, 185, 221) 0%, rgba(182,162,238) 100%);
     padding: 10px;
     border-radius: 5px;
     flex-wrap: wrap;
