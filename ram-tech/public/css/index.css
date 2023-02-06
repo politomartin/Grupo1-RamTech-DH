@@ -11,6 +11,13 @@ body {
 
 /* HEADER */
 
+body header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
 body header div.flex {
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,7 +26,12 @@ body header div.flex {
     align-items: center;
     height: 80px;
     width: 100%;
-    border-bottom: 10px solid #141317;
+    background-image: url('../images/background-image1.png');
+    
+}
+
+body main {
+    margin-top: 80px;
 }
 
 /* Logo */
@@ -337,6 +349,7 @@ body footer div.footer-box {
     border-top: 5px solid #000;
     font-family: 'Manjari', sans-serif;
     font-size: 18px;
+    background-image: url('../images/background-image2.jpg');
 }
 
 body footer div.footer-box .main-footer {

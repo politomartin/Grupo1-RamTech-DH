@@ -35,7 +35,7 @@ const controller = {
     store: (req, res) => {
         const newProduct = {
             id: products[products.length - 1].id + 1,
-            image: 'default-image.png',
+            // image: "image-" + Date.now() + path.extname(req.body.image.originalname),
             ...req.body
         };
         products.push(newProduct);

@@ -6,12 +6,13 @@
     </head>
 
     <body>
-        
+        <!-- HEADER  -->
+        <%- include('../partials/header')  %>
             <main>
                 <div class="formBox">
                     <h5>Crear producto</h5>
 
-                    <form action="/products" method="POST" autocomplete="off">
+                    <form action="/products" method="POST" autocomplete="off" enctype="multipart/form-data">
 
                         <input class="inputs" type="text" name="name" placeholder="Elige el nombre del producto">
 
@@ -49,4 +50,6 @@
                     </form>
                 </div>
             </main>
+    <!-- FOOTER  -->
+    <%- include('../partials/footer')  %>
             
