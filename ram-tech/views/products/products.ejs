@@ -19,7 +19,7 @@
 			<div class="products">
 			<% products.forEach(element => { %>
 				<article>
-					<a href="/product/product-detail" id="product-redirect">
+					<a href="/products/product-detail/<%=element.id %>" id="product-redirect">
 						<img src="/images/images-products/<%= element.image %>" alt="<%=element.name %>">
 						<div class="main-article">
 							<i class="fa-solid fa-heart heart-icon"></i>
