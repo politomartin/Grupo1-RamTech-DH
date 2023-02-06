@@ -30,7 +30,33 @@
       </nav>
     </section>
 
-    <%- include('partials/products')  %>
+    <section class="highlight">
+		
+      <div class="title-section">
+  
+        <h2 class="title">
+          <strong>Destacados del mes</strong>
+        </h2>
+      </div>
+  
+      <div class="products">
+      <% for (let i = 0; i<3; i++) { %>
+        <article>
+          <a href="/product/product-detail" id="product-redirect">
+            <img src="/images/images-products/<%= products[i].image %>" alt="<%=products[i].name %>">
+            <div class="main-article">
+              <i class="fa-solid fa-heart heart-icon"></i>
+              <h4 class="name"><%=products[i].name %></h4>
+              <div class="description-container">
+                <p class="price">$<%=products[i].price %> </p>
+                <p class="discount"><%=products[i].discount %>% Off</p>
+              </div>
+            </div>
+          </a>
+        </article>
+        <%}; %> 
+      </div>
+    </section>
 
     <section class="setup-products">
 
