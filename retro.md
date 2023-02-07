@@ -18,3 +18,10 @@
 3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo.
 4. Hacer menos: Dejar de poner estilos distintos a la pagina.
 5. Dejar de hacer: -
+
+# Retrospectiva Sprint 4.
+1. Comenzar a hacer: Comenzar a utilizar las branches para poder trabajar en paralelo.
+2. Hacer mas: Dividir con mas antelacion el tablero de trabajo.
+3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo / Realizar reuniones con mayor continuidad.
+4. Hacer menos: -
+5. Dejar de hacer: Dejar el trabajo para el final de la entrega.
