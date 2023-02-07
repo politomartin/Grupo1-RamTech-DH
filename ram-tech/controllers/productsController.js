@@ -33,9 +33,10 @@ const controller = {
     },
 
     store: (req, res) => {
+        console.log(req.file);
         const newProduct = {
             id: products[products.length - 1].id + 1,
-            // image: "image-" + Date.now() + path.extname(req.body.image.originalname),
+            image: req.file.filename,
             ...req.body
         };
         products.push(newProduct);
@@ -50,10 +51,12 @@ const controller = {
     },
 
     editedProduct: (req, res) => {
+        console.log(req.file);
         let productToEdit = products.find((product) => product.id == req.params.id)
         productToEdit = {
             ...productToEdit,
-            ...req.body
+            ...req.body,
+            image: req.file ? req.file.filename : productToEdit.image
         }
         const indexToEdit = products.findIndex((product) => product.id == req.params.id)
         products[indexToEdit] = productToEdit
@@ -67,8 +70,11 @@ const controller = {
         const productIndexFound = products.findIndex(function(product){
             return product.id == req.params.id;
         })
-        products.splice(productIndexFound, 1)
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        console.log(productIndexFound);
+        if (productIndexFound > 0) {
+            products.splice(productIndexFound, 1)
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' ')); 
+        }
         res.redirect('/products');
 }
 

@@ -1,62 +1,62 @@
 [
- {
-  "id": 1,
-  "name": "Controles JoyCon",
-  "price": 33000,
-  "category": "Mandos",
-  "brand": "Nintendo",
-  "discount": 15,
-  "image": "joy-con01.jpg",
-  "description": "Controles Nintendo Switch facheritos"
- },
- {
-  "id": 2,
-  "name": "Mouse Razer Viper",
-  "price": 15000,
-  "category": "Mouses",
-  "brand": "Razer",
-  "discount": 5,
-  "image": "razer-viper-mini-usp1-mobile.jpg",
-  "description": "Mouse gamer Razer Viper Mini bien fachero"
- },
- {
-  "id": 3,
-  "name": "Gabinete Corsair Icue 5000T",
-  "price": 130000,
-  "category": "Gabinetes",
-  "brand": "Corsair",
-  "discount": 20,
-  "image": "gabinete-corsair.webp",
-  "description": "Gabinete Corsair Icue 5000T RGB TG MID-T BLACK"
- },
- {
-  "id": 4,
-  "name": "Monitor Samsung Curvo T55",
-  "price": 115000,
-  "category": "Monitores",
-  "brand": "Samsung",
-  "discount": 0,
-  "image": "monitor-samsung.jpg",
-  "description": "Monitor Gamer Curvo Samsung T55 C32t550 Led 32 Full Hd Hdmi"
- },
- {
-  "id": 5,
-  "name": "Teclado Redragon",
-  "price": 14500,
-  "category": "Teclados",
-  "brand": "Redragon",
-  "discount": 5,
-  "image": "teclado-reddragon.jpg",
-  "description": "Teclado Gamer Redragon Kumara K552 Rainbow Outemu Red Esp"
- },
- {
-  "id": 6,
-  "name": "Placa de video Nvidia AorusElite",
-  "price": 290000,
-  "category": "Placas de Video",
-  "brand": "Nvidia",
-  "discount": 0,
-  "image": "tarjeta-grafica.jpg",
-  "description": "Placa De Video Nvidia Gigabyte Geforce Rtx 3060 E-12gd12gb"
- }
-]
+    {
+     "id": 1,
+     "name": "Controles JoyCon",
+     "price": 33000,
+     "category": "Mandos",
+     "brand": "Nintendo",
+     "discount": 15,
+     "image": "joy-con01.jpg",
+     "description": "Controles Nintendo Switch facheritos"
+    },
+    {
+     "id": 2,
+     "name": "Mouse Razer Viper",
+     "price": 15000,
+     "category": "Mouses",
+     "brand": "Razer",
+     "discount": 5,
+     "image": "razer-viper-mini-usp1-mobile.jpg",
+     "description": "Mouse gamer Razer Viper Mini bien fachero"
+    },
+    {
+     "id": 3,
+     "name": "Gabinete Corsair Icue 5000T",
+     "price": 130000,
+     "category": "Gabinetes",
+     "brand": "Corsair",
+     "discount": 20,
+     "image": "gabinete-corsair.webp",
+     "description": "Gabinete Corsair Icue 5000T RGB TG MID-T BLACK"
+    },
+    {
+     "id": 4,
+     "name": "Monitor Samsung Curvo T55",
+     "price": 115000,
+     "category": "Monitores",
+     "brand": "Samsung",
+     "discount": 0,
+     "image": "monitor-samsung.jpg",
+     "description": "Monitor Gamer Curvo Samsung T55 C32t550 Led 32 Full Hd Hdmi"
+    },
+    {
+     "id": 5,
+     "name": "Teclado Redragon",
+     "price": 14500,
+     "category": "Teclados",
+     "brand": "Redragon",
+     "discount": 5,
+     "image": "teclado-reddragon.jpg",
+     "description": "Teclado Gamer Redragon Kumara K552 Rainbow Outemu Red Esp"
+    },
+    {
+     "id": 6,
+     "name": "Placa de video Nvidia AorusElite",
+     "price": 290000,
+     "category": "Placas de Video",
+     "brand": "Nvidia",
+     "discount": 0,
+     "image": "tarjeta-grafica.jpg",
+     "description": "Placa De Video Nvidia Gigabyte Geforce Rtx 3060 E-12gd12gb"
+    }
+   ]

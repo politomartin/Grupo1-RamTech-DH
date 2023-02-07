@@ -10,7 +10,6 @@ let storage = multer.diskStorage({
         callback(null, path.join(__dirname, '../public/images/images-products'));
     },
     filename: (req, file, callback) => {
-        console.log(file);
         const newFileName = "image-" + Date.now() + path.extname(file.originalname);
         callback(null, newFileName);
     }
@@ -29,7 +28,7 @@ router.get('/product-create', productsController.productCreate);
 router.post('/', upload.single('image'),productsController.store);
 
 router.get('/product-edit/:id', productsController.productEdit);
-router.put('/:id', productsController.editedProduct);
+router.put('/:id', upload.single('image'), productsController.editedProduct);
 
 router.delete('/delete/:id', productsController.deleteProduct);
 

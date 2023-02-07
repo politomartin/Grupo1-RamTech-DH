@@ -12,7 +12,7 @@
             <div class="formBox">
                 <h5>Editar producto</h5>
 
-                <form action="/products/<%= productToEdit.id %>?_method=PUT"   method="POST" autocomplete="off">
+                <form action="/products/<%= productToEdit.id %>?_method=PUT"   method="POST" autocomplete="off" enctype="multipart/form-data">
 
                     <input value= "<%=productToEdit.name %>" class="inputs" type="text" name="name" placeholder="Edita el nombre del producto">
 
