@@ -1,62 +1,102 @@
 [
     {
-     "id": 1,
-     "name": "Controles JoyCon",
-     "price": 33000,
-     "category": "Mandos",
-     "brand": "Nintendo",
-     "discount": 15,
-     "image": "joy-con01.jpg",
-     "description": "Controles Nintendo Switch facheritos"
+        "id": 1,
+        "name": "Controles JoyCon",
+        "price": 33000,
+        "category": "Mandos",
+        "brand": "Nintendo",
+        "discount": 15,
+        "image": "joy-con01.jpg",
+        "description": "Controles Nintendo Switch facheritos"
     },
     {
-     "id": 2,
-     "name": "Mouse Razer Viper",
-     "price": 15000,
-     "category": "Mouses",
-     "brand": "Razer",
-     "discount": 5,
-     "image": "razer-viper-mini-usp1-mobile.jpg",
-     "description": "Mouse gamer Razer Viper Mini bien fachero"
+        "id": 2,
+        "name": "Mouse Razer Viper",
+        "price": 15000,
+        "category": "Mouses",
+        "brand": "Razer",
+        "discount": 5,
+        "image": "razer-viper-mini-usp1-mobile.jpg",
+        "description": "Mouse gamer Razer Viper Mini bien fachero"
     },
     {
-     "id": 3,
-     "name": "Gabinete Corsair Icue 5000T",
-     "price": 130000,
-     "category": "Gabinetes",
-     "brand": "Corsair",
-     "discount": 20,
-     "image": "gabinete-corsair.webp",
-     "description": "Gabinete Corsair Icue 5000T RGB TG MID-T BLACK"
+        "id": 3,
+        "name": "Gabinete Corsair Icue 5000T",
+        "price": 130000,
+        "category": "Gabinetes",
+        "brand": "Corsair",
+        "discount": 20,
+        "image": "gabinete-corsair.webp",
+        "description": "Gabinete Corsair Icue 5000T RGB TG MID-T BLACK"
     },
     {
-     "id": 4,
-     "name": "Monitor Samsung Curvo T55",
-     "price": 115000,
-     "category": "Monitores",
-     "brand": "Samsung",
-     "discount": 0,
-     "image": "monitor-samsung.jpg",
-     "description": "Monitor Gamer Curvo Samsung T55 C32t550 Led 32 Full Hd Hdmi"
+        "id": 4,
+        "name": "Monitor Samsung Curvo T55",
+        "price": 115000,
+        "category": "Monitores",
+        "brand": "Samsung",
+        "discount": 0,
+        "image": "monitor-samsung.jpg",
+        "description": "Monitor Gamer Curvo Samsung T55 C32t550 Led 32 Full Hd Hdmi"
     },
     {
-     "id": 5,
-     "name": "Teclado Redragon",
-     "price": 14500,
-     "category": "Teclados",
-     "brand": "Redragon",
-     "discount": 5,
-     "image": "teclado-reddragon.jpg",
-     "description": "Teclado Gamer Redragon Kumara K552 Rainbow Outemu Red Esp"
+        "id": 5,
+        "name": "Teclado Redragon Kuruma",
+        "price": 14500,
+        "category": "Teclados",
+        "brand": "Redragon",
+        "discount": 5,
+        "image": "teclado-reddragon.jpg",
+        "description": "Teclado Gamer Redragon Kumara K552 Rainbow Outemu Red Esp"
     },
     {
-     "id": 6,
-     "name": "Placa de video Nvidia AorusElite",
-     "price": 290000,
-     "category": "Placas de Video",
-     "brand": "Nvidia",
-     "discount": 0,
-     "image": "tarjeta-grafica.jpg",
-     "description": "Placa De Video Nvidia Gigabyte Geforce Rtx 3060 E-12gd12gb"
+        "id": 6,
+        "name": "Placa de video Nvidia AorusElite",
+        "price": 290000,
+        "category": "Placas de Video",
+        "brand": "Nvidia",
+        "discount": 0,
+        "image": "tarjeta-grafica.jpg",
+        "description": "Placa De Video Nvidia Gigabyte Geforce Rtx 3060 E-12gd12gb"
+    },
+    {
+        "id": 7,
+        "name": "Micrófono Razer Seiren Mini",
+        "price": 22100,
+        "category": "Microfonos",
+        "brand": "Razer",
+        "discount": 0,
+        "image": "microfono-razer.jpg",
+        "description": "Recomendado para streaming, grabaciones, transmisión, videollamadas, voces."
+    },
+    {
+        "id": 8,
+        "name": "Auriculares Redragon Zeus",
+        "price": 16200,
+        "category": "Auriculares",
+        "brand": "Redragon",
+        "discount": 10,
+        "image": "auris-redragon.jpg",
+        "description": "Con retroiluminación RGB, un micrófono excepcional, construcción cómoda y una calidad de sonido arrolladora."
+    },
+    {
+        "id": 9,
+        "name": "Mother Gigabyte B660M AORUS PRO DDR4 S1700",
+        "price": 65500,
+        "category": "Auriculares",
+        "brand": "Redragon",
+        "discount": 25,
+        "image": "mother-gigabyte.jpg",
+        "description": "Las placas base de la serie B660 de GIGABYTE vienen con una solución de energía mejorada, los últimos estándares de almacenamiento y una conectividad excepcional para optimizar el rendimiento de los juegos."
+    },
+    {
+        "id": 10,
+        "name": "Micro AMD RYZEN 5 4500 S/VIDEO BOX AM4",
+        "price": 43700,
+        "category": "Procesadores",
+        "brand": "AMD",
+        "discount": 0,
+        "image": "micro-amd-ryzen.jpg",
+        "description": "Línea de productos AMD Ryzen™ 5 Desktop Processors."
     }
-   ]
+]
