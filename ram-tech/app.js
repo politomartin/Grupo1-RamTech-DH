@@ -15,10 +15,11 @@ app.set("views", path.join(__dirname, "./views"));
 
 const mainRouter = require('./routes/main'); 
 const productsRouter = require('./routes/products'); 
-
+const usersRouter = require('./routes/users'); 
 
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
+app.use("/users", usersRouter);
 
 app.listen(3033, () => {
     console.log('Servidor iniciado en http://localhost:3033');
