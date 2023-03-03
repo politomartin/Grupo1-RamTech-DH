@@ -140,7 +140,9 @@ body main div.formBox.links a:hover {
     text-decoration: none;
     transition: 350ms;
 }
-
+.text-danger{
+    color:red;
+}
 
 @media (min-width: 769px) {
 

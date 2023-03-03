@@ -1,8 +1,14 @@
 const express = require("express")
 const path = require("path")
 const methodOverride =  require('method-override'); 
-
+const session = require('express-session')
 const app = express()
+
+app.use(session({
+    secret: "This is a secret phrase",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
