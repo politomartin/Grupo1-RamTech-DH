@@ -1,1 +1,15 @@
-<h1>Hola <%= user.name %></h1>
+<%- include('../partials/head') %>
+    <link href="/css/profile.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <div class="container">
+                    <h1>Hola <%= user.name %>
+                            <%= user.lastName %></h1>
+                    <img src="/images/images-users/<%= user.image %> " alt="Foto de usuario">
+                </div>
+
+            </main>
+            <%- include('../partials/footer') %>

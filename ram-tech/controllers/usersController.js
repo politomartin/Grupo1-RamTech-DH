@@ -51,6 +51,7 @@ const controller = {
         res.render("./users/register");
     },
     profile: (req,res) => {
+      console.log(req.session.userLogged);
         res.render("./users/profile",
         {
             user: req.session.userLogged

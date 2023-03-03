@@ -1,0 +1,15 @@
+body main div.container {
+    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+    width: 80%;
+    padding: 10px;
+    margin: 10%;
+
+    font-family: 'Manjari', sans-serif;
+    text-align: center;
+}
