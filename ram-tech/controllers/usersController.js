@@ -14,12 +14,10 @@ const controller = {
   },
   loginProcess: (req, res) => {
     let errors = validationResult(req);
-    console.log(errors)
-    if (errors.isEmpty()) {
+      if (errors.isEmpty()) {
       //Buscamos usuario por mail
       userToLogin = users.find((user) => user.email == req.body.email);
       //Si no se encuentra, lanzamos error
-      console.log(userToLogin);
       if (!userToLogin) {
         return res.render("./users/login", {
           errors: {
@@ -80,7 +78,6 @@ const controller = {
     }
   },
   profile: (req, res) => {
-    //console.log(req.session.userLogged);
     res.render("./users/profile",
       {
         user: req.session.userLogged
