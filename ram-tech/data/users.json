@@ -48,5 +48,15 @@
   "favouriteProducts": [],
   "image": "image-1678120289958.jpg",
   "rol": "user"
+ },
+ {
+  "id": 6,
+  "name": "Conrado",
+  "lastName": "Aizawa",
+  "email": "conradoaizawa@gmail.com",
+  "password": "$2a$10$jI4A/OyVpQLdTHjtxbEMiOtV7ubBkrvoE9naF7CGD6ciMYbKcy6n.",
+  "favouriteProducts": [],
+  "image": "imagenPerfil.png",
+  "rol": "user"
  }
 ]

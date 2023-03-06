@@ -23,21 +23,29 @@ let upload = multer({ storage });
 const validationsUserRegister = [
     check('name')
         .notEmpty().withMessage('Debe poner un nombre').bail()
-        .isLength( {min: 3 }).withMessage('El nombre debe contener al menos 3 caracteres'),
+        .isLength({ min: 3 }).withMessage('El nombre debe contener al menos 3 caracteres'),
     check('lastName')
         .notEmpty().withMessage('Debe ingresar su Apellido').bail()
-        .isLength( {min: 3 }).withMessage('El apellido debe contener al menos 3 caracteres'),
+        .isLength({ min: 3 }).withMessage('El apellido debe contener al menos 3 caracteres'),
     check('email')
         .notEmpty().withMessage('Debe ingresar un email').bail()
         .isEmail().withMessage('Debe ingresar un email valido'),
     check('password')
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
-        .isLength({ min: 8 }). withMessage('La contraseña debe tener al menos 8 caracteres')
+        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
 ]
+const validationsUserLogin = [
+    check('email')
+        .notEmpty().withMessage('Debe ingresar un email').bail()
+        .isEmail().withMessage('Debe ingresar un email valido'),
+    check('password')
+        .notEmpty().withMessage('Debe ingresar una contraseña').bail()
+        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
+];
 
 //Rutas
 router.get('/login', usersController.login);
-router.post('/login', usersController.loginProcess)
+router.post('/login',validationsUserLogin, usersController.loginProcess)
 
 router.get('/register', usersController.register);
 router.post('/', upload.single('image'), validationsUserRegister, usersController.registerProcces);
