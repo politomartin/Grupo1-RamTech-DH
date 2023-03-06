@@ -23,7 +23,7 @@
   "id": 3,
   "firstName": "Abigail",
   "lastName": "Barroso",
-  "email": "abigail.sabm@gmail.com",
+  "email": "abigail.sabm01@gmail.com",
   "password": "messiqatar22",
   "favouriteProducts": [],
   "image": "default.jpg",
@@ -57,6 +57,16 @@
   "password": "$2a$10$jI4A/OyVpQLdTHjtxbEMiOtV7ubBkrvoE9naF7CGD6ciMYbKcy6n.",
   "favouriteProducts": [],
   "image": "imagenPerfil.png",
+  "rol": "user"
+ },
+ {
+  "id": 7,
+  "name": "Abigail",
+  "lastName": "Barroso",
+  "email": "abigail.sabm@gmail.com",
+  "password": "$2a$10$HdEsMS830j9cCK70AuxOv.bdy07bWd/vZOb9WoQLqwAKnw7iIgjPm",
+  "favouriteProducts": [],
+  "image": "image-1678142035305.jpeg",
   "rol": "user"
  }
 ]
