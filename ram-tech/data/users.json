@@ -58,5 +58,15 @@
   "favouriteProducts": [],
   "image": "imagenPerfil.png",
   "rol": "user"
+ },
+ {
+  "id": 7,
+  "name": "Mateo",
+  "lastName": "Lauzan",
+  "email": "mateolauzan33@gmail.com",
+  "password": "$2a$10$fIdIYmZBNxgRgYrmNl8a7e8cEvnSyQBEdXL5gET6cTGxLOn5cPYSO",
+  "favouriteProducts": [],
+  "image": "imagenPerfil.png",
+  "rol": "user"
  }
 ]

@@ -17,16 +17,27 @@
 
         <div class="icons">
           <ul>
+            <% if (!locals.isLogged) { %>
             <button>
               <a href="/users/login">
                 <li><i class="fa-solid fa-user-astronaut"></i></li>
               </a>
             </button>
+            <% }else { %>
+
             <button>
               <a href="/products/product-cart">
                 <li><i class="fa-solid fa-cart-shopping"></i></li>
               </a>
             </button>
+            <button>
+              <a href="/users/logout">
+                <li><i class="fa-solid fa-user"></i></li>
+              </a>
+            </button>
+            <% } %>
+
+
           </ul>
         </div>
       

@@ -49,38 +49,43 @@ const controller = {
         },
         oldData: req.body,
       });
-    }else {
+    } else {
       res.render('./users/login', { errors: errors.mapped(), old: req.body })
     }
   },
-    register: (req, res) => {
-      res.render("./users/register");
-    },
-      registerProcces: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-          const newUser = {
-            id: users[users.length - 1].id + 1,
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            favouriteProducts: [],
-            image: req.file ? req.file.filename : "imagenPerfil.png",
-            rol: "user"
-          };
-          users.push(newUser);
-          fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-          res.redirect('/');
-        } else {
-          res.render('./users/register', { errors: errors.mapped(), old: req.body })
-        }
-      },
-        profile: (req, res) => {
-          //console.log(req.session.userLogged);
-          res.render("./users/profile",
-            {
-              user: req.session.userLogged
-            });
-        }
+  register: (req, res) => {
+    res.render("./users/register");
+  },
+  registerProcces: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      const newUser = {
+        id: users[users.length - 1].id + 1,
+        ...req.body,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        favouriteProducts: [],
+        image: req.file ? req.file.filename : "imagenPerfil.png",
+        rol: "user"
+      };
+      users.push(newUser);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+      res.redirect('/');
+    } else {
+      res.render('./users/register', { errors: errors.mapped(), old: req.body })
+    }
+  },
+  profile: (req, res) => {
+    //console.log(req.session.userLogged);
+    res.render("./users/profile",
+      {
+        user: req.session.userLogged
+      });
+  },
+  logout: (req, res) => {
+  res.clearCookie('userEmail');
+  req.session.destroy();
+  return res.redirect('/');
   }
+}
 
 module.exports = controller;

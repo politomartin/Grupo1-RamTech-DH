@@ -43,14 +43,19 @@ const validationsUserLogin = [
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
 ];
 
-//Rutas
-router.get('/login', usersController.login);
-router.post('/login',validationsUserLogin, usersController.loginProcess)
+const guestMiddleware = require("../middlewares/guestMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
 
-router.get('/register', usersController.register);
+//Rutas
+router.get('/login', guestMiddleware, usersController.login);
+router.post('/login', validationsUserLogin, usersController.loginProcess)
+
+router.get('/register', guestMiddleware, usersController.register);
 router.post('/', upload.single('image'), validationsUserRegister, usersController.registerProcces);
 
-router.get('/profile', usersController.profile);
+router.get('/profile', authMiddleware, usersController.profile);
+
+router.get('/logout', usersController.logout);
 
 
 module.exports = router;
