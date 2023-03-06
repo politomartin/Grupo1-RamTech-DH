@@ -50,6 +50,19 @@ const controller = {
     register: (req,res) => {
         res.render("./users/register");
     },
+    registerProcces: (req, res) => {
+      const newUser = {
+          id: users[users.length - 1].id + 1,
+          ...req.body,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          favouriteProducts: [],
+          image: req.file.filename,
+          rol: "user"
+      };
+      users.push(newUser);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+      res.redirect('/');
+    },
     profile: (req,res) => {
       console.log(req.session.userLogged);
         res.render("./users/profile",

@@ -1,40 +1,52 @@
-[{
-    "id": 1,
-    "firstName": "Martin",
-    "lastName": "Polito",
-    "email": "politomartin00@gmail.com",
-    "password": "1234hola",
-    "favouriteProducts": [],
-    "image": "default.jpg",
-    "rol": "admin"
-},
-{
-    "id": 2,
-    "name": "Mateo",
-    "lastName": "Lauzan",
-    "email": "mateolauzan@gmail.com",
-    "password": "helloword123",
-    "favouriteProducts": [],
-    "image": "default.jpg",
-    "rol": "admin"
-},
-{
-    "id": 3,
-    "firstName": "Abigail",
-    "lastName": "Barroso",
-    "email": "abigail.sabm@gmail.com",
-    "password": "messiqatar22",
-    "favouriteProducts": [],
-    "image": "default.jpg",
-    "rol": "admin"
-},
-{
-    "id": 4,
-    "name": "Conrado",
-    "lastName": "Aizawa",
-    "email": "conradoaizawa1@gmail.com",
-    "password": "$2a$10$mSNB4vyIu5wJ7BmAcsQO3ef32it0WYfthEmLRMtgveSNPICBCgH5W",
-    "favouriteProducts": [],
-    "image": "imagenPerfil.png",
-    "rol": "user"
-}]
+[
+ {
+  "id": 1,
+  "firstName": "Martin",
+  "lastName": "Polito",
+  "email": "politomartin00@gmail.com",
+  "password": "1234hola",
+  "favouriteProducts": [],
+  "image": "default.jpg",
+  "rol": "admin"
+ },
+ {
+  "id": 2,
+  "name": "Mateo",
+  "lastName": "Lauzan",
+  "email": "mateolauzan@gmail.com",
+  "password": "helloword123",
+  "favouriteProducts": [],
+  "image": "default.jpg",
+  "rol": "admin"
+ },
+ {
+  "id": 3,
+  "firstName": "Abigail",
+  "lastName": "Barroso",
+  "email": "abigail.sabm@gmail.com",
+  "password": "messiqatar22",
+  "favouriteProducts": [],
+  "image": "default.jpg",
+  "rol": "admin"
+ },
+ {
+  "id": 4,
+  "name": "Conrado",
+  "lastName": "Aizawa",
+  "email": "conradoaizawa1@gmail.com",
+  "password": "$2a$10$mSNB4vyIu5wJ7BmAcsQO3ef32it0WYfthEmLRMtgveSNPICBCgH5W",
+  "favouriteProducts": [],
+  "image": "imagenPerfil.png",
+  "rol": "user"
+ },
+ {
+  "id": 5,
+  "name": "Martin",
+  "lastName": "Polito",
+  "email": "politomartin7@gmail.com",
+  "password": "$2a$10$2IIoz5igQ4HqXy4AF.9KdewCtyM4pDqCTUHW5p4qZtabzPrPzbBuC",
+  "favouriteProducts": [],
+  "image": "image-1678120289958.jpg",
+  "rol": "user"
+ }
+]
