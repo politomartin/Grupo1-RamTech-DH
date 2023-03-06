@@ -13,24 +13,41 @@
             <main>
                 <div class="formBox">
                     <h5>Registro</h5>
-
                     <form action="/users" method="POST" autocomplete="off" enctype="multipart/form-data">
-
                         <i class='bx bxs-user' style="color:white"></i> <input class="inputs" type="text" name="name" id="name"
-                            placeholder="Ingrese su nombre" required>
+                            placeholder="Ingrese su nombre">
+                            <% if( locals.errors && errors.name) { %>
+                                <div class="errorMsg">
+                                    <%= errors.name.msg %>    
+                                </div>
+                            <% } %>
 
-
-                        <i class='bx bxs-user' style="color:white"></i> <input class="inputs" type="text" name="lastName" id="lastName"
-                            placeholder="Ingrese su apellido" required>
+                        <i class='bx bxs-user' style="color:white"></i> 
+                        <input class="inputs" type="text" name="lastName" id="lastName"
+                            placeholder="Ingrese su apellido">
+                            <% if( locals.errors && errors.lastName) { %>
+                                <div class="errorMsg">
+                                    <%= errors.lastName.msg %>    
+                                </div>
+                            <% } %>
 
                         <i class='bx bxs-envelope' style="color:white"></i>
-                        <input class="inputs" type="email" name="email" id="email" placeholder="Ingrese su email" required>
+                        <input class="inputs" type="email" name="email" id="email" placeholder="Ingrese su email">
+                        <% if( locals.errors && errors.email) { %>
+                            <div class="errorMsg">
+                                <%= errors.email.msg %>    
+                            </div>
+                        <% } %>
 
                         <i class='bx bxs-lock-open' style="color:white"></i>
-                        <input class="inputs" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
-                            required>
+                        <input class="inputs" type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                        <% if( locals.errors && errors.password) { %>
+                            <div class="errorMsg">
+                                <%= errors.password.msg %>    
+                            </div>
+                        <% } %>
 
-                        <input class="inputs" id='inputImage' type="file" style="font-size: 15px;"accept=".png, .jpg, .jpeg" name="image" id="image">
+                        <input class="inputImage" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image" id="image">
                         
                         <div class="interaction-buttons">
                             <button type="submit" class="buttons">Enviar</button>

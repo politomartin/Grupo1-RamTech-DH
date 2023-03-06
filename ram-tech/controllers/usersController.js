@@ -1,6 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
+const {validationResult} = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -51,17 +52,22 @@ const controller = {
         res.render("./users/register");
     },
     registerProcces: (req, res) => {
-      const newUser = {
-          id: users[users.length - 1].id + 1,
-          ...req.body,
-          password: bcryptjs.hashSync(req.body.password, 10),
-          favouriteProducts: [],
-          image: req.file.filename,
-          rol: "user"
-      };
-      users.push(newUser);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-      res.redirect('/');
+      let errors = validationResult(req);
+      if(errors.isEmpty()){
+        const newUser = {
+            id: users[users.length - 1].id + 1,
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            favouriteProducts: [],
+            image: req.file ? req.file.filename : "imagenPerfil.png",
+            rol: "user"
+        };
+        users.push(newUser);
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+        res.redirect('/');
+      }else{
+        res.render('./users/register', { errors: errors.mapped(), old: req.body})
+      }
     },
     profile: (req,res) => {
       console.log(req.session.userLogged);
