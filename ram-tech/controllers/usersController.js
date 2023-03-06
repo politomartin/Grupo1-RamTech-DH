@@ -39,6 +39,11 @@ const controller = {
         //Por seguridad, se borra esta propiedad
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
+
+        if(req.body.remember) {
+          res.cookie('userEmail', req.body.email), { maxAge: (1000 * 60) }
+        }
+
         return res.redirect("./profile");
       }
       return res.render("./users/login", {
