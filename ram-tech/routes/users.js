@@ -4,6 +4,9 @@ const multer = require('multer');
 const path = require('path');
 const { check } = require('express-validator');
 
+const guestMiddleware = require("../middlewares/guestMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
+
 const usersController = require("../controllers/usersController")
 
 // Configuracion Multer
@@ -43,8 +46,7 @@ const validationsUserLogin = [
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
 ];
 
-const guestMiddleware = require("../middlewares/guestMiddleware")
-const authMiddleware = require("../middlewares/authMiddleware")
+
 
 //Rutas
 router.get('/login', guestMiddleware, usersController.login);

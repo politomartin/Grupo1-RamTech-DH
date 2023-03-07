@@ -60,7 +60,9 @@
 
     <section class="buttons-create-products">
       <a href="/products" id="product-redirect"><input class="buttons" type="submit" value="Todos los productos"></a>
+      <% if (locals.isLogged) { %>
       <a href="/products/product-create" id="product-redirect"><input class="buttons" type="submit" value="Crea tu producto"></a>
+      <% } %>
     </section>
 
     <section class="setup-products">

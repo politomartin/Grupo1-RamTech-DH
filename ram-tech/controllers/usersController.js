@@ -2,6 +2,7 @@ const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require('express-validator');
+const { captureRejectionSymbol } = require("events");
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -14,11 +15,11 @@ const controller = {
   },
   loginProcess: (req, res) => {
     let errors = validationResult(req);
-      if (errors.isEmpty()) {
+    if (errors.isEmpty()) {
       //Buscamos usuario por mail
-      userToLogin = users.find((user) => user.email == req.body.email);
+      let userToLogin = users.find((user) => user.email == req.body.email);
       //Si no se encuentra, lanzamos error
-      if (!userToLogin) {
+      if (!userToLogin || userToLogin == undefined) {
         return res.render("./users/login", {
           errors: {
             email: {
@@ -29,16 +30,19 @@ const controller = {
         });
       }
       //Comparamos input contra hash
+      console.log(userToLogin);
       let passwordCheck = bcryptjs.compareSync(
         req.body.password,
         userToLogin.password
       );
       if (passwordCheck) {
-        //Por seguridad, se borra esta propiedad
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-
-        if(req.body.remember) {
+        //Por seguridad, se borra el password
+        let userToCookie = {
+          ...userToLogin,
+          password: ""
+        }
+        req.session.userLogged = userToCookie;
+        if (req.body.remember) {
           res.cookie('userEmail', req.body.email), { maxAge: (1000 * 60) }
         }
 
@@ -84,9 +88,9 @@ const controller = {
       });
   },
   logout: (req, res) => {
-  res.clearCookie('userEmail');
-  req.session.destroy();
-  return res.redirect('/');
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
   }
 }
 

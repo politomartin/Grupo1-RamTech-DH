@@ -76,11 +76,14 @@
                 </div>
                 
                 <article class="botones">
-                    <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input class="buttons" type="submit" value="Editar"></a>
+
                     <input class="buttons" type="submit" value="Comprar">
+                    <% if (locals.isLogged) { %>
+                    <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input class="buttons" type="submit" value="Editar"></a>
                     <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                         <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
-                      </form>
+                    </form>
+                    <% } %>
                 </article>
             </div>
         </section>
