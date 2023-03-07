@@ -25,3 +25,11 @@ Volvimos a revisar las tareas faltantes, organizando todo para la finalizacion d
 # Daily 06/02 // Sprint 4
 
 En esta revisión diaria verificamos que todas las tareas hayan sido finalizadas. Propusimos diferentes ideas nuevas para la página. Arreglamos y mejoramos detalles visuales. También actualizamos el tablero en Trello.
+
+# Daily 03/03 // Sprint 5
+
+En esta reunión verificamos el avance del proyecto, despejamos las dudas y actualizamos el tablero en Trello.
+
+# Daily 06/03 // Sprint 5
+
+En este daily ultimamos detalles para la entrega, realizamos un code review y unificamos ideas sobre el futuro del proyecto.
