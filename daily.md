@@ -33,3 +33,7 @@ En esta reunión verificamos el avance del proyecto, despejamos las dudas y actu
 # Daily 06/03 // Sprint 5
 
 En este daily ultimamos detalles para la entrega, realizamos un code review y unificamos ideas sobre el futuro del proyecto.
+
+# Daily 20/03 // Sprint 6
+
+El día de hoy definimos el diagrama de la base de datos en MySQL y dividimos las tareas a realizar para el sexto sprint.
