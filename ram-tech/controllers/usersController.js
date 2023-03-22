@@ -1,3 +1,5 @@
+// Habría que incluir la relación entre el rol y el usuario, para saber si es admin o user
+
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");

@@ -1,0 +1,47 @@
+module.exports = (sequelize, dataTypes) => {
+    let alias = "User";
+    let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        firstname: {
+            type: dataTypes.TEXT,
+            allowNull: false,
+        },
+        lastname: {
+            type: dataTypes.TEXT,
+            allowNull: false,
+        },
+        mail: {
+            type: dataTypes.TEXT,
+            allowNull: false,
+        },
+        password: {
+            type: dataTypes.TEXT,
+            allowNull: false,
+        },
+        image: {
+            type: dataTypes.TEXT,
+            allowNull: true,
+        },
+        user_roles_id: {
+            type: dataTypes.INTEGER,
+        }
+    };
+    let config = {
+        tableName: "users",
+        timestamps: false,
+    };
+    const User = sequelize.define(alias, cols, config);
+
+    User.associate = (models) => {
+        User.belongsTo(models.Role, {
+            as: 'roles',
+            foreignKey: 'user_roles_id'
+        });
+    }
+
+    return User
+};
