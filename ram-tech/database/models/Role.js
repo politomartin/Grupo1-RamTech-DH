@@ -4,15 +4,15 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         name : {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING(45)
         },
     };
     let config = {
         tableName: "user_roles",
-        timestamps: false,
+        timestamps: false
     };
     const Role = sequelize.define(alias, cols, config);
 

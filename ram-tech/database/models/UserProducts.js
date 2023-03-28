@@ -4,20 +4,26 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         users_id: {
             type: dataTypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'users',
+                key: 'id'
+            }
         },
         products_id: {
             type: dataTypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'products',
+                key: 'id'
+            }
         }
     };
     let config = {
         tableName: "user_has_products",
-        timestamps: false,
+        timestamps: false
     };
     const User_has_products = sequelize.define(alias, cols, config);
 

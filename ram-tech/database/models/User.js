@@ -4,35 +4,38 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
-        firstname: {
+        first_name: {
             type: dataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
-        lastname: {
+        last_name: {
             type: dataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
         mail: {
             type: dataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
         password: {
             type: dataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
         image: {
-            type: dataTypes.TEXT,
-            allowNull: true,
+            type: dataTypes.TEXT
         },
         user_roles_id: {
-            type: dataTypes.INTEGER,
-        }
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user_roles',
+              key: 'id'
+            }
+          }          
     };
     let config = {
         tableName: "users",
-        timestamps: false,
+        timestamps: false
     };
     const User = sequelize.define(alias, cols, config);
 

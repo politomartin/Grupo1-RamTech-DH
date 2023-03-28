@@ -2,17 +2,17 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Category";
     let cols = {
         id: {
-            type: dataTypes.INT,
+            type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         name : {
-            type: dataTypes.TEXT,
+            type: dataTypes.STRING(45)
         },
     };
     let config = {
         tableName: "categories",
-        timestamps: false,
+        timestamps: false
     };
     const Category = sequelize.define(alias, cols, config);
 
