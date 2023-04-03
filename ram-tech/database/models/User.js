@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT
         },
         user_roles_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             references: {
               model: 'user_roles',
               key: 'id'
