@@ -18,28 +18,27 @@
 
                         <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
 
+                        <input class="inputs" type="number" name="discount" min="1" max="100" placeholder="Elige el porcentaje del descuento">
+                        
+                        <label for="">Seleccione una categoría</label>
                         <select class="selection" name="category">
-                            <option disabled selected="">Seleccione una categoría</option>
-                            <option>Gabinetes</option>
-                            <option>Almacenamiento</option>
-                            <option>Procesadores</option>
-                            <option>Placas de video</option>
-                            <option>Monitores</option>
-                            <option>Mouses</option>
-                            <option>Teclados</option>
-                            <option>Auriculares</option>
-                            <option>Micrófonos</option>
-                            <option>Web Cams</option>
-                            <option>Mandos</option>
-                            <option>Parlantes</option>
+                            <% for( let i = 0; i < category.length; i++ ) { %>
+                                <option value="<%= category[i].id %>">
+                                     <%= category[i].name %>
+                                </option>
+                            <% } %>
                         </select>
 
+                        <label for="">Seleccione una marca</label>
+                        <select class="selection" name="brand">
+                            <% for( let i = 0; i < brand.length; i++ ) { %>
+                                <option value="<%= brand[i].id %>">
+                                     <%= brand[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
 
-                        <input class="inputs" type="text" name="brand" placeholder="Elige la marca">
-
-                        <input class="inputs" type="number" name="discount" min="1" max="100"
-                            placeholder="Elige el porcentaje del descuento">
-
+                        <!-- <input class="inputs" type="text" name="brand" placeholder="Elige la marca"> -->
 
                         <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
 

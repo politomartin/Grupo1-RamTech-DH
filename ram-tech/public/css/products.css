@@ -1,0 +1,92 @@
+/* Títulos de sección */
+
+body main section div.title-section {
+    margin-top: 2%;
+}
+
+body main section h2.title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+/* Sección products */
+
+body main section.highlight {
+    display: block;
+    border-top: 5px solid #141317;
+    border-bottom: 5px solid #141317;
+    margin-bottom: 5%
+}
+body main section.highlight div.products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0% 5%;
+}
+
+body main section.highlight div.products article {
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    color: #FFF;
+    background-color: #150050;
+    margin: 5%;
+    width: 90%;
+    box-shadow: 0 0 10px rgb(100, 100, 100);
+}
+
+body main section.highlight div.products article a#product-redirect {
+    text-decoration: none;
+}
+
+body main section.highlight div.products article img {
+    display: block;
+    width: 100%;
+    padding: 2%;
+}
+
+body main section.highlight div.products article div.main-article {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid 2px #CDB9DD;
+    padding: 15px;
+}
+
+/* marcador heart fav*/
+body main section.highlight article div.main-article .heart-icon {
+    display: flex;
+    font-size: 16px;
+    color: #bc6ff1;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #BC6FF1;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+}
+
+body main section.highlight article div.main-article:hover .heart-icon {
+    transform: scale(2);
+    color: #BC6FF1;
+    border: 2px solid #BC6FF1;   
+}
+
+body main section.highlight article div.main-article h4.name {
+    font-size: 15px;
+    color: #FFF;
+    width: 100%;
+}
+
+body main section.highlight article div.description-container {
+    display: none;
+}

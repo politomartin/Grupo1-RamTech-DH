@@ -32,6 +32,6 @@ app.use("/", mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 
-app.listen(3033, () => {
-    console.log('Servidor iniciado en http://localhost:3033');
+app.listen(3036, () => {
+    console.log('Servidor iniciado en http://localhost:3036');
 })

@@ -1,4 +1,4 @@
-<!-- HEAD  -->
+<!-- HEAD -->
 <%- include('../partials/head') %>
 
 <link href="/css/productEdit.css" rel="stylesheet">
@@ -12,37 +12,65 @@
             <div class="formBox">
                 <h5>Editar producto</h5>
 
-                <form action="/products/<%= productToEdit.id %>?_method=PUT"   method="POST" autocomplete="off" enctype="multipart/form-data">
+                <form action="/products/productEdit/<%= product.id %>?_method=PUT"   method="POST" autocomplete="off" enctype="multipart/form-data">
 
-                    <input value= "<%=productToEdit.name %>" class="inputs" type="text" name="name" placeholder="Edita el nombre del producto">
+                    <input value= "<%=product.name %>" class="inputs" type="text" name="name" placeholder="Edita el nombre del producto">
 
-                    <input value= "<%=productToEdit.price %>" class="inputs" type="number" name="price" min="1" placeholder="Edita el precio">
-
-                    <select class="selection">
-                        <option <%= productToEdit.category === 'Seleccione una categoría' ? 'selected' : null %> value="Seleccione una categoría" disabled selected="">Seleccione una categoría</option>
-                        <option <%= productToEdit.category === 'Gabinetes' ? 'selected' : null %> value="Gabinetes">Gabinetes</option>
-                        <option <%= productToEdit.category === 'Almacenamiento' ? 'selected' : null %> value="Almacenamiento">Almacenamiento</option>
-                        <option <%= productToEdit.category === 'Procesadores' ? 'selected' : null %> value="Procesadores">Procesadores</option>
-                        <option <%= productToEdit.category === 'Placas de video' ? 'selected' : null %> value="Placas de video">Placas de video</option>
-                        <option <%= productToEdit.category === 'Monitores' ? 'selected' : null %> value="Monitores">Monitores</option>
-                        <option <%= productToEdit.category === 'Mouses' ? 'selected' : null %> value="Mouses">Mouses</option>
-                        <option <%= productToEdit.category === 'Teclados' ? 'selected' : null %> value="Teclados">Teclados</option>
-                        <option <%= productToEdit.category === 'Auriculares' ? 'selected' : null %> value="Auriculares">Auriculares</option>
-                        <option <%= productToEdit.category === 'Micrófonos' ? 'selected' : null %> value="Micrófonos">Micrófonos</option>
-                        <option <%= productToEdit.category === 'Web Cams' ? 'selected' : null %> value="Web Cams">Web Cams</option>
-                        <option <%= productToEdit.category === 'Mandos' ? 'selected' : null %> value="Mandos">Mandos</option>
-                        <option <%= productToEdit.category === 'Parlantes' ? 'selected' : null %> value="Parlantes">Parlantes</option>
-                    </select>
-
-
-                    <input value= "<%=productToEdit.brand %>" class="inputs" type="text" name="brand" placeholder="Edita la marca">
-
+                    <input value= "<%=product.price %>" class="inputs" type="number" name="price" min="1" placeholder="Edita el precio">
+                    
                     <input value= "<%=productToEdit.discount %>" class="inputs" type="number" name="discount" min="1" max="100" 
                     placeholder="Edita el porcentaje del descuento">
+                    
+                    <label for="">Seleccione una categoría</label>
+                    <select class="selection" name="category">
+                        <% for( let i = 0; i < category.length; i++ ) { %>
+                            <% if (category[i].id == product.categories_id) { %>
+                                <option value="<%= category[i].id %>" selected>
+                                    <%= category[i].name %>
+                                </option>
+                            <% } else { %>
+                                <option value="<%= category[i].id %>">
+                                    <%= category[i].name %>
+                                </option>
+                            <% } %>
+                        <% } %>
+                    </select>
 
-                    <input value= "<%=productToEdit.image %>" class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg, .webp" name="image">
+                    <label for="">Seleccione una marca</label>
+                        <% for( let i = 0; i < brand.length; i++ ) { %>
+                            <% if (brand[i].id == product.brands_id) { %>
+                                <option value="<%= brand[i].id %>" selected>
+                                    <%= brand[i].name %>
+                                </option>
+                            <% } else { %>
+                            <option value="<%= brand[i].id %>">
+                                    <%= brand[i].name %>
+                            </option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                    <!-- <select class="selection">
+                        <option < %= productToEdit.category === 'Seleccione una categoría' ? 'selected' : null %> value="Seleccione una categoría" disabled selected="">Seleccione una categoría</option>
+                        <option < %= productToEdit.category === 'Gabinetes' ? 'selected' : null %> value="Gabinetes">Gabinetes</option>
+                        <option < %= productToEdit.category === 'Almacenamiento' ? 'selected' : null %> value="Almacenamiento">Almacenamiento</option>
+                        <option < %= productToEdit.category === 'Procesadores' ? 'selected' : null %> value="Procesadores">Procesadores</option>
+                        <option < %= productToEdit.category === 'Placas de video' ? 'selected' : null %> value="Placas de video">Placas de video</option>
+                        <option < %= productToEdit.category === 'Monitores' ? 'selected' : null %> value="Monitores">Monitores</option>
+                        <option < %= productToEdit.category === 'Mouses' ? 'selected' : null %> value="Mouses">Mouses</option>
+                        <option < %= productToEdit.category === 'Teclados' ? 'selected' : null %> value="Teclados">Teclados</option>
+                        <option < %= productToEdit.category === 'Auriculares' ? 'selected' : null %> value="Auriculares">Auriculares</option>
+                        <option < %= productToEdit.category === 'Micrófonos' ? 'selected' : null %> value="Micrófonos">Micrófonos</option>
+                        <option < %= productToEdit.category === 'Web Cams' ? 'selected' : null %> value="Web Cams">Web Cams</option>
+                        <option < %= productToEdit.category === 'Mandos' ? 'selected' : null %> value="Mandos">Mandos</option>
+                        <option < %= productToEdit.category === 'Parlantes' ? 'selected' : null %> value="Parlantes">Parlantes</option>
+                    </select> -->
 
-                    <textarea name= "description" class="textarea" placeholder="Edita la descripcion del producto"><%=productToEdit.description %></textarea>
+
+                    <input value= "<%=product.brand %>" class="inputs" type="text" name="brand" placeholder="Edita la marca">
+
+                    <input value= "<%=product.image %>" class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg, .webp" name="image">
+
+                    <textarea name= "description" class="textarea" placeholder="Edita la descripcion del producto"><%=product.description %></textarea>
 
 
                     <button type="submit" class="buttons">Editar</button>

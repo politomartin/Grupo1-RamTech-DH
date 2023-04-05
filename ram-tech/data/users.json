@@ -58,5 +58,15 @@
   "favouriteProducts": [],
   "image": "imagenPerfil.png",
   "rol": "user"
+ },
+ {
+  "id": 7,
+  "name": "Abigail",
+  "lastName": "Barroso",
+  "email": "abigail.sabm@gmail.com",
+  "password": "$2a$10$E4FePNTlGTcVMTWY75uFjuyf4K8Y6dEyQiRLS1v3QG9XNojb62rwa",
+  "favouriteProducts": [],
+  "image": "imagenPerfil.png",
+  "rol": "user"
  }
 ]
