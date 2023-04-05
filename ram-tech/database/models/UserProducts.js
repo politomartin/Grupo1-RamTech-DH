@@ -27,16 +27,16 @@ module.exports = (sequelize, dataTypes) => {
     };
     const User_has_products = sequelize.define(alias, cols, config);
 
-    User.associate = (models) => {
-        User.belongsToMany(models.Product, {
+    User_has_products.associate = (models) => {
+        User_has_products.belongsToMany(models.Product, {
             as: 'products',
             through: 'users_has_products',
             foreignKey: 'users_id',
             otherKey: 'products_id'
         });
     }
-    User.associate = (models) => {
-        Product.belongsToMany(models.User, {
+    User_has_products.associate = (models) => {
+        User_has_products.belongsToMany(models.User, {
             as: 'users',
             through: 'users_has_products',
             foreignKey: 'products_id',
