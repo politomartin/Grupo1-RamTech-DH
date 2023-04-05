@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        mail: {
+        email: {
             type: dataTypes.TEXT,
             allowNull: false
         },
