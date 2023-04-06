@@ -9,55 +9,45 @@ const { captureRejectionSymbol } = require("events");
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+const db = require("../database/models");
+
 
 const controller = {
 
   login: (req, res) => {
     res.render("./users/login");
   },
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      //Buscamos usuario por mail
-      let userToLogin = users.find((user) => user.email == req.body.email);
-      //Si no se encuentra, lanzamos error
-      if (!userToLogin || userToLogin == undefined) {
-        return res.render("./users/login", {
-          errors: {
-            email: {
-              msg: "No se encontró el mail",
-            },
-          },
-          oldData: req.body,
-        });
-      }
-      //Comparamos input contra hash
-      console.log(userToLogin);
-      let passwordCheck = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (passwordCheck) {
-        //Por seguridad, se borra el password
-        let userToCookie = {
-          ...userToLogin,
-          password: ""
+      try {
+        let userToLogin = await db.User.findOne({
+          where: {
+            email: req.body.email
+          }
+        })
+        if (!userToLogin) {
+          return res.send('login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidas' } } })
+        };
+        let passwordCheck = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+        if (passwordCheck) {
+          //Por seguridad, se borra el password
+          let userToCookie = {
+            ...userToLogin.dataValues,
+            password: ""
+          }
+          req.session.userLogged = userToCookie;
+          if (req.body.remember) {
+            res.cookie('userEmail', req.body.email), { maxAge: (1000 * 60) }
+          }
+          return res.redirect("./profile");
         }
-        req.session.userLogged = userToCookie;
-        if (req.body.remember) {
-          res.cookie('userEmail', req.body.email), { maxAge: (1000 * 60) }
-        }
-
-        return res.redirect("./profile");
+      } catch (error) {
+        res.send(error)
       }
-      return res.render("./users/login", {
-        errors: {
-          password: {
-            msg: "La contraseña es incorrecta",
-          },
-        },
-        oldData: req.body,
-      });
     } else {
       res.render('./users/login', { errors: errors.mapped(), old: req.body })
     }
@@ -65,23 +55,23 @@ const controller = {
   register: (req, res) => {
     res.render("./users/register");
   },
-  registerProcces: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const newUser = {
-        id: users[users.length - 1].id + 1,
-        ...req.body,
+  registerProcces: async (req, res) => {
+    if(req.body.email)
+    try {
+      let user = {
+        first_name: req.body.name,
+        last_name: req.body.lastName,
+        email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        favouriteProducts: [],
         image: req.file ? req.file.filename : "imagenPerfil.png",
-        rol: "user"
       };
-      users.push(newUser);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-      res.redirect('/');
-    } else {
-      res.render('./users/register', { errors: errors.mapped(), old: req.body })
+      await db.User.create(user);
+      res.redirect("/")
+
+    } catch (error) {
+      res.send(error)
     }
+
   },
   profile: (req, res) => {
     res.render("./users/profile",
