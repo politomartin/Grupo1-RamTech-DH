@@ -6,7 +6,6 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
 const db = require('../database/models');
 
-
 const controller = {
     //LISTA DE PRODUCTOS
     index: (req, res) => {
@@ -21,17 +20,15 @@ const controller = {
     },
 
     // DETALLE DEL PRODUCTO
-    productDetail: (req, res) => {
-        db.Product.findByPk(req.params.id, {
-            include: [
-                { association: 'brands' },
-                { association: 'categories' },
-                { association: 'product_images' }
-            ]
-        })
-            .then((product) => {
-                res.render('./products/productDetail', { product });
+    productDetail: async (req, res) => {
+        try {
+            const product = await db.Product.findByPk(req.params.id, {
+                include: ['brands', 'categories', 'product_images']
             })
+            res.render("./products/productDetail", { product });
+        } catch (error) {
+            console.log(error)
+        }
 
         /*const { id } = req.params;
         const product = products.find((product) => product.id == id);*/
