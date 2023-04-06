@@ -1,9 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-/*const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));*/
-
 const db = require('../database/models');
 
 const controller = {
@@ -25,42 +19,49 @@ const controller = {
             const product = await db.Product.findByPk(req.params.id, {
                 include: ['brands', 'categories', 'product_images']
             })
-            res.render("./products/productDetail", { product });
+            res.json(product);
         } catch (error) {
             console.log(error)
         }
 
-        /*const { id } = req.params;
-        const product = products.find((product) => product.id == id);*/
-
     },
 
     // CREACIÓN Y EDICIÓN
-    productCreate: (req, res) => {
-        res.render("./products/productCreate")
-    },
-    store: (req, res) => {
-        db.Product.create({
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            description: req.body.description,
-            brands_id: req.body.brand,
-            categories_id: req.body.category
-        })
+    productCreate: async (req, res) => {
+        try {
+            const requestedCategories = await db.Category.findAll();
+            const requestedBrands = await db.Brand.findAll();
 
-        /*const newProduct = {
-            id: products[products.length - 1].id + 1,
-            image: req.file.filename,
-            ...req.body
-        };
-        products.push(newProduct);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));*/
-        res.redirect('/products');
+            Promise.all([requestedCategories, requestedBrands])
+                .then(([category, brand]) => {
+                    res.render("./products/productCreate", { category, brand });
+                })
+        } catch (error) {
+            res.send(error)
+        }
+
+
+    },
+
+    store: async (req, res) => {
+        try {
+            await db.Product.create({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                description: req.body.description,
+                brands_id: req.body.brand,
+                categories_id: req.body.category
+            })
+            res.redirect('/products');
+        }
+        catch (error) {
+            console.log(error)
+        }
     },
 
     productEdit: (req, res) => {
-        /*const productToEdit = products.find((product) => product.id == req.params.id)*/
+       
 
         const requestProduct = db.Product.findByPk(req.params.id);
         const requestCategory = db.Category.findAll();
@@ -87,19 +88,7 @@ const controller = {
             }
         });
 
-        res.redirect('/products/' + req.params.id)
-
-            /* console.log(req.file);
-            let productToEdit = products.find((product) => product.id == req.params.id)
-            productToEdit = {
-                ...productToEdit,
-                ...req.body,
-                image: req.file ? req.file.filename : productToEdit.image
-            }
-            const indexToEdit = products.findIndex((product) => product.id == req.params.id)
-            products[indexToEdit] = productToEdit
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' ')); */
-            ;
+        res.redirect('/products/' + req.params.id);
     },
 
     // ELIMINACIÓN
@@ -111,15 +100,7 @@ const controller = {
         })
 
         res.redirect('/products');
-        /*const productIndexFound = products.findIndex(function(product){
-            return product.id == req.params.id;
-        })
-        console.log(productIndexFound);
-        if (productIndexFound > 0) {
-            products.splice(productIndexFound, 1)
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' ')); 
-        }*/
-
+     
     }
 
 }

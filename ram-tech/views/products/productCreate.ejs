@@ -7,7 +7,7 @@
 
     <body>
         <!-- HEADER  -->
-        <%- include('../partials/header')  %>
+        <%- include('../partials/header') %>
             <main>
                 <div class="formBox">
                     <h5>Crear producto</h5>
@@ -18,37 +18,38 @@
 
                         <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
 
-                        <input class="inputs" type="number" name="discount" min="1" max="100" placeholder="Elige el porcentaje del descuento">
-                        
+                        <input class="inputs" type="number" name="discount" min="1" max="100"
+                            placeholder="Elige el porcentaje del descuento">
+
                         <label for="">Seleccione una categoría</label>
                         <select class="selection" name="category">
-                            <% for( let i = 0; i < category.length; i++ ) { %>
+                            <% for( let i=0; i < category.length; i++ ) { %>
                                 <option value="<%= category[i].id %>">
-                                     <%= category[i].name %>
+                                    <%= category[i].name %>
                                 </option>
-                            <% } %>
+                                <% } %>
                         </select>
 
                         <label for="">Seleccione una marca</label>
                         <select class="selection" name="brand">
-                            <% for( let i = 0; i < brand.length; i++ ) { %>
+                            <% for( let i=0; i < brand.length; i++ ) { %>
                                 <option value="<%= brand[i].id %>">
-                                     <%= brand[i].name %>
+                                    <%= brand[i].name %>
                                 </option>
-                            <% } %>
+                                <% } %>
                         </select>
 
                         <!-- <input class="inputs" type="text" name="brand" placeholder="Elige la marca"> -->
 
                         <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
 
-                        <textarea name="description" class="textarea" placeholder="Elige la descripcion del producto"></textarea>
+                        <textarea name="description" class="textarea"
+                            placeholder="Elige la descripcion del producto"></textarea>
 
                         <button type="submit" class="buttons">Crear</button>
 
                     </form>
                 </div>
             </main>
-    <!-- FOOTER  -->
-    <%- include('../partials/footer')  %>
-            
+            <!-- FOOTER  -->
+            <%- include('../partials/footer') %>
