@@ -34,25 +34,23 @@
 		
       <div class="title-section">
   
-        <h2 class="title">
-          <strong>Destacados del mes</strong>
-        </h2>
+        <h2 class="title">Destacados del mes</h2>
       </div>
   
       <div class="products">
       <% for (let i = 0; i<3; i++) { %>
         <article>
-          <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
-            <img src="/images/images-products/<%= products[i].image %>" alt="<%=products[i].name %>">
-            <div class="main-article">
+          <div class="description-container">
+            <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
+              <img src="/images/images-products/<%= products[i].image %>" alt="<%=products[i].name %>">
               <i class="fa-solid fa-heart heart-icon"></i>
-              <h4 class="name"><%=products[i].name %></h4>
-              <div class="description-container">
+              <div class="main-container">
+                <h4 class="name"><%=products[i].name %></h4>
                 <p class="price">$<%=products[i].price %> </p>
                 <p class="discount"><%=products[i].discount %>% Off</p>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </article>
         <%}; %> 
       </div>
@@ -68,96 +66,130 @@
     <section class="setup-products">
 
       <div class="title-section">
-        <h2 class="title">
-          <strong>Armá tu Setup ideal</strong>
-        </h2>
+        <h2 class="title">Armá tu Setup ideal</h2>
         <img src="/images/setups-gamers.jpg" alt="Setup-products">
       </div>
 
       <div class="setup">
         <div class="categories-box">
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-gabinete.jpeg')">
-            <a href="/#">
-              <i class="fa-solid fa-computer"></i>
-              <h4 class="name">Gabinetes</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-gabinete.jpeg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-computer"></i>
+                <h4 class="name">Gabinetes</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-almacenamiento.jpeg')">
-            <a href="/#">
-              <i class="fa-solid fa-hard-drive"></i>
-              <h4 class="name">Almacenamiento</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-almacenamiento.jpeg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-hard-drive"></i>
+                <h4 class="name">Almacenamiento</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-procesador.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-microchip"></i>
-              <h4 class="name">Procesadores</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-procesador.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-microchip"></i>
+                <h4 class="name">Procesadores</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-placavideo.jpeg')">
-            <a href="/#">
-              <i class="fa-solid fa-eye"></i>
-              <h4 class="name">Placas de video</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-placavideo.jpeg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-eye"></i>
+                <h4 class="name">Placas de video</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-monitor.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-display"></i>
-              <h4 class="name">Monitores</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-monitor.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-display"></i>
+                <h4 class="name">Monitores</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-mouses.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-computer-mouse"></i>
-              <h4 class="name">Mouses</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-mouses.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-computer-mouse"></i>
+                <h4 class="name">Mouses</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-keyboards.jpg')">
-            <a href="/#">
-              <i class="fa-regular fa-keyboard"></i>
-              <h4 class="name">Teclados</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-keyboards.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-regular fa-keyboard"></i>
+                <h4 class="name">Teclados</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-headsets.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-headset"></i>
-              <h4 class="name">Auriculares</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-headsets.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-headset"></i>
+                <h4 class="name">Auriculares</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-microfono.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-microphone"></i>
-              <h4 class="name">Microfonos</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-microfono.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-microphone"></i>
+                <h4 class="name">Microfonos</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-webcam.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-video"></i>
-              <h4 class="name">WebCams</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-webcam.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-video"></i>
+                <h4 class="name">WebCams</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-mando.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-gamepad"></i>
-              <h4 class="name">Mandos</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-mando.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-gamepad"></i>
+                <h4 class="name">Mandos</h4>
+              </a>
+            </div>
           </div>
 
-          <div class="main-box" style="background-image: url('/images/images-categories/cat-parlantes.jpg')">
-            <a href="/#">
-              <i class="fa-solid fa-volume-high"></i>
-              <h4 class="name">Parlantes</h4>
-            </a>
+          <div class="main-box">
+            <img src="/images/images-categories/cat-parlantes.jpg" alt="">
+            <div class="box">
+              <a href="/#">
+                <i class="fa-solid fa-volume-high"></i>
+                <h4 class="name">Parlantes</h4>
+              </a>
+            </div>
           </div>
 
         </div>

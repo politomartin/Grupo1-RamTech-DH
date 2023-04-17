@@ -182,10 +182,10 @@ body main section div.title-section {
 
 body main section h2.title {
     font-family: 'Russo One', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
     color: white;
     margin-top: 5%;
-    margin-left: 10%;
     margin-bottom: 5%;
 }
 
@@ -197,78 +197,92 @@ body main section.highlight {
     border-bottom: 5px solid #141317;
     margin-bottom: 5%
 }
+
 body main section.highlight div.products {
+    margin: 0% 5%;   
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin: 0% 5%;
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
 }
 
 body main section.highlight div.products article {
-    font-family: 'Manjari', sans-serif;
-    font-size: 18px;
-    color: #FFF;
-    background-color: #150050;
     margin: 5%;
     width: 90%;
-    box-shadow: 0 0 10px rgb(100, 100, 100);
+    background:#150050;
+    border-radius: 15px;
 }
 
-body main section.highlight div.products article a#product-redirect {
+body main section.highlight div.products article div.description-container{
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+}
+
+body main section.highlight div.products article div.description-container a#product-redirect {
     text-decoration: none;
 }
 
-body main section.highlight div.products article img {
+body main section.highlight div.products article .description-container img {
     display: block;
     width: 100%;
-    padding: 2%;
-}
-
-body main section.highlight div.products article div.main-article {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    border-top: solid 2px #CDB9DD;
-    padding: 15px;
+    padding: 4%;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 /* marcador heart fav*/
-body main section.highlight article div.main-article .heart-icon {
-    display: flex;
+body main section.highlight article .description-container i {
+    position: absolute;
+    bottom: 40%;
+    right: 10%;
+}
+
+body main section.highlight article .description-container i.heart-icon {
     font-size: 16px;
-    color: #bc6ff1;
     padding: 5px;
     width: 30px;
     height: 30px;
+    color: #bc6ff1;
     border: 2px solid #BC6FF1;
     background-color: transparent;
     border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-    justify-content: center;
-    align-items: center;
     transition: 400ms;
 }
 
-body main section.highlight article div.main-article:hover .heart-icon {
-    transform: scale(2);
+body main section.highlight article .description-container i:hover {
     color: #BC6FF1;
     border: 2px solid #BC6FF1;   
+    transform: scale(1.5);
 }
 
-body main section.highlight article div.main-article h4.name {
-    font-size: 15px;
-    color: #FFF;
-    width: 100%;
-}
 
-body main section.highlight article div.description-container {
+body main section.highlight article div.description-container .main-container {
     display: none;
 }
 
-/* Sección Setup */
+body main section.highlight article div.description-container .main-container h4.name {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 10px;
+    width: 100%;
+}
 
+body main section.highlight article div.description-container .main-container p.price {
+    color: #FFF;
+    width: 50%;
+}
+
+body main section.highlight article div.description-container .main-container p.discount {
+    color: #b71084;
+    font-weight: 700;
+    width: 50%;
+}
+
+
+/* Sección Setup */
 body main section.setup-products div.title-section img {
     width: 100%;
     border-top: 5px solid #141317;
@@ -285,25 +299,33 @@ body main section.setup-products div.setup .categories-box {
 }
 
 body main section.setup-products div.setup .main-box {
-    background-size: cover;
-    background-position: center;
-    font-family: 'Manjari', sans-serif;
+    width: 190px;
+    height: 140px;
+    margin: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+body main section.setup-products div.setup .main-box img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+body main section.setup-products div.setup .main-box .box {
+    font-family: 'Russo One', sans-serif;
     font-size: 18px;
     text-align: center;
-    width: 45%;
-    margin: 2%;
-    padding: 5%;
-    border-radius: 10px;
+    width: 190px;
+    height: 140px;
+    color: #FFF;
+    transform: translateY(-100px);
 }
 
 body main section.setup-products div.setup .main-box a {
     text-decoration: none;
     color: #FFF;
-}
-
-body main section.setup-products div.setup .main-box a:hover {
-    color: #BC6FF1;
-    transition: 400ms;
 }
 
 /* BOTONES DE TODOS LOS PRODUCTOS Y CREAR PRODUCTO*/
@@ -455,6 +477,21 @@ body footer div.footer-box .main-footer .copy p {
     body header .flex div.navbar nav form input {
     display: none;
     }
+
+    body main section.highlight div.products article {
+        border: 1px solid rgba(182, 162, 238, 0.5);
+        box-shadow: 0px 0px 10px rgba(182, 162, 238, 0.5);
+    }
+
+    body main section.highlight article div.description-container .main-container {
+        display: flex;
+        flex-flow: wrap; 
+    }
+
+    body main section.setup-products div.setup .main-box {
+        border: 1px solid rgba(182, 162, 238, 0.5);
+        box-shadow: 0px 0px 10px rgba(182, 162, 238, 0.5);
+    }
 }
 
 @media (min-width: 425px) {
@@ -472,14 +509,6 @@ body footer div.footer-box .main-footer .copy p {
     body main section.highlight div.products article {
         width: 47%;
         margin: 1%;
-    } 
-    
-    body main section.highlight article div.description-container {
-        display: none;
-    }
-
-    body main section.setup-products div.setup .main-box {
-        width: 45%;
     }
 
     /* FOOTER */
@@ -571,10 +600,13 @@ body footer div.footer-box .main-footer .copy p {
         font-size: xx-large;
     }
 
-    /* Main - abi */
+    /* Main - Title */
     body main section h2.title {
         font-size: 30px;
+        text-align: left;
+        margin-left: 10%;
     }
+
     body main section h2.title::before {
         content: '';
         position: absolute;
@@ -584,57 +616,40 @@ body footer div.footer-box .main-footer .copy p {
     }
     
     body main section h2.title:hover::before {
-        width: 100%;
+        width: 90%;
     }
 
    /* Sección highlight */
 
     body main section.highlight div.products article {
         width: 30%;
+        border-left: 1px solid rgba(182, 162, 238, 0.5);
+        border-top: 1px solid rgba(182, 162, 238, 0.5);
+        box-shadow: 0px 0px 20px rgb(100, 100, 100);
     }
 
-    body main section.highlight div.products article:after {
+    body main section.highlight article .description-container i {
+        bottom: 10%;
+    }
+
+    body main section.highlight article div.description-container .main-container {
         position: absolute;
-        width: 27%;
-        content: '';
-        border: 1px solid #CDB9DD;
-        transform: scaleX(0);
+        padding: 5%;
+        background-color: rgba(21, 0, 80, 0.5);
+        border-left: 1px solid rgba(182, 162, 238, 0.5);
+        border-top: 1px solid rgba(182, 162, 238, 0.5);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+    }
+    
+    body main section.highlight article div.description-container:hover .main-container {
+        display: flex;
+        flex-flow: wrap;
+        opacity: 1;
+        transform: translateY(-150px);
         transition: 400ms;
     }
     
-    body main section.highlight div.products article:hover::after {
-        transform: scaleX(1);
-    }
-    
-    body main section.highlight article div.main-article h4.name {
-        font-size: 18px;
-        margin: 2% 0% 2% 0%;
-    }
-
-    body main section.highlight article div.main-article div.description-container {
-        opacity: 0;
-        height: 0;
-        transition: opacity 200ms ease-in-out;
-        display: block;
-    }
-
-    body main section.highlight div.products article:hover .description-container {
-        height: unset;
-        opacity: 1;
-    }
-    
-    body main section.highlight article div.description-container p.price {
-        font-size: 18px;
-        width: 100%;
-        color: #FFF;
-    }
-    
-    body main section.highlight article div.description-container p.discount {
-        font-size: 18px;
-        color: #b71084;
-        width: 100%;
-    }
-
     /* Seccion botones de todos los productos y crea tu producto*/
 
     body main .buttons-create-products .buttons {
@@ -645,20 +660,56 @@ body footer div.footer-box .main-footer .copy p {
     /* Sección setup */
 
     body main section.setup-products div.setup .main-box {
-        width: 30%;
+        width: 350px;
+        height: 200px;
         font-size: 24px;
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        overflow: hidden;
     }
 
     body main section.setup-products div.setup .main-box:hover {
-        color: #BC6FF1;
-        transition: 400ms;
-        transform: scale(1.2);
         box-shadow: 0px 0px 10px #b71084;
     }
 
-    /* FOOTER */
+    body main section.setup-products div.setup .main-box .box {
+        font-size: 24px;
+        width: 100%;
+        height: 100%;
+        background: rgba(21, 0, 80, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 500ms ease-out;
+    }
 
+    body main section.setup-products div.setup .main-box:hover > .box {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-208px);
+        border-radius: 10px;
+    }
+    
+    body main section.setup-products div.setup .main-box .box i {
+        margin-top: 2%;
+        margin-bottom: 25%;
+        transition: all 500ms ease-out;
+    }
+    
+    body main section.setup-products div.setup .main-box:hover > .box i {
+        margin-top: 25%;
+        margin-bottom: 2%;
+    }
+    
+    body main section.setup-products div.setup .main-box .box h4{
+        width: 100%;
+        margin: auto;
+        max-width: 200px;
+    }
+    
+    body main section.setup-products div.setup .main-box:hover > img {
+        transform: scale(1.3);
+    }
+    
+    /* FOOTER */
 
    body footer div.footer-box div.up {
         margin-left: 50%;

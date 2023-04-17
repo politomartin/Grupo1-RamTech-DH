@@ -1,5 +1,6 @@
 <!-- HEAD -->
 <%- include('../partials/head') %>
+<link href="/css/products.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,25 +12,23 @@
 			
 			<div class="title-section">
 
-				<h2 class="title">
-				<strong> Todos nuestros productos </strong>
-				</h2>
+				<h2 class="title">Todos nuestros productos</h2>
 			</div>
 
 			<div class="products">
-			<% products.forEach(element => { %>
+			<% products.forEach(product => { %>
 				<article>
-					<a href="/products/product-detail/<%=element.id %>" id="product-redirect">
-						<img src="/images/images-products/<%= element.image %>" alt="<%=element.name %>">
-						<div class="main-article">
+					<div class="description-container">
+						<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
+							<img src="/images/images-products/<%= product.image %>" alt="<%=product.name %>">
 							<i class="fa-solid fa-heart heart-icon"></i>
-							<h4 class="name"><%=element.name %></h4>
-							<div class="description-container">
-								<p class="price">$<%=element.price %> </p>
-								<p class="discount"><%=element.discount %>% Off</p>
+							<div class="main-container">
+								<h4 class="name"><%=product.name %></h4>
+								<p class="price">$<%=product.price %> </p>
+								<p class="discount"><%=product.discount %>% Off</p>
 							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</article>
 				<%}); %> 
 			</div>
