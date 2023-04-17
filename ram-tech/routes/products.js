@@ -36,4 +36,5 @@ router.put('/:id', upload.single('image'),authMiddleware, productsController.edi
 
 router.delete('/delete/:id',authMiddleware, productsController.deleteProduct);
 
+router.get ("/search", productsController.search)
 module.exports = router;

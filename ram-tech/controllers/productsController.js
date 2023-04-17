@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { Op } = require("sequelize");
 
 const controller = {
     //LISTA DE PRODUCTOS
@@ -19,7 +20,7 @@ const controller = {
             const product = await db.Product.findByPk(req.params.id, {
                 include: ['brands', 'categories', 'product_images']
             })
-            res.json(product);
+            res.render("./products/productDetail", { product });
         } catch (error) {
             console.log(error)
         }
@@ -61,7 +62,7 @@ const controller = {
     },
 
     productEdit: (req, res) => {
-       
+
 
         const requestProduct = db.Product.findByPk(req.params.id);
         const requestCategory = db.Category.findAll();
@@ -100,7 +101,25 @@ const controller = {
         })
 
         res.redirect('/products');
-     
+
+    },
+    search: async (req, res) => {
+        try {
+            const { q } = req.query
+            const products = await db.Product.findAll({
+                where: {
+                    name: {
+                        [Op.like]: '%' + q + '%'
+                    }
+                }
+
+            })
+            res.render("./products/productSearch", { products })
+
+        }
+        catch (error) {
+            res.send(error)
+        }
     }
 
 }
