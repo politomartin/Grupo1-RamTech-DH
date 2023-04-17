@@ -47,17 +47,17 @@ module.exports = (sequelize, dataTypes) => {
             as: 'brands',
             foreignKey: 'brands_id'
         });
-    
+
         Product.belongsTo(models.Category, {
             as: 'categories',
             foreignKey: 'categories_id'
         });
-   
+
         Product.hasMany(models.ProductImages, {
             as: 'product_images',
             foreignKey: 'product_id'
         });
-    };
+    }
 
     return Product
 };
