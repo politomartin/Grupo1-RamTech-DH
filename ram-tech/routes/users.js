@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { check } = require('express-validator');
+let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$"
 
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
@@ -26,16 +27,32 @@ let upload = multer({ storage });
 const validationsUserRegister = [
     check('name')
         .notEmpty().withMessage('Debe poner un nombre').bail()
-        .isLength({ min: 3 }).withMessage('El nombre debe contener al menos 3 caracteres'),
+        .isLength({ min: 2 }).withMessage('El nombre debe contener al menos 2 caracteres'),
     check('lastName')
         .notEmpty().withMessage('Debe ingresar su Apellido').bail()
-        .isLength({ min: 3 }).withMessage('El apellido debe contener al menos 3 caracteres'),
+        .isLength({ min: 2 }).withMessage('El apellido debe contener al menos 2 caracteres'),
     check('email')
         .notEmpty().withMessage('Debe ingresar un email').bail()
         .isEmail().withMessage('Debe ingresar un email valido'),
     check('password')
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
-        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
+        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
+    check('avatar').custom(function (value, { req }) {
+        let ext
+        if (req.file != undefined) {
+            return true
+        } else {
+            ext = "" + path.extname(req.files[0].filename).toLowerCase();
+        }
+        if (
+            ext == ".jpg" ||
+            ext == ".jpeg" ||
+            ext == ".png" ||
+            ext == ".gif") {
+            return true;
+        }
+        return false;
+    }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')
 ]
 const validationsUserLogin = [
     check('email')

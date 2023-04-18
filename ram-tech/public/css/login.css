@@ -140,9 +140,12 @@ body main div.formBox.links a:hover {
     text-decoration: none;
     transition: 350ms;
 }
-.text-danger{
-    color:red;
+
+.text-danger {
+    color: red;
 }
+
+
 
 @media (min-width: 769px) {
 
@@ -180,6 +183,7 @@ body main div.formBox.links a:hover {
         font-size: 50px;
         margin: 30px 0;
     }
+
     body main div.formBox form .checkbox {
         margin: 20px 0;
     }
@@ -187,6 +191,7 @@ body main div.formBox.links a:hover {
     body main div.formBox form .checkbox label {
         font-size: 20px;
     }
+
     body main div.formBox form .buttons {
         margin-top: 60px;
     }
