@@ -14,8 +14,8 @@
                 <div class="formBox">
                     <h5>Registro</h5>
                     <form id="form" action="/users" method="POST" autocomplete="off" enctype="multipart/form-data">
-                        <i class='bx bxs-user' style="color:white"></i> <input class="inputs" type="text" name="name"
-                            id="name" placeholder="Ingrese su nombre">
+                        <i class='bx bxs-user' style="color:white"></i>
+                        <input class="inputs" type="text" name="name" id="name" placeholder="Ingrese su nombre">
                         <p class="error-message" id="error-name"></p>
                         <% if( locals.errors && errors.name) { %>
                             <div class="errorMsg">
@@ -34,7 +34,7 @@
                                     <% } %>
 
                                         <i class='bx bxs-envelope' style="color:white"></i>
-                                        <input class="inputs" type="email" name="email" id="email"
+                                        <input class="inputs" type="text" name="email" id="email"
                                             placeholder="Ingrese su email">
                                         <p class="error-message" id="error-email"></p>
                                         <% if( locals.errors && errors.email) { %>
@@ -55,6 +55,7 @@
 
                                                         <input class="inputImage" id='inputImage' type="file"
                                                             accept=".gif .png, .jpg, .jpeg" name="image" id="image">
+                                                        <p class="error-message" id="error-inputImage"></p>
 
                                                         <div class="interaction-buttons">
                                                             <button type="submit" class="buttons">Enviar</button>
@@ -70,4 +71,5 @@
                 </div>
             </main>
             <!-- FOOTER  -->
+            <script src="/js/register.js"></script>
             <%- include('../partials/footer') %>

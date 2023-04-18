@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { check } = require('express-validator');
-let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$"
 
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
@@ -37,7 +36,7 @@ const validationsUserRegister = [
     check('password')
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
         .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    check('avatar').custom(function (value, { req }) {
+    check('image').custom(function (value, { req }) {
         let ext
         if (req.file != undefined) {
             return true

@@ -131,6 +131,23 @@ body main .inputImage {
     padding-bottom: 10px;
 }
 
+.show-error-message {
+    display: block;
+}
+
+.is-valid {
+    color: #198754;
+}
+
+.is-invalid {
+    color: #842029;
+    border: 2px solid red;
+}
+
+.error-message {
+    color: #842029;
+
+}
 
 @media (min-width: 769px) {
     body main div.formBox {

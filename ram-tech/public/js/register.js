@@ -18,7 +18,7 @@ window.onload = function () {
             form.name.classList.add('is-valid');
         }
         if (!form.lastName.value) {
-            errors.push({ lastName: 'lastName', message: 'El campo apellido no puede estar vacio' });
+            errors.push({ name: 'lastName', message: 'El campo apellido no puede estar vacio' });
             form.lastName.classList.add('is-invalid');
         } else {
             form.lastName.classList.remove('is-invalid');
@@ -34,7 +34,7 @@ window.onload = function () {
             form.email.classList.add('is-valid');
             form.email.classList.remove('is-invalid');
         }
-        if (form.password.value > 8) {
+        if (!form.password.value || form.password.value >= 8) {
             errors.push({ name: 'password', message: 'El campo contraseña debe tener como mínimo 8 caracteres' });
             form.password.classList.add('is-invalid');
         } else {
@@ -44,9 +44,11 @@ window.onload = function () {
 
         errors.forEach(error => {
             const errorLabel = document.getElementById(`error-${error.name}`);
+            console.log(errorLabel);
             errorLabel.classList.add('show-error-message');
             errorLabel.innerText = error.message;
         });
+        
         if (errors.length === 0) {
             form.submit();
         }
