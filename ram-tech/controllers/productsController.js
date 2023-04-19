@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const { Op } = require("sequelize");
+const { validationResult } = require('express-validator');
 
 const controller = {
     //LISTA DE PRODUCTOS
@@ -30,29 +31,32 @@ const controller = {
     // CREACIÓN Y EDICIÓN
     productCreate: async (req, res) => {
         try {
-            const requestedCategories = await db.Category.findAll();
-            const requestedBrands = await db.Brand.findAll();
+            const categories = await db.Category.findAll();
+            const brands = await db.Brand.findAll();
 
-            Promise.all([requestedCategories, requestedBrands])
-                .then(([category, brand]) => {
-                    res.render("./products/productCreate", { category, brand });
-                })
+            res.render("./products/productCreate", { categories, brands });
         } catch (error) {
-            res.send(error)
+            res.send(error);
         }
-
-
     },
 
     store: async (req, res) => {
+        const categories = await db.Category.findAll();
+        const brands = await db.Brand.findAll();
         try {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render("./products/productCreate", {
+                    errors: resultValidation.mapped(), oldData: req.body, categories, brands
+                });
+            }
             await db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
                 description: req.body.description,
                 brands_id: req.body.brand,
-                categories_id: req.body.category
+                categories_id: req.body.category,
             })
             res.redirect('/products');
         }
@@ -61,36 +65,55 @@ const controller = {
         }
     },
 
-    productEdit: (req, res) => {
+    productEdit: async (req, res) => {
+        try {
+            const product = await db.Product.findByPk(req.params.id);
+            const category = await db.Category.findAll();
+            const brand = await db.Brand.findAll();
+            const product_images = await db.ProductImages.findAll();
 
-
-        const requestProduct = db.Product.findByPk(req.params.id);
-        const requestCategory = db.Category.findAll();
-        const requestBrand = db.Brand.findAll();
-        const requestProductImages = db.ProductImages.findAll();
-
-        Promise.all([requestProduct, requestCategory, requestBrand, requestProductImages])
-            .then(([product, category, brand, product_images]) => {
-                res.render("./products/productEdit", { product, category, brand, product_images });
-            })
+            res.render("./products/productEdit", { product, category, brand, product_images });
+        } catch (error) {
+            console.log(error);
+        }
     },
 
-    editedProduct: (req, res) => {
-        db.Product.update({
-            name: req.body.name,
-            price: req.body.price,
-            discount: req.body.discount,
-            description: req.body.description,
-            brands_id: req.body.brand,
-            categories_id: req.body.category
-        }, {
-            where: {
-                id: req.params.id
+
+    editedProduct: async (req, res) => {
+        try {
+            console.log(req.body)
+            const product = await db.Product.findByPk(req.params.id);
+            const category = await db.Category.findAll();
+            const brand = await db.Brand.findAll();
+            const product_images = await db.ProductImages.findAll();
+            const resultValidation = validationResult(req);
+            console.log(resultValidation)
+            if (resultValidation.errors.length > 0) {
+                return res.render("./products/productEdit", {
+                    errors: resultValidation.mapped(), oldData: req.body, product, category, brand, product_images
+                
+                });
+                
             }
-        });
-
-        res.redirect('/products/' + req.params.id);
+            
+            await db.Product.update({
+                name: req.body.name,
+                price: req.body.price,
+                discount: req.body.discount,
+                description: req.body.description,
+                brands_id: req.body.brand,
+                categories_id: req.body.category
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+            res.redirect('/products');
+        } catch (error) {
+            res.send(error);
+        }
     },
+
 
     // ELIMINACIÓN
     deleteProduct: function (req, res) {

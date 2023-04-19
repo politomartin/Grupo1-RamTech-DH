@@ -3,14 +3,14 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { check } = require('express-validator');
-
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
 
 const usersController = require("../controllers/usersController")
 
 // Configuracion Multer
-let storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: (req, file, callback) => {
         callback(null, path.join(__dirname, '../public/images/images-users'));
     },
@@ -18,9 +18,23 @@ let storage = multer.diskStorage({
         const newFileName = "image-" + Date.now() + path.extname(file.originalname);
         callback(null, newFileName);
     }
-})
+});
 
-let upload = multer({ storage });
+const fileFilter = (req, file, cb) => {
+    if (
+        file.mimetype === 'image/jpg' ||
+        file.mimetype === 'image/jpeg' ||
+        file.mimetype === 'image/png' ||
+        file.mimetype === 'image/gif'
+    ) {
+        cb(null, true);
+    } else {
+        cb(new Error('Solo se permiten archivos de imagen con extensiones JPG, JPEG, PNG o GIF'));
+    }
+};
+
+const upload = multer({ storage, fileFilter });
+
 
 //Validaciones
 const validationsUserRegister = [
@@ -35,24 +49,11 @@ const validationsUserRegister = [
         .isEmail().withMessage('Debe ingresar un email valido'),
     check('password')
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
-        .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    check('image').custom(function (value, { req }) {
-        let ext
-        if (req.file != undefined) {
-            return true
-        } else {
-            ext = "" + path.extname(req.files[0].filename).toLowerCase();
-        }
-        if (
-            ext == ".jpg" ||
-            ext == ".jpeg" ||
-            ext == ".png" ||
-            ext == ".gif") {
-            return true;
-        }
-        return false;
-    }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')
+        .matches(passwordRegex)
+        .withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial y tener al menos 8 caracteres'),
 ]
+
+
 const validationsUserLogin = [
     check('email')
         .notEmpty().withMessage('Debe ingresar un email').bail()

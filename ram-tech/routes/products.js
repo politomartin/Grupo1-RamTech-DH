@@ -19,32 +19,33 @@ let storage = multer.diskStorage({
     }
 })
 
-let upload = multer({ storage });
+const fileFilter = (req, file, callback) => {
+    if (
+        file.mimetype === 'image/jpg' ||
+        file.mimetype === 'image/jpeg' ||
+        file.mimetype === 'image/png' ||
+        file.mimetype === 'image/gif'
+    ) {
+        callback(null, true);
+    } else {
+        callback(new Error('Solo se permiten archivos de imagen con extensiones JPG, JPEG, PNG o GIF'));
+    }
+};
 
-const validationsProducts = [
-    check('name')
+const upload = multer({ storage, fileFilter });
+
+const validationProduct = [
+    check("name")
+        .trim()
         .notEmpty().withMessage('Debe poner un nombre').bail()
         .isLength({ min: 5 }).withMessage('El nombre debe contener al menos 5 caracteres'),
-    check('description')
-        .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres'),
-    check('price')
-        .isNumeric().withMessage('El precio debe ser un número').bail(),
-    check('image').custom(function (value, { req }) {
-        let ext
-        if (req.file != undefined) {
-            return true
-        } else {
-            ext = "" + path.extname(req.files[0].filename).toLowerCase();
-        }
-        if (
-            ext == ".jpg" ||
-            ext == ".jpeg" ||
-            ext == ".png" ||
-            ext == ".gif") {
-            return true;
-        }
-        return false;
-    }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')
+    check("price")
+        .trim()
+        .isNumeric().withMessage('El precio tiene que ser un número'),
+    check("description")
+        .trim()
+        .notEmpty().withMessage('No puede estar vacío').bail()
+        .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres')
 ]
 
 router.get('/', productsController.index);
@@ -54,10 +55,10 @@ router.get('/product-cart', authMiddleware, productsController.productCart);
 router.get('/product-detail/:id', productsController.productDetail);
 
 router.get('/product-create', authMiddleware, productsController.productCreate);
-router.post('/', upload.single('image'), validationsProducts, authMiddleware, productsController.store);
+router.post('/', validationProduct, upload.single('image'), authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', upload.single('image'), validationsProducts, authMiddleware, productsController.editedProduct);
+router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
 

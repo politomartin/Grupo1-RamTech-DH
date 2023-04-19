@@ -1,6 +1,7 @@
 window.onload = function () {
     const form = document.querySelector('#form');
     form.name.focus();
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -34,10 +35,11 @@ window.onload = function () {
             form.email.classList.add('is-valid');
             form.email.classList.remove('is-invalid');
         }
-        if (!form.password.value || form.password.value >= 8) {
-            errors.push({ name: 'password', message: 'El campo contraseña debe tener como mínimo 8 caracteres' });
+        if (!form.password.value || form.password.value.length < 8 || !passwordRegex.test(form.password.value)) {
+            errors.push({ name: 'password', message: 'El campo contraseña debe tener como mínimo 8 caracteres y contener al menos una mayúscula, una minúscula, un carácter especial y un número' });
             form.password.classList.add('is-invalid');
-        } else {
+        }
+        else {
             form.password.classList.remove('is-invalid');
             form.password.classList.add('is-valid');
         }
@@ -48,7 +50,7 @@ window.onload = function () {
             errorLabel.classList.add('show-error-message');
             errorLabel.innerText = error.message;
         });
-        
+
         if (errors.length === 0) {
             form.submit();
         }

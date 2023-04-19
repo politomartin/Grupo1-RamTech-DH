@@ -12,94 +12,75 @@
                 <div class="formBox">
                     <h5>Editar producto</h5>
 
-                    <form action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" autocomplete="off"
+                    <form action="/products/<%= product.id %>?_method=PUT" method="POST" autocomplete="off"
                         enctype="multipart/form-data">
 
                         <input value="<%=product.name %>" class="inputs" type="text" name="name"
                             placeholder="Edita el nombre del producto">
-
-                    <input value= "<%=product.price %>" class="inputs" type="number" name="price" min="1" placeholder="Edita el precio">
-                    
-                    <input value= "<%=product.discount %>" class="inputs" type="number" name="discount" min="1" max="100" 
-                    placeholder="Edita el porcentaje del descuento">
-                    
-                    <label for="">Seleccione una categoría</label>
-                    <select class="selection" name="category">
-                        <% for( let i = 0; i < category.length; i++ ) { %>
-                            <% if (category[i].id == product.categories_id) { %>
-                                <option value="<%= category[i].id %>" selected>
-                                    <%= category[i].name %>
-                                </option>
-                            <% } else { %>
-                                <option value="<%= category[i].id %>">
-                                    <%= category[i].name %>
-                                </option>
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
                             <% } %>
-                        <% } %>
-                    </select>
-                        <input value="<%=product.price %>" class="inputs" type="number" name="price" min="1"
-                            placeholder="Edita el precio">
 
-                        <input value="<%=product.discount %>" class="inputs" type="number" name="discount" min="1"
-                            max="100" placeholder="Edita el porcentaje del descuento">
-
-                        <label for="">Seleccione una categoría</label>
-                        <select class="selection" name="category">
-                            <% for( let i=0; i < category.length; i++ ) { %>
-                                <% if (category[i].id==product.categories_id) { %>
-                                    <option value="<%= category[i].id %>" selected>
-                                        <%= category[i].name %>
-                                    </option>
-                                    <% } else { %>
-                                        <option>
-                                            <%= category[i].name %>
-                                        </option>
-                                        <% } %>
-                                            <% } %>
-                        </select>
-
-                        <label for="">Seleccione una marca</label>
-                        <select class="selection" name="brand">
-                        <% for( let i=0; i < brand.length; i++ ) { %>
-                            <% if (brand[i].id==product.brands_id) { %>
-                                <option value="<%= brand[i].id %>" selected>
-                                    <%= brand[i].name %>
-                                </option>
-
-                                <% } else { %>
-                                    <option>
-                                        <%= brand[i].name %>
-                                    </option>
+                                <input value="<%=product.price %>" class="inputs" type="number" name="price" min="1"
+                                    placeholder="Edita el precio">
+                                <% if (locals.errors && errors.price) { %>
+                                    <div class="text-danger">
+                                        <%= errors.price.msg %>
+                                    </div>
                                     <% } %>
-                                        <% } %>
-                        </select>
-                                            <!-- <select class="selection">
-                        <option < %= productToEdit.category === 'Seleccione una categoría' ? 'selected' : null %> value="Seleccione una categoría" disabled selected="">Seleccione una categoría</option>
-                        <option < %= productToEdit.category === 'Gabinetes' ? 'selected' : null %> value="Gabinetes">Gabinetes</option>
-                        <option < %= productToEdit.category === 'Almacenamiento' ? 'selected' : null %> value="Almacenamiento">Almacenamiento</option>
-                        <option < %= productToEdit.category === 'Procesadores' ? 'selected' : null %> value="Procesadores">Procesadores</option>
-                        <option < %= productToEdit.category === 'Placas de video' ? 'selected' : null %> value="Placas de video">Placas de video</option>
-                        <option < %= productToEdit.category === 'Monitores' ? 'selected' : null %> value="Monitores">Monitores</option>
-                        <option < %= productToEdit.category === 'Mouses' ? 'selected' : null %> value="Mouses">Mouses</option>
-                        <option < %= productToEdit.category === 'Teclados' ? 'selected' : null %> value="Teclados">Teclados</option>
-                        <option < %= productToEdit.category === 'Auriculares' ? 'selected' : null %> value="Auriculares">Auriculares</option>
-                        <option < %= productToEdit.category === 'Micrófonos' ? 'selected' : null %> value="Micrófonos">Micrófonos</option>
-                        <option < %= productToEdit.category === 'Web Cams' ? 'selected' : null %> value="Web Cams">Web Cams</option>
-                        <option < %= productToEdit.category === 'Mandos' ? 'selected' : null %> value="Mandos">Mandos</option>
-                        <option < %= productToEdit.category === 'Parlantes' ? 'selected' : null %> value="Parlantes">Parlantes</option>
-                    </select> -->
+                                        <input value="<%=product.discount %>" class="inputs" type="number"
+                                            name="discount" min="1" max="100"
+                                            placeholder="Edita el porcentaje del descuento">
 
-                                            <input value="<%=product.image %>" class="inputs" id='inputImage'
-                                                type="file" accept=".png, .jpg, .jpeg, .webp" name="image">
+                                        <label for="">Seleccione una categoría</label>
+                                        <select class="selection" name="category">
+                                            <% for( let i=0; i < category.length; i++ ) { %>
+                                                <% if (category[i].id==product.categories_id) { %>
+                                                    <option value="<%= category[i].id %>" selected>
+                                                        <%= category[i].name %>
+                                                    </option>
+                                                    <% } else { %>
+                                                        <option>
+                                                            <%= category[i].name %>
+                                                        </option>
+                                                        <% } %>
+                                                            <% } %>
+                                        </select>
 
-                                            <textarea name="description" class="textarea"
-                                                placeholder="Edita la descripcion del producto"><%=product.description %></textarea>
+                                        <label for="">Seleccione una marca</label>
+                                        <select class="selection" name="brand">
+                                            <% for( let i=0; i < brand.length; i++ ) { %>
+                                                <% if (brand[i].id==product.brands_id) { %>
+                                                    <option value="<%= brand[i].id %>" selected>
+                                                        <%= brand[i].name %>
+                                                    </option>
 
+                                                    <% } else { %>
+                                                        <option>
+                                                            <%= brand[i].name %>
+                                                        </option>
+                                                        <% } %>
+                                                            <% } %>
+                                        </select>
 
-                                            <button type="submit" class="buttons">Editar</button>
+                                        <input value="<%=product.image %>" class="inputs" id='inputImage' type="file"
+                                            accept=".png, .jpg, .jpeg, .webp" name="image">
 
-                                            <!-- <form action="/products/%= product.id %?_method=DELETE" method="POST">
-                        <button class="buttons">Borrar</button>
+                                        <textarea name="description" class="textarea"
+                                            placeholder="Edita la descripcion del producto"><%=product.description %>
+                                            </textarea>
+                                        <% if (locals.errors && errors.description) { %>
+                                            <div class="text-danger">
+                                                <%= errors.description.msg %>
+                                            </div>
+                                            <% } %>
+
+                                                <button type="submit" class="buttons">Editar</button>
+
+                                                <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
+                        <button type="submit" class="buttons">Editar</button>
                     </form> -->
 
                     </form>

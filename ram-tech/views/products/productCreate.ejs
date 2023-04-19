@@ -14,39 +14,59 @@
 
                     <form action="/products" method="POST" autocomplete="off" enctype="multipart/form-data">
 
-                        <input class="inputs" type="text" name="name" placeholder="Elige el nombre del producto">
+                        <input value="<%= locals.oldData ? oldData.name : null %>" class="inputs" type="text"
+                            name="name" placeholder="Elige el nombre del producto">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
+                                <input value="<%= locals.oldData ? oldData.price : null %>" class="inputs" type="number"
+                                    name="price" min="1" placeholder="Elige el precio">
+                                <% if (locals.errors && errors.price) { %>
+                                    <div class="text-danger">
+                                        <%= errors.price.msg %>
+                                    </div>
+                                    <% } %>
+                                        <input value="<%= locals.oldData ? oldData.discount : null %>" class="inputs"
+                                            type="number" name="discount" min="1" max="100"
+                                            placeholder="Elige el porcentaje del descuento">
 
-                        <input class="inputs" type="number" name="price" min="1" placeholder="Elige el precio">
+                                        <label for="">Seleccione una categoría</label>
+                                        <select class="selection" name="category">
+                                            <% for( let i=0; i < categories.length; i++ ) { %>
+                                                <option value="<%= locals.oldData ? oldData.category : null %>"
+                                                    value="<%= categories[i].id %>">
+                                                    <%= categories[i].name %>
+                                                </option>
+                                                <% } %>
+                                        </select>
 
-                        <input class="inputs" type="number" name="discount" min="1" max="100"
-                            placeholder="Elige el porcentaje del descuento">
 
-                        <label for="">Seleccione una categoría</label>
-                        <select class="selection" name="category">
-                            <% for( let i=0; i < category.length; i++ ) { %>
-                                <option value="<%= category[i].id %>">
-                                    <%= category[i].name %>
-                                </option>
-                                <% } %>
-                        </select>
+                                        <label for="">Seleccione una marca</label>
+                                        <select class="selection" name="brand">
+                                            <% for( let i=0; i < brands.length; i++ ) { %>
+                                                <option value="<%= locals.oldData ? oldData.brand : null %>"
+                                                    value="<%= brands[i].id %>">
+                                                    <%= brands[i].name %>
+                                                </option>
+                                                <% } %>
+                                        </select>
 
-                        <label for="">Seleccione una marca</label>
-                        <select class="selection" name="brand">
-                            <% for( let i=0; i < brand.length; i++ ) { %>
-                                <option value="<%= brand[i].id %>">
-                                    <%= brand[i].name %>
-                                </option>
-                                <% } %>
-                        </select>
+                                        <!-- <input class="inputs" type="text" name="brand" placeholder="Elige la marca"> -->
 
-                        <!-- <input class="inputs" type="text" name="brand" placeholder="Elige la marca"> -->
+                                        <input value="<%= locals.oldData ? oldData.image : null %>" class="inputs"
+                                            id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
 
-                        <input class="inputs" id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
-
-                        <textarea name="description" class="textarea"
-                            placeholder="Elige la descripcion del producto"></textarea>
-
-                        <button type="submit" class="buttons">Crear</button>
+                                        <textarea value="<%= locals.oldData ? oldData.description : null %>"
+                                            name="description" class="textarea"
+                                            placeholder="Elige la descripcion del producto"></textarea>
+                                        <% if (locals.errors && errors.description) { %>
+                                            <div class="text-danger">
+                                                <%= errors.description.msg %>
+                                            </div>
+                                            <% } %>
+                                                <button type="submit" class="buttons">Crear</button>
 
                     </form>
                 </div>
