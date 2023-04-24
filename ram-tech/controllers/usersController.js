@@ -30,7 +30,12 @@ const controller = {
       if (!bcryptjs.compareSync(req.body.password, user.password)) {
         return res.render('./users/login', { errors: { unauthorize: { msg: 'Usuario y/o contraseña invalidos' } } });
       }
+      if (req.body.remember) {
+        res.cookie("userEmail", user.email, { maxAge: (1000 * 60) * 2 })
+      }
+
       req.session.user = user;
+
       res.redirect('/users/profile');
 
     } catch (error) {

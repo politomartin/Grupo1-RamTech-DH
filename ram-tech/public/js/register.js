@@ -1,7 +1,9 @@
 window.onload = function () {
     const form = document.querySelector('#form');
-    form.name.focus();
+   
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
+    const allowedExtensions = /(\.png|\.jpeg|\.jpg|\.gif)$/i;
+    const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -26,7 +28,18 @@ window.onload = function () {
             form.lastName.classList.add('is-valid');
         }
 
-        let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if (!form.image.value) {
+            errors.push({ name: 'image', message: 'Debe seleccionar una imagen' });
+            form.image.classList.add('is-invalid');
+        }
+        else if (!allowedExtensions.exec(form.image.value)) {
+            errors.push({ name: 'image', message: 'El archivo seleccionado no es una imagen válida' });
+            form.image.classList.add('is-invalid');
+        }
+        else {
+            form.image.classList.remove('is-invalid');
+            form.image.classList.add('is-valid');
+        }
 
         if (!reEmail.test(form.email.value)) {
             errors.push({ name: 'email', message: 'El campo email es inválido' });
@@ -55,10 +68,4 @@ window.onload = function () {
             form.submit();
         }
     });
-
-    //-------------------DE REGISTRO DE PELÍCULAS------------------//    
-
-
-
-
 }

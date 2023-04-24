@@ -81,21 +81,19 @@ const controller = {
 
     editedProduct: async (req, res) => {
         try {
-            console.log(req.body)
             const product = await db.Product.findByPk(req.params.id);
             const category = await db.Category.findAll();
             const brand = await db.Brand.findAll();
             const product_images = await db.ProductImages.findAll();
             const resultValidation = validationResult(req);
-            console.log(resultValidation)
             if (resultValidation.errors.length > 0) {
                 return res.render("./products/productEdit", {
-                    errors: resultValidation.mapped(), oldData: req.body, product, category, brand, product_images
-                
+                    errors: resultValidation.mapped(), product, category, brand, product_images
+
                 });
-                
+
             }
-            
+
             await db.Product.update({
                 name: req.body.name,
                 price: req.body.price,

@@ -42,9 +42,10 @@
                                                         <%= category[i].name %>
                                                     </option>
                                                     <% } else { %>
-                                                        <option>
+                                                        <option value="<%= category[i].id %>">
                                                             <%= category[i].name %>
                                                         </option>
+
                                                         <% } %>
                                                             <% } %>
                                         </select>
@@ -58,7 +59,7 @@
                                                     </option>
 
                                                     <% } else { %>
-                                                        <option>
+                                                        <option value="<%= brand[i].id %>">
                                                             <%= brand[i].name %>
                                                         </option>
                                                         <% } %>
@@ -68,18 +69,24 @@
                                         <input value="<%=product.image %>" class="inputs" id='inputImage' type="file"
                                             accept=".png, .jpg, .jpeg, .webp" name="image">
 
-                                        <textarea name="description" class="textarea"
-                                            placeholder="Edita la descripcion del producto"><%=product.description %>
-                                            </textarea>
-                                        <% if (locals.errors && errors.description) { %>
+                                        <% if (locals.errors && errors.image) { %>
                                             <div class="text-danger">
-                                                <%= errors.description.msg %>
+                                                <%= errors.image.msg %>
                                             </div>
                                             <% } %>
 
-                                                <button type="submit" class="buttons">Editar</button>
+                                                <textarea name="description" class="textarea"
+                                                    placeholder="Edita la descripcion del producto"><%= product.description %>
+                                            </textarea>
+                                                <% if (locals.errors && errors.description) { %>
+                                                    <div class="text-danger">
+                                                        <%= errors.description.msg %>
+                                                    </div>
+                                                    <% } %>
 
-                                                <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
+                                                        <button type="submit" class="buttons">Editar</button>
+
+                                                        <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
                         <button type="submit" class="buttons">Editar</button>
                     </form> -->
 

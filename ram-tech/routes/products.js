@@ -10,42 +10,38 @@ const authMiddleware = require("../middlewares/authMiddleware")
 const productsController = require('../controllers/productsController');
 
 let storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../public/images/images-products'));
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../public/images/images-products'));
     },
-    filename: (req, file, callback) => {
+    filename: (req, file, cb) => {
         const newFileName = "image-" + Date.now() + path.extname(file.originalname);
-        callback(null, newFileName);
+        cb(null, newFileName);
     }
 })
 
-const fileFilter = (req, file, callback) => {
-    if (
-        file.mimetype === 'image/jpg' ||
-        file.mimetype === 'image/jpeg' ||
-        file.mimetype === 'image/png' ||
-        file.mimetype === 'image/gif'
-    ) {
-        callback(null, true);
-    } else {
-        callback(new Error('Solo se permiten archivos de imagen con extensiones JPG, JPEG, PNG o GIF'));
-    }
-};
-
-const upload = multer({ storage, fileFilter });
+const upload = multer({ storage });
 
 const validationProduct = [
     check("name")
-        .trim()
-        .notEmpty().withMessage('Debe poner un nombre').bail()
+        .notEmpty().withMessage('Debe poner un nombre').trim().bail()
         .isLength({ min: 5 }).withMessage('El nombre debe contener al menos 5 caracteres'),
     check("price")
-        .trim()
         .isNumeric().withMessage('El precio tiene que ser un número'),
     check("description")
-        .trim()
-        .notEmpty().withMessage('No puede estar vacío').bail()
-        .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres')
+        .notEmpty().withMessage('No puede estar vacío').trim().bail()
+        .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres').trim(),
+    check("image")
+        .custom((value, { req }) => {
+            if (!req.file) {
+                return true
+            }
+            const fileExt = path.extname(req.file.originalname);
+            const ext = [".jpg", ".jpeg", ".png", ".gif"];
+            if (ext.includes(fileExt)) {
+                return true
+            }
+        })
+        .withMessage("Formato de archivo no válido")
 ]
 
 router.get('/', productsController.index);
@@ -58,7 +54,7 @@ router.get('/product-create', authMiddleware, productsController.productCreate);
 router.post('/', validationProduct, upload.single('image'), authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
+router.put('/:id', upload.single('image'), validationProduct, authMiddleware, productsController.editedProduct);
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
 

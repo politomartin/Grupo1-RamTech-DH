@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const methodOverride =  require('method-override'); 
+const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const localsMiddleware = require('./middlewares/localsMiddleware');
 
 app.use(session({
     secret: "This is a secret phrase",
@@ -13,7 +13,7 @@ app.use(session({
 }));
 
 app.use(cookies());
-app.use(userLoggedMiddleware);
+app.use(localsMiddleware);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,12 +21,12 @@ app.use(methodOverride('_method'));
 
 app.use(express.static('public'))
 
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
-const mainRouter = require('./routes/main'); 
-const productsRouter = require('./routes/products'); 
-const usersRouter = require('./routes/users'); 
+const mainRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
 
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
