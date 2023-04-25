@@ -28,7 +28,6 @@ const validationProduct = [
     check("price")
         .isNumeric().withMessage('El precio tiene que ser un número'),
     check("description")
-        .notEmpty().withMessage('No puede estar vacío').trim().bail()
         .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres').trim(),
     check("image")
         .custom((value, { req }) => {
@@ -54,7 +53,7 @@ router.get('/product-create', authMiddleware, productsController.productCreate);
 router.post('/', validationProduct, upload.single('image'), authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', upload.single('image'), validationProduct, authMiddleware, productsController.editedProduct);
+router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
 

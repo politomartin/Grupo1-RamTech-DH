@@ -1,6 +1,6 @@
 window.onload = function () {
     const form = document.querySelector('#form');
-   
+
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
     const allowedExtensions = /(\.png|\.jpeg|\.jpg|\.gif)$/i;
     const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -16,14 +16,23 @@ window.onload = function () {
         if (!form.name.value) {
             errors.push({ name: 'name', message: 'El campo nombre no puede estar vacio' });
             form.name.classList.add('is-invalid');
-        } else {
+        } else if (form.name.value.length < 2) {
+            errors.push({ name: 'name', message: 'El campo nombre debe tener como mínimo 2 caracteres' });
+            form.name.classList.add('is-invalid');
+        }
+        else {
             form.name.classList.remove('is-invalid');
             form.name.classList.add('is-valid');
         }
+
         if (!form.lastName.value) {
             errors.push({ name: 'lastName', message: 'El campo apellido no puede estar vacio' });
             form.lastName.classList.add('is-invalid');
-        } else {
+        } else if (form.lastName.value.length < 2) {
+            errors.push({ name: 'lastName', message: 'El campo apellido debe tener como mínimo 2 caracteres' });
+            form.lastName.classList.add('is-invalid');
+        }
+        else {
             form.lastName.classList.remove('is-invalid');
             form.lastName.classList.add('is-valid');
         }

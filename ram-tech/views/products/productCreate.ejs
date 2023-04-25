@@ -12,19 +12,21 @@
                 <div class="formBox">
                     <h5>Crear producto</h5>
 
-                    <form action="/products" method="POST" autocomplete="off" enctype="multipart/form-data">
+                    <form id="form" action="/products" method="POST" autocomplete="off" enctype="multipart/form-data">
 
                         <input value="<%= locals.oldData ? oldData.name : null %>" class="inputs" type="text"
                             name="name" placeholder="Elige el nombre del producto">
+                            <p class="error-message" id="error-name"></p>
+
                         <% if (locals.errors && errors.name) { %>
-                            <div class="text-danger">
+                            <div class="error-message">
                                 <%= errors.name.msg %>
                             </div>
                             <% } %>
                                 <input value="<%= locals.oldData ? oldData.price : null %>" class="inputs" type="number"
                                     name="price" min="1" placeholder="Elige el precio">
                                 <% if (locals.errors && errors.price) { %>
-                                    <div class="text-danger">
+                                    <div class="error-message">
                                         <%= errors.price.msg %>
                                     </div>
                                     <% } %>
@@ -57,12 +59,15 @@
 
                                         <input value="<%= locals.oldData ? oldData.image : null %>" class="inputs"
                                             id='inputImage' type="file" accept=".png, .jpg, .jpeg" name="image">
+                                            <p class="error-message" id="error-image"></p>
 
-                                        <textarea value="<%= locals.oldData ? oldData.description : null %>"
+                                        <textarea"
                                             name="description" class="textarea"
-                                            placeholder="Elige la descripcion del producto"></textarea>
-                                        <% if (locals.errors && errors.description) { %>
-                                            <div class="text-danger">
+                                            placeholder="Elige la descripcion del producto"><%= locals.oldData ? oldData.description : null %></textarea>
+                                            <p class="error-message" id="error-description"></p>
+
+                                            <% if (locals.errors && errors.description) { %>
+                                            <div class="error-message">
                                                 <%= errors.description.msg %>
                                             </div>
                                             <% } %>
@@ -72,4 +77,5 @@
                 </div>
             </main>
             <!-- FOOTER  -->
+            <script src="/js/products.js"></script>
             <%- include('../partials/footer') %>
