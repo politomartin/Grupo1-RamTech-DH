@@ -50,7 +50,7 @@ const controller = {
                     errors: resultValidation.mapped(), oldData: req.body, categories, brands
                 });
             }
-            await db.Product.create({
+            let productCreate = await db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
@@ -58,6 +58,13 @@ const controller = {
                 brands_id: req.body.brand,
                 categories_id: req.body.category,
             })
+            let imagesTocreate = req.files.map(file => {
+                return {
+                    name: file.filename,
+                    product_id: productCreate.id,
+                }
+            })
+            await db.ProductImages.bulkCreate(imagesTocreate);
             res.redirect('/products');
         }
         catch (error) {
@@ -139,6 +146,19 @@ const controller = {
 
         }
         catch (error) {
+            res.send(error)
+        }
+    },
+    searchCategories: async (req, res) => {
+        try {
+            const products = await db.Product.findAll({
+                where: {
+                    categories_id: req.params.id
+                }
+            })
+            res.render("./products/productSearch", { products })
+            // res.json(products)
+        } catch (error) {
             res.send(error)
         }
     }

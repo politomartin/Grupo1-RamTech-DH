@@ -57,5 +57,6 @@ router.put('/:id', validationProduct, upload.single('image'), authMiddleware, pr
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
 
-router.get("/search", productsController.search)
+router.get("/search", productsController.search);
+router.get("/search-cat/:id", productsController.searchCategories);
 module.exports = router;
