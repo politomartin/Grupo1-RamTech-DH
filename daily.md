@@ -37,3 +37,19 @@ En este daily ultimamos detalles para la entrega, realizamos un code review y un
 # Daily 20/03 // Sprint 6
 
 El día de hoy definimos el diagrama de la base de datos en MySQL y dividimos las tareas a realizar para el sexto sprint.
+
+# Daily 17/04 // Sprint 6
+
+Nos juntamos para realizar code review realizando cambios en el css y la creacion del buscador.
+
+# Daily 18/04 // Sprint 7
+
+Seguimos realizando code review. Asimismo realizamos la division de tareas para el Sprint.
+
+# Daily 24/04 // Sprint 7
+
+En esta Daily ultimamos detalles del Sprint 7 y solucionamos pequeños bugs.
+
+# Daily 26/04 // Sprint 8
+
+Realizamos la division de tareas, organizamos el Trello visualizando si quedaron tareas pendientes de anteriores Sprints y nos reunimos para realizar code review.
