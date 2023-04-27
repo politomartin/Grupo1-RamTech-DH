@@ -32,3 +32,17 @@
 3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo / Realizar reuniones con mayor continuidad.
 4. Hacer menos: Dejar el trabajo para el final de la entrega.
 5. Dejar de hacer: Dejar de leer rapido las consignas.
+
+# Retrospectiva Sprint 6.
+1. Comenzar a hacer: Comenzar a utilizar las branches para poder trabajar en paralelo.
+2. Hacer mas: Informar al grupo cuando nos encontramos bloqueados.
+3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo / Realizar reuniones con mayor continuidad / Code review / Realizar pequeños commits.
+4. Hacer menos: Dejar el trabajo para el final de la entrega.
+5. Dejar de hacer: No mantener el estilo de la pagina.
+
+# Retrospectiva Sprint 7.
+1. Comenzar a hacer: Organizar mejor el tiempo.
+2. Hacer mas: Mantener actualizado y explayarse mas en el Trello.
+3. Continuar haciendo: Organizacion del tablero / Comunicacion / Ayudarnos en las tareas y dudas / Mantener la uniformidad de los estilos de la pagina / Realizar los pull antes de comenzar a escribir codigo / Realizar reuniones con mayor continuidad / Code review / Realizar pequeños commits / Informar al grupo cuando nos encontramos bloqueados.
+4. Hacer menos: Subir las cosas al repositorio faltando poco para la fecha de entrega del Sprint.
+5. Dejar de hacer: Trabajar en paralelo en la misma branch con un compañero.
