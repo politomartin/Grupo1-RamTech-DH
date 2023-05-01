@@ -50,7 +50,7 @@ router.get('/product-cart', authMiddleware, productsController.productCart);
 router.get('/product-detail/:id', productsController.productDetail);
 
 router.get('/product-create', authMiddleware, productsController.productCreate);
-router.post('/', validationProduct, upload.single('image'), authMiddleware, productsController.store);
+router.post('/', upload.any(), validationProduct, authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
 router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
