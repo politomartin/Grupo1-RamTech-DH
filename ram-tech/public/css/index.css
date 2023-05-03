@@ -173,22 +173,33 @@ body main section.carousel i img:hover {
 
 body main section.categories nav {
     height: 6vh;
-    background-color: #39426D;
-    display: none;
+    background: rgba(183, 16, 133, 0.5);
 }
 
 body main section.categories nav ul {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
     height: 100%;
 }
 
+body main section.categories nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+body main section.categories nav ul li a .name {
+    display: none;
+}
+
+
 body main section.categories nav ul li:hover {
-    background-color: #BC6FF1;
     transform: scale(1.3);
+    transition: ease-in-out(0.5);
 }
 
 /* Títulos de sección */
@@ -606,15 +617,22 @@ body footer div.footer-box .main-footer .copy p {
 
     body main section.categories nav li {
         width: 20%;
-        height: 100%;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
     }
 
-    body main section.categories nav li i {
-        font-size: xx-large;
+    body main section.categories nav ul li .name {
+        font-family: 'Manjari', sans-serif;
+        font-size: 12px;
+        background: rgba(21, 0, 80, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 500ms ease-out;
+    }
+
+    body main section.categories nav ul li:hover .name {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-208px);
+        border-radius: 10px;
     }
 
     /* Main - Title */
@@ -644,7 +662,7 @@ body footer div.footer-box .main-footer .copy p {
         border-top: 1px solid rgba(182, 162, 238, 0.5);
         box-shadow: 0px 0px 20px rgb(100, 100, 100);
     }
-
+    
     body main section.highlight article .description-container i {
         bottom: 10%;
     }

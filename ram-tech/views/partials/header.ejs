@@ -14,6 +14,19 @@
           </form>
         </nav>
 
+        <!-- <% categories.forEach(cat=> {%>
+        <div class="categories">
+          <ul>
+              <li>
+                <a href="/products/search-cat/<%= cat.id %>">
+                  <i class="<%= cat.icon %>"></i>
+                  <h4 class="name"><%= cat.name  %></h4>
+                </a>
+              </li>
+          </ul>
+        </div>
+        <% }) %> -->
+
         <div class="icons">
           <ul>
             <% if (!locals.isLogged) { %>
@@ -35,8 +48,6 @@
               </a>
             </button>
             <% } %>
-
-
           </ul>
         </div>
       
