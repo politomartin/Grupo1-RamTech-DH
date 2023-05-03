@@ -6,34 +6,21 @@ const { check } = require('express-validator');
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
-
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 const usersController = require("../controllers/usersController")
 
 // Configuracion Multer
 const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../public/images/images-users'));
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../public/images/images-users'));
     },
-    filename: (req, file, callback) => {
+    filename: (req, file, cb) => {
         const newFileName = "image-" + Date.now() + path.extname(file.originalname);
-        callback(null, newFileName);
+        cb(null, newFileName);
     }
 });
 
-const fileFilter = (req, file, cb) => {
-    if (
-        file.mimetype === 'image/jpg' ||
-        file.mimetype === 'image/jpeg' ||
-        file.mimetype === 'image/png' ||
-        file.mimetype === 'image/gif'
-    ) {
-        cb(null, true);
-    } else {
-        cb(new Error('Solo se permiten archivos de imagen con extensiones JPG, JPEG, PNG o GIF'));
-    }
-};
-
-const upload = multer({ storage, fileFilter });
+const upload = multer({ storage });
 
 
 //Validaciones
@@ -51,6 +38,19 @@ const validationsUserRegister = [
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
         .matches(passwordRegex)
         .withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial y tener al menos 8 caracteres'),
+    check("image")
+        .custom((value, { req }) => {
+            if (!req.file) {
+                return true
+            }
+            const fileExt = path.extname(req.file.originalname);
+            const ext = [".jpg", ".jpeg", ".png", ".gif"];
+            if (ext.includes(fileExt)) {
+                return true;
+            }
+        })
+        .withMessage("Formato de archivo no válido")
+
 ]
 
 
@@ -67,7 +67,7 @@ const validationsUserLogin = [
 
 //Rutas
 router.get('/login', guestMiddleware, usersController.login);
-router.post('/login', validationsUserLogin, usersController.loginProcess)
+router.post('/login', userLoggedMiddleware, validationsUserLogin, usersController.loginProcess)
 
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/', upload.single('image'), validationsUserRegister, usersController.registerProcces);

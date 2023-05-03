@@ -14,7 +14,7 @@
                 <div class="formBox">
                     <h5>Acceder</h5>
 
-                    <form autocomplete="off" action="/users/login" method="POST">
+                    <form id="form" autocomplete="off" action="/users/login" method="POST">
                         <% if (locals.errors && errors.unauthorize) { %>
                             <div class="text-danger">
                                 <%= errors.unauthorize.msg %>
@@ -22,6 +22,8 @@
                             <% } %>
                                 <i class='bx bxs-envelope' style="color:white"></i>
                                 <input class="inputs" type="email" name="email" placeholder="Ingrese su email">
+                                <p class="error-message" id="error-email"></p>
+
                                 <% if (locals.errors && errors.email) { %>
                                     <div class="text-danger">
                                         <%= errors.email.msg %>
@@ -30,6 +32,8 @@
                                         <i class='bx bxs-lock-open' style="color:white"></i>
                                         <input class="inputs" type="password" name="password"
                                             placeholder="Ingrese su contraseña">
+                                        <p class="error-message" id="error-password"></p>
+
                                         <% if (locals.errors && errors.password) { %>
                                             <div class="text-danger">
                                                 <%= errors.password.msg %>
@@ -37,7 +41,7 @@
                                             <% } %>
                                                 <div class="checkbox">
 
-                                                    <input type="checkbox">
+                                                    <input type="checkbox" name="remember">
                                                     <label for="remember" class="remember">Recordarme</label>
                                                 </div>
 
@@ -51,6 +55,8 @@
                     </div>
                 </div>
             </main>
+
+            <script src="/js/login.js"></script>
 
             <!-- FOOTER  -->
             <%- include('../partials/footer') %>

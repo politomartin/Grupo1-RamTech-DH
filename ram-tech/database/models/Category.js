@@ -9,6 +9,9 @@ module.exports = (sequelize, dataTypes) => {
         name : {
             type: dataTypes.STRING(45)
         },
+        icon : {
+            type: dataTypes.STRING(45)
+        },
     };
     let config = {
         tableName: "categories",

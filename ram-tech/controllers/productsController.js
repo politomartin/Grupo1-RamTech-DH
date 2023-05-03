@@ -50,7 +50,7 @@ const controller = {
                     errors: resultValidation.mapped(), oldData: req.body, categories, brands
                 });
             }
-            await db.Product.create({
+            let productCreate = await db.Product.create({
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
@@ -58,6 +58,13 @@ const controller = {
                 brands_id: req.body.brand,
                 categories_id: req.body.category,
             })
+            let imagesTocreate = req.files.map(file => {
+                return {
+                    name: file.filename,
+                    product_id: productCreate.id,
+                }
+            })
+            await db.ProductImages.bulkCreate(imagesTocreate);
             res.redirect('/products');
         }
         catch (error) {
@@ -81,21 +88,19 @@ const controller = {
 
     editedProduct: async (req, res) => {
         try {
-            console.log(req.body)
             const product = await db.Product.findByPk(req.params.id);
             const category = await db.Category.findAll();
             const brand = await db.Brand.findAll();
             const product_images = await db.ProductImages.findAll();
             const resultValidation = validationResult(req);
-            console.log(resultValidation)
             if (resultValidation.errors.length > 0) {
                 return res.render("./products/productEdit", {
-                    errors: resultValidation.mapped(), oldData: req.body, product, category, brand, product_images
-                
+                    errors: resultValidation.mapped(), product, category, brand, product_images
+
                 });
-                
+
             }
-            
+
             await db.Product.update({
                 name: req.body.name,
                 price: req.body.price,
@@ -141,6 +146,19 @@ const controller = {
 
         }
         catch (error) {
+            res.send(error)
+        }
+    },
+    searchCategories: async (req, res) => {
+        try {
+            const products = await db.Product.findAll({
+                where: {
+                    categories_id: req.params.id
+                }
+            })
+            res.render("./products/productSearch", { products })
+            // res.json(products)
+        } catch (error) {
             res.send(error)
         }
     }

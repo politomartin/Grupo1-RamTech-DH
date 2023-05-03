@@ -145,7 +145,23 @@ body main div.formBox.links a:hover {
     color: red;
 }
 
+.show-error-message {
+    display: block;
+}
 
+.is-valid {
+    color: #198754;
+}
+
+.is-invalid {
+    color: #842029;
+    border: 2px solid red;
+}
+
+.error-message {
+    color: #842029;
+
+}
 
 @media (min-width: 769px) {
 

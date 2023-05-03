@@ -12,11 +12,13 @@
                 <div class="formBox">
                     <h5>Editar producto</h5>
 
-                    <form action="/products/<%= product.id %>?_method=PUT" method="POST" autocomplete="off"
+                    <form id="form" action="/products/<%= product.id %>?_method=PUT" method="POST" autocomplete="off"
                         enctype="multipart/form-data">
 
                         <input value="<%=product.name %>" class="inputs" type="text" name="name"
                             placeholder="Edita el nombre del producto">
+                        <p class="error-message" id="error-name"></p>
+
                         <% if (locals.errors && errors.name) { %>
                             <div class="text-danger">
                                 <%= errors.name.msg %>
@@ -25,6 +27,7 @@
 
                                 <input value="<%=product.price %>" class="inputs" type="number" name="price" min="1"
                                     placeholder="Edita el precio">
+
                                 <% if (locals.errors && errors.price) { %>
                                     <div class="text-danger">
                                         <%= errors.price.msg %>
@@ -42,9 +45,10 @@
                                                         <%= category[i].name %>
                                                     </option>
                                                     <% } else { %>
-                                                        <option>
+                                                        <option value="<%= category[i].id %>">
                                                             <%= category[i].name %>
                                                         </option>
+
                                                         <% } %>
                                                             <% } %>
                                         </select>
@@ -58,7 +62,7 @@
                                                     </option>
 
                                                     <% } else { %>
-                                                        <option>
+                                                        <option value="<%= brand[i].id %>">
                                                             <%= brand[i].name %>
                                                         </option>
                                                         <% } %>
@@ -67,19 +71,28 @@
 
                                         <input value="<%=product.image %>" class="inputs" id='inputImage' type="file"
                                             accept=".png, .jpg, .jpeg, .webp" name="image">
+                                        <p class="error-message" id="error-image"></p>
 
-                                        <textarea name="description" class="textarea"
-                                            placeholder="Edita la descripcion del producto"><%=product.description %>
-                                            </textarea>
-                                        <% if (locals.errors && errors.description) { %>
+                                        <% if (locals.errors && errors.image) { %>
                                             <div class="text-danger">
-                                                <%= errors.description.msg %>
+                                                <%= errors.image.msg %>
                                             </div>
                                             <% } %>
 
-                                                <button type="submit" class="buttons">Editar</button>
+                                                <textarea name="description" class="textarea"
+                                                    placeholder="Edita la descripcion del producto"><%= product.description %>
+                                            </textarea>
+                                                <p class="error-message" id="error-description"></p>
 
-                                                <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
+                                                <% if (locals.errors && errors.description) { %>
+                                                    <div class="text-danger">
+                                                        <%= errors.description.msg %>
+                                                    </div>
+                                                    <% } %>
+
+                                                        <button type="submit" class="buttons">Editar</button>
+
+                                                        <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
                         <button type="submit" class="buttons">Editar</button>
                     </form> -->
 
@@ -88,4 +101,6 @@
                 </div>
             </main>
             <!-- FOOTER  -->
+            <script src="/js/products.js"></script>
+
             <%- include('../partials/footer') %>

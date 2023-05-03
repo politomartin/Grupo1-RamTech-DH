@@ -19,8 +19,12 @@
 
             <article class="product"> 
                 <div class="images-product">
-                    <img src="/images/images-products/<%= product.image %>" alt="Imagen del Producto" width="200px"
-                        alt="Imagen del producto" class="principal-image">
+                    <% product.product_images.forEach(image => { %>
+                        <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto" width="200px"
+                            alt="Imagen del producto" class="principal-image">
+                    
+                      <% }) %>
+
                     <!-- <div class="carrousel-images">
                         <div>
                             <img src="/images/images-product-detail/joy-con01.jpg">

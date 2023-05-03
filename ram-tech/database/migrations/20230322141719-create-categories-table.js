@@ -17,6 +17,9 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING(45)
+      },
+      icon: {
+        type: Sequelize.STRING(45)
       }
     });
   },

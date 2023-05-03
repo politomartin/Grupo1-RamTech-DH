@@ -55,12 +55,18 @@
 
                                                         <input class="inputImage" id='inputImage' type="file"
                                                             accept=".gif .png, .jpg, .jpeg" name="image" id="image">
-                                                        <p class="error-message" id="error-inputImage"></p>
-
-                                                        <div class="interaction-buttons">
-                                                            <button type="submit" class="buttons">Enviar</button>
-                                                            <button type="reset" class="buttons">Limpiar</button>
-                                                        </div>
+                                                        <p class="error-message" id="error-image"></p>
+                                                        <% if( locals.errors && errors.image) { %>
+                                                            <div class="errorMsg">
+                                                                <%= errors.image.msg %>
+                                                            </div>
+                                                            <% } %>
+                                                                <div class="interaction-buttons">
+                                                                    <button type="submit"
+                                                                        class="buttons">Enviar</button>
+                                                                    <button type="reset"
+                                                                        class="buttons">Limpiar</button>
+                                                                </div>
                     </form>
 
 
