@@ -50,10 +50,17 @@ router.get('/product-cart', authMiddleware, productsController.productCart);
 router.get('/product-detail/:id', productsController.productDetail);
 
 router.get('/product-create', authMiddleware, productsController.productCreate);
-router.post('/', upload.any(), validationProduct, authMiddleware, productsController.store);
+router.post('/', validationProduct, authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
+router.put('/:id', upload.any(), validationProduct, authMiddleware, productsController.editedProduct);
+
+
+
+router.get("/edit-images/:id", productsController.editImages);
+router.post("/addImages/:id?", upload.any(), productsController.addImages);
+router.post("/imageDelete/:id", productsController.imageDelete);
+
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
 

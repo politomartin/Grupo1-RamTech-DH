@@ -5,7 +5,9 @@ const { validationResult } = require('express-validator');
 const controller = {
     //LISTA DE PRODUCTOS
     index: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include: ['brands', 'categories', 'product_images']
+        })
             .then((products) => {
                 return res.render('./products/products', { products })
             });
@@ -119,6 +121,41 @@ const controller = {
         }
     },
 
+    addImages: async function (req, res, next) {
+        let productId = req.params.id;
+        let imagesTocreate = req.files.map(file => {
+            return {
+                name: file.filename,
+                product_id: productId,
+            }
+        })
+        await db.ProductImages.bulkCreate(imagesTocreate);
+        res.redirect("/products/edit-images/" + productId);
+    },
+
+    editImages: async function (req, res) {
+        let product = await db.Product.findByPk(req.params.id, {
+            include: ["product_images"]
+        });
+        // res.json(product)
+        res.render("./products/imagesEdit", { product })
+    },
+
+    imageDelete: function (req, res, next) {
+        let imageName = req.body.imageToDelete;
+        let productId;
+        db.ProductImages.findOne({ name: imageName }).then(function (image) {
+            productId = image.product_id;
+            db.ProductImages.destroy({
+                where: {
+                    name: req.body.imageToDelete
+                }
+            }).then(function () { res.redirect("/products/edit-images/" + productId); })
+
+
+        })
+
+    },
 
     // ELIMINACIÓN
     deleteProduct: function (req, res) {
