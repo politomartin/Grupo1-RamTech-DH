@@ -1,36 +1,38 @@
 <%- include('../partials/head') %>
 
+    <title>Edición de Imágenes</title>
     </head>
-
 
     <body>
         <!-- HEADER  -->
         <%- include('../partials/header') %>
             <main>
-                <div class="update-images">
-                    <% product.product_images.forEach(function(image) { let number=0%>
-                        <form name="product-image-form" class="img-form" action="/products/imageDelete/<%= image.id %>"
+                <div class="formBox">
+                    <% products.product_images.forEach(image=> { %>
+
+                        <form class="form-delete" name="form" action="/products/delete-images/<%= image.id %>"
                             method="post">
-                            <label class="image-e-c" for="<%= image.id %>"> <img class="thumbnail-edit"
-                                    src="/images/images-products/<%=image.name%>" width="250px"> <input type="checkbox"
-                                    name="imageToDelete" id="<%=image.id%>" value="<%=image.name%>"> </label>
-                            <input type="submit" value="borrar">
+                            <div class="image-container">
+                                <img src="/images/images-products/<%=image.name%>" width="100px">
+                                <input type="checkbox" name="imageToDelete" id="<%=image.id%>" value="<%=image.name%>">
+                            </div>
+                            <% }) %>
+                                <div class="form-actions">
+                                    <input type="submit" value="Borrar Imágenes">
+                                </div>
                         </form>
 
-                        <%;})%>
-
-                            <form method="post" class="second-form" action="/products/addImages/30"
-                                enctype="multipart/form-data">
-
-                                <h2>Agregar Imagenes</h2>
-                                <input type="text" class="hidden" name="product_id" value="<%=product.id%>" disabled>
-                                <br>
+                        <form class="form-add" method="post" action="/products/add-images/<%=products.id%>"
+                            enctype="multipart/form-data">
+                            <h3>Agregar Imágenes</h3>
+                            <div class="form-input">
                                 <input type="file" name="images" multiple>
-                                <p class="invalid-feedback"></p> <br> <br>
-
-                                <input type="submit" value="Aceptar">
-                            </form>
-
+                            </div>
+                            <div class="form-actions">
+                                <input type="submit" value="Subir Imágenes">
+                            </div>
+                        </form>
+                </div>
             </main>
 
             <%- include('../partials/footer') %>

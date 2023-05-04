@@ -21,14 +21,10 @@
 								<div class="description-container">
 									<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
 
-
-
-										<% if (product.product_images.length > 0) { %>
-
+										<% if (product.product_images.length> 0) { %>
 											<img src="/images/images-products/<%= product.product_images[0].name %>">
 											<% } else { %>
-												<img
-													src="/images/images-products/image-1683166066993.PNG">
+												<img src="/images/images-products/default-product.png">
 												<% } %>
 
 													<i class="fa-solid fa-heart heart-icon"></i>

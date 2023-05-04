@@ -121,7 +121,13 @@ const controller = {
         }
     },
 
-    addImages: async function (req, res, next) {
+    imagesEdit: async (req, res) => {
+        let products = await db.Product.findByPk(req.params.id, {
+            include: ["product_images"]
+        });
+        res.render("./products/imagesEdit", { products })
+    },
+    imagesAdd: async (req, res) => {
         let productId = req.params.id;
         let imagesTocreate = req.files.map(file => {
             return {
@@ -130,44 +136,43 @@ const controller = {
             }
         })
         await db.ProductImages.bulkCreate(imagesTocreate);
-        res.redirect("/products/edit-images/" + productId);
+        res.redirect(`/products/edit-images/${productId}`);
     },
-
-    editImages: async function (req, res) {
-        let product = await db.Product.findByPk(req.params.id, {
-            include: ["product_images"]
-        });
-        // res.json(product)
-        res.render("./products/imagesEdit", { product })
-    },
-
-    imageDelete: function (req, res, next) {
-        let imageName = req.body.imageToDelete;
-        let productId;
-        db.ProductImages.findOne({ name: imageName }).then(function (image) {
-            productId = image.product_id;
-            db.ProductImages.destroy({
+    imagesDelete: async (req, res) => {
+        try {
+            let image = await db.ProductImages.findOne({
                 where: {
                     name: req.body.imageToDelete
                 }
-            }).then(function () { res.redirect("/products/edit-images/" + productId); })
-
-
-        })
-
+            })
+            let productId = image.product_id;
+            await db.ProductImages.destroy({
+                where: {
+                    name: req.body.imageToDelete
+                }
+            })
+            res.redirect(`/products/edit-images/${productId}`)
+        }
+        catch (error) {
+            res.send(error);
+        }
     },
 
     // ELIMINACIÓN
-    deleteProduct: function (req, res) {
-        db.Product.destroy({
+    deleteProduct: async function (req, res) {
+        await db.ProductImages.destroy({
+            where: {
+                product_id: req.params.id
+            }
+        })
+        await db.Product.destroy({
             where: {
                 id: req.params.id
             }
         })
-
         res.redirect('/products');
-
     },
+
     search: async (req, res) => {
         try {
             const { q } = req.query
