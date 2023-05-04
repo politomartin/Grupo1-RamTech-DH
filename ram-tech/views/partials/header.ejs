@@ -14,18 +14,18 @@
           </form>
         </nav>
 
-        <!-- <% categories.forEach(cat=> {%>
+        <!-- < % categories.forEach(cat=> {%>
         <div class="categories">
           <ul>
               <li>
-                <a href="/products/search-cat/<%= cat.id %>">
-                  <i class="<%= cat.icon %>"></i>
-                  <h4 class="name"><%= cat.name  %></h4>
+                <a href="/products/search-cat/< %= cat.id %>">
+                  <i class="< %= cat.icon %>"></i>
+                  <h4 class="name">< %= cat.name  %></h4>
                 </a>
               </li>
           </ul>
         </div>
-        <% }) %> -->
+        < % }) %> -->
 
         <div class="icons">
           <ul>
@@ -43,8 +43,13 @@
               </a>
             </button>
             <button>
+              <a href="/users/profile">
+                <li><i class="fa-solid fa-user-astronaut"></i></li>
+              </a>
+            </button>
+            <button>
               <a href="/users/logout">
-                <li><i class="fa-solid fa-user"></i></li>
+                <li><i class="fa-solid fa-shuttle-space fa-rotate-270"></i></li>
               </a>
             </button>
             <% } %>
