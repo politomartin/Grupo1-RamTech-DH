@@ -5,7 +5,9 @@ const { validationResult } = require('express-validator');
 const controller = {
     //LISTA DE PRODUCTOS
     index: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include: ['brands', 'categories', 'product_images']
+        })
             .then((products) => {
                 return res.render('./products/products', { products })
             });
@@ -119,18 +121,58 @@ const controller = {
         }
     },
 
+    imagesEdit: async (req, res) => {
+        let products = await db.Product.findByPk(req.params.id, {
+            include: ["product_images"]
+        });
+        res.render("./products/imagesEdit", { products })
+    },
+    imagesAdd: async (req, res) => {
+        let productId = req.params.id;
+        let imagesTocreate = req.files.map(file => {
+            return {
+                name: file.filename,
+                product_id: productId,
+            }
+        })
+        await db.ProductImages.bulkCreate(imagesTocreate);
+        res.redirect(`/products/edit-images/${productId}`);
+    },
+    imagesDelete: async (req, res) => {
+        try {
+            let image = await db.ProductImages.findOne({
+                where: {
+                    name: req.body.imageToDelete
+                }
+            })
+            let productId = image.product_id;
+            await db.ProductImages.destroy({
+                where: {
+                    name: req.body.imageToDelete
+                }
+            })
+            res.redirect(`/products/edit-images/${productId}`)
+        }
+        catch (error) {
+            res.send(error);
+        }
+    },
 
     // ELIMINACIÓN
-    deleteProduct: function (req, res) {
-        db.Product.destroy({
+    deleteProduct: async function (req, res) {
+        await db.ProductImages.destroy({
+            where: {
+                product_id: req.params.id
+            }
+        })
+        await db.Product.destroy({
             where: {
                 id: req.params.id
             }
         })
-
         res.redirect('/products');
-
     },
+
     search: async (req, res) => {
         try {
             const { q } = req.query

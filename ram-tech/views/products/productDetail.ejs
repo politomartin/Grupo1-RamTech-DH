@@ -1,31 +1,36 @@
 <!-- HEAD  -->
-<%- include('../partials/head')  %>
+<%- include('../partials/head') %>
 
     <link rel="stylesheet" href="/css/productDetail.css">
     <title>Detalle del Producto</title>
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <!-- HEADER  -->
-    <%- include('../partials/header')  %>
- 
-    <main>
-        <div class="product-title">
-            <h2> <%= product.name %></h2>
-        </div>
+        <!-- HEADER  -->
+        <%- include('../partials/header') %>
 
-        <section class="main-product">
+            <main>
+                <div class="product-title">
+                    <h2>
+                        <%= product.name %>
+                    </h2>
+                </div>
 
-            <article class="product"> 
-                <div class="images-product">
-                    <% product.product_images.forEach(image => { %>
-                        <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto" width="200px"
-                            alt="Imagen del producto" class="principal-image">
-                    
-                      <% }) %>
+                <section class="main-product">
 
-                    <!-- <div class="carrousel-images">
+                    <article class="product">
+                        <div class="images-product">
+                            <% if (product.product_images.length===0) { %>
+                                <img src="/images/images-products/default-product.png" width="200px"
+                                    alt="Imagen del producto" class="principal-image">
+                                <% } %>
+                                    <% product.product_images.forEach(image=> { %>
+                                        <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
+                                            width="200px" alt="Imagen del producto" class="principal-image">
+                                        <% }) %>
+
+                                            <!-- <div class="carrousel-images">
                         <div>
                             <img src="/images/images-product-detail/joy-con01.jpg">
                         </div>
@@ -42,61 +47,71 @@
                             <img src="/images/images-product-detail/joy-con05.jpg">
                         </div>
                     </div> -->
-                </div>
-            </article>
-
-            <article class="box-product-buttons">
-                <div class="product-description">
-                    <article class="price-product">
-                        <h2> $<%= product.price - (product.price*product.discount)/100 %> </h2>
+                        </div>
                     </article>
-                    <% if(product.discount > 0) { %>
-                        <article class="product-discount">
-                            <h4> <%= product.discount %>% de descuento!</h4>
-                            <p> Precio anterior: <%= product.price %> </p>
-                        </article>
-                    <% } %> 
-                    <!-- <article class="dues">
+
+                    <article class="box-product-buttons">
+                        <div class="product-description">
+                            <article class="price-product">
+                                <h2> $<%= product.price - (product.price*product.discount)/100 %>
+                                </h2>
+                            </article>
+                            <% if(product.discount> 0) { %>
+                                <article class="product-discount">
+                                    <h4>
+                                        <%= product.discount %>% de descuento!
+                                    </h4>
+                                    <p> Precio anterior: <%= product.price %>
+                                    </p>
+                                </article>
+                                <% } %>
+                                    <!-- <article class="dues">
                         <ul>
                             <li> 12 cuotas sin interes</li>
                         </ul>
                         <input class="buttons" type="button" value="Calcular Cuotas">
                     </article> -->
-                    <article class="recive-product">
-                        <h4> Recibi tu producto </h4>
-                        <p> Llega hoy por $1.200</p>
-                        <input class="buttons" type="submit" value="Formas de entrega">
-                    </article>
+                                    <article class="recive-product">
+                                        <h4> Recibi tu producto </h4>
+                                        <p> Llega hoy por $1.200</p>
+                                        <input class="buttons" type="submit" value="Formas de entrega">
+                                    </article>
 
-                    <article>
-                        <h4> Medios de pago </h4>
-                        <div class="payment-method-images">
-                            <div><img src="/images/images-product-detail/logo-visa.png"></div>
-                            <div><img src="/images/images-product-detail/logo-master.png"></div>
-                            <div><img src="/images/images-product-detail/logo-pago-facil.png"></div>
-                            <div><img src="/images/images-product-detail/logo-mercado-credito.png"></div>
+                                    <article>
+                                        <h4> Medios de pago </h4>
+                                        <div class="payment-method-images">
+                                            <div><img src="/images/images-product-detail/logo-visa.png"></div>
+                                            <div><img src="/images/images-product-detail/logo-master.png"></div>
+                                            <div><img src="/images/images-product-detail/logo-pago-facil.png"></div>
+                                            <div><img src="/images/images-product-detail/logo-mercado-credito.png">
+                                            </div>
+                                        </div>
+                                    </article>
                         </div>
-                    </article>
-                </div>
-                
-                <article class="botones">
 
-                    <input class="buttons" type="submit" value="Comprar">
-                    <% if (locals.isLogged) { %>
-                    <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input class="buttons" type="submit" value="Editar"></a>
-                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                        <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
-                    </form>
-                    <% } %>
-                </article>
-            </div>
-        </section>
-        <section class="description-under-product">
-            <h2>Caracteristicas generales </h2>
-            <p> <%= product.category %> - <%= product.brand %> </p>
-            <p> <%= product.description %> </p>
-        </section>
-    </main>
+                        <article class="botones">
 
-<!-- FOOTER  -->
-<%- include('../partials/footer')  %>
+                            <input class="buttons" type="submit" value="Comprar">
+                            <% if (locals.isLogged) { %>
+                                <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input
+                                        class="buttons" type="submit" value="Editar"></a>
+                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                    <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
+                                </form>
+                                <% } %>
+                        </article>
+                        </div>
+                </section>
+                <section class="description-under-product">
+                    <h2>Caracteristicas generales </h2>
+                    <p>
+                        <%= product.category %> - <%= product.brand %>
+                    </p>
+                    <p>
+                        <%= product.description %>
+                    </p>
+                </section>
+            </main>
+
+            <!-- FOOTER  -->
+            <%- include('../partials/footer') %>

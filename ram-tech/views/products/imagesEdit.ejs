@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+
+    <title>Edición de Imágenes</title>
+    </head>
+
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/header') %>
+            <main>
+                <div class="formBox">
+                    <% products.product_images.forEach(image=> { %>
+
+                        <form class="form-delete" name="form" action="/products/delete-images/<%= image.id %>"
+                            method="post">
+                            <div class="image-container">
+                                <img src="/images/images-products/<%=image.name%>" width="100px">
+                                <input type="checkbox" name="imageToDelete" id="<%=image.id%>" value="<%=image.name%>">
+                            </div>
+                            <% }) %>
+                                <div class="form-actions">
+                                    <input type="submit" value="Borrar Imágenes">
+                                </div>
+                        </form>
+
+                        <form class="form-add" method="post" action="/products/add-images/<%=products.id%>"
+                            enctype="multipart/form-data">
+                            <h3>Agregar Imágenes</h3>
+                            <div class="form-input">
+                                <input type="file" name="images" multiple>
+                            </div>
+                            <div class="form-actions">
+                                <input type="submit" value="Subir Imágenes">
+                            </div>
+                        </form>
+                </div>
+            </main>
+
+            <%- include('../partials/footer') %>

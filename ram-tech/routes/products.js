@@ -53,10 +53,13 @@ router.get('/product-create', authMiddleware, productsController.productCreate);
 router.post('/', upload.any(), validationProduct, authMiddleware, productsController.store);
 
 router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', validationProduct, upload.single('image'), authMiddleware, productsController.editedProduct);
+router.put('/:id', upload.any(), validationProduct, authMiddleware, productsController.editedProduct);
+
+router.get("/edit-images/:id", productsController.imagesEdit);
+router.post("/add-images/:id", upload.any(), productsController.imagesAdd);
+router.post("/delete-images/:id", productsController.imagesDelete);
 
 router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
-
 router.get("/search", productsController.search);
 router.get("/search-cat/:id", productsController.searchCategories);
 module.exports = router;
