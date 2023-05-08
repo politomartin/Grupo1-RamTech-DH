@@ -1,6 +1,6 @@
 window.onload = function () {
-    const carousel = document.querySelector(".carousel"),
-    firstImg = carousel.querySelectorAll("img")[0];
+    const carousel = document.querySelector(".carousel");
+    const firstImg = carousel.querySelectorAll("img")[0];
     const icons = document.querySelectorAll(".carousel i");
 
     let isSlideStart = false, prevPageX, prevScrollLeft;

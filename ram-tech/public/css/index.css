@@ -129,15 +129,42 @@ body header .flex .navbar div.icons ul li {
     font-size: x-large;
 }
 
-body header .flex .navbar div.icons a:visited {
-    text-decoration: none;
-    color: #000;
-}
-
 body header .flex .navbar div.icons button {
     background-color: transparent;
     border: none;
-    margin: 0 10px;
+    margin: 8px 10px 0px 10px;
+    position: relative;
+    top: 30%;
+}
+
+body header .flex .navbar div.icons button div {
+    padding: 6%;
+    width: 60px;
+    border-radius: 15px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    background-color: #141317;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-out;
+}
+
+body header .flex .navbar div.icons button div p {
+    color:#BC6FF1;
+    font-family: 'Manjari', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+body header .flex .navbar div.icons button:hover> div {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(3px);
+}
+
+body header .flex .navbar div.icons a:visited {
+    text-decoration: none;
+    color: #000;
 }
 
 /* Burger */

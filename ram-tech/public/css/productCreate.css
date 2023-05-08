@@ -1,128 +1,171 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Manjari', sans-serif;
-
-}
-
-body {
+body main {
+    margin: 100px 0px 50px 0px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #141317;
+}
+
+body main div.formBox {
+    display: flex;
     flex-direction: column;
-}
-
-body header {
-    width: 100%;
-}
-
-body main {
-    margin: 50px 0px;
-}
-
-.formBox {
-    width: 250px;
-    padding: 10px;
-    background-color: lightgray;
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manjari', sans-serif;
     text-align: center;
+
+    color: white;
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    padding: 5%;
+    margin-top: 20px;
 }
 
-h5 {
+body main .formBox h5 {
     font-family: 'Russo One', sans-serif;
-    font-weight: 100;
-    color: black;
-    font-size: 20px;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 5%;
 }
 
-
-.formBox .inputs {
+body main .formBox form .inputs {
     background-color: transparent;
+    font-family: 'Manjari', sans-serif;
+    font-size: 15px;
     text-align: left;
-    width: 100%;
-    color: black;
-    padding: 4px;
+    color: #CDB9DD;
+    padding: 5px;
+    margin-top: 5px;
     margin-bottom: 15px;
     border: none;
-    border-bottom: solid 2px black;
     outline: none;
-    margin-top: 5px;
+    border-bottom: solid 1px #bc6ff1;
+    width: 100%;
 }
 
-.formBox input::placeholder {
-    color: black;
+body main .formBox form input::placeholder {
+    color: white;
     opacity: 1;
 }
 
-.formBox .buttons {
+body main .formBox .selection {
+    display: block;
+    color: #CDB9DD;
+    font-family: 'Manjari', sans-serif;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px #bc6ff1;
+    outline: none;
+    margin: 15px 0;
+    width: 100%;
+}
+
+body main .formBox option {
+    color: #150050;
+}
+
+body main .formBox .textarea {
+    display: block;
+    font-family: 'Manjari', sans-serif;
+    color: #CDB9DD;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px #bc6ff1;
+    outline: none;
+    margin: 15px 0;
+    width: 100%;
+}
+
+body main .formBox .textarea::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+body main .formBox .buttons {
     cursor: pointer;
     display: flex;
     justify-content: center;
-    width: 100%;
     font-family: 'Russo One', sans-serif;
-    padding: 4px;
-    font-weight: 100;
-    font-size: 13px;
-    color: white;
-    margin-top: 18px;
+    font-size: 15px;
+    color: #CDB9DD;
+    padding: 7px;
+    margin: 10% 0 5% 20%;
     border: none;
     border-radius: 5px;
-    background-color: black;
-    transition: 500ms;
+    background-color: rgba(20, 19, 23, 0.7);
+    width: 60%;
+    transition: 0.5s;
 }
 
-.formBox .buttons:hover {
-    color: black;
-    background-color: white;
+body main .formBox .buttons:hover {
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 10px #eee;
+    background-color: rgba(183, 16, 133, 0.8)
 }
 
-.formBox .selection {
-    color: black;
-    display: block;
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 2px black solid;
-    margin: 15px 0
+
+@media (max-width: 425px) {
+    body main .formBox {
+        width: 90%;
+        font-size: 18px;
+    }
 }
 
-.formBox option {
-    color: black;
+@media (min-width: 426px) {
+    body main .formBox {
+        width: 70%;
+        font-size: 18px;
+    }
 
-}
+    body main .formBox .textarea {
+        font-size: 15px;
+    }
 
-.formBox .textarea {
-    color: black;
-    display: block;
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 2px black solid;
-    margin: 15px 0
-}
-
-.formBox .textarea::placeholder{
-    color: black;
-    opacity: 1;
-}
-
-footer {
-    
-    width: 100%;
 }
 
 @media (min-width: 769px) {
+    body main .formBox {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    body main div.formBox h5 {
+        font-size: 30px;
+    }
+
+    body main div.formBox form .inputs {
+        font-size: 20px;
+    }
     
-    body main {
-        margin: 150px 0;
+    body main div.formBox form input::placeholder {
+        font-size: 20px;
     }
-    .formBox {
-        width: 600px;
-        margin: auto;
+
+    body main .formBox .selection {
+        font-size: 20px;
     }
+
+    body main div.formBox .selection input#inputImage {
+        font-size: 15px;
+    }
+
+    body main .formBox .textarea {
+        font-size: 20px;
+    }
+
+    body main .formBox .buttons {
+        font-size: 18px;
+        margin: 10% 0 0% 20%;
+    }
+    
+    body main div.formBox form .buttons:hover {
+        background-position: right center;
+        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
+    }
+
 }

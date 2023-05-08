@@ -1,101 +1,67 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-
-    background-color: #141317;
-
-}
-
-
-body main div.formBox {
-    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
-    border-radius: 10px;
+body main {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh;
-    width: 80%;
-    padding: 10px;
-    margin: 10%;
-
-    font-family: 'Manjari', sans-serif;
-    text-align: center;
 }
 
+body main div.formBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manjari', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    height: 350px;
+    width: 350px;
+    padding: 10px;
+    margin:  30px 30px 50px 30px;
+}
 
 body main div.formBox h5 {
     font-family: 'Russo One', sans-serif;
-    font-weight: 100;
+    font-size: 25px;
     color: white;
-    font-size: 30px;
     margin-bottom: 10px;
 }
 
-body main div.formBox form input {
-    background-color: transparent;
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 25px;
-    border: none;
-    text-align: center;
-    outline: none;
-    border-bottom: solid 2px #150050;
+body main div.formBox form {
+    width: 70%;
 }
 
 body main div.formBox form .inputs {
-    width: 100%;
-    font-size: 10px;
+    background-color: transparent;
     color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+    border-bottom: solid 2px #bc6ff1;
+    width: 100%;
+    font-size: 15px;
     padding: 5px;
 }
 
 body main div.formBox form input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 10px;
-
-}
-
-body main div.formBox form .buttons {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-family: 'Russo One', sans-serif;
-    padding: 7px;
-    font-weight: 100;
-    font-size: 15px;
-    color: #CDB9DD;
-    margin: 15px 0;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
-    transition: 0.5s;
-    box-shadow: none;
-    outline: none;
-    background-size: 200% auto;
-}
-
-body main div.formBox form .buttons:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 0 10px #eee;
 }
 
 body main div.formBox form i {
     position: absolute;
-    transform: translateX(1.4px) translateY(7.4px);
-    font-size: 12px;
+    font-size: 15px;
+    color: #CDB9DD;
+    transform: translateX(4px) translateY(15px);
 }
 
 body main div.formBox form .checkbox {
-    font-size: 12px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +73,7 @@ body main div.formBox form .checkbox input {
 }
 
 body main div.formBox form .checkbox label {
-    margin-left: 2px;
+    margin-left: 5px;
     margin-top: 5px;
 }
 
@@ -120,11 +86,32 @@ body main div.formBox form .checkbox input::before {
     border-radius: 20px;
 }
 
+body main div.formBox form .buttons {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+    color: #CDB9DD;
+    padding: 7px;
+    margin: 10% 0 10% 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(20, 19, 23, 0.7);
+    width: 60%;
+    transition: 0.5s;
+}
+
+body main div.formBox form .buttons:hover {
+    color: #fff;
+    background-color: rgba(183, 16, 133, 0.8);
+    box-shadow: 0 0 10px #eee;
+}
+
 
 body main div.formBox div.links {
     display: inline-flex;
-    font-size: 10px;
-
+    font-size: 12px;
 }
 
 body main div.formBox .links a {
@@ -132,6 +119,7 @@ body main div.formBox .links a {
     color: white;
     text-decoration: none;
     margin: 0 14.76px;
+    width: 50%;
 }
 
 body main div.formBox.links a:hover {
@@ -164,40 +152,34 @@ body main div.formBox.links a:hover {
 }
 
 @media (min-width: 769px) {
-
     body main div.formBox {
-        justify-content: space-evenly;
-        height: 90%;
+        height: 550px;
+        width: 500px;
+        padding: 10px;
+        margin:  30px 30px 50px 30px;
     }
-
+    
+    body main div.formBox h5 {
+        font-size: 30px;
+    }
+    
+    body main div.formBox form {
+        width: 80%;
+    }
+    
     body main div.formBox form .inputs {
         font-size: 20px;
         padding: 10px;
         margin: 30px 0;
     }
-
-    body main {
-        width: 50%;
-        margin: auto;
-        max-width: 700px;
-    }
-
-    body main div.formBox form {
-        width: 80%;
-    }
-
-    body main div.formBoxv {
-        width: 50%;
-        margin: 25%;
-    }
-
+    
     body main div.formBox form input::placeholder {
         font-size: 20px;
     }
-
-    body main div.formBox h5 {
-        font-size: 50px;
-        margin: 30px 0;
+    
+    body main div.formBox form i {
+        transform: translateX(10px) translateY(45px);
+        font-size: 20px;
     }
 
     body main div.formBox form .checkbox {
@@ -209,9 +191,16 @@ body main div.formBox.links a:hover {
     }
 
     body main div.formBox form .buttons {
-        margin-top: 60px;
+        border-left: 1px solid rgba(182, 162, 238, 0.5);
+        border-top: 1px solid rgba(182, 162, 238, 0.5);
+        font-size: 18px;
     }
 
+    body main div.formBox form .buttons:hover {
+        background-position: right center;
+        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
+    }
+  
     body main div.formBox div.links {
         width: 100%;
         margin-top: 20px;

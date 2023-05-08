@@ -4,37 +4,37 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "nodemon app.js"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon app.js"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Pholl7/Grupo1-TPIntegrador-DH.git"
+        "type": "git",
+        "url": "git+https://github.com/Pholl7/Grupo1-TPIntegrador-DH.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/Pholl7/Grupo1-TPIntegrador-DH/issues"
+        "url": "https://github.com/Pholl7/Grupo1-TPIntegrador-DH/issues"
     },
     "homepage": "https://github.com/Pholl7/Grupo1-TPIntegrador-DH#readme",
     "dependencies": {
-      "bcryptjs": "^2.4.3",
-      "cookie-parser": "^1.4.6",
-      "dotenv": "^16.0.3",
-      "ejs": "^3.1.8",
-      "express": "^4.18.2",
-      "express-session": "^1.17.3",
-      "express-validator": "^6.15.0",
-      "method-override": "^3.0.0",
-      "multer": "^1.4.5-lts.1",
-      "mysql2": "^3.2.0",
-      "node-fetch": "^3.3.0",
-      "sequelize": "^6.29.3",
-      "sequelize-cli": "^6.6.0"
+        "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "express-session": "^1.17.3",
+        "express-validator": "^6.15.0",
+        "mariadb": "^3.1.2",
+        "method-override": "^3.0.0",
+        "multer": "^1.4.5-lts.1",
+        "mysql2": "^3.2.0",
+        "node-fetch": "^3.3.0",
+        "sequelize": "^6.29.3",
+        "sequelize-cli": "^6.6.0"
     },
     "devDependencies": {
-      "nodemon": "^2.0.21"
+        "nodemon": "^2.0.21"
     }
-  }
-  
+}

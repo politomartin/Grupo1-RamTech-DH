@@ -1,65 +1,60 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-
-    background-color: #141317;
-
-}
-
-body main div.formBox {
-    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
-    border-radius: 10px;
+body main {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 55vh;
-    width: 80%;
-    padding: 10px;
-    margin: 10%;
-    text-align: center;
-    font-family: 'Manjari', sans-serif;
 }
 
+body main div.formBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manjari', sans-serif;
+    text-align: center;
+    font-size: 12px;
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    height: 460px;
+    width: 360px;
+    padding: 10px;
+    margin:  30px 30px 50px 30px;
+}
 
 body main div.formBox h5 {
     font-family: 'Russo One', sans-serif;
-    font-weight: 100;
+    font-size: 25px;
     color: white;
-    font-size: 30px;
     margin-bottom: 10px;
 }
 
-body main div.formBox form input {
+body main div.formBox form .inputs {
     background-color: transparent;
-    color: white;
+    text-align: center;
+    color: #CDB9DD;
+    padding: 5px;
     margin-top: 5px;
     margin-bottom: 25px;
     border: none;
-    text-align: center;
     outline: none;
-    border-bottom: solid 2px #150050;
-}
-
-body main div.formBox .inputs {
-    width: 80%;
-    font-size: 10px;
-    color: white;
-    padding: 5px;
+    border-bottom: solid 2px #150050; width: 100%;
 }
 
 body main div.formBox form input::placeholder {
     color: white;
     opacity: 1;
-    font-size: 10px;
-
 }
 
-´ body main div.formBox form input:focus {
+body main div.formBox form i {
+    position: absolute;
+    transform: translateX(2.4px) translateY(11.4px);
+    color: #CDB9DD;
+}
+
+body main div.formBox form input:focus {
     outline: none;
     border: solid 2px#bc6ff1;
 }
@@ -75,15 +70,14 @@ body main div.formBox .interaction-buttons .buttons {
     cursor: pointer;
     display: inline;
     font-family: 'Russo One', sans-serif;
-    padding: 10px;
-    font-weight: 100;
     font-size: 15px;
-    color: #CDB9DD;
+    padding: 10px;
     margin: 5px 25px;
     margin-bottom: 20px;
+    color: #bc6ff1;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
+    background-color: rgba(20, 19, 23, 0.7);
     width: 45%;
     background-size: 200% auto;
     transition: 0.5s;
@@ -91,24 +85,17 @@ body main div.formBox .interaction-buttons .buttons {
 
 body main div.formBox .interaction-buttons .buttons:hover {
     background-position: right center;
-    color: #fff;
     text-decoration: none;
+    color: #fff;
     box-shadow: 0 0 10px #eee;
-}
-
-body main div.formBox form i {
-    position: absolute;
-    transform: translateX(1.4px) translateY(7.4px);
-    font-size: 15px;
+    background-color: rgba(183, 16, 133, 0.8)
 }
 
 body main div.formBox div a {
     cursor: pointer;
     display: flex;
-    font-size: 12px;
     color: white;
     text-decoration: none;
-
 }
 
 body main div.formBox a:hover {
@@ -126,9 +113,8 @@ body main .errorMsg {
 }
 
 body main .inputImage {
-    width: 80%;
-    font-size: 8px;
-    padding-bottom: 10px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .show-error-message {
@@ -151,48 +137,40 @@ body main .inputImage {
 
 @media (min-width: 769px) {
     body main div.formBox {
-        width: 50%;
-        margin: 25%;
-
+        height: 570px;
+        width: 550px;
+        padding: 10px;
+        margin:  30px 30px 80px 30px; 
+        font-size: 20px
     }
 
-    body main div.formBox {
-        max-width: 700px;
-        margin: auto;
-        margin-top: 100px;
-        margin-bottom: 100px;
-
+    body main div.formBox h5 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    body main div.formBox .inputs {
+        padding: 15px;
+        margin: 20px 0;
+        font-size: 20px
     }
 
+    body main div.formBox form i {
+        transform: translateX(10px) translateY(9px);
+        font-size: 20px;
+    }
+    
     body main div.formBox div a {
         margin-top: -10px;
         font-size: 20px;
     }
 
-    body main div.formBox form input::placeholder {
-        font-size: 20px;
-
-    }
-
-    body main div.formBox .inputs {
-        padding: 15px;
-        margin: 20px 0;
-    }
-
-    body main div.formBox h5 {
-        font-size: 50px;
-    }
-
-    body main div.formBox h5 {
-        margin: 30px 0;
-    }
-
-    body main div.formBox {
-        height: 90%;
-    }
-
     body main div.formBox .interaction-buttons {
         margin-bottom: 30px;
+    }
+
+    body main div.formBox .interaction-buttons .buttons:hover {
+        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
     }
 
     body main .errorMsg {
@@ -201,5 +179,7 @@ body main .inputImage {
 
     body main .inputImage {
         font-size: 20px;
+        width: 80%;
+        margin-bottom: 30px;
     }
 }

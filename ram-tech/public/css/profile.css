@@ -1,15 +1,80 @@
+body main {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 body main div.container {
-    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 50vh;
-    width: 80%;
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    height: 350px;
+    width: 350px;
     padding: 10px;
-    margin: 10%;
+    margin: 30px 30px 50px 30px;
+}
 
+body main div.container h1 {
     font-family: 'Manjari', sans-serif;
     text-align: center;
+    color: white;
+    font-size: 28px;
+}
+
+body main div.container .img-cont {
+    width: 250px;
+    height: 250px;
+}
+
+body main div.container img {
+    border-radius: 50%;
+    max-width: 250px;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 425px) {
+    body main div.container {
+        height: 400px;
+        width: 400px;
+        margin-bottom: 70px;
+    }
+
+    body main div.container h1 {
+        font-size: 30px;
+    }
+
+    body main div.container .img-cont {
+        width: 300px;
+        height: 300px;
+    }
+
+    body main div.container .img-cont img {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 769px) {
+    body main div.container {
+        height: 450px;
+        width: 450px;
+        margin-bottom: 100px;
+    }
+
+    body main div.container h1 {
+        font-size: 34px;
+    }
+
+    body main div.container .img-cont {
+        width: 300px;
+        height: 300px;
+    }
 }
