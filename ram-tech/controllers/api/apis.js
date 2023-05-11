@@ -3,8 +3,16 @@ const db = require("../../database/models")
 const controller = {
     allProducts: async (req, res) => {
         let products = await db.Product.findAll({
-            include: ["categories","brands"],
+            include: ["categories", "brands", "product_images"],
+            order: [["id","ASC"]]
         })
+
+        let categories = await db.Category.findAll({ include: ["products"] })
+
+        let allCategories = categories.map(category => ({
+            name: category.name,
+            total: category.products.length
+        }))
 
         let allProducts = products.map(product => ({
             id: product.id,
@@ -12,6 +20,7 @@ const controller = {
             price: product.price,
             discount: product.discount,
             description: product.description,
+            images: product.product_images,
             brands_id: product.brands,
             categories_id: product.categories,
             detail: `/api/product/${product.id}`
@@ -19,21 +28,22 @@ const controller = {
 
         return res.status(200).json({
             count: allProducts.length,
-            data: allProducts,
+            dataProducts: allProducts,
+            dataCategories: allCategories,
             status: 200
         })
     },
 
     productById: async (req, res) => {
         let products = await db.Product.findByPk(req.params.id, {
-            include: ["categories"]
+            include: ["categories", "product_images"]
         })
         return res.status(200).json({
             data: products,
             status: 200
         })
     },
- 
+
     allUsers: async (req, res) => {
         let users = await db.User.findAll()
 
@@ -67,7 +77,8 @@ const controller = {
             },
             status: 200
         })
-    }
+    },
+    
 
 }
 
