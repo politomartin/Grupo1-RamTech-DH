@@ -18,99 +18,105 @@
                 </div>
 
                 <section class="main-product">
-
-                    <article class="product">
-                        <div class="images-product">
+                    <div class="images-product">
+                        <div class="first-img">
                             <% if (product.product_images.length===0) { %>
-                                <img src="/images/images-products/default-product.png" width="200px"
-                                    alt="Imagen del producto" class="principal-image">
-                                <% } %>
-                                    <% product.product_images.forEach(image=> { %>
-                                        <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
-                                            width="200px" alt="Imagen del producto" class="principal-image">
-                                        <% }) %>
+                                <img src="/images/images-products/default-product.png" alt="Imagen del producto"
+                                    class="principal-image">
 
-                                            <!-- <div class="carrousel-images">
-                        <div>
-                            <img src="/images/images-product-detail/joy-con01.jpg">
+                                <% } else { %>
+                                    <img src="/images/images-products/<%= product.product_images[0].name %>"
+                                        alt="Imagen del Producto" class="first-image">
                         </div>
-                        <div>
-                            <img src="/images/images-product-detail/joy-con02.jpg">
+                        <div class="second-img">
+                            <% product.product_images.slice(2).forEach(image=> { %>
+                                <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
+                                    class="secondary-image">
+                                <% }) %>
+                                    <% } %>
                         </div>
-                        <div>
-                            <img src="/images/images-product-detail/joy-con03.jpg">
-                        </div>
-                        <div>
-                            <img src="/images/images-product-detail/joy-con04.jpg">
-                        </div>
-                        <div>
-                            <img src="/images/images-product-detail/joy-con05.jpg">
-                        </div>
-                    </div> -->
-                        </div>
-                    </article>
+                    </div>
 
-                    <article class="box-product-buttons">
-                        <div class="product-description">
-                            <article class="price-product">
-                                <h2> $<%= product.price - (product.price*product.discount)/100 %>
-                                </h2>
-                            </article>
-                            <% if(product.discount> 0) { %>
-                                <article class="product-discount">
-                                    <h4>
-                                        <%= product.discount %>% de descuento!
-                                    </h4>
-                                    <p> Precio anterior: <%= product.price %>
-                                    </p>
-                                </article>
-                                <% } %>
-                                    <!-- <article class="dues">
-                        <ul>
-                            <li> 12 cuotas sin interes</li>
-                        </ul>
-                        <input class="buttons" type="button" value="Calcular Cuotas">
+                    <div class="product-description">
+                        <div class="price-product">
+                            <h2>
+                                $<%= product.price - (product.price*product.discount)/100 %>
+                            </h2>
+                        </div>
+
+                        <% if(product.discount> 0) { %>
+                        <div class="product-discount">
+                            <h4>
+                                <%= product.discount %>% de descuento!
+                            </h4>
+                            <p>Precio anterior: </div>p><p><%= product.price %></p>
+                        </div>
+                            <% } %>
+
+                        <div class="dues">
+                            <h4> Cuotas? Acá!</h4>
+                            <p> Hasta 12 cuotas sin interes</p>
+                            <div class="chekbox">
+                                <input type="checkbox" name="three">
+                                <label for="three" class="three">3 cuotas</label>
+
+                                <input type="checkbox" name="six">
+                                <label for="six" class="six">6 cuotas</label>
+
+                                <input type="checkbox" name="nine">
+                                <label for="nine" class="nine">9 cuotas</label>
+
+                                <input type="checkbox" name="twelve">
+                                <label for="twelve" class="twelve">12 cuotas</label>
+                            </div>
+
+                            <input id="button" class="buttons" type="button" value="Calcular Cuotas">
+                            <p id="total-dues"> cada cuota</p>
+                        </div>
+
+                        <div class="recive-product">
+                            <h4> Recibi tu producto </h4>
+                            <label for="delivery-method">Formas de entrega</label>
+                            <select class="selection" name="recive-product" id="delivery-method">
+                                <option value="home">Envio a domicilio</option>
+                                <option value="post">Retiro en correo</option>
+                                <option value="free">Retiro en tienda</option>
+                            </select>
+                            <p id="shipping-cost"> </p>
+                        </div>
+
+                        <dic class="payment-method-images">
+                            <h4> Medios de pago </h4>
+                            <img src="/images/images-product-detail/logo-visa.png">
+                            <img src="/images/images-product-detail/logo-master.png">
+                            <img src="/images/images-product-detail/logo-pago-facil.png">
+                            <img src="/images/images-product-detail/logo-mercado-credito.png">
+                        </div>
+                    </div>
+
+                    <!-- <article class="botones">
+
+                        <input class="buttons" type="submit" value="Comprar">
+                        < % if (locals.isLogged) { %>
+                            <a href="/products/product-edit/< %=product.id %>" id="product-redirect"><input
+                                    class="buttons" type="submit" value="Editar"></a>
+                            <form action="/products/delete/< %= product.id %>?_method=DELETE" method="POST">
+                                <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
+                            </form>
+                            < % } %>
                     </article> -->
-                                    <article class="recive-product">
-                                        <h4> Recibi tu producto </h4>
-                                        <p> Llega hoy por $1.200</p>
-                                        <input class="buttons" type="submit" value="Formas de entrega">
-                                    </article>
 
-                                    <article>
-                                        <h4> Medios de pago </h4>
-                                        <div class="payment-method-images">
-                                            <div><img src="/images/images-product-detail/logo-visa.png"></div>
-                                            <div><img src="/images/images-product-detail/logo-master.png"></div>
-                                            <div><img src="/images/images-product-detail/logo-pago-facil.png"></div>
-                                            <div><img src="/images/images-product-detail/logo-mercado-credito.png">
-                                            </div>
-                                        </div>
-                                    </article>
-                        </div>
-
-                        <article class="botones">
-
-                            <input class="buttons" type="submit" value="Comprar">
-                            <% if (locals.isLogged) { %>
-                                <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input
-                                        class="buttons" type="submit" value="Editar"></a>
-                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                    <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
-                                </form>
-                                <% } %>
-                        </article>
-                        </div>
                 </section>
-                <section class="description-under-product">
+                <!-- <section class="description-under-product">
                     <h2>Caracteristicas generales </h2>
                     <p>
-                        <%= product.category %> - <%= product.brand %>
+                        < %= product.category %> - < %= product.brand %>
                     </p>
                     <p>
-                        <%= product.description %>
+                        < %= product.description %>
                     </p>
-                </section>
+                </section> -->
+                <script src="/js/productDetail.js"></script>
             </main>
 
             <!-- FOOTER  -->

@@ -13,14 +13,11 @@ body main div.formBox {
     justify-content: center;
     font-family: 'Manjari', sans-serif;
     text-align: center;
-    font-size: 12px;
     background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
     border-radius: 10px;
     border-left: 1px solid rgba(182, 162, 238, 0.5);
     border-top: 1px solid rgba(182, 162, 238, 0.5);
-    height: 460px;
-    width: 360px;
-    padding: 10px;
+    padding: 5%;
     margin:  30px 30px 50px 30px;
 }
 
@@ -33,13 +30,15 @@ body main div.formBox h5 {
 
 body main div.formBox form .inputs {
     background-color: transparent;
+    font-family: 'Manjari', sans-serif;
     text-align: center;
+    font-size: 15px;
     color: #CDB9DD;
+    border: none;
+    outline: none;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 25px;
-    border: none;
-    outline: none;
     border-bottom: solid 2px #150050; width: 100%;
 }
 
@@ -50,8 +49,9 @@ body main div.formBox form input::placeholder {
 
 body main div.formBox form i {
     position: absolute;
-    transform: translateX(2.4px) translateY(11.4px);
+    font-size: 15px;
     color: #CDB9DD;
+    transform: translateX(4px) translateY(8px);
 }
 
 body main div.formBox form input:focus {
@@ -63,7 +63,6 @@ body main div.formBox .interaction-buttons {
     display: flex;
     justify-content: start;
     width: 100%;
-    margin: 0px;
 }
 
 body main div.formBox .interaction-buttons .buttons {
@@ -71,24 +70,20 @@ body main div.formBox .interaction-buttons .buttons {
     display: inline;
     font-family: 'Russo One', sans-serif;
     font-size: 15px;
-    padding: 10px;
-    margin: 5px 25px;
-    margin-bottom: 20px;
-    color: #bc6ff1;
+    color: #CDB9DD;
     border: none;
     border-radius: 5px;
     background-color: rgba(20, 19, 23, 0.7);
+    padding: 10px;
+    margin: 5%;
     width: 45%;
-    background-size: 200% auto;
     transition: 0.5s;
 }
 
 body main div.formBox .interaction-buttons .buttons:hover {
-    background-position: right center;
-    text-decoration: none;
     color: #fff;
     box-shadow: 0 0 10px #eee;
-    background-color: rgba(183, 16, 133, 0.8)
+    background-color: rgba(183, 16, 133, 0.8);
 }
 
 body main div.formBox div a {
@@ -96,6 +91,7 @@ body main div.formBox div a {
     display: flex;
     color: white;
     text-decoration: none;
+    margin-top: 5%;
 }
 
 body main div.formBox a:hover {
@@ -119,6 +115,8 @@ body main .inputImage {
 
 .show-error-message {
     display: block;
+    background-color: #141317;
+    padding: 5px;
 }
 
 .is-valid {
@@ -135,11 +133,32 @@ body main .inputImage {
 
 }
 
+@media (max-width: 425px) {
+    body main .formBox {
+        height: 440px;
+        width: 350px;
+    }
+
+    body main div.formBox h5 {
+        font-size: 20px;
+    }
+
+    body main div.formBox form .inputs {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 426px) {
+    body main .formBox {
+        height: 500px ;
+        width: 420px;
+    }
+}
+
 @media (min-width: 769px) {
     body main div.formBox {
-        height: 570px;
-        width: 550px;
-        padding: 10px;
+        height: 600px;
+        width: 500px;
         margin:  30px 30px 80px 30px; 
         font-size: 20px
     }
@@ -149,9 +168,7 @@ body main .inputImage {
         margin-bottom: 20px;
     }
     
-    body main div.formBox .inputs {
-        padding: 15px;
-        margin: 20px 0;
+    body main div.formBox form .inputs {
         font-size: 20px
     }
 
@@ -169,8 +186,14 @@ body main .inputImage {
         margin-bottom: 30px;
     }
 
+    body main div.formBox .interaction-buttons .buttons {
+        font-size: 18px;
+        border-left: 1px solid rgba(182, 162, 238, 0.5);
+        border-top: 1px solid rgba(182, 162, 238, 0.5);
+    }
+
     body main div.formBox .interaction-buttons .buttons:hover {
-        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
+        background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
 
     body main .errorMsg {

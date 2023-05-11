@@ -1,5 +1,6 @@
 <%- include('../partials/head') %>
     <link href="/css/profile.css" rel="stylesheet">
+    <title>Perfil</title>
     </head>
 
     <body>
@@ -11,8 +12,19 @@
                     <div class="img-cont">
                         <img src="/images/images-users/<%= user.image %> " alt="Foto de usuario">
                     </div>
+                    <div class="interaction-buttons">
+                        <button class="buttons">
+                            <a href="/products/product-cart">
+                              <p>Carrito</p>
+                            </a>
+                          </button>
+                          <button class="buttons">
+                            <a href="/users/logout">
+                              <p>Salir</p>
+                            </a>
+                          </button>
+                    </div>
                 </div>
 
             </main>
             <%- include('../partials/footer') %>
-            <!-- style="max-width: 300px;" -->

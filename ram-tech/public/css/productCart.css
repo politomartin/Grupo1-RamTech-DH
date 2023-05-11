@@ -1,20 +1,17 @@
-/*Cuidado, afecta a todos los elementos */
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #141317;
+body main {
+    margin: 100px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 body main div.title {
-    font-family: 'Russo One', sans-serif;
-    color: white;
-    margin: 10% 0% 10% 10%;
     display: flex;
     gap: 20px;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    margin: 5% 0;
 }
 
 body main div.title h4 {
@@ -24,40 +21,38 @@ body main div.title h4 {
 }
 
 body main div.container {
-    background: linear-gradient(255deg, #7b28b1 0%, #a277bf 100%);
-    color: #FFF;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
-    width: 90%;
-    padding: 5%;
-    margin-bottom: 10%;
-    margin-left: 5%;
+    color: white;
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
     border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    width: 350px;
 }
 
-body main div.container div.productos {
-    background-color: rgba(255, 255, 255, 0.2);
+body main div.container .productos {
     display: flex;
     flex-wrap: wrap;
-    margin: 10% 5% 0% 5%;
-    width: 90%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 5%;
 }
 
-body main div.container div.productos div.producto:hover {
-     background-color: rgba(255, 255, 255, 0.3); 
+body main div.container div.productos div.producto {
+    display: flex;
+    margin: 5%;
+    padding: 2%;
 }
 
-body main div.container div.productos hr {
-   border:2px solid #000;
-   border-radius: 1px;
-   width: 100%;
-   height: 1px;
-   margin-left: 7%;
-   margin-right: 7%;
+body main div.container .productos div.producto:hover {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: 300ms;
 }
 
-body main div.container div.productos div.image {
+body main div.container .productos div.image {
     display: flex;
     width: 33%;
 }
@@ -68,25 +63,20 @@ body main div.container div.productos img {
     height: 65px;
 }
 
-body main div.container div.productos div.producto {
-    width: 100%;
-    display: flex;
-}
-
 body main div.container div.productos div.description {
     display:flex;
     flex-wrap: wrap;
-    width: 100%;
     font-family: 'Manjari', sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     color: #FFF;
+    width: 100%;
 }
 
 body main div.container div.productos div.description div.buttons{
     display:flex;
     flex-wrap: wrap;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
 
 }
 
@@ -115,24 +105,34 @@ body main div.container div.productos div.description div.buttons article.articl
     margin-right: 3%;
 }
 
-body main div.container div.total {
-    font-family: 'Manjari', sans-serif;
-    font-size: 17px;
-    color: #FFF;
-    background-color:rgba(255, 255, 255, 0.2);
-    margin: 10% 10% 0% 10%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+/* Linea */
+body main div.container .productos hr {
+   border: 1px solid #BC6FF1;
+   border-radius: 1px;
+   margin: 0 5%;
+   height: 1px;
+   width: 100%;
 }
 
-body main div.container div.total article {
+body main div.container div.total {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Manjari', sans-serif;
+    font-size: 15px;
+    color: #FFF;
+    border-radius: 10px;
+    background-color:rgba(255, 255, 255, 0.2);
+    margin: 5%;
+    padding: 3%;
+}
+
+body main div.container .total article {
     width: 45%;
     margin-top: 5%;
     margin-left: 2%;
 }
 
-body main div.container div.total article.article1 {
+body main div.container .total article.article1 {
     margin-left: 3%;
 }
 
@@ -178,52 +178,47 @@ body main div.container div.total article.article4total {
     font-weight: bolder;
 }
 
-body main div.container div.total hr {
-    border:2px solid #000;
+body main div.container .total hr {
+    border: 1px solid #BC6FF1;
     border-radius: 1px;
+    margin: 0 5%;
+    height: 1px;
     width: 100%;
-    margin-left: 7%;
-    margin-right: 7%;
 }
-
+ 
 body main div.container div.pago {
     display: flex;
-    margin-right: 20%;
+    margin: 0% 10% 5% 10%;
     width: 100%;
-    margin-left: 20%;
 }
 
 main div.container div.pago a{
     width: 100%;
     text-decoration: none;
-}
-
-.btn-grad {
-    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
-    margin: 10px;
-    padding: 10px 45px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: none;
-    border-radius: 10px;
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    outline: none;
-    font-family: 'Russo One', sans-serif;
-}
-
-.btn-grad:focus {
     outline:none;
 }
 
-.btn-grad:hover {
-    background-position: right center;
-    color: #fff;
+main div.container div.pago a button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+    color: #CDB9DD;
+    padding: 10px;
+    margin: 5% 0 5% 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(20, 19, 23, 0.7);
+    width: 60%;
+    transition: 0.5s;
+}
+
+main div.container div.pago a button:hover {
     text-decoration: none;
+    color: #fff;
     box-shadow: 0 0 10px #eee;
+    background-color: rgba(183, 16, 133, 0.8);
 }
 
 @media (min-width: 425px) {
@@ -236,8 +231,8 @@ main div.container div.pago a{
         /* MAIN */
     body main div.title {
         font-size: 30px;
-        text-align: left;
-        margin: 5% 0% 5% 10%;
+        margin: 2% 0% 2% 10%;
+        width: 90%;
     }
 
     body main div.title::before {
@@ -249,27 +244,33 @@ main div.container div.pago a{
     }
     
     body main div.title:hover::before {
-        width: 100%;
+        width: 90%;
     }
 
     body main div.container {
         justify-content: space-around;
-        width: 80%;
-        padding: 5%;
-        margin: 0% 0% 10% 10%;
+        font-size: 18px;
+        padding: 1%;
+        width: 750px;
+        height: 400px;
     }
 
     body main div.container div.productos {
-        width: 40%;
-        margin: 0%;
-    }
-
-    body main div.container div.pago {
-        margin-top:10%;
+        width: 55%;
+        margin: 2% 0%;
     }
 
     body main div.container div.total {
         width: 40%;
-        margin: 0%;
+        margin: 2% 0%;
+    }
+
+    main div.container div.pago a button {
+        font-size: 18px;
+        margin: 2% 0% 0% 20%;
+    }
+
+    main div.container div.pago a button:hover {
+        background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
 }

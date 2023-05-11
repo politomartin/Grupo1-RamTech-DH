@@ -73,12 +73,13 @@ const controller = {
           oldData: req.body
         });
       }
+      let imageDefault = "./images-users/imagenPerfil.png"
       let user = {
         first_name: req.body.name,
         last_name: req.body.lastName,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        image: req.file ? req.file.filename : "imagenPerfil.png",
+        image: req.file ? req.file.filename : imageDefault,
       }
 
       await db.User.create(user);

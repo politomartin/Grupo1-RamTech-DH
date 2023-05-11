@@ -27,12 +27,8 @@ body header div.flex {
     height: 80px;
     width: 100%;
     background-image: url('../images/background-image1.png');
-
 }
 
-body main {
-    margin-top: 80px;
-}
 
 /* Logo */
 
@@ -44,16 +40,16 @@ body header .flex div.logo {
 
 body header .flex div.logo img {
     width: auto;
-    height: 70px;
+    height: 60px;
 }
 
 /* Navbar */
 
 body header .flex div.navbar {
-    display: inline-flex;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 70%;
+    width: 100%;
 }
 
 /* Search */
@@ -66,7 +62,7 @@ body header .flex div.navbar nav {
 }
 
 body header .flex div.navbar nav form i {
-    background-color: #141317;
+    background-color: transparent;
     border-radius: 10px;
     color: whitesmoke;
     font-size: 25px;
@@ -82,90 +78,50 @@ body header .flex div.navbar nav form button {
     border: none;
 }
 
-body header .flex div.navbar nav form button i {
+body header .flex .navbar nav form button i {
     font-size: x-large;
 }
 
-body header .flex div.navbar nav form input:active {
+body header .flex .navbar nav form input:active {
     outline: none;
 }
 
 /* Categories */
-body main section.categories nav {
-    height: 6vh;
-    background: rgba(183, 16, 133, 0.5);
-}
 
-body main section.categories nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    height: 100%;
-}
-
-body main section.categories nav ul li a {
-    text-decoration: none;
-    color: #FFF;
-}
-
-body main section.categories nav ul li a .name {
-    display: none;
-}
-
-
-body main section.categories nav ul li:hover {
-    transform: scale(1.3);
-    transition: ease-in-out(0.5);
-}
 
 /* Icons Log */
-body header .flex .navbar div.icons ul li {
+body header .flex .navbar div.icons {
+    display: flex;
     color: whitesmoke;
-    list-style-type: none;
-    font-size: x-large;
 }
 
-body header .flex .navbar div.icons button {
-    background-color: transparent;
+body header .flex .navbar .icons button {
+    cursor: pointer;
+    display: inline;
     border: none;
-    margin: 8px 10px 0px 10px;
-    position: relative;
-    top: 30%;
+    background-color: transparent;
+    margin: 10px 5px 0px 5px;
+    width: 50px;
 }
 
-body header .flex .navbar div.icons button div {
-    padding: 6%;
-    width: 60px;
-    border-radius: 15px;
-    border-left: 1px solid rgba(182, 162, 238, 0.5);
-    border-top: 1px solid rgba(182, 162, 238, 0.5);
-    background-color: #141317;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 500ms ease-out;
+body header .flex .navbar .icons button a {
+    margin: auto;
+    text-decoration: none;
+    outline: none;
 }
 
-body header .flex .navbar div.icons button div p {
-    color:#BC6FF1;
+body header .flex .navbar .icons button a i {
+    font-size: 25px;
+    color: whitesmoke;
+} 
+
+body header .flex .navbar .icons button a p {
     font-family: 'Manjari', sans-serif;
     font-size: 15px;
-    text-align: center;
-}
+    color:#BC6FF1;
+    margin-top: 5px;
+}    
 
-body header .flex .navbar div.icons button:hover> div {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(3px);
-}
-
-body header .flex .navbar div.icons a:visited {
-    text-decoration: none;
-    color: #000;
-}
 
 /* Burger */
 body header .flex .navbar div.burger-menu {
@@ -173,17 +129,18 @@ body header .flex .navbar div.burger-menu {
 }
 
 body header .flex .navbar div.burger-menu i {
-    background-color: #141317;
+    background-color: transparent;
     border-radius: 10px;
     color: whitesmoke;
     font-size: 25px;
     border: 2px solid #BC6FF1;
     height: 35px;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 5px 20px 0px;
     padding: 3px;
     width: 35px;
 }
 
+/* Errors */
 .show-error-message {
     display: block;
 }
@@ -199,10 +156,14 @@ body header .flex .navbar div.burger-menu i {
 
 .error-message {
     color: #842029;
-
+    
 }
 
 /* MAIN */
+body main {
+    margin-top: 80px;
+}
+
 body main section.carousel {
     display: flex;
     position: relative;
@@ -355,8 +316,39 @@ body main section.highlight article div.description-container .main-container p.
     width: 50%;
 }
 
+/* Buttons */
 
-/* Sección Setup */
+body main .buttons-create-products {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body main .buttons-create-products a {
+    text-decoration: none;
+    outline: none;
+}
+
+body main .buttons-create-products .buttons {
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+    color: #CDB9DD;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(56, 14, 49, 0.7);
+    margin: 5%;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+body main .buttons-create-products .buttons:hover {
+    color: #fff;
+    box-shadow: 0 0 10px #eee;
+    background-color: rgba(183, 16, 133, 0.8);
+}
+
+
+/* Section Setup */
 body main section.setup-products div.title-section img {
     width: 100%;
     border-top: 5px solid #141317;
@@ -402,42 +394,8 @@ body main section.setup-products div.setup .main-box a {
     color: #FFF;
 }
 
-/* BOTONES DE TODOS LOS PRODUCTOS Y CREAR PRODUCTO*/
 
-body main .buttons-create-products {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-body main .buttons-create-products .buttons {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-family: 'Russo One', sans-serif;
-    padding: 7px;
-    font-weight: 100;
-    font-size: 15px;
-    color: #CDB9DD;
-    margin: 15px 0;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(183, 16, 132) 100%);
-    transition: 0.5s;
-    box-shadow: none;
-    outline: none;
-    background-size: 200% auto;
-}
-
-body main .buttons-create-products .buttons:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 0 10px #eee;
-}
-
-
-/* FOOTER */
+/* Footer */
 
 body footer div.footer-box {
     background-position: center;
@@ -595,10 +553,12 @@ body footer div.footer-box .main-footer .copy p {
 @media (min-width: 769px) {
 
     /* HEADER */
-    body header .flex .navbar div.burger-menu {
-        display: none;
+
+    body header .flex div.logo img {
+        height: 70px;
     }
 
+    /* Navbar - Search */
     body header .flex .navbar nav form {
         display: block;
         border: 5px solid;
@@ -608,7 +568,7 @@ body footer div.footer-box .main-footer .copy p {
         background-clip: padding-box;
         border-image: linear-gradient(to right, #bc6ff1, #b71084) 1;
     }
-
+    
     body header .flex .navbar nav form::after {
         position: absolute;
         top: -4px;
@@ -618,7 +578,7 @@ body footer div.footer-box .main-footer .copy p {
         z-index: -1;
         border-radius: 16px;
     }
-
+    
     body header .flex div.navbar nav form i {
         background-color: transparent;
         border: 0px;
@@ -626,7 +586,7 @@ body footer div.footer-box .main-footer .copy p {
         margin: 3px 0px 0px 0px;
         padding: 3px;
     }
-
+    
     body header .flex .navbar nav form input {
         display: flex;
         position: relative;
@@ -638,13 +598,23 @@ body footer div.footer-box .main-footer .copy p {
         border: none;
         outline: none;
     }
-
+    
     body header .flex .navbar nav form button.submit {
         display: block;
         position: absolute;
     }
-
+    
     body header .flex .navbar nav form button.search {
+        display: none;
+    }
+
+    /* Icons Log */
+    body header .flex .navbar div.icons button:hover p {
+        color: #b71084;
+    }
+
+    /* Burger */
+    body header .flex .navbar div.burger-menu {
         display: none;
     }
 
@@ -731,11 +701,15 @@ body footer div.footer-box .main-footer .copy p {
         transition: 400ms;
     }
 
-    /* Seccion botones de todos los productos y crea tu producto*/
-
+    /* Buttons*/
     body main .buttons-create-products .buttons {
-        padding: 15px;
         font-size: 20px;
+        border-left: 1px solid rgba(182, 162, 238, 0.5);
+        border-top: 1px solid rgba(182, 162, 238, 0.5);
+    }
+    
+    body main .buttons-create-products .buttons:hover {
+        background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
 
     /* Sección setup */

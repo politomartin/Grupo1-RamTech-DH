@@ -13,7 +13,6 @@ body main div.formBox {
     justify-content: center;
     font-family: 'Manjari', sans-serif;
     text-align: center;
-
     color: white;
     background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
     border-radius: 10px;
@@ -25,8 +24,8 @@ body main div.formBox {
 
 body main .formBox h5 {
     font-family: 'Russo One', sans-serif;
-    color: white;
     font-size: 25px;
+    color: white;
     margin-bottom: 5%;
 }
 
@@ -36,11 +35,11 @@ body main .formBox form .inputs {
     font-size: 15px;
     text-align: left;
     color: #CDB9DD;
+    border: none;
+    outline: none;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: none;
-    outline: none;
     border-bottom: solid 1px #bc6ff1;
     width: 100%;
 }
@@ -92,7 +91,7 @@ body main .formBox .buttons {
     font-family: 'Russo One', sans-serif;
     font-size: 15px;
     color: #CDB9DD;
-    padding: 7px;
+    padding: 10px;
     margin: 10% 0 5% 20%;
     border: none;
     border-radius: 5px;
@@ -105,32 +104,34 @@ body main .formBox .buttons:hover {
     text-decoration: none;
     color: #fff;
     box-shadow: 0 0 10px #eee;
-    background-color: rgba(183, 16, 133, 0.8)
+    background-color: rgba(183, 16, 133, 0.8);
 }
 
 
 @media (max-width: 425px) {
     body main .formBox {
-        width: 90%;
+        height: 550px;
+        width: 350px;
         font-size: 18px;
     }
 }
 
 @media (min-width: 426px) {
     body main .formBox {
-        width: 70%;
+        height: 600px;
+        width: 420px;
         font-size: 18px;
     }
 
     body main .formBox .textarea {
         font-size: 15px;
     }
-
 }
 
 @media (min-width: 769px) {
     body main .formBox {
-        width: 50%;
+        height: 650px;
+        width: 550px;
         font-size: 20px;
     }
 
@@ -164,8 +165,7 @@ body main .formBox .buttons:hover {
     }
     
     body main div.formBox form .buttons:hover {
-        background-position: right center;
-        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
+        background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
 
 }

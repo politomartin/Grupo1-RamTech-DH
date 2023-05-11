@@ -17,10 +17,10 @@ body main div.formBox {
     border-left: 1px solid rgba(182, 162, 238, 0.5);
     border-top: 1px solid rgba(182, 162, 238, 0.5);
     background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    padding: 5%;
+    margin:  30px 30px 50px 30px;
     height: 350px;
     width: 350px;
-    padding: 10px;
-    margin:  30px 30px 50px 30px;
 }
 
 body main div.formBox h5 {
@@ -36,16 +36,17 @@ body main div.formBox form {
 
 body main div.formBox form .inputs {
     background-color: transparent;
-    color: white;
+    font-family: 'Manjari', sans-serif;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    font-size: 15px;
+    color: #CDB9DD;
     border: none;
     outline: none;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 25px;
     border-bottom: solid 2px #bc6ff1;
     width: 100%;
-    font-size: 15px;
-    padding: 5px;
 }
 
 body main div.formBox form input::placeholder {
@@ -57,7 +58,7 @@ body main div.formBox form i {
     position: absolute;
     font-size: 15px;
     color: #CDB9DD;
-    transform: translateX(4px) translateY(15px);
+    transform: translateX(4px) translateY(8px);
 }
 
 body main div.formBox form .checkbox {
@@ -93,11 +94,11 @@ body main div.formBox form .buttons {
     font-family: 'Russo One', sans-serif;
     font-size: 15px;
     color: #CDB9DD;
-    padding: 7px;
-    margin: 10% 0 10% 20%;
     border: none;
     border-radius: 5px;
     background-color: rgba(20, 19, 23, 0.7);
+    padding: 10px;
+    margin: 10% 0 10% 20%;
     width: 60%;
     transition: 0.5s;
 }
@@ -107,7 +108,6 @@ body main div.formBox form .buttons:hover {
     background-color: rgba(183, 16, 133, 0.8);
     box-shadow: 0 0 10px #eee;
 }
-
 
 body main div.formBox div.links {
     display: inline-flex;
@@ -135,6 +135,8 @@ body main div.formBox.links a:hover {
 
 .show-error-message {
     display: block;
+    background-color: #141317;
+    padding: 5px;
 }
 
 .is-valid {
@@ -198,7 +200,7 @@ body main div.formBox.links a:hover {
 
     body main div.formBox form .buttons:hover {
         background-position: right center;
-        background-image: linear-gradient(to right, rgb(94 0 157) 60%, rgb(183, 15, 131) 100%);
+        background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
   
     body main div.formBox div.links {
@@ -209,5 +211,9 @@ body main div.formBox.links a:hover {
     body main div.formBox .links a {
         font-size: 15px;
         width: 45%;
+    }
+
+    body main .errorMsg {
+        font-size: 18px;
     }
 }

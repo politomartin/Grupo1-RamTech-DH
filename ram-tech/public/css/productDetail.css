@@ -1,103 +1,108 @@
-/*Cuidado, afecta a todos los elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body main {
+    margin: 100px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-body {
-    background-color: #141317;
-}
-
-
-
-/* MAIN */
-body main .product-title {
+body main div.product-title {
     font-family: "Russo One";
     text-align: center;
     color: white;
-    margin: 10% 10% 5% 10%;
+    margin: 5% 0;
 }
 
-body main .main-product {
-    margin: 0% 5% 5% 5%;
-    padding: 2%;
-    width: 90%;
-}
-
-
-/* Box del producto*/
-
-body main .main-product .product {
-    margin-bottom: 30px;
-}
-
-body main .main-product .product div.images-product {
+/* Imágenes producto*/ 
+body main .main-product div.images-product {
     display: flex;
-    background: linear-gradient(90deg, rgba(205, 185, 221) 0%, rgba(182,162,238) 100%);
-    padding: 10px;
-    border-radius: 5px;
-    flex-wrap: wrap;
-}
-body main .main-product .product .images-product .principal-image {
-    width: 100%;
-    margin: auto;
-    padding: 5px;
-}
-
-body main .main-product .product .images-product .carrousel-images {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    margin-top: 10px;
+    justify-content: space-evenly;
 }
 
-body main .main-product .product .images-product .carrousel-images div {
+body main .main-product .images-product div.first-img {
+    background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    box-shadow: 0px 0px 10px rgba(182, 162, 238, 0.8);
+    height: 350px;
+    width: 350px;
+    padding: 10px;
+    margin: 25px 0px;
+}
+
+body main .main-product .images-product div.first-img img {
+    border-radius: 10px;
+    object-fit: cover;
     width: 100%;
-    margin: auto;
-
+    height: 100%;
 }
 
-body main .main-product .product .images-product .carrousel-images div img {
+body main .main-product .images-product div.second-img {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 10px;
+    border-left: 1px solid rgba(182, 162, 238, 0.5);
+    border-top: 1px solid rgba(182, 162, 238, 0.5);
+    background: linear-gradient(60deg, rgb(138, 9, 130, 0.8) 25%, rgb(156, 125, 224) 100%);
+    box-shadow: 0px 0px 20px rgba(183, 16, 133, 0.5);
+    padding: 2%;
+    height: 160px;
+    width: 400px;
+}
+
+body main .main-product .images-product div.second-img img {
+    border: 1px solid rgba(182, 162, 238, 0.5);
+    border-radius: 10px;
+    object-fit: cover;
     width: 100%;
-    margin: auto;
+    height: 100%;
 }
 
-/* Otros detalles del producto*/
+body main .main-product .images-product div.second-img img:hover {
+    transition: 300ms;
+    transform: scale(1.1);
+}
 
-body main .box-product-buttons .product-description {
-    background-color: #fff;
-    padding: 5px 20px;
+/* Detalles del producto*/
+body main div.product-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Manjari', sans-serif;
+    font-size: 15px;
+    background-color: #c3b8e9;
     border-radius: 5px;
+    padding: 5px 20px;
+    margin-top: 30px;
+    width: 400px;
 }
 
-body main .box-product-buttons .product-description h2 {
+body main .product-description .price-product {
+    font-family: 'Russo One', sans-serif;
+    font-size: 25px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-body main .box-product-buttons h2 {
-    font-family: "Russo One";
+body main .product-description .product-discount h4 {
+    font-weight: 700;
+    font-size: 18px;
+    color: #00c45f;
 }
 
-body main .box-product-buttons p, h4{
-    font-family: 'Manjari', sans-serif;
+/* body main .product-description .product-discount p {
+    font-size: 12px;
 }
 
-body main .box-product-buttons p {
-    font-size: 13px;
-}
+body main .product-description .dues {
+} */
 
-body main .box-product-buttons .product-description ul {
-    padding-left: 15px;
-    margin-bottom: 5px;
-}
-
-/* body main .box-product-buttons .product-description .dues input {
+body main .product-description .dues input {
     font-weight: bold;
     padding: 5px ;
     background-color: rgb(211, 211, 211);
@@ -106,9 +111,13 @@ body main .box-product-buttons .product-description ul {
     color: #000000;
     font-size: 10px;
     margin-bottom: 15px;
-} */
+}
 
-body main .box-product-buttons .product-description .recive-product input {
+body main .product-description .dues .checkbox input::before {
+    border-radius: 20px;
+}
+
+body main .product-description .recive-product input {
     font-weight: bold;
     padding: 5px ;
     background-color: rgb(211, 211, 211);
@@ -120,39 +129,31 @@ body main .box-product-buttons .product-description .recive-product input {
     margin-bottom: 15px;
 }
 
-body main .box-product-buttons .product-description .payment-method-images {
-    display: flex;
+
+body main .product-description .payment-method-images {
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-body main .box-product-buttons .product-description .payment-method-images div {
+/* 
+body main .product-description .payment-method-images {
     width: 20%;
     margin: auto;
 }
 
-body main .box-product-buttons .product-description .payment-method-images div img {
+body main .product-description .payment-method-images img {
     width:100%;
-}
+} */
 
-body main .product-discount h4 {
-    font-size: 15px;
-    color: #00c45f;
-    font-weight: bold;
-}
 
-body main .product-discount p {
-    font-size: 12px;    
-}
-
-body main .box-product-buttons .botones {
+body main .botones {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     margin-top: 15px;
 }
 
-body main .box-product-buttons .botones input {
+body main .botones input {
     font-weight: bold;
     padding: 5px 15px ;
     background: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
