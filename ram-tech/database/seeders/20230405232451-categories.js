@@ -46,11 +46,11 @@ module.exports = {
       icon: 'fa-solid fa-hard-drive'
     },
       {
-      name: 'WebCams',
+      name: 'Memoria RAM',
       icon: 'fa-solid fa-video'
     },
     {
-      name: 'Parlantes',
+      name: 'Motherboard',
       icon: 'fa-solid fa-volume-high'
     },
   ], {});

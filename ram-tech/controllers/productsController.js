@@ -6,7 +6,8 @@ const controller = {
     //LISTA DE PRODUCTOS
     index: (req, res) => {
         db.Product.findAll({
-            include: ['brands', 'categories', 'product_images']
+            include: ['brands', 'categories', 'product_images'],
+            order: [["id","ASC"]]
         })
             .then((products) => {
                 return res.render('./products/products', { products })
