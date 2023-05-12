@@ -47,7 +47,7 @@ module.exports = {
     },
       {
       name: 'Memoria RAM',
-      icon: 'fa-solid fa-video'
+      icon: 'fa-solid fa-memory'
     },
     {
       name: 'Motherboard',
