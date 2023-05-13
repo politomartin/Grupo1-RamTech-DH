@@ -65,6 +65,14 @@ window.onload = function () {
             form.password.classList.remove('is-invalid');
             form.password.classList.add('is-valid');
         }
+        if (!form.confirmPassword.value || form.password.value !== form.confirmPassword.value) {
+            errors.push({ name: 'confirmPassword', message: 'Las contraserñas no coinciden' });
+            form.confirmPassword.classList.add('is-invalid');
+        }
+        else {
+            form.confirmPassword.classList.remove('is-invalid');
+            form.confirmPassword.classList.add('is-valid');
+        }
 
         errors.forEach(error => {
             const errorLabel = document.getElementById(`error-${error.name}`);

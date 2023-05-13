@@ -7,7 +7,7 @@ const controller = {
     index: (req, res) => {
         db.Product.findAll({
             include: ['brands', 'categories', 'product_images'],
-            order: [["id","ASC"]]
+            order: [["id", "ASC"]]
         })
             .then((products) => {
                 return res.render('./products/products', { products })
@@ -178,6 +178,7 @@ const controller = {
         try {
             const { q } = req.query
             const products = await db.Product.findAll({
+                include: ['brands', 'categories', 'product_images'],
                 where: {
                     name: {
                         [Op.like]: '%' + q + '%'
@@ -195,6 +196,7 @@ const controller = {
     searchCategories: async (req, res) => {
         try {
             const products = await db.Product.findAll({
+                include: ['brands', 'categories', 'product_images'],
                 where: {
                     categories_id: req.params.id
                 }

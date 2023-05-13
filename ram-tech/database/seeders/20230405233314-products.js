@@ -222,6 +222,14 @@ module.exports = {
                 "description": "Placa De Video Nvidia Gigabyte Geforce Rtx 3060 E-12gd12gb"
             },
             {
+                "name": "Placa de video MSI GT 1030",
+                "price": 58000,
+                "categories_id": 9,
+                "brands_id": 6,
+                "discount": 0,
+                "description": "Como cuenta con 384 núcleos, los cálculos para el procesamiento de gráficos se realizarán de forma simultánea logrando un resultado óptimo del trabajo de la placa. Esto le permitirá ejecutar lecturas dispersas y rápidas de y hacia la GPU"
+            },
+            {
                 "name": "Placa de video Asus rtx 4080",
                 "price": 480000,
                 "categories_id": 9,
@@ -268,6 +276,14 @@ module.exports = {
                 "brands_id": 6,
                 "discount": 5,
                 "description": "La memoria DDR4 de alto rendimiento ilumina tu sistema con iluminación vívida y animada de diez LED RGB ultrabrillantes y direccionables individualmente por módulo"
+            },
+            {
+                "name": "Memoria Ram Corsair Dominator Platinum RGB White 16GB (2X8GB) 3600 Mhz DDR4",
+                "price": 68000,
+                "categories_id": 11,
+                "brands_id": 6,
+                "discount": 0,
+                "description": "La memoria DDR4 CORSAIR DOMINATOR PLATINUM RGB redefine las memorias premium DDR4, con un diseño superior en aluminio, chips de memoria de alta frecuencia estrictamente verificados y 12 LED RGB CAPELLIX de direccionamiento individual y gran intensidad"
             },
             {
                 "name": "Memoria Ram HyperX Fury",

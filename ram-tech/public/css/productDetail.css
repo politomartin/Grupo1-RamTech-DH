@@ -13,7 +13,7 @@ body main div.product-title {
     margin: 5% 0;
 }
 
-/* Imágenes producto*/ 
+/* Imágenes producto*/
 body main .main-product div.images-product {
     display: flex;
     flex-direction: column;
@@ -35,7 +35,6 @@ body main .main-product .images-product div.first-img {
 
 body main .main-product .images-product div.first-img img {
     border-radius: 10px;
-    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -51,20 +50,11 @@ body main .main-product .images-product div.second-img {
     box-shadow: 0px 0px 20px rgba(183, 16, 133, 0.5);
     padding: 2%;
     height: 160px;
-    width: 400px;
 }
 
 body main .main-product .images-product div.second-img img {
     border: 1px solid rgba(182, 162, 238, 0.5);
     border-radius: 10px;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-body main .main-product .images-product div.second-img img:hover {
-    transition: 300ms;
-    transform: scale(1.1);
 }
 
 /* Detalles del producto*/
@@ -104,7 +94,7 @@ body main .product-description .dues {
 
 body main .product-description .dues input {
     font-weight: bold;
-    padding: 5px ;
+    padding: 5px;
     background-color: rgb(211, 211, 211);
     border: none;
     border-radius: 2px;
@@ -119,7 +109,7 @@ body main .product-description .dues .checkbox input::before {
 
 body main .product-description .recive-product input {
     font-weight: bold;
-    padding: 5px ;
+    padding: 5px;
     background-color: rgb(211, 211, 211);
     border: none;
     border-radius: 2px;
@@ -135,6 +125,7 @@ body main .product-description .payment-method-images {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 /* 
 body main .product-description .payment-method-images {
     width: 20%;
@@ -149,13 +140,13 @@ body main .product-description .payment-method-images img {
 body main .botones {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content: space-around;
     margin-top: 15px;
 }
 
 body main .botones input {
     font-weight: bold;
-    padding: 5px 15px ;
+    padding: 5px 15px;
     background: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
     border: none;
     border-radius: 2px;
@@ -172,7 +163,7 @@ body main .botones input {
 }
 
 body main .box-product-buttons .botones form #delete-button {
-background: linear-gradient(to right, rgb(193, 12, 27) 0%, rgb(189, 8, 8) 51%, rgb(235, 13, 50) 100%);
+    background: linear-gradient(to right, rgb(193, 12, 27) 0%, rgb(189, 8, 8) 51%, rgb(235, 13, 50) 100%);
 
 }
 
@@ -223,7 +214,7 @@ body main .description-under-product p {
         width: 5%;
         transition: 0.4s ease;
     }
-    
+
     body main div.product-title:hover::before {
         width: 100%;
     }
@@ -270,7 +261,7 @@ body main .description-under-product p {
     } */
 
     body main .product-discount p {
-        font-size: 18px;    
+        font-size: 18px;
     }
 
     body main section .box-product-buttons .product-description .recive-product input {
@@ -297,10 +288,10 @@ body main .description-under-product p {
         font-size: 30px;
         font-family: "Russo One";
     }
-    
+
     body main .description-under-product p {
         font-size: 20px;
         padding: 25px;
     }
-    
+
 }

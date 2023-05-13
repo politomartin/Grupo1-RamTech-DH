@@ -12,7 +12,7 @@
       <main>
         <section class="carousel">
           <i id="left" class="fa-solid fa-circle-arrow-left"></i>
-          
+
           <div class="slider">
             <img class="img1" src="/images/images-carousel/img1.jpg">
             <img class="img2" src="/images/images-carousel/img2.jpg">
@@ -24,22 +24,22 @@
             <img class="img8" src="/images/images-carousel/img8.jpg">
             <img class="img9" src="/images/images-carousel/img9.jpg">
           </div>
-          
+
           <i id="right" class="fa-solid fa-circle-arrow-right"></i>
         </section>
 
         <section class="highlight">
 
           <div class="title-section">
-            <h2 class="title">Destacados del mes</h2>
+            <h2 class="title">Nuestros productos más baratos</h2>
           </div>
 
           <div class="products">
-            <% for (let i=0; i<3; i++) { %>
+            <% for (let i=0; i<6; i++) { %>
               <article>
                 <div class="description-container">
                   <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
-                    <img src="/images/images-products/<%= products[i].image %>" alt="<%=products[i].name %>">
+                    <img src="/images/images-products/<%= products[i].product_images[0].name%>" alt="<%=products[i].name %>">
                     <i class="fa-solid fa-heart heart-icon"></i>
                     <div class="main-container">
                       <h4 class="name">
@@ -61,7 +61,7 @@
         <section class="buttons-create-products">
           <a href="/products" id="product-redirect"><input class="buttons" type="submit"
               value="Todos los productos"></a>
-          <% if (locals.isLogged) { %>
+          <% if (locals.admin) { %>
             <a href="/products/product-create" id="product-redirect"><input class="buttons" type="submit"
                 value="Crea tu producto"></a>
             <% } %>
@@ -77,13 +77,14 @@
           <div class="setup">
             <div class="categories-box">
               <% categories.forEach(cat=> {%>
-                
                 <div class="main-box">
                   <img src="/images/images-categories/<%= cat.name  %>.jpg" alt="">
                   <div class="box">
                     <a href="/products/search-cat/<%= cat.id %>">
                       <i class="<%= cat.icon %>"></i>
-                      <h4 class="name"><%= cat.name  %></h4>
+                      <h4 class="name">
+                        <%= cat.name %>
+                      </h4>
                     </a>
                   </div>
                 </div>

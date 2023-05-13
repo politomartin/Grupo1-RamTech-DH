@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const localsMiddleware = require('./middlewares/localsMiddleware');
+const adminLocalsMiddleware = require('./middlewares/adminLocalsMiddleware');
 
 app.use(session({
     secret: "This is a secret phrase",
@@ -14,6 +15,7 @@ app.use(session({
 
 app.use(cookies());
 app.use(localsMiddleware);
+app.use(adminLocalsMiddleware);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

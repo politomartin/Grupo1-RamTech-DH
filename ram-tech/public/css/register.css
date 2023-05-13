@@ -17,8 +17,8 @@ body main div.formBox {
     border-radius: 10px;
     border-left: 1px solid rgba(182, 162, 238, 0.5);
     border-top: 1px solid rgba(182, 162, 238, 0.5);
-    padding: 5%;
-    margin:  30px 30px 50px 30px;
+    padding: 2%;
+    margin: 30px 30px 50px 30px;
 }
 
 body main div.formBox h5 {
@@ -39,7 +39,8 @@ body main div.formBox form .inputs {
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 25px;
-    border-bottom: solid 2px #150050; width: 100%;
+    border-bottom: solid 2px #150050;
+    width: 100%;
 }
 
 body main div.formBox form input::placeholder {
@@ -117,6 +118,7 @@ body main .inputImage {
     display: block;
     background-color: #141317;
     padding: 5px;
+    margin: 10px 0;
 }
 
 .is-valid {
@@ -150,16 +152,16 @@ body main .inputImage {
 
 @media (min-width: 426px) {
     body main .formBox {
-        height: 500px ;
+        height: 500px;
         width: 420px;
     }
 }
 
 @media (min-width: 769px) {
     body main div.formBox {
-        height: 600px;
+        height: 100%;
         width: 500px;
-        margin:  30px 30px 80px 30px; 
+        margin: 30px 30px 80px 30px;
         font-size: 20px
     }
 
@@ -167,16 +169,17 @@ body main .inputImage {
         font-size: 30px;
         margin-bottom: 20px;
     }
-    
+
     body main div.formBox form .inputs {
-        font-size: 20px
+        font-size: 20px;
+        width: 400px;
     }
 
     body main div.formBox form i {
         transform: translateX(10px) translateY(9px);
         font-size: 20px;
     }
-    
+
     body main div.formBox div a {
         margin-top: -10px;
         font-size: 20px;

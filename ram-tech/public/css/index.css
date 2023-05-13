@@ -5,8 +5,17 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
+    margin: 0;
     background-color: #141317;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -113,14 +122,14 @@ body header .flex .navbar .icons button a {
 body header .flex .navbar .icons button a i {
     font-size: 25px;
     color: whitesmoke;
-} 
+}
 
 body header .flex .navbar .icons button a p {
     font-family: 'Manjari', sans-serif;
     font-size: 15px;
-    color:#BC6FF1;
+    color: #BC6FF1;
     margin-top: 5px;
-}    
+}
 
 
 /* Burger */
@@ -156,7 +165,7 @@ body header .flex .navbar div.burger-menu i {
 
 .error-message {
     color: #842029;
-    
+
 }
 
 /* MAIN */
@@ -262,6 +271,7 @@ body main section.highlight div.products article div.description-container a#pro
 body main section.highlight div.products article .description-container img {
     display: block;
     width: 100%;
+    height: 20rem;
     padding: 4%;
     border-radius: 20px;
     overflow: hidden;
@@ -397,6 +407,10 @@ body main section.setup-products div.setup .main-box a {
 
 /* Footer */
 
+footer {
+    margin-top: 100px;
+}
+
 body footer div.footer-box {
     background-position: center;
     width: 100%;
@@ -404,7 +418,9 @@ body footer div.footer-box {
     font-family: 'Manjari', sans-serif;
     font-size: 18px;
     background-image: url('../images/background-image2.jpg');
+    flex-grow: 1;
 }
+
 
 body footer div.footer-box .main-footer {
     margin: auto;
@@ -568,7 +584,7 @@ body footer div.footer-box .main-footer .copy p {
         background-clip: padding-box;
         border-image: linear-gradient(to right, #bc6ff1, #b71084) 1;
     }
-    
+
     body header .flex .navbar nav form::after {
         position: absolute;
         top: -4px;
@@ -578,7 +594,7 @@ body footer div.footer-box .main-footer .copy p {
         z-index: -1;
         border-radius: 16px;
     }
-    
+
     body header .flex div.navbar nav form i {
         background-color: transparent;
         border: 0px;
@@ -586,7 +602,7 @@ body footer div.footer-box .main-footer .copy p {
         margin: 3px 0px 0px 0px;
         padding: 3px;
     }
-    
+
     body header .flex .navbar nav form input {
         display: flex;
         position: relative;
@@ -598,12 +614,12 @@ body footer div.footer-box .main-footer .copy p {
         border: none;
         outline: none;
     }
-    
+
     body header .flex .navbar nav form button.submit {
         display: block;
         position: absolute;
     }
-    
+
     body header .flex .navbar nav form button.search {
         display: none;
     }
@@ -678,13 +694,14 @@ body footer div.footer-box .main-footer .copy p {
         border-top: 1px solid rgba(182, 162, 238, 0.5);
         box-shadow: 0px 0px 20px rgb(100, 100, 100);
     }
-    
+
     body main section.highlight article .description-container i {
         bottom: 10%;
     }
 
     body main section.highlight article div.description-container .main-container {
         position: absolute;
+        width: 100%;
         padding: 5%;
         background-color: rgba(21, 0, 80, 0.5);
         border-left: 1px solid rgba(182, 162, 238, 0.5);
@@ -707,7 +724,7 @@ body footer div.footer-box .main-footer .copy p {
         border-left: 1px solid rgba(182, 162, 238, 0.5);
         border-top: 1px solid rgba(182, 162, 238, 0.5);
     }
-    
+
     body main .buttons-create-products .buttons:hover {
         background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
@@ -799,6 +816,10 @@ body footer div.footer-box .main-footer .copy p {
 @media (min-width: 1024px) {
     body main section.setup-products div.setup .main-box {
         width: 20%;
+    }
+
+    body main section.highlight div.products article .description-container img {
+        height: 31rem;
     }
 
     /* Footer */

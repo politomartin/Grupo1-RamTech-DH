@@ -28,13 +28,15 @@
                                     <img src="/images/images-products/<%= product.product_images[0].name %>"
                                         alt="Imagen del Producto" class="first-image">
                         </div>
-                        <div class="second-img">
-                            <% product.product_images.slice(2).forEach(image=> { %>
-                                <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
-                                    class="secondary-image">
-                                <% }) %>
-                                    <% } %>
-                        </div>
+                        <% if (product.product_images.length> 1) { %>
+                            <div class="second-img">
+                                <% product.product_images.slice(1).forEach(image=> { %>
+                                    <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
+                                        class="secondary-image">
+                                    <% }) %>
+                                        <% } %>
+                                            <% } %>
+                            </div>
                     </div>
 
                     <div class="product-description">
@@ -45,59 +47,62 @@
                         </div>
 
                         <% if(product.discount> 0) { %>
-                        <div class="product-discount">
-                            <h4>
-                                <%= product.discount %>% de descuento!
-                            </h4>
-                            <p>Precio anterior: </div>p><p><%= product.price %></p>
-                        </div>
+                            <div class="product-discount">
+                                <h4>
+                                    <%= product.discount %>% de descuento!
+                                </h4>
+                                <p>Precio anterior: </p>
+                                <p>
+                                    <%= product.price %>
+                                </p>
+                            </div>
                             <% } %>
 
-                        <div class="dues">
-                            <h4> Cuotas? Acá!</h4>
-                            <p> Hasta 12 cuotas sin interes</p>
-                            <div class="chekbox">
-                                <input type="checkbox" name="three">
-                                <label for="three" class="three">3 cuotas</label>
+                                <div class="dues">
+                                    <h4> Cuotas? Acá!</h4>
+                                    <p> Hasta 12 cuotas sin interes</p>
+                                    <div class="chekbox">
+                                        <input type="checkbox" name="three">
+                                        <label for="three" class="three">3 cuotas</label>
 
-                                <input type="checkbox" name="six">
-                                <label for="six" class="six">6 cuotas</label>
+                                        <input type="checkbox" name="six">
+                                        <label for="six" class="six">6 cuotas</label>
 
-                                <input type="checkbox" name="nine">
-                                <label for="nine" class="nine">9 cuotas</label>
+                                        <input type="checkbox" name="nine">
+                                        <label for="nine" class="nine">9 cuotas</label>
 
-                                <input type="checkbox" name="twelve">
-                                <label for="twelve" class="twelve">12 cuotas</label>
-                            </div>
+                                        <input type="checkbox" name="twelve">
+                                        <label for="twelve" class="twelve">12 cuotas</label>
+                                    </div>
 
-                            <input id="button" class="buttons" type="button" value="Calcular Cuotas">
-                            <p id="total-dues"> cada cuota</p>
-                        </div>
+                                    <input id="button" class="buttons" type="button" value="Calcular Cuotas">
+                                    <p id="total-dues"> cada cuota</p>
+                                </div>
 
-                        <div class="recive-product">
-                            <h4> Recibi tu producto </h4>
-                            <label for="delivery-method">Formas de entrega</label>
-                            <select class="selection" name="recive-product" id="delivery-method">
-                                <option value="home">Envio a domicilio</option>
-                                <option value="post">Retiro en correo</option>
-                                <option value="free">Retiro en tienda</option>
-                            </select>
-                            <p id="shipping-cost"> </p>
-                        </div>
+                                <div class="recive-product">
+                                    <h4> Recibi tu producto </h4>
+                                    <label for="delivery-method">Formas de entrega</label>
+                                    <select class="selection" name="recive-product" id="delivery-method">
+                                        <option value="home">Envio a domicilio</option>
+                                        <option value="post">Retiro en correo</option>
+                                        <option value="free">Retiro en tienda</option>
+                                    </select>
+                                    <p id="shipping-cost"> </p>
+                                </div>
 
-                        <dic class="payment-method-images">
-                            <h4> Medios de pago </h4>
-                            <img src="/images/images-product-detail/logo-visa.png">
-                            <img src="/images/images-product-detail/logo-master.png">
-                            <img src="/images/images-product-detail/logo-pago-facil.png">
-                            <img src="/images/images-product-detail/logo-mercado-credito.png">
-                        </div>
+                                <div class="payment-method-images">
+                                    <h4> Medios de pago </h4>
+                                    <img src="/images/images-product-detail/logo-visa.png">
+                                    <img src="/images/images-product-detail/logo-master.png">
+                                    <img src="/images/images-product-detail/logo-pago-facil.png">
+                                    <img src="/images/images-product-detail/logo-mercado-credito.png">
+                                </div>
                     </div>
 
                     <!-- <article class="botones">
 
                         <input class="buttons" type="submit" value="Comprar">
-                        < % if (locals.isLogged) { %>
+                        < % if (locals.admin) { %>
                             <a href="/products/product-edit/< %=product.id %>" id="product-redirect"><input
                                     class="buttons" type="submit" value="Editar"></a>
                             <form action="/products/delete/< %= product.id %>?_method=DELETE" method="POST">

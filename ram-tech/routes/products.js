@@ -4,8 +4,8 @@ const multer = require('multer');
 const path = require('path');
 const { check } = require('express-validator');
 
-const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
+const adminMiddleware = require("../middlewares/adminMiddleware")
 
 const productsController = require('../controllers/productsController');
 
@@ -49,17 +49,17 @@ router.get('/product-cart', authMiddleware, productsController.productCart);
 
 router.get('/product-detail/:id', productsController.productDetail);
 
-router.get('/product-create', authMiddleware, productsController.productCreate);
-router.post('/', upload.any(), validationProduct, authMiddleware, productsController.store);
+router.get('/product-create', authMiddleware, adminMiddleware, productsController.productCreate);
+router.post('/', upload.any(), validationProduct, authMiddleware, adminMiddleware, productsController.store);
 
-router.get('/product-edit/:id', authMiddleware, productsController.productEdit);
-router.put('/:id', upload.any(), validationProduct, authMiddleware, productsController.editedProduct);
+router.get('/product-edit/:id', adminMiddleware, productsController.productEdit);
+router.put('/:id', upload.any(), validationProduct, authMiddleware, adminMiddleware, productsController.editedProduct);
 
-router.get("/edit-images/:id", productsController.imagesEdit);
-router.post("/add-images/:id", upload.any(), productsController.imagesAdd);
-router.post("/delete-images/:id", productsController.imagesDelete);
+router.get("/edit-images/:id", adminMiddleware, productsController.imagesEdit);
+router.post("/add-images/:id", upload.any(), authMiddleware, adminMiddleware, productsController.imagesAdd);
+router.post("/delete-images/:id", authMiddleware, adminMiddleware, productsController.imagesDelete);
 
-router.delete('/delete/:id', authMiddleware, productsController.deleteProduct);
+router.delete('/delete/:id', authMiddleware, adminMiddleware, productsController.deleteProduct);
 router.get("/search", productsController.search);
 router.get("/search-cat/:id", productsController.searchCategories);
 module.exports = router;

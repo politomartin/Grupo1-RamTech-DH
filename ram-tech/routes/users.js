@@ -38,6 +38,9 @@ const validationsUserRegister = [
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
         .matches(passwordRegex)
         .withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial y tener al menos 8 caracteres'),
+    check("confirmPassword").custom((value, { req }) => {
+        return value === req.body.password;
+    }).withMessage('Las contraseñas deben coincidir'),
     check("image")
         .custom((value, { req }) => {
             if (!req.file) {

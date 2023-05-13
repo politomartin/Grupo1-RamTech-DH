@@ -89,13 +89,13 @@
                                                         <%= errors.description.msg %>
                                                     </div>
                                                     <% } %>
+                                                        <% if (locals.admin) { %>
+                                                            <button type="submit" class="buttons">Editar</button>
 
-                                                        <button type="submit" class="buttons">Editar</button>
-
-                                                        <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
+                                                            <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
                         <button type="submit" class="buttons">Editar</button>
                     </form> -->
-
+                                                            <% } %>
                     </form>
 
                 </div>

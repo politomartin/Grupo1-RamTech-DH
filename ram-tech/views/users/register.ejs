@@ -52,20 +52,32 @@
                                                     </div>
                                                     <% } %>
 
-                                                        <input class="inputImage" id='inputImage' type="file"
-                                                            accept=".gif .png, .jpg, .jpeg" name="image" id="image">
-                                                        <p class="error-message" id="error-image"></p>
-                                                        <% if( locals.errors && errors.image) { %>
+                                                        <i class="fa-solid fa-lock-open"></i>
+                                                        <input class="inputs" type="password" name="confirmPassword"
+                                                            id="confirmPassword"
+                                                            placeholder="Vuelva a ingresar la contraseña">
+                                                        <p class="error-message" id="error-confirmPassword"></p>
+                                                        <% if( locals.errors && errors.confirmPassword) { %>
                                                             <div class="errorMsg">
-                                                                <%= errors.image.msg %>
+                                                                <%= errors.confirmPassword.msg %>
                                                             </div>
                                                             <% } %>
-                                                                <div class="interaction-buttons">
-                                                                    <button type="submit"
-                                                                        class="buttons">Enviar</button>
-                                                                    <button type="reset"
-                                                                        class="buttons">Limpiar</button>
-                                                                </div>
+
+                                                                <input class="inputImage" id='inputImage' type="file"
+                                                                    accept=".gif .png, .jpg, .jpeg" name="image"
+                                                                    id="image">
+                                                                <p class="error-message" id="error-image"></p>
+                                                                <% if( locals.errors && errors.image) { %>
+                                                                    <div class="errorMsg">
+                                                                        <%= errors.image.msg %>
+                                                                    </div>
+                                                                    <% } %>
+                                                                        <div class="interaction-buttons">
+                                                                            <button type="submit"
+                                                                                class="buttons">Enviar</button>
+                                                                            <button type="reset"
+                                                                                class="buttons">Limpiar</button>
+                                                                        </div>
                     </form>
 
 

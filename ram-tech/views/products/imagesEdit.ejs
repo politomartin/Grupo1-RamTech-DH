@@ -21,17 +21,18 @@
                                     <input type="submit" value="Borrar Imágenes">
                                 </div>
                         </form>
-
-                        <form class="form-add" method="post" action="/products/add-images/<%=products.id%>"
-                            enctype="multipart/form-data">
-                            <h3>Agregar Imágenes</h3>
-                            <div class="form-input">
-                                <input type="file" name="images" multiple>
-                            </div>
-                            <div class="form-actions">
-                                <input type="submit" value="Subir Imágenes">
-                            </div>
-                        </form>
+                        <% if (locals.admin) { %>
+                            <form class="form-add" method="post" action="/products/add-images/<%=products.id%>"
+                                enctype="multipart/form-data">
+                                <h3>Agregar Imágenes</h3>
+                                <div class="form-input">
+                                    <input type="file" name="images" multiple>
+                                </div>
+                                <div class="form-actions">
+                                    <input type="submit" value="Subir Imágenes">
+                                </div>
+                            </form>
+                            <% } %>
                 </div>
             </main>
 

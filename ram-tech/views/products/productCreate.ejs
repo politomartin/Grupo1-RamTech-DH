@@ -69,7 +69,9 @@
                                                 <%= errors.description.msg %>
                                             </div>
                                             <% } %>
-                                                <button type="submit" class="buttons">Crear</button>
+                                                <% if (locals.admin) { %>
+                                                    <button type="submit" class="buttons">Crear</button>
+                                                    <% } %>
 
                     </form>
                 </div>
