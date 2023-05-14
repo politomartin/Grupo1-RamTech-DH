@@ -2,14 +2,9 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-    await queryInterface.createTable('user_has_products', { 
+  async up(queryInterface, Sequelize) {
+
+    await queryInterface.createTable('carts', {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -28,16 +23,16 @@ module.exports = {
           model: 'products',
           key: 'id'
         }
+      },
+      amount: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       }
-    });
+    })
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-    */
-    await queryInterface.dropTable('users_has_products');
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('carts');
+
   }
 };

@@ -359,6 +359,11 @@ body main .buttons-create-products .buttons:hover {
 
 
 /* Section Setup */
+body main section.setup-products div.setup a {
+    margin: 1%;
+    text-decoration: none;
+}
+
 body main section.setup-products div.title-section img {
     width: 100%;
     border-top: 5px solid #141317;
@@ -814,10 +819,6 @@ body footer div.footer-box .main-footer .copy p {
 }
 
 @media (min-width: 1024px) {
-    body main section.setup-products div.setup .main-box {
-        width: 20%;
-    }
-
     body main section.highlight div.products article .description-container img {
         height: 31rem;
     }

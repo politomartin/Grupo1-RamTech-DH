@@ -13,10 +13,6 @@ const controller = {
                 return res.render('./products/products', { products })
             });
     },
-    // CARRITO
-    productCart: (req, res) => {
-        res.render("./products/productCart");
-    },
 
     // DETALLE DEL PRODUCTO
     productDetail: async (req, res) => {
@@ -206,7 +202,83 @@ const controller = {
         } catch (error) {
             res.send(error)
         }
-    }
+    },
+
+    // CARRITO
+    productCart: async (req, res) => {
+        const userId = req.session.user.id;
+        try {
+            const userCart = await db.Cart.findAll({
+                include: [
+                    {
+                        model: db.Product,
+                        as: "products",
+                        include: 'product_images'
+                    }
+                ],
+                where: {
+                    users_id: userId,
+                }
+            });
+            userCart.forEach(cartProduct => {
+                cartProduct.products.price = (cartProduct.products.price) * (100 - cartProduct.products.discount) / 100 * (cartProduct.amount)
+            });
+
+            let totalPrice = 0;
+            userCart.forEach(cartProduct => {
+                totalPrice += cartProduct.products.price
+            });
+            // res.json({ userCart, totalPrice });
+            res.render("./products/productCart", { userCart, totalPrice })
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    addProductToCart: async (req, res) => {
+        const { id } = req.params
+        const userId = req.session.user.id
+        try {
+            const productInCart = await db.Cart.findOne({
+                where: {
+                    products_id: id,
+                    users_id: userId
+                },
+            })
+            if (productInCart) {
+                await productInCart.update({
+                    amount: productInCart.amount + Number(req.body.amount || 1)
+                })
+            } else {
+                let newUserCart = {
+                    users_id: userId,
+                    products_id: id,
+                    amount: req.body.amount || 1
+                }
+                await db.Cart.create(newUserCart);
+            }
+            res.redirect("/products/product-cart")
+        }
+        catch (error) {
+            console.log(error);
+        }
+    },
+
+    deleteProductFromCart: async (req, res) => {
+        const userId = req.session.user.id
+        try {
+            await db.Cart.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect("/products/product-cart")
+        }
+        catch (error) {
+            console.log(error);
+        }
+    },
+
 
 }
 

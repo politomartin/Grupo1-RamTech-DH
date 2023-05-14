@@ -89,38 +89,41 @@
                                     </select>
                                     <p id="shipping-cost"> </p>
                                 </div>
-
-                                <div class="payment-method-images">
-                                    <h4> Medios de pago </h4>
-                                    <img src="/images/images-product-detail/logo-visa.png">
-                                    <img src="/images/images-product-detail/logo-master.png">
-                                    <img src="/images/images-product-detail/logo-pago-facil.png">
-                                    <img src="/images/images-product-detail/logo-mercado-credito.png">
-                                </div>
+                                <% if (locals.isLogged) { %>
+                                    <form action="/products/addProductToCart/<%= product.id %>" method="POST">
+                                        <input class="buy-buttons" type="submit" value="Añadir al carrito">
+                                        <input class="buy-buttons" type="number" value="Elige la cantidad" name="amount"
+                                            min="1" placeholder="Elige la cantidad">
+                                    </form>
+                                    <% } %>
+                                        <div class="payment-method-images">
+                                            <h4> Medios de pago </h4>
+                                            <img src="/images/images-product-detail/logo-visa.png">
+                                            <img src="/images/images-product-detail/logo-master.png">
+                                            <img src="/images/images-product-detail/logo-pago-facil.png">
+                                            <img src="/images/images-product-detail/logo-mercado-credito.png">
+                                        </div>
                     </div>
 
-                    <!-- <article class="botones">
-
-                        <input class="buttons" type="submit" value="Comprar">
-                        < % if (locals.admin) { %>
-                            <a href="/products/product-edit/< %=product.id %>" id="product-redirect"><input
+                    <article class="botones">
+                        <% if (locals.admin) { %>
+                            <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input
                                     class="buttons" type="submit" value="Editar"></a>
-                            <form action="/products/delete/< %= product.id %>?_method=DELETE" method="POST">
+                            <a href="/products/edit-images/<%=product.id %>" id="product-redirect"><input
+                                    class="buttons" type="submit" value="Agregar o borrar imágenes"></a>
+                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                                 <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
                             </form>
-                            < % } %>
-                    </article> -->
+                            <% } %>
+                    </article>
 
                 </section>
-                <!-- <section class="description-under-product">
+                <section class="description-under-product">
                     <h2>Caracteristicas generales </h2>
                     <p>
-                        < %= product.category %> - < %= product.brand %>
+                        <%=product.description%>
                     </p>
-                    <p>
-                        < %= product.description %>
-                    </p>
-                </section> -->
+                </section>
                 <script src="/js/productDetail.js"></script>
             </main>
 

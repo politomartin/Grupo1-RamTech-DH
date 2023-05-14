@@ -39,8 +39,8 @@
               <article>
                 <div class="description-container">
                   <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
-                    <img src="/images/images-products/<%= products[i].product_images[0].name%>" alt="<%=products[i].name %>">
-                    <i class="fa-solid fa-heart heart-icon"></i>
+                    <img src="/images/images-products/<%= products[i].product_images[0].name%>"
+                      alt="<%=products[i].name %>">
                     <div class="main-container">
                       <h4 class="name">
                         <%=products[i].name %>
@@ -77,19 +77,18 @@
           <div class="setup">
             <div class="categories-box">
               <% categories.forEach(cat=> {%>
-                <div class="main-box">
-                  <img src="/images/images-categories/<%= cat.name  %>.jpg" alt="">
-                  <div class="box">
-                    <a href="/products/search-cat/<%= cat.id %>">
+                <a href="/products/search-cat/<%= cat.id %>">
+                  <div class="main-box">
+                    <img src="/images/images-categories/<%= cat.name  %>.jpg" alt="">
+                    <div class="box">
                       <i class="<%= cat.icon %>"></i>
                       <h4 class="name">
                         <%= cat.name %>
                       </h4>
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
                 <% })%>
-
             </div>
           </div>
         </section>

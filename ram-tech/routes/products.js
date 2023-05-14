@@ -45,8 +45,6 @@ const validationProduct = [
 
 router.get('/', productsController.index);
 
-router.get('/product-cart', authMiddleware, productsController.productCart);
-
 router.get('/product-detail/:id', productsController.productDetail);
 
 router.get('/product-create', authMiddleware, adminMiddleware, productsController.productCreate);
@@ -62,4 +60,10 @@ router.post("/delete-images/:id", authMiddleware, adminMiddleware, productsContr
 router.delete('/delete/:id', authMiddleware, adminMiddleware, productsController.deleteProduct);
 router.get("/search", productsController.search);
 router.get("/search-cat/:id", productsController.searchCategories);
+
+router.get('/product-cart', authMiddleware, productsController.productCart);
+router.post("/addProductToCart/:id", productsController.addProductToCart)
+router.delete("/deleteProductFromCart/:id", productsController.deleteProductFromCart)
+
+
 module.exports = router;

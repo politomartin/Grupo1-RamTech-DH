@@ -1,70 +1,68 @@
 <!-- HEAD  -->
-<%- include('../partials/head')  %>
+<%- include('../partials/head') %>
 
     <link rel="stylesheet" href="/css/productCart.css">
     <title>Carrito</title>
-</head>
-  
-<body>
-    <!-- HEADER  -->
-    <%- include('../partials/header')  %>
-   
-    <main>
-        <div class="title">
-            <h2>CARRITO</h2>
-            <h4>(2 ARTICULOS)</h4>
-        </div>
-        <div class="container">
-            <div class="productos">
-                <div class="producto">
-                    <div class="image">
-                        <img src="/images/images-product-detail/joyConProduct.jpg" alt="">
-                    </div>
-                    <div class="description">
-                        <article class="article1">Nintendo Switch</article>
-                        <article class="article2">Cantidad</article>
-                        <article class="article3">$33.000</article>
-                        <div class="buttons">
-                            <article class="article4">Editar</article>
-                            <article class="article4">Eliminar</article>
-                            <article class="article5">Disponible</article>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="producto">
-                    <div class="image">
-                        <img src="/images/images-product-detail/joyConProduct.jpg" alt="">
-                    </div>
-                    <div class="description">
-                        <article class="article1">Nintendo Switch</article>
-                        <article class="article2">Cantidad</article>
-                        <article class="article3">$33.000</article>
-                        <div class="buttons">
-                            <article class="article4">Editar</article>
-                            <article class="article4">Eliminar</article>
-                            <article class="article5">Disponible</article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="total">
-                <article class="article1">Total de la orden</article>
-                <article class="article1total">$0.00</article>
-                <article class="article2">Envio</article>
-                <article class="article2total">$0.00</article>
-                <hr>
-                <article class="article3">Codigo Promocional</article>
-                <article class="article3total">+</article>
-                <hr>
-                <article class="article4">Total a Pagar</article>
-                <article class="article4total">$0.00</article>
-            </div>
-            <div class="pago">
-                <a href="#"><button>Proceder a pagar</button></a>
-            </div>
-        </div>
-        </main>
+    </head>
 
-    <!-- FOOTER  -->
-    <%- include('../partials/footer')  %>
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/header') %>
+
+            <main>
+                <div class="title">
+                    <h2>CARRITO</h2>
+                    <h4>(2 ARTICULOS)</h4>
+                </div>
+                <div class="container">
+                    <div class="productos">
+                        <% userCart.forEach(product=> { %>
+
+                            <div class="producto">
+                                <div class="image">
+                                    <img src="/images/images-products/<%= product.products.product_images[0].name %>"
+                                        alt="">
+                                </div>
+                                <div class="description">
+
+                                    <article class="article1">
+                                        <%= product.products.name %>
+                                    </article>
+                                    <article class="article2">
+                                        <%= product.amount %>
+                                    </article>
+                                    <article class="article3">
+                                        <%= product.products.price %>
+                                    </article>
+                                    <div class="buttons">
+                                        <form action="/products/deleteProductFromCart/<%= product.id %>?_method=DELETE"
+                                            method="POST">
+                                            <input type="submit" value="Eliminar" class="article4">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                                <hr>
+                    </div>
+                    <div class="total">
+                        <article class="article1">Total de la orden</article>
+                        <article class="article1total">$<%= totalPrice %>
+                        </article>
+                        <article class="article2">Envio</article>
+                        <article class="article2total">$0.00</article>
+                        <hr>
+                        <article class="article3">Codigo Promocional</article>
+                        <article class="article3total">+</article>
+                        <hr>
+                        <article class="article4">Total a Pagar</article>
+                        <article class="article4total">$0.00</article>
+                    </div>
+                    <div class="pago">
+                        <a href="#"><button>Proceder a pagar</button></a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- FOOTER  -->
+            <%- include('../partials/footer') %>
