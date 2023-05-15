@@ -1,41 +1,44 @@
-  <!-- HEADER  -->
-  <header>
-    <div class="flex" >
-      <div class="logo">
-        <a href="/"><img src="/images/logo2.png" alt="RamTech"></img></a>
-      </div>
+<!-- HEADER  -->
+<header>
+  <div class="flex">
+    <div class="logo">
+      <a href="/"><img src="/images/logo2.png" alt="RamTech"></img></a>
+    </div>
 
-      <div class="navbar"> 
-        <nav>
-          <form action="/products/search" method="get" autocomplete="off">
-            <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="search" placeholder="Buscar..." name="q" id="">
-          </form>
-        </nav>
-
-        <!-- < % categories.forEach(cat=> {%>
+    <div id="categories" class="container">
+      <%categories.forEach(cat=> { %>
         <div class="categories">
           <ul>
-              <li>
-                <a href="/products/search-cat/< %= cat.id %>">
-                  <i class="< %= cat.icon %>"></i>
-                  <h4 class="name">< %= cat.name  %></h4>
-                </a>
-              </li>
+            <li>
+              <a href="/products/search-cat/<%= cat.id %>">
+                <h4 class="name">
+                  <%= cat.name %>
+                </h4>
+              </a>
+            </li>
           </ul>
         </div>
-        < % }) %> -->
+        <% }) %>
+    </div>
 
-        <div class="icons">
-            <% if (!locals.isLogged) { %>
-            <button>
-              <a href="/users/login">
-                <i class="fa-solid fa-user-astronaut"></i>
-                <p>Ingresar</p>
-              </a>
-            </button>
-            <% }else { %>
+    <div class="navbar">
+      <nav>
+        <form id="search-form" action="/products/search" method="get" autocomplete="off">
+          <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="search" placeholder="Buscar..." name="q" id="">
+        </form>
+      </nav>
+
+      <div class="icons">
+        <% if (!locals.isLogged) { %>
+          <button>
+            <a href="/users/login">
+              <i class="fa-solid fa-user-astronaut"></i>
+              <p>Ingresar</p>
+            </a>
+          </button>
+          <% }else { %>
 
             <button>
               <a href="/products/product-cart">
@@ -56,12 +59,14 @@
               </a>
             </button>
             <% } %>
-        </div>
-      
-        <div class="burger-menu">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-
       </div>
+
+      <div id="burger-menu" class="burger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
     </div>
-  </header>
+  </div>
+</header>
+
+<script src="/js/header.js"></script>

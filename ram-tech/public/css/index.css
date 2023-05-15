@@ -520,9 +520,45 @@ body footer div.footer-box .main-footer .copy p {
 }
 
 
+
+.flex .container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    top: 80px;
+    background-image: url('../images/background-image1.png');
+    border-radius: 5px;
+    padding: 10px;
+    gap: 35px;
+    transition: all 400ms
+}
+
+.flex .categories a {
+    text-decoration: none;
+    color: white;
+}
+
+.flex .categories ul {
+    list-style: none;
+}
+
+
+.flex .visible {
+    opacity: 0;
+    transition: all 400ms
+}
+
+.flex #search-form {
+    display: none;
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {
+
     body header .flex div.navbar nav form button.submit {
         display: none;
     }
@@ -572,6 +608,14 @@ body footer div.footer-box .main-footer .copy p {
 
 
 @media (min-width: 769px) {
+
+    .flex .container {
+        display: none;
+    }
+
+    .flex #search-form {
+        display: flex;
+    }
 
     /* HEADER */
 

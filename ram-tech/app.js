@@ -6,7 +6,7 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const localsMiddleware = require('./middlewares/localsMiddleware');
 const adminLocalsMiddleware = require('./middlewares/adminLocalsMiddleware');
-
+const categoriesMiddleware = require('./middlewares/categoriesMiddleware');
 app.use(session({
     secret: "This is a secret phrase",
     resave: false,
@@ -16,6 +16,7 @@ app.use(session({
 app.use(cookies());
 app.use(localsMiddleware);
 app.use(adminLocalsMiddleware);
+app.use(categoriesMiddleware);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
