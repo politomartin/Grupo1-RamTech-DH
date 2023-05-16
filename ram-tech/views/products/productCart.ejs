@@ -41,22 +41,34 @@
                                         </form>
                                     </div>
                                 </div>
+
                             </div>
+                            <hr>
                             <% }) %>
-                                <hr>
                     </div>
+
                     <div class="total">
-                        <article class="article1">Total de la orden</article>
-                        <article class="article1total">$<%= totalPrice %>
+                        <article class="article1">Total de la orden:</article>
+                        <article class="article1total">$
+                            <span id="products-price">
+                                <%= totalPrice %>
+                            </span>
                         </article>
-                        <article class="article2">Envio</article>
-                        <article class="article2total">$0.00</article>
                         <hr>
-                        <article class="article3">Codigo Promocional</article>
-                        <article class="article3total">+</article>
+                        <article class="article1">
+                            <article class="article1" for="delivery-method">Formas de entrega</article>
+                            <select class="selection" name="received-product" id="delivery-method">
+                                <option disabled selected>Elige tu forma de entrega</option>
+                                <option value="home">Envio a domicilio</option>
+                                <option value="post">Retiro en correo</option>
+                                <option value="free">Retiro en tienda</option>
+                            </select>
+                            <article class="article1" id="shipping-cost">Llega hoy por:</article>
+                        </article>
                         <hr>
-                        <article class="article4">Total a Pagar</article>
-                        <article class="article4total">$0.00</article>
+                        <hr>
+                        <article class="article1">Total a Pagar: </article>
+                        <article id="final-price" class="article4total"></article>
                     </div>
                     <div class="pago">
                         <a href="#"><button>Proceder a pagar</button></a>
@@ -65,4 +77,5 @@
             </main>
 
             <!-- FOOTER  -->
+            <script src="/js/productCart.js"></script>
             <%- include('../partials/footer') %>

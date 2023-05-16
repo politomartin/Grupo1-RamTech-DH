@@ -1,0 +1,92 @@
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+    <link href="/css/register.css" rel="stylesheet">
+    <title>Formulario de edición de usuario</title>
+    </head>
+
+    <body>
+
+        <!-- HEADER  -->
+        <%- include('../partials/header') %>
+
+            <main>
+                <div class="formBox">
+                    <h5>Editar usuario</h5>
+                    <form id="form" action="/users/user-edit/<%= usertoEdit.id %>?_method=PUT" method="POST"
+                        autocomplete="off" enctype="multipart/form-data">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                        <input value="<%=usertoEdit.first_name %>" class="inputs" type="text" name="name" id="name"
+                            placeholder="Ingrese su nombre">
+                        <p class="error-message" id="error-name"></p>
+                        <% if( locals.errors && errors.name) { %>
+                            <div class="errorMsg">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
+
+                                <i class="fa-solid fa-user-astronaut"></i>
+                                <input class="inputs" type="text" name="lastName" id="lastName"
+                                    placeholder="Ingrese su apellido" value="<%=usertoEdit.last_name %>">
+                                <p class="error-message" id="error-lastName"></p>
+                                <% if( locals.errors && errors.lastName) { %>
+                                    <div class="errorMsg">
+                                        <%= errors.lastName.msg %>
+                                    </div>
+                                    <% } %>
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <input class="inputs" type="text" name="email" id="email"
+                                            placeholder="Ingrese su email" value="<%=usertoEdit.email %>">
+                                        <p class="error-message" id="error-email"></p>
+                                        <% if( locals.errors && errors.email) { %>
+                                            <div class="errorMsg">
+                                                <%= errors.email.msg %>
+                                            </div>
+                                            <% } %>
+
+                                                <i class="fa-solid fa-lock-open"></i>
+                                                <i id="eye-icon1" class="fa-solid fa-eye"></i>
+                                                <input class="inputs" type="password" name="password" id="password"
+                                                    placeholder="Ingrese su contraseña">
+                                                <p class="error-message" id="error-password"></p>
+                                                <% if( locals.errors && errors.password) { %>
+                                                    <div class="errorMsg">
+                                                        <%= errors.password.msg %>
+                                                    </div>
+                                                    <% } %>
+
+                                                        <i id="eye-icon2" class="fa-solid fa-eye"></i>
+                                                        <i class="fa-solid fa-lock-open"></i>
+                                                        <input class="inputs" type="password" name="confirmPassword"
+                                                            id="confirmPassword"
+                                                            placeholder="Vuelva a ingresar la contraseña">
+                                                        <p class="error-message" id="error-confirmPassword"></p>
+                                                        <% if( locals.errors && errors.confirmPassword) { %>
+                                                            <div class="errorMsg">
+                                                                <%= errors.confirmPassword.msg %>
+                                                            </div>
+                                                            <% } %>
+
+                                                                <input class="inputImage" id='inputImage' type="file"
+                                                                    accept=".gif .png, .jpg, .jpeg" name="image"
+                                                                    id="image">
+                                                                <p class="error-message" id="error-image"></p>
+                                                                <% if( locals.errors && errors.image) { %>
+                                                                    <div class="errorMsg">
+                                                                        <%= errors.image.msg %>
+                                                                    </div>
+                                                                    <% } %>
+                                                                        <div class="interaction-buttons">
+                                                                            <button type="submit"
+                                                                                class="buttons">Enviar</button>
+                                                                            <button type="reset"
+                                                                                class="buttons">Limpiar</button>
+                                                                        </div>
+                    </form>
+
+
+                </div>
+            </main>
+            <!-- FOOTER  -->
+            <script src="/js/register.js"></script>
+            <%- include('../partials/footer') %>

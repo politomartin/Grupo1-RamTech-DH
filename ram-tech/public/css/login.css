@@ -18,7 +18,7 @@ body main div.formBox {
     border-top: 1px solid rgba(182, 162, 238, 0.5);
     background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
     padding: 5%;
-    margin:  30px 30px 50px 30px;
+    margin: 30px 30px 50px 30px;
     height: 350px;
     width: 350px;
 }
@@ -153,32 +153,36 @@ body main div.formBox.links a:hover {
 
 }
 
+form #eye-icon {
+    transform: translateX(354px) translateY(44px);
+}
+
 @media (min-width: 769px) {
     body main div.formBox {
         height: 550px;
         width: 500px;
         padding: 10px;
-        margin:  30px 30px 50px 30px;
+        margin: 30px 30px 50px 30px;
     }
-    
+
     body main div.formBox h5 {
         font-size: 30px;
     }
-    
+
     body main div.formBox form {
         width: 80%;
     }
-    
+
     body main div.formBox form .inputs {
         font-size: 20px;
         padding: 10px;
         margin: 30px 0;
     }
-    
+
     body main div.formBox form input::placeholder {
         font-size: 20px;
     }
-    
+
     body main div.formBox form i {
         transform: translateX(10px) translateY(45px);
         font-size: 20px;
@@ -202,7 +206,7 @@ body main div.formBox.links a:hover {
         background-position: right center;
         background-image: linear-gradient(to right, rgb(94 0 157) 25%, rgb(183, 15, 131) 100%);
     }
-  
+
     body main div.formBox div.links {
         width: 100%;
         margin-top: 20px;

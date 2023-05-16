@@ -135,6 +135,12 @@ body main .inputImage {
 
 }
 
+form #eye-icon1,
+form #eye-icon2 {
+    transform: translateX(360px) translateY(12px);
+}
+
+
 @media (max-width: 425px) {
     body main .formBox {
         height: 440px;

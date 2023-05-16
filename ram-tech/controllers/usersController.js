@@ -96,6 +96,35 @@ const controller = {
         user: req.session.user
       });
   },
+
+  userEdit: async (req, res) => {
+    try {
+      const usertoEdit = await db.User.findOne(
+        { where: { id: req.session.user.id } }
+      )
+      res.render("./users/users", { usertoEdit })
+    }
+    catch (error) {
+      res.send(error)
+    }
+  },
+
+  userEdition: async (req, res) => {
+    try {
+      const userEdited = {
+        first_name: req.body.name,
+        last_name: req.body.lastName,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email: req.body.email,
+        image: req.file.filename
+      }
+      await db.User.update(userEdited, { where: { id: req.params.id } });
+      res.redirect('/users/profile');
+    } catch (error) {
+      return res.send(error);
+    }
+  },
+
   logout: (req, res) => {
     res.clearCookie('userEmail');
     req.session.destroy();

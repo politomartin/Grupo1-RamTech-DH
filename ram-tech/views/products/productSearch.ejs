@@ -1,39 +1,49 @@
 <!-- HEAD -->
 <%- include('../partials/head') %>
-<link href="/css/products.css" rel="stylesheet">
-</head>
+	<link href="/css/products.css" rel="stylesheet">
+	</head>
 
-<body>
-	<!-- Header -->
-	<%- include('../partials/header') %>
-	
-	<main>
-		<section class="highlight">
-			
-			<div class="title-section">
+	<body>
+		<!-- Header -->
+		<%- include('../partials/header') %>
 
-				<h2 class="title">Productos</h2>
-				
-			</div>
+			<main>
+				<section class="highlight">
 
-			<div class="products">
-			<% products.forEach(product => { %>
-				<article>
-					<div class="description-container">
-						<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
-							<img src="/images/images-products/<%= product.product_images[0].name %>" alt="<%=product.name %>">
-							
-							<div class="main-container">
-								<h4 class="name"><%=product.name %></h4>
-								<p class="price">$<%=product.price %> </p>
-								<p class="discount"><%=product.discount %>% Off</p>
-							</div>
-						</a>
+					<div class="title-section">
+
+						<h2 class="title">Productos</h2>
+
 					</div>
-				</article>
-				<%}); %> 
-			</div>
-		</section>
-	</main>
-	<!-- FOOTER  -->
-<%- include('../partials/footer')  %>
+
+					<div class="products">
+						<% products.forEach(product=> { %>
+							<article>
+								<div class="description-container">
+									<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
+										<% if (product.product_images.length===0) { %>
+											<img src="/images/images-products/default-product.png"
+												alt="Imagen del producto" class="principal-image">
+											<% } else { %>
+												<img src="/images/images-products/<%= product.product_images[0].name %>"
+													alt="<%=product.name %>">
+												<% } %>
+													<div class="main-container">
+														<h4 class="name">
+															<%=product.name %>
+														</h4>
+														<p class="price">$<%=product.price %>
+														</p>
+														<p class="discount">
+															<%=product.discount %>% Off
+														</p>
+													</div>
+									</a>
+								</div>
+							</article>
+							<%}); %>
+					</div>
+				</section>
+			</main>
+			<!-- FOOTER  -->
+			<%- include('../partials/footer') %>
