@@ -21,7 +21,7 @@ let storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const validationProduct = [
+const validationProductCreate = [
     check("name")
         .notEmpty().withMessage('Debe poner un nombre').trim().bail()
         .isLength({ min: 5 }).withMessage('El nombre debe contener al menos 5 caracteres'),
@@ -43,15 +43,25 @@ const validationProduct = [
         .withMessage("Formato de archivo no válido")
 ]
 
+const validationProductEdit = [
+    check("name")
+        .notEmpty().withMessage('Debe poner un nombre').trim().bail()
+        .isLength({ min: 5 }).withMessage('El nombre debe contener al menos 5 caracteres'),
+    check("price")
+        .isNumeric().withMessage('El precio tiene que ser un número'),
+    check("description")
+        .isLength({ min: 20 }).withMessage('La descripción debe contener al menos 20 caracteres').trim(),
+]
+
 router.get('/', productsController.index);
 
 router.get('/product-detail/:id', productsController.productDetail);
 
 router.get('/product-create', authMiddleware, adminMiddleware, productsController.productCreate);
-router.post('/', upload.any(), validationProduct, authMiddleware, adminMiddleware, productsController.store);
+router.post('/', upload.any(), validationProductCreate, authMiddleware, adminMiddleware, productsController.store);
 
 router.get('/product-edit/:id', adminMiddleware, productsController.productEdit);
-router.put('/:id', upload.any(), validationProduct, authMiddleware, adminMiddleware, productsController.editedProduct);
+router.put('/:id', validationProductEdit, authMiddleware, adminMiddleware, productsController.editedProduct);
 
 router.get("/edit-images/:id", adminMiddleware, productsController.imagesEdit);
 router.post("/add-images/:id", upload.any(), authMiddleware, adminMiddleware, productsController.imagesAdd);

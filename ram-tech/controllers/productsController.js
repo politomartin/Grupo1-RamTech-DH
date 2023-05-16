@@ -228,8 +228,13 @@ const controller = {
             userCart.forEach(cartProduct => {
                 totalPrice += cartProduct.products.price
             });
+            let totalAmount = 0;
+            userCart.forEach(product => {
+                totalAmount += product.amount
+            });
+
             // res.json({ userCart, totalPrice });
-            res.render("./products/productCart", { userCart, totalPrice })
+            res.render("./products/productCart", { userCart, totalPrice, totalAmount })
         } catch (error) {
             console.log(error);
         }
