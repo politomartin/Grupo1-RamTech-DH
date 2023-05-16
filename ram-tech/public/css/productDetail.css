@@ -69,30 +69,41 @@ body main div.product-description {
     font-size: 15px;
     background-color: #c3b8e9;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 20px;
     margin-top: 30px;
-    width: 400px;
 }
 
 body main .product-description .price-product {
     font-family: 'Russo One', sans-serif;
     font-size: 25px;
     text-align: center;
-    margin-bottom: 10px;
+}
+
+body main .product-description .product-discount {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px;
 }
 
 body main .product-description .product-discount h4 {
-    font-weight: 700;
-    font-size: 18px;
-    color: #00c45f;
+    font-size: 28px;
+    color: #008440;
+    margin-bottom: 10px;
 }
 
-/* body main .product-description .product-discount p {
-    font-size: 12px;
+body main .product-description .product-discount p#price {
+    font-family: 'Russo One', sans-serif;
+    color: #b71085;
 }
 
 body main .product-description .dues {
-} */
+    width: 300px;
+}
+
+body main .product-description .dues h4 {
+    font-size: 20px;
+}
 
 body main .product-description .dues input {
     font-weight: bold;

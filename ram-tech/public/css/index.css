@@ -175,48 +175,26 @@ body main {
 
 body main section.carousel {
     display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(60deg, rgb(138, 9, 130, 0.8) 25%, rgb(156, 125, 224) 100%);
+    padding: 1%;
+    height: 430px;
 }
 
-body main .carousel .slider {
-    white-space: nowrap;
-    padding: 3%;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-body main .carousel .slider img {
+body main section.carousel img {
+    width: 0px;
+    flex-grow: 1;
     object-fit: cover;
-    width: calc(100% / 2);
-    margin-left: 20px;
-    border-radius: 15px;
-    border-left: 1px solid rgba(182, 162, 238, 0.5);
-    border-top: 1px solid rgba(182, 162, 238, 0.5);
-    box-shadow: 0px 0px 20px rgba(183, 16, 133, 0.7);
+    opacity: .8;
+    transition: .5s ease;
 }
 
-body main .carousel .slider img:first-child {
-    margin-left: 0px;
+body main section.carousel img:hover {
+    cursor:pointer;
+    width: 100%;
+    opacity: 1;
+    filter: contrast(120%);
 }
 
-body main .carousel i {
-    color: #CDB9DD;
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-body main .carousel i:first-child {
-    left: 5%;
-}
-
-body main .carousel i:last-child {
-    right: 5%;
-}
 
 /* Títulos de sección */
 
@@ -324,24 +302,6 @@ body main section.highlight article div.description-container .main-container p.
     color: #b71084;
     font-weight: 700;
     width: 50%;
-}
-section#section{
-    display: flex;
-    /* width: 600px; */
-    height: 430px;
-}
-section#section img {
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .8;
-    transition: .5s ease;
-}
-section#section img:hover {
-    cursor:pointer;
-    width: 100%;
-    opacity: 1;
-    filter: contrast(120%);
 }
 
 /* Buttons */
@@ -538,7 +498,7 @@ body footer div.footer-box .main-footer .copy p {
 }
 
 
-
+/* Burger */
 .flex .container {
     display: flex;
     flex-direction: column;
@@ -702,14 +662,6 @@ body footer div.footer-box .main-footer .copy p {
     }
 
     /* MAIN */
-    /* body main section.carousel {
-        height: 25vh;
-    }
-
-    body main section.carousel i.desktop {
-        display: block;
-    } */
-
     body main section.categories nav {
         height: 10vh;
     }
