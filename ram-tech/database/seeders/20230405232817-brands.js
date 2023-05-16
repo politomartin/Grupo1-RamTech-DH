@@ -3,17 +3,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-      await queryInterface.bulkInsert('brands', [{
-        name: 'Nintendo',
-      },
+      await queryInterface.bulkInsert('brands', [
       {
         name: 'Razer',
       },
       {
         name: 'Corsair',
-      },
-      {
-        name: 'Samsung',
       },
       {
         name: 'Redragon',
@@ -24,6 +19,36 @@ module.exports = {
       {
         name: 'Nvidia',
       },
+      {
+        name: 'Asus',
+      },
+      {
+        name: 'Kingston',
+      },
+      {
+        name: 'Noblex',
+      },
+      {
+        name: 'Logitech',
+      },
+      {
+        name: 'HyperX',
+      },
+      {
+        name: 'LG',
+      },
+      {
+        name: 'Philips',
+      },
+      {
+        name: 'Samsung',
+      },
+      {
+        name: 'Nintendo',
+      },
+      {
+        name: 'Other',
+      }
     ], {});
     
   },

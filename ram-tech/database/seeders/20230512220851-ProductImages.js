@@ -17,14 +17,6 @@ module.exports = {
         product_id: 1
       },
       {
-        name: 'joy-con04.jpg',
-        product_id: 1
-      },
-      {
-        name: 'joy-con05.jpg',
-        product_id: 1
-      },
-      {
         name: 'joystick-ps5-1.jpg',
         product_id: 2
       },
@@ -53,11 +45,19 @@ module.exports = {
         product_id: 5
       },
       {
+        name: 'Mouse-HyperXPulsefire-3.PNG',
+        product_id: 5
+      },
+      {
         name: 'Mouse-LogitechPro-1.PNG',
         product_id: 6
       },
       {
         name: 'Mouse-LogitechPro-2.PNG',
+        product_id: 6
+      },
+      {
+        name: 'Mouse-LogitechPro-3.PNG',
         product_id: 6
       },
       {
@@ -89,15 +89,35 @@ module.exports = {
         product_id: 10,
       },
       {
-        name: 'monitor-samsung.jpg',
+        name: 'monitor-samsungT55-1.jpg',
         product_id: 11,
       },
       {
-        name: 'monitor-lg-1.jpeg',
+        name: 'monitor-samsungT55-2.jpg',
+        product_id: 11,
+      },
+      {
+        name: 'monitor-lgUltra-1.jpg',
         product_id: 12,
       },
       {
-        name: 'monitor-asus-1.jpeg',
+        name: 'monitor-lgUltra-2.jpg',
+        product_id: 12,
+      },
+      {
+        name: 'monitor-lgUltra-3.jpg',
+        product_id: 12,
+      },
+      {
+        name: 'monitor-asus24-1.jpeg',
+        product_id: 13,
+      },
+      {
+        name: 'monitor-asus24-2.jpeg',
+        product_id: 13,
+      },
+      {
+        name: 'monitor-asus24-3.jpeg',
         product_id: 13,
       },
       {
@@ -121,7 +141,7 @@ module.exports = {
         product_id: 16,
       },
       {
-        name: 'microfono-razer.jpg',
+        name: 'microfono-razerSiren-1.jpg',
         product_id: 17,
       },
       {
@@ -130,6 +150,10 @@ module.exports = {
       },
       {
         name: 'microfono-blue-condenser2.jpeg',
+        product_id: 18,
+      },
+      {
+        name: 'microfono-blue-condenser3.jpeg',
         product_id: 18,
       },
       {
@@ -300,6 +324,179 @@ module.exports = {
         name: 'Motherboard-AM4-Msi-B450-GAMING-PLUS-MAX_44046_4.jpeg',
         product_id: 39,
       },
+      {
+        name: 'monitor-samsung24-1.jpg',
+        product_id: 40,
+      },
+      {
+        name: 'monitor-samsung24-2.jpg',
+        product_id: 40,
+      },
+      {
+        name: 'monitor-samsung24-3.jpg',
+        product_id: 40,
+      },
+      {
+        name: 'monitor-samsungOdyssey-1.jpg',
+        product_id: 41,
+      },
+      {
+        name: 'monitor-samsungOdyssey-2.jpg',
+        product_id: 41,
+      },
+      {
+        name: 'monitor-samsungOdyssey-3.jpg',
+        product_id: 41,
+      },
+      {
+        name: 'monitor-asus21-1.jpeg',
+        product_id: 42,
+      },
+      {
+        name: 'monitor-asus21-2.jpeg',
+        product_id: 42,
+      },
+      {
+        name: 'monitor-asus21-3.jpeg',
+        product_id: 42,
+      },
+      {
+        name: 'monitor-lg32-1.jpg',
+        product_id: 43,
+      },
+      {
+        name: 'monitor-lg32-2.jpg',
+        product_id: 43,
+      },
+      {
+        name: 'monitor-lg32-3.jpg',
+        product_id: 43,
+      },
+      {
+        name: 'monitor-noblex27-1.jpg',
+        product_id: 44,
+      },
+      {
+        name: 'monitor-noblex27-2.jpg',
+        product_id: 44,
+      },
+      {
+        name: 'monitor-noblex27-3.jpg',
+        product_id: 44,
+      },
+      {
+        name: 'microfono-razerElite-1.jpg',
+        product_id: 45,
+      },
+      {
+        name: 'microfono-razerElite-2.jpg',
+        product_id: 45,
+      },
+      {
+        name: 'microfono-razerElite-3.jpg',
+        product_id: 45,
+      },
+      {
+        name: 'microfono-hyperx-condenser1.jpg',
+        product_id: 46,
+      },
+      {
+        name: 'microfono-hyperx-condenser2.jpg',
+        product_id: 46,
+      },
+      {
+        name: 'microfono-hyperx-condenser3.jpg',
+        product_id: 46,
+      },
+      {
+        name: 'webcam-redragonHitman-1.jpg',
+        product_id: 47,
+      },
+      {
+        name: 'webcam-redragonHitman-3.jpg',
+        product_id: 47,
+      },
+      {
+        name: 'webcam-redragonHitman-3.jpg',
+        product_id: 47,
+      },
+      {
+        name: 'web-logitechBrio-1.jpg',
+        product_id: 48,
+      },
+      {
+        name: 'web-logitechBrio-2.jpg',
+        product_id: 48,
+      },
+      {
+        name: 'web-logitechBrio-3.jpg',
+        product_id: 48,
+      },
+      {
+        name: 'web-logitechHD-1.jpg',
+        product_id: 49,
+      },
+      {
+        name: 'web-logitechHD-2.jpg',
+        product_id: 49,
+      },
+      {
+        name: 'web-logitechHD-3.jpg',
+        product_id: 49,
+      },
+      {
+        name: 'webcam-razerKiyo-1.jpg',
+        product_id: 50,
+      },
+      {
+        name: 'webcam-razerKiyo-2.jpg',
+        product_id: 50,
+      },
+      {
+        name: 'webcam-razerKiyo-3.jpg',
+        product_id: 50,
+      },
+      {
+        name: 'parlante-redragon-1.jpg',
+        product_id: 51,
+      },
+      {
+        name: 'parlante-xinua1.jpg',
+        product_id: 52,
+      },
+      {
+        name: 'parlante-xinua2.jpg',
+        product_id: 52,
+      },
+      {
+        name: 'parlante-xinua3.jpg',
+        product_id: 52,
+      },
+      {
+        name: 'parlante-hp1.jpg',
+        product_id: 53,
+      },
+      {
+        name: 'parlante-hp2.jpg',
+        product_id: 53,
+      },
+      {
+        name: 'parlante-hp3.jpg',
+        product_id: 53,
+      },
+      {
+        name: 'parlante-hpBarra1.jpg',
+        product_id: 54,
+      },
+      {
+        name: 'parlante-hpBarra2.jpg',
+        product_id: 54,
+      },
+      {
+        name: 'parlante-hpBarra3.jpg',
+        product_id: 54,
+      },
+
     ], {});
 
   },
