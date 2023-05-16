@@ -30,19 +30,21 @@
                         </div>
                         <% if (product.product_images.length> 1) { %>
                             <div class="second-img">
-                                <% product.product_images.slice(1).forEach(image=> { %>
-                                    <img src="/images/images-products/<%= image.name %>" alt="Imagen del Producto"
-                                        class="secondary-image">
-                                    <% }) %>
+                                <% product.product_images.slice(1).forEach((image, i)=> { %>
+                                    <% if (i <=1) { %>
+                                        <img id="image<%=i %>" src="/images/images-products/<%= image.name %>" alt="Imagen del
+                                    Producto" class="secondary-image">
                                         <% } %>
-                                            <% } %>
+                                            <% }) %>
+                                                <% } %>
+                                                    <% } %>
                             </div>
                     </div>
-
+                    <% let finalPrice = product.price - (product.price*product.discount)/100; %>
                     <div class="product-description">
                         <div class="price-product">
-                            <h2>
-                                $<%= product.price - (product.price*product.discount)/100 %>
+                            <h2 id="final-price">
+                                $<%= finalPrice %>
                             </h2>
                         </div>
 
@@ -61,22 +63,25 @@
                                 <div class="dues">
                                     <h4> Cuotas? Acá!</h4>
                                     <p> Hasta 12 cuotas sin interes</p>
-                                    <div class="chekbox">
-                                        <input type="checkbox" name="three">
+                                    <select class="chekbox" id="checkbox">
+                                        <!-- <input type="radio" name="three" value="3">
                                         <label for="three" class="three">3 cuotas</label>
 
-                                        <input type="checkbox" name="six">
+                                        <input type="radio" name="three" value="6">
                                         <label for="six" class="six">6 cuotas</label>
 
-                                        <input type="checkbox" name="nine">
+                                        <input type="radio" name="three" value="9">
                                         <label for="nine" class="nine">9 cuotas</label>
 
-                                        <input type="checkbox" name="twelve">
-                                        <label for="twelve" class="twelve">12 cuotas</label>
-                                    </div>
-
-                                    <input id="button" class="buttons" type="button" value="Calcular Cuotas">
-                                    <p id="total-dues"> cada cuota</p>
+                                        <input type="radio" name="three" value="12">
+                                        <label for="twelve" class="twelve">12 cuotas</label> -->
+                                        <option value="0" selected>Seleccionar</option>
+                                        <option value="3">3 cuotas</option>
+                                        <option value="6">6 cuotas</option>
+                                        <option value="9">9 cuotas</option>
+                                        <option value="12">12 cuotas</option>
+                                    </select>
+                                    <p id="total-dues"></p>
                                 </div>
 
                                 <div class="recive-product">
@@ -96,26 +101,25 @@
                                             min="1" placeholder="Elige la cantidad">
                                     </form>
                                     <% } %>
-                                        <div class="payment-method-images">
-                                            <h4> Medios de pago </h4>
-                                            <img src="/images/images-product-detail/logo-visa.png">
-                                            <img src="/images/images-product-detail/logo-master.png">
-                                            <img src="/images/images-product-detail/logo-pago-facil.png">
-                                            <img src="/images/images-product-detail/logo-mercado-credito.png">
-                                        </div>
+                    
+                                        <article class="botones">
+                                            <% if (locals.admin) { %>
+                                                <a href="/products/product-edit/<%=product.id %>"
+                                                    id="product-redirect"><input class="buttons" type="submit"
+                                                        value="Editar"></a>
+                                                <a href="/products/edit-images/<%=product.id %>"
+                                                    id="product-redirect"><input class="buttons" type="submit"
+                                                        value="Editar imágenes"></a>
+                                                <form action="/products/delete/<%= product.id %>?_method=DELETE"
+                                                    method="POST">
+                                                    <input class="buttons" type="submit" value="Borrar"
+                                                        id="delete-button"></input>
+                                                </form>
+                                                <% } %>
+                                        </article>
                     </div>
 
-                    <article class="botones">
-                        <% if (locals.admin) { %>
-                            <a href="/products/product-edit/<%=product.id %>" id="product-redirect"><input
-                                    class="buttons" type="submit" value="Editar"></a>
-                            <a href="/products/edit-images/<%=product.id %>" id="product-redirect"><input
-                                    class="buttons" type="submit" value="Agregar o borrar imágenes"></a>
-                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                <input class="buttons" type="submit" value="Borrar" id="delete-button"></input>
-                            </form>
-                            <% } %>
-                    </article>
+
 
                 </section>
                 <section class="description-under-product">
