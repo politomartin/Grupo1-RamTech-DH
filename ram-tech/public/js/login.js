@@ -1,6 +1,7 @@
 window.onload = function () {
     const form = document.querySelector('#form');
     const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const eyeIcon = document.getElementById("eye-icon")
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -37,5 +38,20 @@ window.onload = function () {
         if (errors.length === 0) {
             form.submit();
         }
+    });
+
+    let isTextVisible = false;
+    eyeIcon.addEventListener("click", () => {
+        if (isTextVisible) {
+            form.password.type = "password";
+            eyeIcon.classList.remove("fa-solid", "fa-eye-slash");
+            eyeIcon.classList.add("fa-solid", "fa-eye");
+        } else {
+            form.password.type = "text";
+            eyeIcon.classList.remove("fa-solid", "fa-eye");
+            eyeIcon.classList.add("fa-solid", "fa-eye-slash");
+        }
+
+        isTextVisible = !isTextVisible;
     });
 }

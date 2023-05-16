@@ -103,8 +103,34 @@ body main .product-description .dues {
 
 body main .product-description .dues h4 {
     font-size: 20px;
+    margin-bottom: 5px;
 }
 
+body main .product-description .dues p {
+    font-size: 18px;
+}
+
+body main .product-description .dues .checkbox { 
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #bc6ff1;
+    outline: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+body main .product-description .dues p#total-dues {
+    font-weight: 700;
+    color: #b71085;
+    margin-bottom: 20px;
+}
+.buy-product {
+    display: flex;
+    flex-direction: row;
+}
 body main .product-description .dues input {
     font-weight: bold;
     padding: 5px;
@@ -116,8 +142,9 @@ body main .product-description .dues input {
     margin-bottom: 15px;
 }
 
-body main .product-description .dues .checkbox input::before {
-    border-radius: 20px;
+body main .product-description .recive-product {
+    margin-top: 30px;
+    width: 300px;
 }
 
 body main .product-description .recive-product input {
@@ -133,22 +160,27 @@ body main .product-description .recive-product input {
 }
 
 
-body main .product-description .payment-method-images {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: space-between;
+body main .product-description p {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
 }
 
-/* 
-body main .product-description .payment-method-images {
-    width: 20%;
-    margin: auto;
+body main .product-description .payment-img {
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+    height: 50px;
+    width: 300px;
 }
 
-body main .product-description .payment-method-images img {
+
+body main .product-description .payment-img img {
+    object-fit: cover;
     width:100%;
-} */
-
+    height: 100%;
+}
 
 body main .botones {
     gap: 25px;
@@ -189,13 +221,13 @@ body main .box-product-buttons .botones input:hover {
 }
 
 body main .description-under-product {
-    text-align: center;
-    background-color: white;
-    width: 80%;
-    margin: auto;
     font-family: 'Manjari', sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
     border-radius: 5px;
-    margin: 68px 0px;
+    margin: 50px 0px;
+    padding: 5px;
+    width: 80%;
 }
 
 body main .description-under-product h2 {
@@ -204,8 +236,11 @@ body main .description-under-product h2 {
 }
 
 body main .description-under-product p {
+    font-size: 18px;
     padding: 15px;
+    margin-bottom: 10px;
 }
+
 .second-img{
     display: none !important;
     overflow: hidden;

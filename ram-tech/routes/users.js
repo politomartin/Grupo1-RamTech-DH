@@ -79,5 +79,7 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/logout', usersController.logout);
 
+router.get('/user-edit', usersController.userEdit);
+router.put('/user-edit/:id', upload.single('image'), validationsUserRegister, usersController.userEdition);
 
 module.exports = router;

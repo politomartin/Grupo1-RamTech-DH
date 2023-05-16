@@ -20,6 +20,7 @@
                 <section class="main-product">
                     <div class="images-product">
                         <div class="first-img">
+
                             <% if (product.product_images.length===0) { %>
                                 <img src="/images/images-products/default-product.png" alt="Imagen del producto"
                                     class="principal-image">
@@ -40,84 +41,75 @@
                                                     <% } %>
                             </div>
                     </div>
-                    <% let finalPrice = product.price - (product.price*product.discount)/100; %>
-                    <div class="product-description">
-                        <div class="price-product">
-                            <h2 id="final-price">
-                                $<%= finalPrice %>
-                            </h2>
-                        </div>
-
-                        <% if(product.discount> 0) { %>
-                            <div class="product-discount">
-                                <h4>
-                                    <%= product.discount %>% de descuento!
-                                </h4>
-                                <p>Precio anterior: </p>
-                                <p id="price">
-                                    <%= product.price %>
-                                </p>
+                    <% let finalPrice=product.price - (product.price*product.discount)/100; %>
+                        <div class="product-description">
+                            <div class="price-product">
+                                <h2 id="final-price">
+                                    $<%= finalPrice %>
+                                </h2>
                             </div>
-                            <% } %>
 
-                                <div class="dues">
-                                    <h4> Cuotas? Acá!</h4>
-                                    <p> Hasta 12 cuotas sin interes</p>
-                                    <select class="chekbox" id="checkbox">
-                                        <!-- <input type="radio" name="three" value="3">
-                                        <label for="three" class="three">3 cuotas</label>
-
-                                        <input type="radio" name="three" value="6">
-                                        <label for="six" class="six">6 cuotas</label>
-
-                                        <input type="radio" name="three" value="9">
-                                        <label for="nine" class="nine">9 cuotas</label>
-
-                                        <input type="radio" name="three" value="12">
-                                        <label for="twelve" class="twelve">12 cuotas</label> -->
-                                        <option value="0" selected>Seleccionar</option>
-                                        <option value="3">3 cuotas</option>
-                                        <option value="6">6 cuotas</option>
-                                        <option value="9">9 cuotas</option>
-                                        <option value="12">12 cuotas</option>
-                                    </select>
-                                    <p id="total-dues"></p>
+                            <% if(product.discount> 0) { %>
+                                <div class="product-discount">
+                                    <h4>
+                                        <%= product.discount %>% de descuento!
+                                    </h4>
+                                    <p>Precio anterior: </p>
+                                    <p id="price">
+                                        <%= product.price %>
+                                    </p>
                                 </div>
+                                <% } %>
 
-                                <div class="recive-product">
-                                    <h4> Recibi tu producto </h4>
-                                    <label for="delivery-method">Formas de entrega</label>
-                                    <select class="selection" name="recive-product" id="delivery-method">
-                                        <option value="home">Envio a domicilio</option>
-                                        <option value="post">Retiro en correo</option>
-                                        <option value="free">Retiro en tienda</option>
-                                    </select>
-                                    <p id="shipping-cost"> </p>
-                                </div>
-                                <% if (locals.isLogged) { %>
-                                    <form action="/products/addProductToCart/<%= product.id %>" method="POST">
-                                        <input class="buy-buttons" type="submit" value="Añadir al carrito">
-                                        <input class="buy-buttons" type="number" value="Elige la cantidad" name="amount"
-                                            min="1" placeholder="Elige la cantidad">
-                                    </form>
-                                    <% } %>
-                    
-                                        <article class="botones">
-                                            <% if (locals.admin) { %>
-                                                <a href="/products/product-edit/<%=product.id %>"
-                                                    id="product-redirect"><input class="buttons" type="submit"
-                                                        value="Editar"></a>
-                                                <a href="/products/edit-images/<%=product.id %>"
-                                                    id="product-redirect"><input class="buttons" type="submit"
-                                                        value="Editar imágenes"></a>
-                                                <form action="/products/delete/<%= product.id %>?_method=DELETE"
-                                                    method="POST">
-                                                    <input class="buttons" type="submit" value="Borrar"
-                                                        id="delete-button"></input>
-                                                </form>
-                                                <% } %>
-                                        </article>
-                    </div>
+                                    <div class="dues">
+                                        <h4> Cuotas? Acá!</h4>
+                                        <p> Hasta 12 cuotas sin interes</p>
+                                        <select class="checkbox" id="checkbox">
+                                            <option value="0" selected>Seleccionar</option>
+                                            <option value="3">3 cuotas</option>
+                                            <option value="6">6 cuotas</option>
+                                            <option value="9">9 cuotas</option>
+                                            <option value="12">12 cuotas</option>
+                                        </select>
+                                        <p id="total-dues"></p>
+                                    </div>
+
+                                    <p>Métodos de pago</p>
+                                    <div class="payment-img">
+                                        <img class="logo" src="/images/images-product-detail/logo-master.png" alt="">
+                                        <img class="logo" src="/images/images-product-detail/logo-mercado-credito.png"
+                                            alt="">
+                                        <img class="logo" src="/images/images-product-detail/logo-pago-facil.png"
+                                            alt="">
+                                        <img class="logo" src="/images/images-product-detail/logo-visa.png" alt="">
+                                    </div>
+
+                                    <% if (locals.isLogged) { %>
+                                        <div class="buy-product">
+                                            <form action="/products/addProductToCart/<%= product.id %>" method="POST">
+                                                <input class="buy-buttons" type="submit" value="Añadir al carrito">
+                                                <input class="buy-buttons" type="number" value="Elige la cantidad"
+                                                    name="amount" min="1" placeholder="Elige la cantidad">
+                                            </form>
+                                        </div>
+                                        <% } %>
+
+                                            <article class="botones">
+                                                <% if (locals.admin) { %>
+                                                    <a href="/products/product-edit/<%=product.id %>"
+                                                        id="product-redirect"><input class="buttons" type="submit"
+                                                            value="Editar"></a>
+                                                    <a href="/products/edit-images/<%=product.id %>"
+                                                        id="product-redirect"><input class="buttons" type="submit"
+                                                            value="Editar imágenes"></a>
+                                                    <form action="/products/delete/<%= product.id %>?_method=DELETE"
+                                                        method="POST">
+                                                        <input class="buttons" type="submit" value="Borrar"
+                                                            id="delete-button"></input>
+                                                    </form>
+                                                    <% } %>
+                                            </article>
+                        </div>
 
 
 

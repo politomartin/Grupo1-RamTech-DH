@@ -1,6 +1,7 @@
 window.onload = function () {
     const form = document.querySelector('#form');
-
+    const eyeIcon1 = document.getElementById("eye-icon1")
+    const eyeIcon2 = document.getElementById("eye-icon2")
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/;
     const allowedExtensions = /(\.png|\.jpeg|\.jpg|\.gif)$/i;
     const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -85,4 +86,35 @@ window.onload = function () {
             form.submit();
         }
     });
+
+    let isTextVisible = false;
+    eyeIcon1.addEventListener("click", () => {
+        if (isTextVisible) {
+            form.password.type = "password";
+            eyeIcon1.classList.remove("fa-solid", "fa-eye-slash");
+            eyeIcon1.classList.add("fa-solid", "fa-eye");
+        } else {
+            form.password.type = "text";
+            eyeIcon1.classList.remove("fa-solid", "fa-eye");
+            eyeIcon1.classList.add("fa-solid", "fa-eye-slash");
+        }
+
+        isTextVisible = !isTextVisible;
+    });
+
+    let textVisibility = false;
+    eyeIcon2.addEventListener("click", () => {
+        if (textVisibility) {
+            form.confirmPassword.type = "password";
+            eyeIcon2.classList.remove("fa-solid", "fa-eye-slash");
+            eyeIcon2.classList.add("fa-solid", "fa-eye");
+        } else {
+            form.confirmPassword.type = "text";
+            eyeIcon2.classList.remove("fa-solid", "fa-eye");
+            eyeIcon2.classList.add("fa-solid", "fa-eye-slash");
+        }
+        textVisibility = !textVisibility;
+    });
+
+
 }

@@ -23,7 +23,7 @@ body main div.title h4 {
 body main div.container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     color: white;
     background: linear-gradient(1deg, rgba(189, 111, 241, 0.5) 0%, rgba(20, 0, 78, 0.8) 100%);
     border-radius: 10px;
@@ -64,7 +64,7 @@ body main div.container div.productos img {
 }
 
 body main div.container div.productos div.description {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     font-family: 'Manjari', sans-serif;
     font-size: 15px;
@@ -72,29 +72,29 @@ body main div.container div.productos div.description {
     width: 100%;
 }
 
-body main div.container div.productos div.description div.buttons{
-    display:flex;
+body main div.container div.productos div.description div.buttons {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 
 }
 
-body main div.container div.productos div.description article.article1{
+body main div.container div.productos div.description article.article1 {
     text-align: left;
-    margin-top:2%;
+    margin-top: 2%;
     width: 40%;
 }
 
-body main div.container div.productos div.description article.article2{
-    margin-top:2%;
+body main div.container div.productos div.description article.article2 {
+    margin-top: 2%;
     margin-right: 15%;
     display: flex;
     justify-content: flex-end;
     width: 45%;
 }
 
-body main div.container div.productos div.description article.article3{
+body main div.container div.productos div.description article.article3 {
     display: flex;
     margin-right: 5%;
     justify-content: flex-end;
@@ -107,11 +107,11 @@ body main div.container div.productos div.description div.buttons article.articl
 
 /* Linea */
 body main div.container .productos hr {
-   border: 1px solid #BC6FF1;
-   border-radius: 1px;
-   margin: 0 5%;
-   height: 1px;
-   width: 100%;
+    border: 1px solid #BC6FF1;
+    border-radius: 1px;
+    margin: 0 5%;
+    height: 1px;
+    width: 100%;
 }
 
 body main div.container div.total {
@@ -121,24 +121,19 @@ body main div.container div.total {
     font-size: 15px;
     color: #FFF;
     border-radius: 10px;
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     margin: 5%;
     padding: 3%;
 }
 
 body main div.container .total article {
-    width: 45%;
-    margin-top: 5%;
-    margin-left: 2%;
+    margin: 10px 0;
 }
 
-body main div.container .total article.article1 {
-    margin-left: 3%;
-}
 
 body main div.container div.total article.article1total {
     text-align: end;
-    margin-right: 2%;
+    margin-left: 12%;
 }
 
 body main div.container div.total article.article2 {
@@ -162,7 +157,7 @@ body main div.container div.total article.article3total {
     width: 30%;
     margin-bottom: 5%;
     font-weight: bolder;
-    color:#000;
+    color: #000;
 }
 
 body main div.container div.total article.article4 {
@@ -181,21 +176,20 @@ body main div.container div.total article.article4total {
 body main div.container .total hr {
     border: 1px solid #BC6FF1;
     border-radius: 1px;
-    margin: 0 5%;
     height: 1px;
     width: 100%;
 }
- 
+
 body main div.container div.pago {
     display: flex;
     margin: 0% 10% 5% 10%;
     width: 100%;
 }
 
-main div.container div.pago a{
+main div.container div.pago a {
     width: 100%;
     text-decoration: none;
-    outline:none;
+    outline: none;
 }
 
 main div.container div.pago a button {
@@ -221,6 +215,21 @@ main div.container div.pago a button:hover {
     background-color: rgba(183, 16, 133, 0.8);
 }
 
+main div.description .buttons input {
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 3px #eee;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgba(219, 12, 57, 0.8);
+}
+
+main div.total .selection {
+    margin: 10px 0;
+}
+
 @media (min-width: 425px) {
     body main div.title {
         font-size: 20px;
@@ -228,7 +237,8 @@ main div.container div.pago a button:hover {
 }
 
 @media (min-width: 769px) {
-        /* MAIN */
+
+    /* MAIN */
     body main div.title {
         font-size: 30px;
         margin: 2% 0% 2% 10%;
@@ -242,7 +252,7 @@ main div.container div.pago a button:hover {
         width: 5%;
         transition: 0.4s ease;
     }
-    
+
     body main div.title:hover::before {
         width: 90%;
     }
@@ -252,7 +262,6 @@ main div.container div.pago a button:hover {
         font-size: 18px;
         padding: 1%;
         width: 750px;
-        height: 400px;
     }
 
     body main div.container div.productos {
