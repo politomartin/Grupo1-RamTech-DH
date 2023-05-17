@@ -213,79 +213,61 @@ body main section h2.title {
 
 /* Sección products */
 
-body main section.highlight {
+body main .highlight {
     display: block;
     border-top: 5px solid #141317;
     border-bottom: 5px solid #141317;
     margin-bottom: 5%
 }
 
-body main section.highlight div.products {
-    margin: 0% 5%;
+body main .highlight div.products {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     font-family: 'Manjari', sans-serif;
     font-size: 18px;
 }
 
-body main section.highlight div.products article {
-    margin: 5%;
-    width: 90%;
+body main .highlight .products article {
     background: #150050;
-    border-radius: 15px;
-}
-
-body main section.highlight div.products article div.description-container {
-    font-size: 20px;
-    text-align: center;
+    border-radius: 20px;
+    margin: 5%;
+    width: 325px;
+    /* height: 410px; */
+    height: auto;
     position: relative;
 }
 
-body main section.highlight div.products article div.description-container a#product-redirect {
+body main .highlight .products article a#product-redirect {
     text-decoration: none;
 }
 
-body main section.highlight div.products article .description-container img {
-    display: block;
-    width: 100%;
-    height: 20rem;
-    padding: 4%;
-    border-radius: 20px;
+body main .highlight .products article .img-container {
     overflow: hidden;
+    border-radius: 20px;
+    padding: 5%;
+    width: 323px;
+    height: 320px;
 }
 
-/* marcador heart fav*/
-body main section.highlight article .description-container i {
-    position: absolute;
-    bottom: 40%;
-    right: 10%;
+body main .highlight .products article .img-container img {
+    object-fit: cover;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-body main section.highlight article .description-container i.heart-icon {
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    color: #bc6ff1;
-    border: 2px solid #BC6FF1;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: 400ms;
-}
-
-body main section.highlight article .description-container i:hover {
-    color: #BC6FF1;
-    border: 2px solid #BC6FF1;
-    transform: scale(1.5);
-}
-
-
-body main section.highlight article div.description-container .main-container {
+body main .highlight article .main-container {
     display: none;
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px 0px;
+    padding: 5px;
 }
 
-body main section.highlight article div.description-container .main-container h4.name {
+body main .highlight article .main-container h4.name {
     color: #FFF;
     text-align: center;
     font-family: 'Russo One', sans-serif;
@@ -293,12 +275,12 @@ body main section.highlight article div.description-container .main-container h4
     width: 100%;
 }
 
-body main section.highlight article div.description-container .main-container p.price {
+body main .highlight article .main-container p.price {
     color: #FFF;
     width: 50%;
 }
 
-body main section.highlight article div.description-container .main-container p.discount {
+body main .highlight article .main-container p.discount {
     color: #b71084;
     font-weight: 700;
     width: 50%;
@@ -550,12 +532,12 @@ body footer div.footer-box .main-footer .copy p {
         display: none;
     }
 
-    body main section.highlight div.products article {
+    body main .highlight div.products article {
         border: 1px solid rgba(182, 162, 238, 0.5);
         box-shadow: 0px 0px 10px rgba(182, 162, 238, 0.5);
     }
 
-    body main section.highlight article div.description-container .main-container {
+    body main .highlight article .main-container {
         display: flex;
         flex-flow: wrap;
     }
@@ -578,9 +560,15 @@ body footer div.footer-box .main-footer .copy p {
         display: block;
     }
 
-    body main section.highlight div.products article {
-        width: 47%;
-        margin: 1%;
+    body main .highlight div.products article {
+        width: 350px;
+        /* height: 420px; */
+    }
+
+    body main .highlight .products article .img-container {
+        padding: 5%;
+        width: 348px;
+        height: 330px;
     }
 
     /* FOOTER */
@@ -589,6 +577,31 @@ body footer div.footer-box .main-footer .copy p {
     }
 }
 
+
+@media (min-width: 668px) {
+
+    body main .highlight div.products {
+        flex-flow: row wrap;
+    }
+
+    body main .highlight div.products article {
+        margin: 1%;
+        padding: 2%;
+        width: 310px;
+        height: 470px;
+    }
+
+    body main .highlight .products article .img-container {
+        padding: 1%;
+        width: 280px;
+        height: 300px;
+    }
+
+    body main .highlight .products article .main-container {
+        margin: 15px 0px;
+        padding: 0;
+    }
+}
 
 @media (min-width: 769px) {
 
@@ -712,33 +725,36 @@ body footer div.footer-box .main-footer .copy p {
 
     /* Sección highlight */
 
-    body main section.highlight div.products article {
-        width: 30%;
+    body main .highlight div.products article {
+
         border-left: 1px solid rgba(182, 162, 238, 0.5);
         border-top: 1px solid rgba(182, 162, 238, 0.5);
         box-shadow: 0px 0px 20px rgb(100, 100, 100);
+        width: auto;
+        height: auto;
+        padding: 1%;
     }
 
-    body main section.highlight article .description-container i {
-        bottom: 10%;
+    body main .highlight .products article .img-container {
+        width: 288px;
     }
 
-    body main section.highlight article div.description-container .main-container {
+    body main .highlight article .main-container {
         position: absolute;
-        width: 100%;
+        width: 95%;
         padding: 5%;
         background-color: rgba(21, 0, 80, 0.5);
-        border-left: 1px solid rgba(182, 162, 238, 0.5);
-        border-top: 1px solid rgba(182, 162, 238, 0.5);
+        border: 1px solid rgba(182, 162, 238, 0.5);
         border-radius: 10px;
         backdrop-filter: blur(5px);
     }
 
-    body main section.highlight article div.description-container:hover .main-container {
+    body main .highlight article:hover .main-container {
         display: flex;
         flex-flow: wrap;
+        padding: 5%;
         opacity: 1;
-        transform: translateY(-150px);
+        transform: translateY(-210px);
         transition: 400ms;
     }
 
@@ -838,8 +854,8 @@ body footer div.footer-box .main-footer .copy p {
 }
 
 @media (min-width: 1024px) {
-    body main section.highlight div.products article .description-container img {
-        height: 31rem;
+    body main .highlight div.products article .main-container {
+        width: 92%;
     }
 
     /* Footer */

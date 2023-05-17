@@ -31,22 +31,23 @@
           <div class="products">
             <% for (let i=0; i<6; i++) { %>
               <article>
-                <div class="description-container">
-                  <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
-                    <img src="/images/images-products/<%= products[i].product_images[0].name%>"
-                      alt="<%=products[i].name %>">
+                <a href="/products/product-detail/<%= products[i].id %> " id="product-redirect">
+                    <div class="img-container">
+                      <img src="/images/images-products/<%= products[i].product_images[0].name%>"
+                        alt="<%=products[i].name %>">
+                    </div>
                     <div class="main-container">
                       <h4 class="name">
                         <%=products[i].name %>
                       </h4>
-                      <p class="price">$<%=products[i].price %>
+                      <p class="price">
+                        $<%=products[i].price %>
                       </p>
                       <p class="discount">
                         <%=products[i].discount %>% Off
                       </p>
                     </div>
                   </a>
-                </div>
               </article>
               <%}; %>
           </div>
