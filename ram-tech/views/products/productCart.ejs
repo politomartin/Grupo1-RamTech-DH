@@ -12,7 +12,7 @@
             <main>
                 <div class="title">
                     <h2>CARRITO</h2>
-                    <% if (totalAmount >= 1) { %>
+                    <% if (totalAmount>= 1) { %>
                         <h4>
                             <%= totalAmount %> ÍTEM(S)
                         </h4>
@@ -20,40 +20,47 @@
                             <h4>
                                 0 ÍTEM(S)
                             </h4>
-                        <% } %>
-                         
+                            <% } %>
+
                 </div>
                 <div class="container">
                     <div class="productos">
-                        <% userCart.forEach(product=> { %>
+                        <% if (userCart.length===0) { %>
+                            <h2 id="no-product">Aún no hay productos</h2>
 
-                            <div class="producto">
-                                <div class="image">
-                                    <img src="/images/images-products/<%= product.products.product_images[0].name %>"
-                                        alt="">
-                                </div>
-                                <div class="description">
+                            <% } else { %>
 
-                                    <article class="article1">
-                                        <%= product.products.name %>
-                                    </article>
-                                    <article class="article2">
-                                        <%= product.amount %>
-                                    </article>
-                                    <article class="article3">
-                                        <%= product.products.price %>
-                                    </article>
-                                    <div class="buttons">
-                                        <form action="/products/deleteProductFromCart/<%= product.id %>?_method=DELETE"
-                                            method="POST">
-                                            <input type="submit" value="Eliminar" class="article4">
-                                        </form>
+                                <% userCart.forEach(product=> { %>
+
+                                    <div class="producto">
+                                        <div class="image">
+                                            <img src="/images/images-products/<%= product.products.product_images[0].name %>"
+                                                alt="">
+                                        </div>
+                                        <div class="description">
+
+                                            <article class="article1">
+                                                <%= product.products.name %>
+                                            </article>
+                                            <article class="article2">
+                                                <%= product.amount %>
+                                            </article>
+                                            <article class="article3">
+                                                <%= product.products.price %>
+                                            </article>
+                                            <div class="buttons">
+                                                <form
+                                                    action="/products/deleteProductFromCart/<%= product.id %>?_method=DELETE"
+                                                    method="POST">
+                                                    <input type="submit" value="Eliminar" class="article4">
+                                                </form>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
-
-                            </div>
-                            <hr>
-                            <% }) %>
+                                    <hr>
+                                <% }) %>
+                            <% } %>
                     </div>
 
                     <div class="total">
@@ -63,9 +70,10 @@
                                 <%= totalPrice %>
                             </span>
                         </article>
+
                         <hr>
+
                         <article class="article1">
-                            <article class="article1" for="delivery-method">Formas de entrega</article>
                             <select class="selection" name="received-product" id="delivery-method">
                                 <option disabled selected>Elige tu forma de entrega</option>
                                 <option value="home">Envio a domicilio</option>
@@ -74,8 +82,9 @@
                             </select>
                             <article class="article1" id="shipping-cost">Llega hoy por:</article>
                         </article>
+
                         <hr>
-                        <hr>
+
                         <article class="article1">Total a Pagar: </article>
                         <article id="final-price" class="article4total"></article>
                     </div>

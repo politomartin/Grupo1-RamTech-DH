@@ -35,7 +35,6 @@ body main .main-product .images-product div.first-img {
 }
 
 body main .main-product .images-product div.first-img img {
-   
     border-radius: 10px;
     width: 100%;
     height: 100%;
@@ -51,12 +50,12 @@ body main .main-product .images-product div.second-img {
     background: linear-gradient(60deg, rgb(138, 9, 130, 0.8) 25%, rgb(156, 125, 224) 100%);
     box-shadow: 0px 0px 20px rgba(183, 16, 133, 0.5);
     padding: 2%;
-    height: 160px;
 }
 
 body main .main-product .images-product div.second-img img {
     border: 1px solid rgba(182, 162, 238, 0.5);
     border-radius: 10px;
+    width: 140px;
 }
 
 /* Detalles del producto*/
@@ -71,6 +70,7 @@ body main div.product-description {
     border-radius: 5px;
     padding: 20px;
     margin-top: 30px;
+    width: 360px;
 }
 
 body main .product-description .price-product {
@@ -127,38 +127,6 @@ body main .product-description .dues p#total-dues {
     color: #b71085;
     margin-bottom: 20px;
 }
-.buy-product {
-    display: flex;
-    flex-direction: row;
-}
-body main .product-description .dues input {
-    font-weight: bold;
-    padding: 5px;
-    background-color: rgb(211, 211, 211);
-    border: none;
-    border-radius: 2px;
-    color: #000000;
-    font-size: 10px;
-    margin-bottom: 15px;
-}
-
-body main .product-description .recive-product {
-    margin-top: 30px;
-    width: 300px;
-}
-
-body main .product-description .recive-product input {
-    font-weight: bold;
-    padding: 5px;
-    background-color: rgb(211, 211, 211);
-    border: none;
-    border-radius: 2px;
-    color: #000000;
-    font-size: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
 
 body main .product-description p {
     font-weight: 700;
@@ -175,28 +143,65 @@ body main .product-description .payment-img {
     width: 300px;
 }
 
-
 body main .product-description .payment-img img {
     object-fit: cover;
     width:100%;
     height: 100%;
 }
 
-body main .botones {
-    gap: 25px;
+body main .product-description .buy-product {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 10px;    
+    width: 90%;
+}
+
+body main .product-description .buy-product form input {
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+
+}
+
+body main .product-description .buy-product form input#first {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:rgba(188, 111, 241, 0.57);
+    margin: 10px;
+    width: 55%;
+    transition: 0.5s;
+}
+
+body main .product-description .buy-product form input#first:hover {
+    color: #fff;
+    box-shadow: 0 0 10px #eee;
+    background-color: rgba(183, 16, 133, 0.8);
+}
+
+body main .product-description .buy-product form input#second {
+    border-bottom: solid 2px #bc6ff1;
+    width: 35%;
+}
+
+body main .product-description article.botones {
+    gap: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 15px;
 }
 
-body main .botones input {
+body main .product-description article.botones input {
     font-weight: bold;
     padding: 5px 15px;
-    background: linear-gradient(to right, rgb(94 0 157) 0%, rgb(108 15 193) 51%, rgb(150 16 183) 100%);
+    background: rgba(20, 19, 23, 0.7);
     border: none;
     border-radius: 2px;
-    color: #CDB9DD;
+    color: white;
     font-size: 13px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -208,148 +213,102 @@ body main .botones input {
     justify-content: center;
 }
 
-body main .box-product-buttons .botones form #delete-button {
+body main .product-description .botones form #delete-button {
     background: linear-gradient(to right, rgb(193, 12, 27) 0%, rgb(189, 8, 8) 51%, rgb(235, 13, 50) 100%);
 
 }
 
-body main .box-product-buttons .botones input:hover {
-    background-position: right center;
-    color: #fff;
+body main .product-description .botones input:hover {
     text-decoration: none;
-    box-shadow: 0 0 10px #eee;
+    box-shadow: 0px 0px 10px #b71084;
 }
 
-body main .description-under-product {
+body main section.description-under-product {
     font-family: 'Manjari', sans-serif;
     text-align: center;
     background-color: whitesmoke;
     border-radius: 5px;
     margin: 50px 0px;
     padding: 5px;
-    width: 80%;
 }
 
-body main .description-under-product h2 {
+body main section.description-under-product h2 {
     padding: 20px 0px;
     font-family: "Russo One";
 }
 
-body main .description-under-product p {
-    font-size: 18px;
-    padding: 15px;
+body main section.description-under-product p {
     margin-bottom: 10px;
 }
 
-.second-img{
-    display: none !important;
-    overflow: hidden;
-}
-.second-img img{
-    width: 140px;
-}
+
 
 @media (min-width: 425px) {
     body main div.product-title {
         font-size: 20px;
         text-align: left;
     }
+    
+    body main .main-product .images-product div.first-img {
+        width: 400px;
+        height: 400px;
+    }
+    
+    body main div.product-description {
+        width: 400px;
+    }
+    
+    body main .description-under-product {
+        width: 400px;
+    }
+    
+    body main .description-under-product p {
+        font-size: 18px;
+        padding: 15px;
+    }
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     body main div.product-title {
         font-size: 30px;
-        margin: 3% 10% 0% 10%;
+        margin: 3% 10%;
     }
-
-    body main div.product-title::before {
-        content: '';
-        position: absolute;
-        border-bottom: 3px solid #BC6FF1;
-        width: 5%;
-        transition: 0.4s ease;
-    }
-
-    body main div.product-title:hover::before {
-        width: 100%;
-    }
-
-
 
     body main section.main-product {
         display: flex;
         justify-content: space-evenly;
-        max-width: 1500px;
-        width: 100%;
+        width: 90%;
         gap: 5%;
-        margin: auto;
     }
 
-    body main section article.product {
-        max-width: 650px;
-        width: 70%;
+    body main .main-product .images-product div.first-img {
+        width: 400px;
+        height: 400px;
     }
 
-    body main section article.box-product-buttons {
-        width: 40%;
+    body main .main-product .images-product div.second-img img {
+        width: 180px;
     }
 
-    body main section .box-product-buttons .product-description {
-        width: 100%;
+    body main div.product-description {
+        width: 500px;
     }
 
-    body main section .box-product-buttons .product-description h2 {
-        font-size: 40px;
-        padding: 10px;
-        margin-bottom: 20px;
+    body main .product-description .buy-product form input#first:hover {
+        background: linear-gradient(60deg, rgb(138, 9, 130, 0.8) 25%, rgb(156, 125, 224) 100%); 
     }
 
-    p {
-        font-size: 20px;
-    }
-
-    /* body main section .box-product-buttons .product-description .dues input {
-        padding: 10px;
-        font-size: 15px;
-        margin-bottom: 25px;
-        margin-top: 15px;
-    } */
-
-    body main .product-discount p {
-        font-size: 18px;
-    }
-
-    body main section .box-product-buttons .product-description .recive-product input {
-        padding: 10px;
-        font-size: 15px;
-        margin-bottom: 25px;
-        margin-top: 15px;
-    }
-
-    body main section .box-product-buttons .product-description h4 {
-        font-size: 30px;
-        margin: 20px 0px;
-    }
-
-    body main section .box-product-buttons .botones input {
-        padding: 15px 60px;
-        font-size: 20px;
-        margin-top: 5px;
-        margin-bottom: 15px;
+    body main section.description-under-product {
+        width: 800px;
     }
 
     body main .description-under-product h2 {
-        padding: 20px 0px;
         font-size: 30px;
-        font-family: "Russo One";
     }
 
     body main .description-under-product p {
         font-size: 20px;
         padding: 25px;
-    }
-    .second-img{
-        display: flex !important;
     }
 }

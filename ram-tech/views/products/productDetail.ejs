@@ -87,8 +87,9 @@
                                     <% if (locals.isLogged) { %>
                                         <div class="buy-product">
                                             <form action="/products/addProductToCart/<%= product.id %>" method="POST">
-                                                <input class="buy-buttons" type="submit" value="Añadir al carrito">
-                                                <input class="buy-buttons" type="number" value="1"
+                                                <input class="buy-buttons" id="first" type="submit"
+                                                    value="Añadir al carrito">
+                                                <input class="buy-buttons" id="second" type="number" value="1"
                                                     name="amount" min="1" placeholder="Elige la cantidad">
                                             </form>
                                         </div>

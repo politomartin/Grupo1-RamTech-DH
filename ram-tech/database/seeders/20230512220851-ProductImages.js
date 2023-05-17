@@ -413,7 +413,7 @@ module.exports = {
         product_id: 47,
       },
       {
-        name: 'webcam-redragonHitman-3.png',
+        name: 'webcam-redragonHitman-2.png',
         product_id: 47,
       },
       {

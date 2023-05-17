@@ -15,7 +15,7 @@ body main div.title {
 }
 
 body main div.title h4 {
-    font-size: 15px;
+    font-size: 20px;
     display: flex;
     align-items: center;
 }
@@ -40,10 +40,18 @@ body main div.container .productos {
     margin: 5%;
 }
 
+body main div.container .productos h2#no-product {
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    margin: auto;
+    padding: 30px;
+}
+
 body main div.container div.productos div.producto {
     display: flex;
     margin: 5%;
     padding: 2%;
+    width: 100%;
 }
 
 body main div.container .productos div.producto:hover {
@@ -67,7 +75,7 @@ body main div.container div.productos div.description {
     display: flex;
     flex-wrap: wrap;
     font-family: 'Manjari', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     color: #FFF;
     width: 100%;
 }
@@ -118,7 +126,7 @@ body main div.container div.total {
     display: flex;
     flex-wrap: wrap;
     font-family: 'Manjari', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     color: #FFF;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -131,7 +139,19 @@ body main div.container .total article {
 }
 
 
+main div.total article.article1 .selection {
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #bc6ff1;
+    outline: none;
+    margin: 10px 0;
+}
+
 body main div.container div.total article.article1total {
+    font-weight: 700;
     text-align: end;
     margin-left: 12%;
 }
@@ -154,10 +174,11 @@ body main div.container div.total article.article3 {
 
 body main div.container div.total article.article3total {
     text-align: center;
+    font-weight: 700;
+    color: #000;
     width: 30%;
     margin-bottom: 5%;
-    font-weight: bolder;
-    color: #000;
+    margin-left: 15%;
 }
 
 body main div.container div.total article.article4 {
@@ -226,13 +247,15 @@ main div.description .buttons input {
     background-color: rgba(219, 12, 57, 0.8);
 }
 
-main div.total .selection {
-    margin: 10px 0;
-}
+
 
 @media (min-width: 425px) {
     body main div.title {
         font-size: 20px;
+    }
+
+    main div.total article.article1 .selection {
+        width: 126%;
     }
 }
 
@@ -240,20 +263,8 @@ main div.total .selection {
 
     /* MAIN */
     body main div.title {
-        font-size: 30px;
+        font-size: 40px;
         margin: 2% 0% 2% 10%;
-        width: 90%;
-    }
-
-    body main div.title::before {
-        content: '';
-        position: absolute;
-        border-bottom: 3px solid #BC6FF1;
-        width: 5%;
-        transition: 0.4s ease;
-    }
-
-    body main div.title:hover::before {
         width: 90%;
     }
 
@@ -261,7 +272,7 @@ main div.total .selection {
         justify-content: space-around;
         font-size: 18px;
         padding: 1%;
-        width: 750px;
+        width: 800px;
     }
 
     body main div.container div.productos {
@@ -272,6 +283,10 @@ main div.total .selection {
     body main div.container div.total {
         width: 40%;
         margin: 2% 0%;
+    }
+
+    main div.total article.article1 .selection {
+        width: 115%;
     }
 
     main div.container div.pago a button {
