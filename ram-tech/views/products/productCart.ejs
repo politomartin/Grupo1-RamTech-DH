@@ -12,7 +12,16 @@
             <main>
                 <div class="title">
                     <h2>CARRITO</h2>
-                    <h4>(2 ARTICULOS)</h4>
+                    <% if (totalAmount >= 1) { %>
+                        <h4>
+                            <%= totalAmount %> ÍTEM(S)
+                        </h4>
+                        <% } else { %>
+                            <h4>
+                                0 ÍTEM(S)
+                            </h4>
+                        <% } %>
+                         
                 </div>
                 <div class="container">
                     <div class="productos">

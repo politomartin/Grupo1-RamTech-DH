@@ -12,8 +12,7 @@
                 <div class="formBox">
                     <h5>Editar producto</h5>
 
-                    <form id="form" action="/products/<%= product.id %>?_method=PUT" method="POST" autocomplete="off"
-                        enctype="multipart/form-data">
+                    <form id="form" action="/products/<%= product.id %>?_method=PUT" method="POST" autocomplete="off">
 
                         <input value="<%=product.name %>" class="inputs" type="text" name="name"
                             placeholder="Edita el nombre del producto">
@@ -69,38 +68,28 @@
                                                             <% } %>
                                         </select>
 
-                                        <input value="<%=product.image %>" class="inputs" id='inputImage' type="file"
-                                            accept=".png, .jpg, .jpeg, .webp" name="image">
-                                        <p class="error-message" id="error-image"></p>
+                                        <textarea name="description" class="textarea"
+                                            placeholder="Edita la descripcion del producto"><%= product.description %>
+                                            </textarea>
+                                        <p class="error-message" id="error-description"></p>
 
-                                        <% if (locals.errors && errors.image) { %>
+                                        <% if (locals.errors && errors.description) { %>
                                             <div class="text-danger">
-                                                <%= errors.image.msg %>
+                                                <%= errors.description.msg %>
                                             </div>
                                             <% } %>
+                                                <% if (locals.admin) { %>
+                                                    <button type="submit" class="buttons">Editar</button>
 
-                                                <textarea name="description" class="textarea"
-                                                    placeholder="Edita la descripcion del producto"><%= product.description %>
-                                            </textarea>
-                                                <p class="error-message" id="error-description"></p>
-
-                                                <% if (locals.errors && errors.description) { %>
-                                                    <div class="text-danger">
-                                                        <%= errors.description.msg %>
-                                                    </div>
-                                                    <% } %>
-                                                        <% if (locals.admin) { %>
-                                                            <button type="submit" class="buttons">Editar</button>
-
-                                                            <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
+                                                    <!-- <form action="/products/%= product.id %?_method=PUT" method="POST">
                         <button type="submit" class="buttons">Editar</button>
                     </form> -->
-                                                            <% } %>
+                                                    <% } %>
                     </form>
 
                 </div>
             </main>
             <!-- FOOTER  -->
-            <script src="/js/products.js"></script>
+            <script src="/js/productEdit.js"></script>
 
             <%- include('../partials/footer') %>

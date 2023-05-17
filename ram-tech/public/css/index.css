@@ -186,8 +186,9 @@ body main section.carousel img {
     object-fit: cover;
     opacity: .8;
     transition: .5s ease;
+    max-width: 65%;
 }
-
+body main section.carousel img.active,
 body main section.carousel img:hover {
     cursor: pointer;
     width: 100%;
