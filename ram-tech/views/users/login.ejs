@@ -20,7 +20,7 @@
                                 <%= errors.unauthorize.msg %>
                             </div>
                             <% } %>
-                                <i class="fa-solid fa-envelope"></i>
+                                <i id="email-lock" class="fa-solid fa-envelope"></i>
                                 <input class="inputs" type="email" name="email" placeholder="Ingrese su email">
                                 <p class="error-message" id="error-email"></p>
 
@@ -29,8 +29,8 @@
                                         <%= errors.email.msg %>
                                     </div>
                                     <% } %>
+                                        <i id="eye" class="fa-solid fa-eye"></i>
                                         <i class="fa-solid fa-lock-open"></i>
-                                        <i id="eye-icon" class="fa-solid fa-eye"></i>
                                         <input class="inputs" type="password" name="password"
                                             placeholder="Ingrese su contraseña">
                                         <p class="error-message" id="error-password"></p>

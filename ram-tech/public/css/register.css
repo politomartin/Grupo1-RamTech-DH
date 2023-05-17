@@ -137,9 +137,8 @@ body main .inputImage {
 
 form #eye-icon1,
 form #eye-icon2 {
-    transform: translateX(360px) translateY(12px);
+    transform: translateX(270px) translateY(10px);
 }
-
 
 @media (max-width: 425px) {
     body main .formBox {
@@ -164,6 +163,12 @@ form #eye-icon2 {
 }
 
 @media (min-width: 769px) {
+
+    form #eye-icon1,
+    form #eye-icon2 {
+        transform: translateX(360px) translateY(12px);
+    }
+
     body main div.formBox {
         height: 100%;
         width: 500px;

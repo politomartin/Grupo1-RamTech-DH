@@ -1,6 +1,5 @@
 <!-- HEAD -->
 <%- include('../partials/head') %>
-	<link href="/css/products.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -13,33 +12,33 @@
 					<div class="title-section">
 
 						<h2 class="title">Productos</h2>
-
 					</div>
 
 					<div class="products">
 						<% products.forEach(product=> { %>
 							<article>
-								<div class="description-container">
-									<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
-										<% if (product.product_images.length===0) { %>
-											<img src="/images/images-products/default-product.png"
-												alt="Imagen del producto" class="principal-image">
-											<% } else { %>
-												<img src="/images/images-products/<%= product.product_images[0].name %>"
-													alt="<%=product.name %>">
-												<% } %>
-													<div class="main-container">
-														<h4 class="name">
-															<%=product.name %>
-														</h4>
-														<p class="price">$<%=product.price %>
-														</p>
-														<p class="discount">
-															<%=product.discount %>% Off
-														</p>
-													</div>
-									</a>
-								</div>
+								<a href="/products/product-detail/<%=product.id %>" id="product-redirect">
+
+									<% if (product.product_images.length> 0) { %>
+										<div class="img-container">
+											<img src="/images/images-products/<%= product.product_images[0].name %>">
+										</div>
+										<% } else { %>
+											<div class="img-container">
+												<img src="/images/images-products/default-product.png">
+											</div>
+											<% } %>
+												<div class="main-container">
+													<h4 class="name">
+														<%=product.name %>
+													</h4>
+													<p class="price">$<%=product.price %>
+													</p>
+													<p class="discount">
+														<%=product.discount %>% Off
+													</p>
+												</div>
+								</a>
 							</article>
 							<%}); %>
 					</div>

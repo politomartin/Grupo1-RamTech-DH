@@ -150,6 +150,11 @@ main div.total article.article1 .selection {
     margin: 10px 0;
 }
 
+main div.total article.article1 .selection option {
+    background-color: transparent;
+    color: #000;
+}
+
 body main div.container div.total article.article1total {
     font-weight: 700;
     text-align: end;

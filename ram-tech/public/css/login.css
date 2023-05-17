@@ -61,6 +61,10 @@ body main div.formBox form i {
     transform: translateX(4px) translateY(8px);
 }
 
+form #eye {
+    transform: translateX(170px) translateY(10px);
+} 
+
 body main div.formBox form .checkbox {
     font-size: 15px;
     display: flex;
@@ -153,9 +157,6 @@ body main div.formBox.links a:hover {
 
 }
 
-form #eye-icon {
-    transform: translateX(354px) translateY(44px);
-}
 
 @media (min-width: 769px) {
     body main div.formBox {
@@ -187,6 +188,11 @@ form #eye-icon {
         transform: translateX(10px) translateY(45px);
         font-size: 20px;
     }
+
+
+    form #eye {
+        transform: translateX(345px) translateY(45px);
+    } 
 
     body main div.formBox form .checkbox {
         margin: 20px 0;

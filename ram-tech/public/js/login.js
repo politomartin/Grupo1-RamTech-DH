@@ -1,7 +1,7 @@
 window.onload = function () {
     const form = document.querySelector('#form');
     const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    const eyeIcon = document.getElementById("eye-icon")
+    const eyeIcon = document.getElementById("eye")
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
