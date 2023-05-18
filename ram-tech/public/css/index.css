@@ -495,6 +495,7 @@ body footer div.footer-box .main-footer .copy p {
     padding: 10px;
     gap: 35px;
     transition: all 400ms;
+    font-family: 'Manjari';
 }
 
 .flex .categories a {
@@ -856,7 +857,7 @@ body footer div.footer-box .main-footer .copy p {
 
 @media (min-width: 1024px) {
     body main .highlight div.products article .main-container {
-        width: 92%;
+        width: 93%;
     }
 
     body main .highlight .products article .img-container {
